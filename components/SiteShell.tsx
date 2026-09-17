@@ -5,6 +5,11 @@ import { siteConfig } from "../config/site";
 export function SiteHeader() {
   return (
     <header className="site-header">
+      <Link className="availability-bar" href="/download" aria-label="Capehelm for Mac is coming soon. View availability details.">
+        <strong>Coming Soon</strong>
+        <span>Capehelm for Mac is not yet available.</span>
+        <span aria-hidden="true">View status ↗</span>
+      </Link>
       <div className="nav-wrap">
         <Link className="brand" href="/" aria-label="Capehelm home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -20,7 +25,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link className="button button-small" href="/download">
-            Download Capehelm
+            Coming Soon
           </Link>
         </nav>
         <details className="mobile-menu">
@@ -50,18 +55,18 @@ export function SiteFooter() {
             alt=""
           />
           <p className="footer-title">Capehelm</p>
-          <p>Private personal finance for Mac.</p>
+          <p>Private personal finance for Mac. Coming soon.</p>
         </div>
         <nav aria-label="Footer navigation">
           <Link href="/features">Features</Link>
           <Link href="/privacy">Privacy</Link>
-          <Link href="/download">Download</Link>
+          <Link href="/download">Coming Soon</Link>
           <a href="mailto:support@capehelm.com">Email support</a>
         </nav>
       </div>
       <div className="footer-bottom">
         <span>© 2026 Capehelm</span>
-        <span>No analytics. No advertising trackers.</span>
+        <span>Coming Soon · No release date announced.</span>
       </div>
     </footer>
   );

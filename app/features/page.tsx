@@ -5,7 +5,7 @@ import { ArrowIcon, CheckIcon, PageShell } from "../../components/SiteShell";
 
 export const metadata: Metadata = {
   title: "Features — Capehelm",
-  description: "Explore Capehelm Dashboard, Budget Health, Forecast, Trends, Transactions, Net Worth and reporting for Mac.",
+  description: "Explore the planned Capehelm Dashboard, Budget Health, Forecast, Trends, Transactions, Net Worth and reporting experience coming soon for Mac.",
 };
 
 const sections = [
@@ -20,6 +20,6 @@ export default function FeaturesPage() {
   return <PageShell>
     <section className="page-hero section-shell"><p className="eyebrow"><span /> Product features</p><h1>Past, present and future—<em>in one financial workspace.</em></h1><p>Capehelm is designed to move from a high-level answer to the detail behind it without sending your financial history to an app-owned cloud account.</p><div className="page-subnav">{sections.map((section) => <a key={section.id} href={`#${section.id}`}>{section.eyebrow}</a>)}</div></section>
     <section className="feature-chapters section-shell">{sections.map((section, index) => <article className={`feature-chapter ${index % 2 ? "chapter-reverse" : ""}`} id={section.id} key={section.id}><div className="chapter-copy"><p className="eyebrow"><span /> {section.eyebrow}</p><h2>{section.title}</h2><p>{section.body}</p><ul>{section.bullets.map((bullet) => <li key={bullet}><CheckIcon />{bullet}</li>)}</ul></div><ProductWindow visual={section.visual} /></article>)}</section>
-    <section className="compact-cta section-shell"><div><p className="eyebrow"><span /> Private by design</p><h2>A clearer view of your money, kept on your devices.</h2></div><div><Link className="button" href="/download">Download Capehelm <ArrowIcon /></Link><Link className="text-link" href="/privacy">How privacy works <ArrowIcon /></Link></div></section>
+    <section className="compact-cta section-shell"><div><p className="eyebrow"><span /> Coming soon for Mac</p><h2>A clearer view of your money, kept on your devices.</h2></div><div><Link className="button" href="/download">View availability <ArrowIcon /></Link><Link className="text-link" href="/privacy">How privacy works <ArrowIcon /></Link></div></section>
   </PageShell>;
 }

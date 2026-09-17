@@ -4,9 +4,9 @@ import { DevicePair, ProductWindow, ReportStack } from "../components/ProductVis
 import { ArrowIcon, PageShell } from "../components/SiteShell";
 
 export const metadata: Metadata = {
-  title: "Capehelm — Private Personal Finance for Mac",
+  title: "Capehelm — Coming Soon for Mac",
   description:
-    "See spending clearly, plan the next 14 days and track long-term progress in a private finance workspace designed for your Mac.",
+    "Capehelm is a private, local-first personal finance workspace coming soon for Mac. No release date has been announced.",
 };
 
 const featureCards = [
@@ -27,11 +27,11 @@ export default function Home() {
       <section className="hero section-shell">
         <div className="hero-glow" />
         <div className="hero-copy reveal">
-          <p className="eyebrow"><span /> Private personal finance</p>
+          <p className="eyebrow"><span /> Coming soon for Mac</p>
           <h1>See where your money is going.<br /><em>Know where it’s going next.</em></h1>
           <p className="hero-lede">Capehelm brings spending, budgets, cash-flow forecasting, trends and net worth together in a private finance workspace designed for your Mac.</p>
           <div className="hero-actions">
-            <Link className="button" href="/download">Download for Mac <ArrowIcon /></Link>
+            <Link className="button" href="/download">Coming Soon <ArrowIcon /></Link>
             <Link className="text-link" href="#forecast">Explore Capehelm <span aria-hidden="true">↓</span></Link>
           </div>
           <p className="trust-line"><span>◆ No financial account required</span><span>◆ No advertising</span><span>◆ Local-first by design</span></p>
@@ -83,7 +83,7 @@ export default function Home() {
 
       <section className="devices-section section-shell" id="devices"><div className="section-intro centered"><p className="eyebrow"><span /> Mac + iPhone</p><h2>Built for the devices already in your life.</h2><p>The Mac is Capehelm’s complete finance workspace. The iPhone companion keeps selected Forecast, Reports, Financial To-Do and shared-document workflows close at hand.</p></div><DevicePair /><p className="device-note">The iPhone companion focuses on selected workflows and does not mirror the complete macOS feature set.</p></section>
 
-      <section className="final-cta section-shell"><ImageMark /><p className="eyebrow"><span /> Capehelm for Mac</p><h2>Take control of your finances<br />without giving them away.</h2><p>Bring spending, budgets, Forecast and net worth together in one private financial workspace.</p><div><Link className="button" href="/download">Download Capehelm <ArrowIcon /></Link><Link className="button button-ghost" href="/features">See Features</Link></div></section>
+      <section className="final-cta section-shell"><ImageMark /><p className="eyebrow"><span /> Coming soon for Mac</p><h2>Take control of your finances<br />without giving them away.</h2><p>Capehelm is not yet available. Explore the private financial workspace we are building, with no release date announced.</p><div><Link className="button" href="/download">View availability <ArrowIcon /></Link><Link className="button button-ghost" href="/features">See Features</Link></div></section>
     </PageShell>
   );
 }

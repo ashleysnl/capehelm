@@ -16,7 +16,7 @@ for (const [path, expected] of [
   ["/", "See where your money is going"],
   ["/features", "Past, present and future"],
   ["/privacy", "Privacy Policy"],
-  ["/download", "Public download coming soon"],
+  ["/download", "No release date announced"],
 ]) {
   test(`server-renders ${path}`, async () => {
     const response = await render(path);
@@ -26,6 +26,8 @@ for (const [path, expected] of [
     assert.match(html, new RegExp(expected, "i"));
     assert.match(html, /Capehelm/);
     assert.match(html, /mailto:support@capehelm\.com/);
+    assert.match(html, /Coming Soon/i);
+    assert.doesNotMatch(html, /Download Capehelm|Download for Mac|Private beta/i);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
   });
 }

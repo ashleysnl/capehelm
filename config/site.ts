@@ -9,16 +9,16 @@ export const siteConfig = {
     iOS: "iOS 17 or later companion",
   },
   download: {
-    status: "private-beta" as const,
+    status: "coming-soon" as const,
     url: null as string | null,
-    label: "Public download coming soon",
-    note: "The current build is ad-hoc signed for local use and is not yet notarized for unrestricted public installation.",
+    label: "Coming Soon",
+    note: "Capehelm is not yet available from the Mac App Store or as a direct download. No release date has been announced.",
   },
   navigation: [
     { href: "/features", label: "Features" },
     { href: "/privacy", label: "Privacy" },
     { href: "/#devices", label: "Mac + iPhone" },
-    { href: "/download", label: "Download" },
+    { href: "/download", label: "Coming Soon" },
   ],
   featureGroups: [
     {

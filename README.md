@@ -31,7 +31,7 @@ npm test
 
 - `app/` — Home, Features, Privacy and Download routes, global metadata and styling
 - `components/` — shared site chrome and synthetic product visuals
-- `config/site.ts` — product name, version, navigation and download availability
+- `config/site.ts` — product name, navigation and availability status
 - `public/brand/` — approved Capehelm logo, mark and app icon copied from the product repository
 - `public/og.png` — bespoke social-sharing card
 
@@ -41,12 +41,12 @@ All finance UI displayed on the website is constructed from clearly synthetic de
 
 Edit `config/site.ts`:
 
-- `download.status`: use `private-beta`, `coming-soon`, or extend the union when public distribution is approved.
+- `download.status`: keep `coming-soon` until public distribution is approved.
 - `download.url`: keep `null` until a notarized, approved public artifact exists.
 - `download.label` and `download.note`: public-facing release status.
-- `version`: update the visible Capehelm version in one place.
+- `version`: internal product version; it is not shown while Capehelm is unavailable.
 
-The current source application is version 1.1.0 and is ad-hoc signed for local/personal use, not notarized for unrestricted public distribution. The website therefore does not link an installable binary.
+Capehelm is not yet available from the Mac App Store or as a direct download. The website deliberately makes no release-date commitment and does not link an installable binary.
 
 ## SEO and deployment
 

@@ -14,8 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = incoming.get("x-forwarded-host") ?? incoming.get("host") ?? "localhost:3000";
   const protocol = incoming.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const title = "Capehelm — Private Personal Finance for Mac";
-  const description = "Capehelm brings budgeting, 14-day cash-flow forecasting, spending trends and net worth together in a private personal-finance workspace for Mac.";
+  const title = "Capehelm — Coming Soon for Mac";
+  const description = "Capehelm is a private, local-first personal finance workspace coming soon for Mac. It is not yet available and no release date has been announced.";
 
   return {
     metadataBase: new URL(origin),
