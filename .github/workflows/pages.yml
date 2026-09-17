@@ -37,8 +37,11 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://ashleysnl.github.io/capehelm
         run: npm run build
 
-      - name: Preserve framework assets
-        run: touch dist/client/.nojekyll
+      - name: Prepare Pages artifact
+        run: |
+          mv dist/client/capehelm/_next dist/client/_next
+          rmdir dist/client/capehelm
+          touch dist/client/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
