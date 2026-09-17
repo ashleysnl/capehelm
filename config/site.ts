@@ -40,6 +40,19 @@ export const siteConfig = {
   ],
 };
 
+export const siteBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function siteAssetPath(path: string): string {
+  return `${siteBasePath}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export function siteHref(href: string): string {
+  if (href.startsWith("#") || /^[a-z]+:/i.test(href)) {
+    return href;
+  }
+  return `${siteBasePath}${href.startsWith("/") ? href : `/${href}`}`;
+}
+
 export type ProductVisual =
   | "dashboard"
   | "forecast"

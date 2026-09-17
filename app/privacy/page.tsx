@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     "Learn how Capehelm handles financial data, support correspondence, website information and your privacy choices.",
 };
 
+export const dynamic = "force-static";
+
 const sections = [
   "Our Privacy Approach",
   "Information Processed by the Capehelm App",

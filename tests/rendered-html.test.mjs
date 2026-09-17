@@ -1,15 +1,10 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(path = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-  return worker.fetch(
-    new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }),
-    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
-    { waitUntil() {}, passThroughOnException() {} },
-  );
+async function render(route = "/") {
+  const relativePath = route === "/" ? "index.html" : `${route.slice(1)}.html`;
+  return readFile(new URL(`../dist/client/${relativePath}`, import.meta.url), "utf8");
 }
 
 for (const [path, expected] of [
@@ -18,16 +13,17 @@ for (const [path, expected] of [
   ["/privacy", "Privacy Policy"],
   ["/download", "No release date announced"],
 ]) {
-  test(`server-renders ${path}`, async () => {
-    const response = await render(path);
-    assert.equal(response.status, 200);
-    assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-    const html = await response.text();
+  test(`statically renders ${path}`, async () => {
+    const html = await render(path);
     assert.match(html, new RegExp(expected, "i"));
     assert.match(html, /Capehelm/);
     assert.match(html, /mailto:support@capehelm\.com/);
     assert.match(html, /Coming Soon/i);
     assert.doesNotMatch(html, /Download Capehelm|Download for Mac|Private beta/i);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+    if (process.env.GITHUB_PAGES_BUILD === "true") {
+      assert.match(html, /\/capehelm\/_next\//);
+      assert.doesNotMatch(html, /(?:href|src)="\/(?!capehelm(?:\/|"))/);
+    }
   });
 }

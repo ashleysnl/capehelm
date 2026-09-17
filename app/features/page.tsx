@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ProductWindow } from "../../components/ProductVisuals";
-import { ArrowIcon, CheckIcon, PageShell } from "../../components/SiteShell";
+import { ArrowIcon, CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
 
 export const metadata: Metadata = {
   title: "Features — Capehelm",
   description: "Explore the planned Capehelm Dashboard, Budget Health, Forecast, Trends, Transactions, Net Worth and reporting experience coming soon for Mac.",
 };
+
+export const dynamic = "force-static";
 
 const sections = [
   { id: "stand", eyebrow: "See where you stand", title: "A current financial picture, without the spreadsheet archaeology.", body: "Dashboard brings spending, budget position, forecast context, savings and net-worth signals into one focused starting point. Budget Health then shows whether the month is actually on track.", visual: "dashboard" as const, bullets: ["Monthly financial overview", "Budget Health status by group and category", "Projected month-end spending", "Upcoming attention items", "Budget Builder"] },
@@ -20,6 +21,6 @@ export default function FeaturesPage() {
   return <PageShell>
     <section className="page-hero section-shell"><p className="eyebrow"><span /> Product features</p><h1>Past, present and future—<em>in one financial workspace.</em></h1><p>Capehelm is designed to move from a high-level answer to the detail behind it without sending your financial history to an app-owned cloud account.</p><div className="page-subnav">{sections.map((section) => <a key={section.id} href={`#${section.id}`}>{section.eyebrow}</a>)}</div></section>
     <section className="feature-chapters section-shell">{sections.map((section, index) => <article className={`feature-chapter ${index % 2 ? "chapter-reverse" : ""}`} id={section.id} key={section.id}><div className="chapter-copy"><p className="eyebrow"><span /> {section.eyebrow}</p><h2>{section.title}</h2><p>{section.body}</p><ul>{section.bullets.map((bullet) => <li key={bullet}><CheckIcon />{bullet}</li>)}</ul></div><ProductWindow visual={section.visual} /></article>)}</section>
-    <section className="compact-cta section-shell"><div><p className="eyebrow"><span /> Coming soon for Mac</p><h2>A clearer view of your money, kept on your devices.</h2></div><div><Link className="button" href="/download">View availability <ArrowIcon /></Link><Link className="text-link" href="/privacy">How privacy works <ArrowIcon /></Link></div></section>
+    <section className="compact-cta section-shell"><div><p className="eyebrow"><span /> Coming soon for Mac</p><h2>A clearer view of your money, kept on your devices.</h2></div><div><SiteLink className="button" href="/download">View availability <ArrowIcon /></SiteLink><SiteLink className="text-link" href="/privacy">How privacy works <ArrowIcon /></SiteLink></div></section>
   </PageShell>;
 }
