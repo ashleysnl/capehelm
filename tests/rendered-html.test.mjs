@@ -21,6 +21,7 @@ for (const [path, expected] of [
   ["/", "See where your money is going"],
   ["/features", "Past, present and future"],
   ["/privacy", "Privacy Policy"],
+  ["/support", "Capehelm Support"],
   ["/download", "No release date announced"],
 ]) {
   test(`statically renders ${path}`, async () => {
@@ -37,9 +38,14 @@ for (const [path, expected] of [
       assert.match(html, /Capehelm hands the link to your default browser\./);
       assert.match(html, /macOS sharing service or your email application/);
     }
+    if (path === "/support") {
+      assert.match(html, /mailto:support@capehelm\.com/);
+      assert.match(html, /href="\/privacy"/);
+      assert.match(html, /Capehelm does not require your online banking password, bank login, or personal Finance Document/);
+    }
     if (process.env.GITHUB_PAGES_BUILD === "true") {
       assert.match(html, /\/_next\//);
-      assert.doesNotMatch(html, /(?:href|src)="\/capehelm(?:\/|\")/);
+      assert.doesNotMatch(html, /(?:href|src)="\/capehelm(?:\/|")/);
     }
   });
 }

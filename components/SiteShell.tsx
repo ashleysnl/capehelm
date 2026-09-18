@@ -1,8 +1,8 @@
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { siteAssetPath, siteConfig, siteHref } from "../config/site";
 
-export function SiteLink({ href, ...props }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  return <a href={siteHref(href)} {...props} />;
+export function SiteLink({ href, children, ...props }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+  return <a href={siteHref(href)} {...props}>{children}</a>;
 }
 
 export function SiteHeader() {
@@ -63,6 +63,7 @@ export function SiteFooter() {
         <nav aria-label="Footer navigation">
           <SiteLink href="/features">Features</SiteLink>
           <SiteLink href="/privacy">Privacy</SiteLink>
+          <SiteLink href="/support">Support</SiteLink>
           <SiteLink href="/download">Coming Soon</SiteLink>
           <a href="mailto:support@capehelm.com">Email support</a>
         </nav>
