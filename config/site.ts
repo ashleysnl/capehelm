@@ -35,7 +35,15 @@ export const siteConfig = {
     },
     {
       title: "Measure long-term progress",
-      features: ["Net Worth", "Reports"],
+      features: ["Net Worth", "Retirement Projection"],
+    },
+    {
+      title: "Keep your household aligned",
+      features: ["Reports", "Mac + iPhone"],
+    },
+    {
+      title: "Keep control",
+      features: ["Finance Documents", "Imports", "Backup & Restore"],
     },
   ],
 };
@@ -58,4 +66,5 @@ export type ProductVisual =
   | "forecast"
   | "budget"
   | "trends"
-  | "networth";
+  | "networth"
+  | "retirement";

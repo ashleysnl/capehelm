@@ -18,8 +18,9 @@ const featureCards = [
   ["Transactions", "Search, inspect and organize your financial history.", "05"],
   ["Categories & Rules", "Teach Capehelm how your financial life works.", "06"],
   ["Net Worth", "Track long-term financial progress.", "07"],
-  ["Reports", "Turn complexity into clear household updates.", "08"],
-  ["Financial To-Do", "Remember payments, claims and follow-ups.", "09"],
+  ["Retirement", "Compare long-term paths, timing and contributions.", "08"],
+  ["Reports", "Turn complexity into clear household updates.", "09"],
+  ["Financial To-Do", "Remember payments, reimbursements and follow-ups.", "10"],
 ];
 
 export default function Home() {
@@ -66,7 +67,7 @@ export default function Home() {
       </section>
 
       <section className="spotlight section-shell networth-feature">
-        <div className="spotlight-copy"><p className="eyebrow"><span /> Net Worth</p><h2>Measure progress beyond this month’s spending.</h2><p>Bring organizations, accounts, assets and liabilities into one long-term view. See contribution-adjusted growth alongside liquid assets, retirement savings and secured debt.</p><ul className="feature-list"><li>Assets and liabilities</li><li>Account histories</li><li>Contribution-adjusted growth</li><li>Retirement nest egg</li></ul></div>
+        <div className="spotlight-copy"><p className="eyebrow"><span /> Net Worth</p><h2>Measure progress beyond this month’s spending.</h2><p>Bring organizations, accounts, assets and liabilities into one long-term view. See contribution-adjusted growth alongside liquid assets and secured debt.</p><ul className="feature-list"><li>Assets and liabilities</li><li>Account histories</li><li>Contribution-adjusted growth</li><li>Account and institution organization</li></ul></div>
         <ProductWindow visual="networth" />
       </section>
 
@@ -76,8 +77,8 @@ export default function Home() {
       </section>
 
       <section className="privacy-banner section-shell">
-        <div><p className="eyebrow"><span /> Local-first architecture</p><h2>Your financial history isn’t our business.</h2><p>Capehelm has no app-owned cloud service, login, telemetry or remote analytics. Your finance documents, imports and backups stay under your control.</p><SiteLink className="button button-secondary" href="/privacy">Read about privacy <ArrowIcon /></SiteLink></div>
-        <div className="privacy-flow" role="img" aria-label="Your statements flow into Capehelm and then into your finance document on your devices"><div><b>Your statements</b><span>User-controlled import</span></div><i>→</i><div className="flow-core"><b>Capehelm</b><span>Analysis on your device</span></div><i>→</i><div><b>Your finance document</b><span>Stored where you choose</span></div><small>Nothing in this core flow requires a Capehelm financial account.</small></div>
+        <div><p className="eyebrow"><span /> Local-first architecture</p><h2>Your financial history isn’t our business.</h2><p>Capehelm has no app-owned cloud service, login, telemetry or remote analytics. Your Finance Documents, backups, reports and exports stay under your control.</p><SiteLink className="button button-secondary" href="/privacy">Read about privacy <ArrowIcon /></SiteLink></div>
+        <div className="privacy-flow" role="img" aria-label="Your statements flow into Capehelm and then into your finance document on your devices"><div><b>Your statements</b><span>Built-in or configured bank CSV import</span></div><i>→</i><div className="flow-core"><b>Capehelm</b><span>Analysis on your device</span></div><i>→</i><div><b>Your finance document</b><span>Stored where you choose</span></div><small>Nothing in this core flow requires a Capehelm financial account.</small></div>
       </section>
 
       <section className="feature-grid-section section-shell"><div className="section-intro"><p className="eyebrow"><span /> A complete workspace</p><h2>Serious tools. One coherent financial picture.</h2></div><div className="feature-grid">{featureCards.map(([title, description, number]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div><div className="feature-grid-link"><SiteLink className="text-link" href="/features">See every feature <ArrowIcon /></SiteLink></div></section>

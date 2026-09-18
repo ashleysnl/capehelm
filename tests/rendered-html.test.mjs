@@ -7,6 +7,16 @@ async function render(route = "/") {
   return readFile(new URL(`../dist/client/${relativePath}`, import.meta.url), "utf8");
 }
 
+test("features page includes current planning, import and local-control capabilities", async () => {
+  const html = await render("/features");
+  assert.match(html, /Capehelm Guide/);
+  assert.match(html, /Built-in and configurable bank CSV imports/);
+  assert.match(html, /potential duplicate charges/);
+  assert.match(html, /Retirement Projection/i);
+  assert.match(html, /Your data\. Your files\. Your backups\./);
+  assert.doesNotMatch(html, /connects directly to your bank|guaranteed returns|AI-powered financial advice/i);
+});
+
 for (const [path, expected] of [
   ["/", "See where your money is going"],
   ["/features", "Past, present and future"],

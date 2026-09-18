@@ -1,6 +1,6 @@
 import type { ProductVisual } from "../config/site";
 
-const navItems = ["Overview", "Forecast", "Transactions", "Budget", "Trends", "Net Worth"];
+const navItems = ["Overview", "Forecast", "Transactions", "Budget", "Trends", "Net Worth", "Retirement"];
 
 function WindowFrame({ children, label }: { children: React.ReactNode; label: string }) {
   return (
@@ -126,8 +126,25 @@ function NetWorth() {
   );
 }
 
+function Retirement() {
+  return (
+    <WindowFrame label="Synthetic Capehelm retirement projection comparing conservative, expected and optimistic paths">
+      <Sidebar active="Retirement" />
+      <div className="mock-content">
+        <div className="screen-heading"><div><span>Long-term planning</span><h3>Retirement projection</h3></div><button>Expected plan</button></div>
+        <div className="retirement-summary"><MoneyCard label="Target date" value="May 2050" note="Age 65" tone="violet" /><MoneyCard label="Monthly contributions" value="$1,450" note="Across 3 accounts" tone="green" /><MoneyCard label="Expected path" value="$1.42m" note="At target date" /></div>
+        <div className="mock-panel retirement-chart">
+          <div className="panel-label"><span>Projected account growth</span><b>3 paths</b></div>
+          <div className="projection-plot" aria-hidden="true"><i className="projection-band" /><i className="projection-line conservative" /><i className="projection-line expected" /><i className="projection-line optimistic" /><span className="milestone one">2034</span><span className="milestone two">2042</span><span className="milestone three">2050</span></div>
+        </div>
+        <div className="projection-legend"><span><i className="conservative" />Conservative</span><span><i className="expected" />Expected</span><span><i className="optimistic" />Optimistic</span></div>
+      </div>
+    </WindowFrame>
+  );
+}
+
 export function ProductWindow({ visual = "dashboard", className = "" }: { visual?: ProductVisual; className?: string }) {
-  return <div className={`product-visual ${className}`}>{visual === "forecast" ? <Forecast /> : visual === "budget" ? <Budget /> : visual === "trends" ? <Trends /> : visual === "networth" ? <NetWorth /> : <Dashboard />}</div>;
+  return <div className={`product-visual ${className}`}>{visual === "forecast" ? <Forecast /> : visual === "budget" ? <Budget /> : visual === "trends" ? <Trends /> : visual === "networth" ? <NetWorth /> : visual === "retirement" ? <Retirement /> : <Dashboard />}</div>;
 }
 
 export function ReportStack() {
