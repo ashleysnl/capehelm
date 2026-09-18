@@ -33,15 +33,11 @@ jobs:
       - name: Build static site
         env:
           GITHUB_PAGES_BUILD: "true"
-          NEXT_PUBLIC_BASE_PATH: /capehelm
-          NEXT_PUBLIC_SITE_URL: https://ashleysnl.github.io/capehelm
+          NEXT_PUBLIC_SITE_URL: https://capehelm.com
         run: npm run build
 
       - name: Prepare Pages artifact
-        run: |
-          mv dist/client/capehelm/_next dist/client/_next
-          rmdir dist/client/capehelm
-          touch dist/client/.nojekyll
+        run: touch dist/client/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

@@ -32,6 +32,7 @@ npm test
 - `app/` — Home, Features, Privacy and Download routes, global metadata and styling
 - `components/` — shared site chrome and synthetic product visuals
 - `config/site.ts` — product name, navigation and availability status
+- `public/CNAME` — GitHub Pages custom-domain declaration for `capehelm.com`
 - `public/brand/` — approved Capehelm logo, mark and app icon copied from the product repository
 - `public/og.png` — bespoke social-sharing card
 
@@ -50,4 +51,4 @@ Capehelm is not yet available from the Mac App Store or as a direct download. Th
 
 ## SEO and deployment
 
-Open Graph URLs are derived from the incoming request host. Set `NEXT_PUBLIC_SITE_URL` to the final canonical origin when a permanent hostname is assigned so `sitemap.xml` uses it. Hosting configuration is maintained in `.openai/hosting.json` by Sites.
+The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://capehelm.com` origin. The production export is served from the root path, so asset and navigation URLs must not include the former `/capehelm` project prefix. Hosting configuration is maintained in `.openai/hosting.json` by Sites.

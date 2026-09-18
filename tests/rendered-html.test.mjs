@@ -32,8 +32,8 @@ for (const [path, expected] of [
     assert.doesNotMatch(html, /Download Capehelm|Download for Mac|Private beta/i);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
     if (process.env.GITHUB_PAGES_BUILD === "true") {
-      assert.match(html, /\/capehelm\/_next\//);
-      assert.doesNotMatch(html, /(?:href|src)="\/(?!capehelm(?:\/|"))/);
+      assert.match(html, /\/_next\//);
+      assert.doesNotMatch(html, /(?:href|src)="\/capehelm(?:\/|\")/);
     }
   });
 }
