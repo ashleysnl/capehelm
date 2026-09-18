@@ -32,6 +32,7 @@ for (const [path, expected] of [
     assert.doesNotMatch(html, /Download Capehelm|Download for Mac|Private beta/i);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
     if (path === "/privacy") {
+      assert.match(html, /Effective Date: September 18, 2026/);
       assert.match(html, /Capehelm does not send the email or read the clipboard contents after that handoff\./);
       assert.match(html, /Capehelm hands the link to your default browser\./);
       assert.match(html, /macOS sharing service or your email application/);

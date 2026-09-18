@@ -60,7 +60,7 @@ export default function PrivacyPage() {
         <p className="eyebrow"><span /> Legal</p>
         <h1>Capehelm<br /><em>Privacy Policy</em></h1>
         <div className="policy-intro">
-          <p className="policy-date">Effective Date: September 17, 2026</p>
+          <p className="policy-date">Effective Date: September 18, 2026</p>
           <p>Capehelm is a local-first personal finance application designed to help you understand, organize, and plan your finances while keeping your financial information under your control.</p>
           <p>This Privacy Policy explains how information is handled when you use the Capehelm application, visit the Capehelm website, or contact Capehelm for support.</p>
           <p>Capehelm is operated by a sole proprietor.</p>
