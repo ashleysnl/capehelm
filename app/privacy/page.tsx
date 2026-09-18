@@ -147,6 +147,9 @@ export default function PrivacyPage() {
             <p>Capehelm creates or stores these files only as part of actions you initiate.</p>
             <p>You are responsible for choosing where these files are stored and for protecting copies you create or share.</p>
             <p>If you share a Capehelm report, backup, Finance Document, or export with another person or service, that copy is no longer solely under Capehelm&apos;s local application controls.</p>
+            <p>When you choose an Email / Share action, Capehelm hands the selected local file to the macOS sharing service or your email application; whether and where it is sent is determined by the action you take in that service.</p>
+            <p>If you choose to prepare an inquiry about a transaction, Capehelm may open a draft in your default email application containing the details needed for that inquiry. If it cannot open that draft, Capehelm may copy the draft text to your clipboard instead. Capehelm does not send the email or read the clipboard contents after that handoff.</p>
+            <p>When you choose to open a Capehelm support, privacy, or other website link, Capehelm hands the link to your default browser. Information handled by your email, sharing, clipboard, browser, or destination service is governed by that service&apos;s own privacy practices.</p>
           </section>
 
           <section>
