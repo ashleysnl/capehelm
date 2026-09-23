@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     description,
     images: [`${siteUrl}/og.png`],
   },
-  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

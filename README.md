@@ -25,7 +25,8 @@ npm run lint
 npm test
 ```
 
-`npm test` creates the production build and verifies all four public routes render.
+`npm test` creates the production build, verifies all five public routes render,
+and checks the published robots and sitemap files.
 
 ## Project map
 
@@ -33,6 +34,8 @@ npm test
 - `components/` — shared site chrome and synthetic product visuals
 - `config/site.ts` — product name, navigation and availability status
 - `public/CNAME` — GitHub Pages custom-domain declaration for `capehelm.com`
+- `public/robots.txt` — crawler access rules and production sitemap declaration
+- `public/sitemap.xml` — canonical production URLs for all public marketing pages
 - `public/brand/` — approved Capehelm logo, mark and app icon copied from the product repository
 - `public/og.png` — bespoke social-sharing card
 
@@ -51,4 +54,4 @@ Capehelm is not yet available from the Mac App Store or as a direct download. Th
 
 ## SEO and deployment
 
-The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://capehelm.com` origin. The production export is served from the root path, so asset and navigation URLs must not include the former `/capehelm` project prefix. Hosting configuration is maintained in `.openai/hosting.json` by Sites.
+The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://capehelm.com` origin. The production export is served from the root path, so asset and navigation URLs must not include the former `/capehelm` project prefix. GitHub Pages copies `public/CNAME`, `public/robots.txt`, and `public/sitemap.xml` into the deployed site root. Hosting configuration is maintained in `.openai/hosting.json` by Sites.
