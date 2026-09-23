@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
-import { siteAssetPath, siteConfig } from "../../config/site";
+import { productionSiteUrl, siteAssetPath, siteConfig } from "../../config/site";
 
 export const metadata: Metadata = {
-  title: "Capehelm for Mac — Coming Soon",
-  description: "Capehelm is coming soon for Mac. It is not yet available from the Mac App Store or as a direct download, and no release date has been announced.",
+  title: { absolute: "Download Capehelm for Mac | Capehelm" },
+  description:
+    "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
+  alternates: { canonical: `${productionSiteUrl}/download` },
 };
 
 export const dynamic = "force-static";

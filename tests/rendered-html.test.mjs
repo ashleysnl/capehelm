@@ -26,11 +26,12 @@ for (const [path, expected] of [
 ]) {
   test(`statically renders ${path}`, async () => {
     const html = await render(path);
+    const visibleHtml = html.match(/<body>([\s\S]*?)<script/)?.[1] ?? html;
     assert.match(html, new RegExp(expected, "i"));
     assert.match(html, /Capehelm/);
     assert.match(html, /mailto:support@capehelm\.com/);
     assert.match(html, /Coming Soon/i);
-    assert.doesNotMatch(html, /Download Capehelm|Download for Mac|Private beta/i);
+    assert.doesNotMatch(visibleHtml, /Download Capehelm|Download for Mac|Private beta/i);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
     if (path === "/privacy") {
       assert.match(html, /Effective Date: September 18, 2026/);

@@ -51,7 +51,7 @@ function Dashboard() {
     <WindowFrame label="Synthetic Capehelm dashboard showing monthly position, budget health, forecast and net worth">
       <Sidebar active="Overview" />
       <div className="mock-content">
-        <div className="screen-heading"><div><span>August overview</span><h3>Your financial position</h3></div><button>Current month</button></div>
+        <div className="screen-heading"><div><span>August overview</span><p className="visual-title">Your financial position</p></div><button>Current month</button></div>
         <div className="money-grid">
           <MoneyCard label="Income" value="$7,850" note="Month to date" tone="green" />
           <MoneyCard label="Spending" value="$4,240" note="54% of income" tone="pink" />
@@ -73,7 +73,7 @@ function Forecast() {
     <WindowFrame label="Synthetic Capehelm 14-day cash-flow forecast">
       <Sidebar active="Forecast" />
       <div className="mock-content">
-        <div className="screen-heading"><div><span>14-day outlook</span><h3>Know what your money needs to do</h3></div><button>Aug 10–23</button></div>
+        <div className="screen-heading"><div><span>14-day outlook</span><p className="visual-title">Know what your money needs to do</p></div><button>Aug 10–23</button></div>
         <div className="forecast-kpis"><MoneyCard label="Starting balance" value="$4,820" note="Northstar Chequing" /><MoneyCard label="Lowest balance" value="$2,160" note="Above safety floor" tone="green" /><MoneyCard label="Flexible room" value="$620" note="After commitments" tone="violet" /></div>
         <div className="mock-panel forecast-panel">
           <div className="panel-label"><span>Projected checking balance</span><b>Safety floor $1,500</b></div>
@@ -91,7 +91,7 @@ function Budget() {
     <WindowFrame label="Synthetic Capehelm Budget Health dashboard">
       <Sidebar active="Budget" />
       <div className="mock-content">
-        <div className="screen-heading"><div><span>Monthly plan</span><h3>Budget health</h3></div><button>Open Budget Builder</button></div>
+        <div className="screen-heading"><div><span>Monthly plan</span><p className="visual-title">Budget health</p></div><button>Open Budget Builder</button></div>
         <div className="budget-summary"><div className="budget-ring"><span>76%</span><small>month planned</small></div><MoneyCard label="Actual MTD" value="$4,240" note="52% of plan" /><MoneyCard label="Projected month-end" value="$7,980" note="$120 under plan" tone="green" /></div>
         <div className="budget-table"><div className="budget-row header"><span>Group</span><span>Plan</span><span>Projected</span><span>Status</span></div>{rows.map((row) => <div className="budget-row" key={row[0]}><b>{row[0]}</b><span>{row[1]}</span><span>{row[2]}</span><em className={row[3] === "On track" ? "good" : row[3] === "Watch" ? "watch" : "over"}>{row[3]}</em></div>)}</div>
       </div>
@@ -105,7 +105,7 @@ function Trends() {
     <WindowFrame label="Synthetic Capehelm spending trends treemap">
       <Sidebar active="Trends" />
       <div className="mock-content">
-        <div className="screen-heading"><div><span>Spending patterns</span><h3>See the shape of your spending</h3></div><button>Year to date</button></div>
+        <div className="screen-heading"><div><span>Spending patterns</span><p className="visual-title">See the shape of your spending</p></div><button>Year to date</button></div>
         <div className="trend-tabs"><b>Group</b><span>Category</span><span>Merchant</span></div>
         <div className="trends-layout"><div className="treemap">{blocks.map(([label, value, classes]) => <div key={label} className={String(classes)}><b>{label}</b><span>{value}%</span></div>)}</div><div className="mock-panel leaderboard"><div className="panel-label"><span>Top movements</span><b>vs last year</b></div><ul><li><span>Groceries</span><b>+8%</b></li><li><span>Dining</span><b>−12%</b></li><li><span>Travel</span><b>+5%</b></li><li><span>Utilities</span><b>−3%</b></li></ul></div></div>
       </div>
@@ -118,7 +118,7 @@ function NetWorth() {
     <WindowFrame label="Synthetic Capehelm net worth dashboard">
       <Sidebar active="Net Worth" />
       <div className="mock-content">
-        <div className="screen-heading"><div><span>Long-term progress</span><h3>Net worth</h3></div><button>Update values</button></div>
+        <div className="screen-heading"><div><span>Long-term progress</span><p className="visual-title">Net worth</p></div><button>Update values</button></div>
         <div className="networth-hero"><div><span>Current net worth</span><strong>$286,420</strong><small>Contribution-adjusted growth +6.8%</small></div><LineChart /></div>
         <div className="allocation-grid"><MoneyCard label="Investments" value="$184k" note="64% of assets" tone="violet" /><MoneyCard label="Liquid assets" value="$42k" note="14% of assets" tone="green" /><MoneyCard label="Property" value="$380k" note="Updated recently" /><MoneyCard label="Liabilities" value="$320k" note="Mortgage + vehicle" tone="pink" /></div>
       </div>
@@ -131,7 +131,7 @@ function Retirement() {
     <WindowFrame label="Synthetic Capehelm retirement projection comparing conservative, expected and optimistic paths">
       <Sidebar active="Retirement" />
       <div className="mock-content">
-        <div className="screen-heading"><div><span>Long-term planning</span><h3>Retirement projection</h3></div><button>Expected plan</button></div>
+        <div className="screen-heading"><div><span>Long-term planning</span><p className="visual-title">Retirement projection</p></div><button>Expected plan</button></div>
         <div className="retirement-summary"><MoneyCard label="Target date" value="May 2050" note="Age 65" tone="violet" /><MoneyCard label="Monthly contributions" value="$1,450" note="Across 3 accounts" tone="green" /><MoneyCard label="Expected path" value="$1.42m" note="At target date" /></div>
         <div className="mock-panel retirement-chart">
           <div className="panel-label"><span>Projected account growth</span><b>3 paths</b></div>
@@ -150,8 +150,8 @@ export function ProductWindow({ visual = "dashboard", className = "" }: { visual
 export function ReportStack() {
   return (
     <div className="report-stack" role="img" aria-label="Synthetic Capehelm financial report pages">
-      <article className="report-page report-back"><span>CAPEHELM</span><h4>Weekly Spending Review</h4><div className="report-chart" /><p>Three things to know this week</p></article>
-      <article className="report-page report-front"><div className="report-logo">CH</div><span>WEEKLY FAMILY PLAN</span><h4>A clear plan for the week ahead.</h4><div className="report-stats"><b>$680<small>Flexible room</small></b><b>5<small>Commitments</small></b><b>14 days<small>Plan horizon</small></b></div><div className="report-chart pink" /><p>Built from synthetic demonstration data.</p></article>
+      <article className="report-page report-back"><span>CAPEHELM</span><p className="visual-title">Weekly Spending Review</p><div className="report-chart" /><p>Three things to know this week</p></article>
+      <article className="report-page report-front"><div className="report-logo">CH</div><span>WEEKLY FAMILY PLAN</span><p className="visual-title">A clear plan for the week ahead.</p><div className="report-stats"><b>$680<small>Flexible room</small></b><b>5<small>Commitments</small></b><b>14 days<small>Plan horizon</small></b></div><div className="report-chart pink" /><p>Built from synthetic demonstration data.</p></article>
     </div>
   );
 }
@@ -160,7 +160,7 @@ export function DevicePair() {
   return (
     <div className="device-pair" role="img" aria-label="Capehelm on a Mac with an iPhone companion">
       <div className="mac-device"><ProductWindow visual="forecast" /></div>
-      <div className="phone-device"><div className="phone-island" /><div className="phone-brand">CH <span>Capehelm</span></div><h4>Forecast</h4><small>Next 14 days</small><div className="phone-balance"><span>Lowest balance</span><strong>$2,160</strong><em>Above safety floor</em></div><div className="phone-bars">{[45, 62, 55, 70, 48, 64, 58].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div><nav><b>Forecast</b><span>Reports</span><span>To-Do</span></nav></div>
+      <div className="phone-device"><div className="phone-island" /><div className="phone-brand">CH <span>Capehelm</span></div><p className="visual-title">Forecast</p><small>Next 14 days</small><div className="phone-balance"><span>Lowest balance</span><strong>$2,160</strong><em>Above safety floor</em></div><div className="phone-bars">{[45, 62, 55, 70, 48, 64, 58].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div><nav><b>Forecast</b><span>Reports</span><span>To-Do</span></nav></div>
     </div>
   );
 }

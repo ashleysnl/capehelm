@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { DevicePair, ProductWindow, ReportStack } from "../components/ProductVisuals";
 import { ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
+import { productionSiteUrl } from "../config/site";
 
 export const metadata: Metadata = {
-  title: "Capehelm — Coming Soon for Mac",
+  title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
   description:
-    "Capehelm is a private, local-first personal finance workspace coming soon for Mac. No release date has been announced.",
+    "Capehelm is a private personal finance app for Mac with budgeting, 14-day cash-flow forecasting, spending analysis, net worth and retirement planning. Your financial data stays local.",
+  alternates: { canonical: `${productionSiteUrl}/` },
 };
 
 export const dynamic = "force-static";

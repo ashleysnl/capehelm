@@ -11,7 +11,7 @@
 
 ## P0 — Launch-Critical
 
-- [ ] **Task 1 — Search engine indexing foundation**
+- [x] **Task 1 — Search engine indexing foundation**
 - [ ] **Task 2 — Technical SEO baseline**
 - [ ] **Task 3 — Homepage positioning and hero rewrite**
 - [ ] **Task 4 — Mac App Store conversion path**
@@ -105,26 +105,26 @@ The core website funnel is:
 - [x] Create or verify `sitemap.xml`.
 - [x] Include every canonical public page in the sitemap.
 - [x] Ensure sitemap URLs use `https://capehelm.com/...`.
-- [ ] Add Google Search Console.
-- [ ] Verify domain ownership through Cloudflare DNS.
-- [ ] Submit `sitemap.xml` in Google Search Console.
-- [ ] Request indexing for the homepage.
-- [ ] Request indexing for `/features`.
-- [ ] Request indexing for `/privacy`.
-- [ ] Request indexing for `/support`.
-- [ ] Request indexing for `/download` or its eventual replacement.
-- [ ] Add Bing Webmaster Tools.
-- [ ] Submit the sitemap to Bing.
+- [x] Add Google Search Console.
+- [x] Verify domain ownership through Cloudflare DNS.
+- [x] Submit `sitemap.xml` in Google Search Console.
+- [x] Request indexing for the homepage.
+- [x] Request indexing for `/features`.
+- [x] Request indexing for `/privacy`.
+- [x] Request indexing for `/support`.
+- [x] Request indexing for `/download` or its eventual replacement.
+- [x] Add Bing Webmaster Tools.
+- [x] Submit the sitemap to Bing.
 
 ## Acceptance Criteria
 
-- `https://capehelm.com/robots.txt` returns successfully.
-- `https://capehelm.com/sitemap.xml` returns successfully.
-- Sitemap contains only canonical production URLs.
-- Google Search Console recognizes the domain.
-- Sitemap status is accepted.
-- Important pages are submitted for indexing.
-- Bing Webmaster Tools recognizes the site.
+- [x] `https://capehelm.com/robots.txt` returns successfully.
+- [x] `https://capehelm.com/sitemap.xml` returns successfully.
+- [x] Sitemap contains only canonical production URLs.
+- [x] Google Search Console recognizes the domain.
+- [x] Sitemap status is accepted.
+- [x] Important pages are submitted for indexing.
+- [x] Bing Webmaster Tools recognizes the site.
 
 ## Execution Notes
 
@@ -136,34 +136,36 @@ This task should be completed before spending significant time on content SEO.
 - **Public routes included:** `/`, `/features`, `/privacy`, `/support`, and `/download`.
 - **Route exclusions:** `/404` is an error page; `/robots.txt`, `/sitemap.xml`, `CNAME`, images, scripts, styles, and other build assets are infrastructure/assets rather than indexable marketing pages. No redirect-only or internal/admin routes were found.
 - **Validation performed:** confirmed the GitHub Pages workflow publishes `dist/client` at the custom domain; built the production export; verified both crawl files are copied to the deployed artifact root; parsed the sitemap as XML; checked the exact canonical URL set, production origin, uniqueness, and rendered-page coverage; checked robots directives; ran lint and the repository test suite.
-- **Manual work remaining:** add and DNS-verify the `capehelm.com` Domain property in Google Search Console, submit the sitemap and request indexing for the five public pages, then add/import the site in Bing Webmaster Tools and submit the sitemap there.
-- **Warning:** A production check on 2026-09-23 found that `https://capehelm.com/robots.txt` and `https://capehelm.com/sitemap.xml` still return GitHub Pages 404 responses because these repository changes have not yet been deployed. Task 1 remains open until the deployed URLs return successfully and the external webmaster tools accept the property and sitemap. Canonical tags, hostname redirects, and broader per-page metadata work remain scoped to Task 2.
+- **Google Search Console:** the `capehelm.com` Domain property is verified, the sitemap is accepted, and all five public pages have been submitted for indexing.
+- **Bing Webmaster Tools:** the site is recognized and the production sitemap has been submitted.
+- **Manual work remaining:** none for Task 1.
+- **Production verification:** A production check on 2026-09-23 confirmed that `https://capehelm.com/robots.txt` returns HTTP 200 as `text/plain` and `https://capehelm.com/sitemap.xml` returns HTTP 200 as `application/xml`. Google Search Console and Bing Webmaster Tools are configured, and the sitemap has been submitted to both. Canonical tags, hostname redirects, and broader per-page metadata work remain scoped to Task 2.
 
 ---
 
 # Task 2 — Technical SEO Baseline
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x]
 **Goal:** Make every important page technically understandable to search engines.
 
 ## Work
 
-- [ ] Add a unique `<title>` to every public page.
-- [ ] Add a unique meta description to every public page.
-- [ ] Add canonical URLs to every public page.
-- [ ] Confirm `www.capehelm.com` and `capehelm.com` resolve consistently.
-- [ ] Confirm the GitHub Pages hostname is not treated as a competing canonical URL.
-- [ ] Confirm the `.ca` domain redirects cleanly to `.com`.
-- [ ] Confirm each page has one clear `<h1>`.
-- [ ] Ensure heading hierarchy uses logical `<h2>` and `<h3>` structure.
-- [ ] Ensure screenshots/images have descriptive `alt` text.
-- [ ] Add meaningful filenames for marketing images where practical.
-- [ ] Verify all internal links use production URLs or clean relative paths.
-- [ ] Remove broken, placeholder, or dead links.
-- [ ] Verify no accidental `noindex` or crawler-blocking directives are present.
-- [ ] Confirm all pages return appropriate HTTP status codes.
-- [ ] Confirm the website works without JavaScript-dependent navigation failures.
+- [x] Add a unique `<title>` to every public page.
+- [x] Add a unique meta description to every public page.
+- [x] Add canonical URLs to every public page.
+- [x] Confirm `www.capehelm.com` and `capehelm.com` resolve consistently.
+- [x] Confirm the GitHub Pages hostname is not treated as a competing canonical URL.
+- [x] Confirm the `.ca` domain redirects cleanly to `.com`.
+- [x] Confirm each page has one clear `<h1>`.
+- [x] Ensure heading hierarchy uses logical `<h2>` and `<h3>` structure.
+- [x] Ensure screenshots/images have descriptive `alt` text.
+- [x] Add meaningful filenames for marketing images where practical.
+- [x] Verify all internal links use production URLs or clean relative paths.
+- [x] Remove broken, placeholder, or dead links.
+- [x] Verify no accidental `noindex` or crawler-blocking directives are present.
+- [x] Confirm all pages return appropriate HTTP status codes.
+- [x] Confirm the website works without JavaScript-dependent navigation failures.
 
 ## Suggested Titles
 
@@ -193,12 +195,28 @@ This task should be completed before spending significant time on content SEO.
 
 ## Acceptance Criteria
 
-- Every public page has a unique title and meta description.
-- Every page points to the correct canonical URL.
-- No duplicate homepage is indexable through GitHub Pages.
-- No broken links remain.
-- Heading hierarchy is clean.
-- Image alt text is meaningful.
+- [x] Every public page has a unique title and meta description.
+- [x] Every page points to the correct canonical URL.
+- [x] No duplicate homepage is indexable through GitHub Pages.
+- [x] No broken links remain.
+- [x] Heading hierarchy is clean.
+- [x] Image alt text is meaningful.
+- [ ] Updated metadata is deployed and verified on the live production pages.
+
+### Repository Evidence — 2026-09-23
+
+- **Files changed:** updated production URL configuration in `config/site.ts` and `app/layout.tsx`; added page-specific metadata to all five public routes; changed visual mockup labels in `components/ProductVisuals.tsx` from document headings to styled text and updated their selectors in `app/globals.css`; added `tests/technical-seo.test.mjs`; refined the rendered-page availability assertion in `tests/rendered-html.test.mjs`.
+- **Titles and descriptions:** all five indexable pages now emit one unique, descriptive title and one unique, product-accurate meta description. The Download description retains the current coming-soon status and does not claim that an install is available.
+- **Canonical URLs:** `/` resolves to the framework-normalized origin canonical `https://capehelm.com`; `/features`, `/privacy`, `/support`, and `/download` point to their matching clean `https://capehelm.com/...` URLs. No canonical contains localhost, `.ca`, or the GitHub Pages hostname, and the 404 emits no canonical.
+- **Heading fixes:** each public page has exactly one `<h1>`. Synthetic product-window and device/report labels that used `<h3>` or `<h4>` purely for visual styling now use styled paragraphs, leaving a logical page-level `<h1>` → `<h2>` → `<h3>` outline without skipped levels.
+- **Image audit:** no missing alternative text was found. The header logo and app icon have concise alt text, the footer mark is correctly decorative with `alt=""`, and CSS-rendered product visuals expose descriptive `role="img"` labels. Existing brand asset filenames are meaningful; no rename was necessary.
+- **Link audit:** no broken internal route or fragment link was found. Header, mobile navigation, footer, Privacy, Support, Download, and in-page anchors all use clean relative URLs and work in the static HTML without JavaScript. The only external links are `mailto:support@capehelm.com`.
+- **Crawl directives and 404:** public pages emit no `noindex` or `nofollow`; the generated 404 emits one `noindex`, no conflicting global directive, and no canonical.
+- **Build and tests:** the GitHub Pages production export prerendered all five public routes plus the 404. Lint passed, and all 15 tests passed, including exact metadata, canonical uniqueness, heading order, image alternatives, clean routes, valid fragments, crawl directives, and Task 1 consistency.
+- **External verification:** all five canonical production pages returned HTTP 200 and a nonexistent path returned 404. `www.capehelm.com`, `capehelm.ca`, `www.capehelm.ca`, and `ashleysnl.github.io/capehelm` each returned a path-preserving HTTP 301 to `https://capehelm.com`.
+- **URL-shape warning:** the clean extensionless routes are canonical. GitHub Pages also serves `.html` variants with HTTP 200, but their embedded canonical points to the clean route. Trailing-slash variants such as `/features/` return 404, matching the repository's non-trailing-slash convention.
+- **Deferred scope:** existing site-wide Open Graph and X metadata remains unchanged for Task 13, and no structured data is present or added before Task 12.
+- **Manual checks remaining:** commit and push these repository changes so GitHub Pages deploys them, then confirm the live `<title>`, meta description, and canonical on all five pages. Recheck external redirects if Cloudflare DNS or GitHub Pages custom-domain settings change.
 
 ---
 

@@ -111,7 +111,7 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 .report-back { left: 28%; top: 3%; transform: rotate(7deg); background: #e7ebf2; }
 .report-front { left: 0; top: 0; transform: rotate(-4deg); }
 .report-page > span { color: #697386; font-size: 7px; letter-spacing: .16em; }
-.report-page h4 { margin: 8px 0 16px; font-family: Georgia, serif; font-size: 20px; line-height: 1.15; }
+.report-page .visual-title { margin: 8px 0 16px; color: #152034; font-family: Georgia, serif; font-size: 20px; font-weight: 700; line-height: 1.15; }
 .report-logo { width: 34px; height: 34px; display: grid; place-items: center; margin-bottom: 12px; border-radius: 50%; color: #e6c663; background: #071427; font-family: Georgia, serif; font-size: 11px; }
 .report-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; }
 .report-stats b { padding: 8px; border-radius: 4px; font-size: 10px; background: #eef2f7; }
@@ -145,7 +145,7 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 .phone-island { position: absolute; top: 8px; left: 50%; width: 62px; height: 16px; transform: translateX(-50%); border-radius: 99px; background: #03050a; }
 .phone-brand { color: var(--gold); font-family: Georgia, serif; font-size: 10px; }
 .phone-brand span { color: #d8e0eb; font-family: system-ui; }
-.phone-device h4 { margin: 15px 0 0; font-size: 22px; }
+.phone-device .visual-title { margin: 15px 0 0; font-size: 22px; font-weight: 700; }
 .phone-device > small { color: #72829a; font-size: 9px; }
 .phone-balance { margin-top: 16px; padding: 13px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.035); }
 .phone-balance span, .phone-balance strong, .phone-balance em { display: block; }
@@ -186,7 +186,7 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 .mock-content { min-width: 0; padding: 17px; }
 .screen-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
 .screen-heading span { color: #73839a; text-transform: uppercase; letter-spacing: .08em; }
-.screen-heading h3 { margin: 2px 0 0; font-size: 17px; line-height: 1.2; }
+.screen-heading .visual-title { margin: 2px 0 0; font-size: 17px; font-weight: 700; line-height: 1.2; }
 .screen-heading button { padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; color: #aebacc; background: rgba(255,255,255,.04); font-size: 8px; }
 .money-grid, .forecast-kpis, .allocation-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
 .forecast-kpis { grid-template-columns: repeat(3,1fr); }
@@ -330,7 +330,7 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 
 @media (max-width: 520px) {
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }.trust-line { display: grid; }
-  .product-window { border-radius: 12px; font-size: 7px; }.window-bar { height: 26px; }.window-body { grid-template-columns: 82px 1fr; min-height: 280px; }.mock-sidebar { padding: 9px 6px; }.mock-sidebar > div:not(.mock-brand):not(.local-chip) { padding: 4px; }.mock-sidebar > div i { margin-right: 3px; }.mock-brand b { font-size: 8px; }.mock-content { padding: 9px; }.screen-heading h3 { font-size: 12px; }.screen-heading button { font-size: 6px; }.money-grid { gap: 4px; }.money-card { padding: 6px; min-height: 48px; }.money-card strong { font-size: 9px; }.dashboard-lower { grid-template-columns: 1.25fr .75fr; gap: 4px; }.mock-panel { padding: 7px; }.line-chart { height: 100px; }.attention li { padding: 5px 0; }.forecast-bars { height: 128px; gap: 3px; }.budget-row { min-height: 32px; padding: 5px; }.treemap { height: 190px; }.networth-hero { min-height: 120px; }.networth-hero .line-chart { height: 90px; }.networth-hero strong { font-size: 14px; }.projection-plot { height: 128px; }.retirement-summary { gap: 4px; }
+  .product-window { border-radius: 12px; font-size: 7px; }.window-bar { height: 26px; }.window-body { grid-template-columns: 82px 1fr; min-height: 280px; }.mock-sidebar { padding: 9px 6px; }.mock-sidebar > div:not(.mock-brand):not(.local-chip) { padding: 4px; }.mock-sidebar > div i { margin-right: 3px; }.mock-brand b { font-size: 8px; }.mock-content { padding: 9px; }.screen-heading .visual-title { font-size: 12px; }.screen-heading button { font-size: 6px; }.money-grid { gap: 4px; }.money-card { padding: 6px; min-height: 48px; }.money-card strong { font-size: 9px; }.dashboard-lower { grid-template-columns: 1.25fr .75fr; gap: 4px; }.mock-panel { padding: 7px; }.line-chart { height: 100px; }.attention li { padding: 5px 0; }.forecast-bars { height: 128px; gap: 3px; }.budget-row { min-height: 32px; padding: 5px; }.treemap { height: 190px; }.networth-hero { min-height: 120px; }.networth-hero .line-chart { height: 90px; }.networth-hero strong { font-size: 14px; }.projection-plot { height: 128px; }.retirement-summary { gap: 4px; }
   .spotlight { gap: 34px; }.feature-list { grid-template-columns: 1fr; }.metric-row { grid-template-columns: 1fr; }.section-intro h2, .spotlight-copy h2, .privacy-banner h2, .reports-section h2, .architecture h2, .download-card h2, .compact-cta h2 { font-size: 35px; }.feature-grid { grid-template-columns: 1fr; }.reports-section { min-height: auto; }.report-stack { min-height: 330px; }.privacy-banner { border-radius: 18px; }.device-pair { min-height: 390px; }.mac-device { width: 145%; left: -38%; }.phone-device { right: -12px; transform: scale(.68); }.architecture-diagram { grid-template-columns: 1fr; }.architecture-diagram > i { transform: rotate(90deg); text-align: center; }.privacy-principles article { min-height: auto; padding: 36px 24px; }.privacy-principles h2 { margin-top: 30px; }.download-status { grid-template-columns: 1fr; }.download-status span { justify-self: start; }.footer-grid { gap: 30px; flex-direction: column; }.footer-bottom { gap: 12px; flex-direction: column; }
 }
 

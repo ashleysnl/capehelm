@@ -1,3 +1,5 @@
+export const productionSiteUrl = "https://capehelm.com";
+
 export const siteConfig = {
   name: "Capehelm",
   tagline: "Understand your money. Keep it yours.",
