@@ -1,5 +1,9 @@
 export const productionSiteUrl = "https://capehelm.com";
 
+// Set this to the production apps.apple.com listing when it is available.
+// Until then, App Store CTAs use the existing /download availability page.
+export const macAppStoreUrl: string | null = null;
+
 export const siteConfig = {
   name: "Capehelm",
   tagline: "Understand your money. Keep it yours.",
@@ -12,8 +16,9 @@ export const siteConfig = {
   },
   download: {
     status: "coming-soon" as const,
-    url: null as string | null,
+    url: macAppStoreUrl,
     label: "Coming Soon",
+    appStoreLabel: "Download on the Mac App Store",
     note: "Capehelm is not yet available from the Mac App Store or as a direct download. No release date has been announced.",
   },
   navigation: [

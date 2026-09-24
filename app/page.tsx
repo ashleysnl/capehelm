@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DevicePair, ProductWindow, ReportStack } from "../components/ProductVisuals";
 import { ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
-import { productionSiteUrl } from "../config/site";
+import { productionSiteUrl, siteConfig } from "../config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
@@ -31,14 +31,14 @@ export default function Home() {
       <section className="hero section-shell">
         <div className="hero-glow" />
         <div className="hero-copy reveal">
-          <p className="eyebrow"><span /> Coming soon for Mac</p>
-          <h1>See where your money is going.<br /><em>Know where it’s going next.</em></h1>
-          <p className="hero-lede">Capehelm brings spending, budgets, cash-flow forecasting, trends and net worth together in a private finance workspace designed for your Mac.</p>
+          <p className="hero-positioning">Private personal finance for Mac.</p>
+          <h1>Understand your money.<br /><em>Plan what&apos;s next.</em></h1>
+          <p className="hero-lede">Track spending, build a budget, forecast the next 14 days, monitor your net worth and plan retirement — while keeping your financial data on your Mac.</p>
           <div className="hero-actions">
-            <SiteLink className="button" href="/download">Coming Soon <ArrowIcon /></SiteLink>
+            <SiteLink className="button hero-primary-cta" href={siteConfig.download.url ?? "/download"}>{siteConfig.download.appStoreLabel} <ArrowIcon /></SiteLink>
             <SiteLink className="text-link" href="#forecast">Explore Capehelm <span aria-hidden="true">↓</span></SiteLink>
           </div>
-          <p className="trust-line"><span>◆ No financial account required</span><span>◆ No advertising</span><span>◆ Local-first by design</span></p>
+          <p className="hero-supporting-line">2 months free for eligible new subscribers · Monthly or annual · No ads</p>
         </div>
         <div className="hero-visual reveal reveal-late"><ProductWindow visual="dashboard" /></div>
       </section>

@@ -18,7 +18,7 @@ test("features page includes current planning, import and local-control capabili
 });
 
 for (const [path, expected] of [
-  ["/", "See where your money is going"],
+  ["/", "Understand your money"],
   ["/features", "Past, present and future"],
   ["/privacy", "Privacy Policy"],
   ["/support", "Capehelm Support"],
@@ -50,3 +50,20 @@ for (const [path, expected] of [
     }
   });
 }
+
+test("homepage hero communicates the Task 3 positioning and one dominant App Store action", async () => {
+  const html = await render("/");
+  const hero = html.match(/<section class="hero section-shell">([\s\S]*?)<\/section>/)?.[1] ?? "";
+
+  assert.match(hero, /<h1>Understand your money\.<br\/><em>Plan what(?:'|&#x27;)s next\.<\/em><\/h1>/);
+  assert.match(hero, /Private personal finance for Mac\./);
+  assert.match(hero, /forecast the next 14 days/i);
+  assert.match(hero, /build a budget/i);
+  assert.match(hero, /monitor your net worth/i);
+  assert.match(hero, /plan retirement/i);
+  assert.match(hero, /keeping your financial data on your Mac/i);
+  assert.match(hero, /Download on the Mac App Store/);
+  assert.match(hero, /2 months free for eligible new subscribers · Monthly or annual · No ads/);
+  assert.equal((hero.match(/class="button hero-primary-cta"/g) ?? []).length, 1);
+  assert.match(hero, /role="img" aria-label="Synthetic Capehelm dashboard showing monthly position, budget health, forecast and net worth"/);
+});

@@ -13,7 +13,7 @@
 
 - [x] **Task 1 — Search engine indexing foundation**
 - [ ] **Task 2 — Technical SEO baseline**
-- [ ] **Task 3 — Homepage positioning and hero rewrite**
+- [x] **Task 3 — Homepage positioning and hero rewrite**
 - [ ] **Task 4 — Mac App Store conversion path**
 - [ ] **Task 5 — Pricing and free-trial clarity**
 - [ ] **Task 6 — Privacy/local-first positioning**
@@ -223,7 +223,7 @@ This task should be completed before spending significant time on content SEO.
 # Task 3 — Homepage Positioning and Hero Rewrite
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x]
 **Goal:** Make Capehelm understandable within approximately 10 seconds.
 
 ## Recommended Hero Direction
@@ -248,15 +248,15 @@ Track spending, build a budget, forecast the next 14 days, monitor your net wort
 
 ## Work
 
-- [ ] Rewrite the homepage hero around user outcomes rather than internal module names.
-- [ ] Explicitly state that Capehelm is for macOS.
-- [ ] Use "private personal finance" or equivalent language above the fold.
-- [ ] Mention the 14-day Forecast above the fold or immediately after the hero.
-- [ ] Add one dominant Mac App Store CTA.
-- [ ] Avoid competing primary CTAs.
-- [ ] Keep hero copy short enough to scan quickly.
-- [ ] Ensure the first screenshot supports the hero message.
-- [ ] Confirm the hero works well at desktop and narrow widths.
+- [x] Rewrite the homepage hero around user outcomes rather than internal module names.
+- [x] Explicitly state that Capehelm is for macOS.
+- [x] Use "private personal finance" or equivalent language above the fold.
+- [x] Mention the 14-day Forecast above the fold or immediately after the hero.
+- [x] Add one dominant Mac App Store CTA.
+- [x] Avoid competing primary CTAs.
+- [x] Keep hero copy short enough to scan quickly.
+- [x] Ensure the first screenshot supports the hero message.
+- [x] Confirm the hero works well at desktop and narrow widths.
 
 ## Acceptance Criteria
 
@@ -268,6 +268,17 @@ A new visitor should immediately understand:
 - That it is privacy/local-first.
 - That it does more than historical expense tracking.
 - Where to click to get the app.
+
+### Repository Evidence — 2026-09-23
+
+- **Previous hero:** the homepage opened with “See where your money is going. Know where it’s going next.”, a module-heavy supporting sentence, a “Coming Soon” button to `/download`, an “Explore Capehelm” Forecast anchor, and three small trust claims. Mac and local-first language were present, but “14-day Forecast,” Retirement, subscription/trial context, and an actionable App Store CTA were not explicit in the primary scan.
+- **New hero copy:** “Private personal finance for Mac.” appears above “Understand your money. Plan what's next.” The body now states: “Track spending, build a budget, forecast the next 14 days, monitor your net worth and plan retirement — while keeping your financial data on your Mac.”
+- **CTA behavior:** the hero contains one dominant “Download on the Mac App Store” link and one visually subordinate “Explore Capehelm” text link. The repository does not contain a production App Store listing URL, so `macAppStoreUrl` is a clearly named configuration placeholder; until it is populated, the hero CTA uses the existing `/download` availability page rather than a fabricated external URL. The supporting line reads “2 months free for eligible new subscribers · Monthly or annual · No ads.”
+- **First product visual:** retained the existing synthetic Dashboard product window because it reinforces the full positioning in one view: current spending, budget status, a 14-day outlook, net worth, and local-only status. Its accessible label identifies the synthetic Dashboard and its contents.
+- **Responsive validation:** inspected the built homepage at 1440×900, 1280×800, 834×1112, and 390×844. Desktop, laptop, and tablet use a deliberate two-line headline; phone uses a readable three-line wrap. The CTA remains prominent, the copy and trial line remain readable, the Dashboard stays within its container, and final viewport checks found no horizontal scrolling or overlapping hero elements.
+- **Accessibility and semantics:** the homepage retains one `<h1>`; positioning, body, and trial copy use paragraphs; the CTA is a descriptive anchor with the existing visible `:focus-visible` treatment; and the product visual retains a meaningful `role="img"` label.
+- **Validation results:** `npm run lint` passed. `npm test` passed all 16 tests and includes a successful production build that prerendered all six routes. The Task 3 regression test verifies the exact hero positioning, required product concepts, one primary App Store CTA, qualified trial line, and Dashboard visual. The built route/link suite found no broken internal routes or fragments.
+- **Deferred:** the official App Store URL plus repeated/header/final CTA work remains Task 4; detailed pricing remains Task 5; broader privacy copy remains Task 6; homepage feature reordering remains Task 7; full screenshot storytelling remains Task 8; and FAQ, structured data, Open Graph, new landing pages, analytics, and performance work remain in their assigned later tasks.
 
 ---
 
