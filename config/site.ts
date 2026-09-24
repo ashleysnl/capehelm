@@ -3,6 +3,29 @@ export const productionSiteUrl = "https://capehelm.com";
 // Set this to the production apps.apple.com listing when it is available.
 // Until then, App Store CTAs use the existing /download availability page.
 export const macAppStoreUrl: string | null = null;
+export const macAppStoreFallbackUrl = "/download";
+
+export function resolveMacAppStoreDestination(url: string | null | undefined): string {
+  if (!url) {
+    return macAppStoreFallbackUrl;
+  }
+
+  try {
+    const candidate = new URL(url);
+    const isProductionListing =
+      candidate.origin === "https://apps.apple.com" &&
+      !candidate.username &&
+      !candidate.password &&
+      /\/app\/(?:[^/]+\/)?id\d+\/?$/.test(candidate.pathname);
+
+    return isProductionListing ? url : macAppStoreFallbackUrl;
+  } catch {
+    return macAppStoreFallbackUrl;
+  }
+}
+
+export const macAppStoreDestination = resolveMacAppStoreDestination(macAppStoreUrl);
+export const isMacAppStoreLive = macAppStoreDestination !== macAppStoreFallbackUrl;
 
 export const siteConfig = {
   name: "Capehelm",
@@ -15,17 +38,19 @@ export const siteConfig = {
     iOS: "iOS 17 or later companion",
   },
   download: {
-    status: "coming-soon" as const,
-    url: macAppStoreUrl,
-    label: "Coming Soon",
+    status: isMacAppStoreLive ? "available" as const : "coming-soon" as const,
+    url: macAppStoreDestination,
+    isExternal: isMacAppStoreLive,
+    label: isMacAppStoreLive ? "Available on the Mac App Store" : "Coming Soon",
     appStoreLabel: "Download on the Mac App Store",
-    note: "Capehelm is not yet available from the Mac App Store or as a direct download. No release date has been announced.",
+    note: isMacAppStoreLive
+      ? "Capehelm is available from the Mac App Store."
+      : "Capehelm is not yet available from the Mac App Store or as a direct download. No release date has been announced.",
   },
   navigation: [
     { href: "/features", label: "Features" },
     { href: "/privacy", label: "Privacy" },
     { href: "/#devices", label: "Mac + iPhone" },
-    { href: "/download", label: "Coming Soon" },
   ],
   featureGroups: [
     {

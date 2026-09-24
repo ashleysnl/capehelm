@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ProductWindow } from "../../components/ProductVisuals";
-import { ArrowIcon, CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
+import { AppStoreLink, ArrowIcon, CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
 import { productionSiteUrl } from "../../config/site";
 
 export const metadata: Metadata = {
@@ -26,6 +26,6 @@ export default function FeaturesPage() {
     <section className="page-hero section-shell"><p className="eyebrow"><span /> Product features</p><h1>Past, present and future—<em>in one financial workspace.</em></h1><p>Capehelm is designed to move from a high-level answer to the detail behind it without sending your financial history to an app-owned cloud account.</p><div className="page-subnav">{sections.map((section) => <a key={section.id} href={`#${section.id}`}>{section.eyebrow}</a>)}<a href="#control">Keep control</a></div></section>
     <section className="feature-chapters section-shell">{sections.map((section, index) => <article className={`feature-chapter ${index % 2 ? "chapter-reverse" : ""}`} id={section.id} key={section.id}><div className="chapter-copy"><p className="eyebrow"><span /> {section.eyebrow}</p><h2>{section.title}</h2><p>{section.body}</p><ul>{section.bullets.map((bullet) => <li key={bullet}><CheckIcon />{bullet}</li>)}</ul></div><ProductWindow visual={section.visual} /></article>)}</section>
     <section className="control-strip section-shell" id="control"><div><p className="eyebrow"><span /> Local-first control</p><h2>Your data. Your files. Your backups.</h2></div><p>Capehelm Finance Documents, built-in and configurable bank CSV imports, local backups, reports and exports stay under your control.</p></section>
-    <section className="compact-cta section-shell"><div><p className="eyebrow"><span /> Coming soon for Mac</p><h2>A clearer view of your money, kept on your devices.</h2></div><div><SiteLink className="button" href="/download">View availability <ArrowIcon /></SiteLink><SiteLink className="text-link" href="/privacy">How privacy works <ArrowIcon /></SiteLink></div></section>
+    <section className="compact-cta section-shell"><div><p className="eyebrow"><span /> Private personal finance for Mac</p><h2>A clearer view of your money, kept on your devices.</h2></div><div><AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink><SiteLink className="text-link" href="/privacy">How privacy works <ArrowIcon /></SiteLink></div></section>
   </PageShell>;
 }

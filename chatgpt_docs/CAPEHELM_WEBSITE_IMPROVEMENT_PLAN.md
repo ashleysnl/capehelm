@@ -285,22 +285,22 @@ A new visitor should immediately understand:
 # Task 4 — Mac App Store Conversion Path
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [ ] Repository work complete; App Store launch checks pending
 **Goal:** Minimize friction between the website and the Mac App Store.
 
 ## Work
 
-- [ ] Add the official Mac App Store badge.
-- [ ] Add the App Store link to the site header.
-- [ ] Add the App Store link to the hero.
-- [ ] Add a second CTA after the core feature section.
-- [ ] Add a final CTA near the footer.
-- [ ] Ensure the CTA is visually dominant over secondary navigation.
+- [ ] Add the official Mac App Store badge after obtaining Apple&apos;s approved asset.
+- [x] Add the App Store CTA to the site header with the safe pre-launch fallback.
+- [x] Add the App Store CTA to the hero with the safe pre-launch fallback.
+- [x] Add a second CTA after the core feature section.
+- [x] Add a final CTA near the footer.
+- [x] Ensure the CTA is visually dominant over secondary navigation.
 - [ ] Ensure every CTA points to the final production App Store listing.
-- [ ] Verify external-link behavior.
+- [x] Implement and test future-safe external-link behavior.
 - [ ] Verify Mac App Store links on Safari.
 - [ ] Verify Mac App Store links from mobile devices.
-- [ ] Consider a sticky CTA on small-screen layouts if it does not harm usability.
+- [x] Consider a sticky CTA on small-screen layouts if it does not harm usability; retain the sticky header CTA and do not add an obscuring bottom overlay.
 
 ## Recommended CTA Language
 
@@ -326,6 +326,17 @@ when the desired action is specifically App Store conversion.
 - CTA appears multiple times without becoming visually repetitive.
 - No page leaves the user wondering where to download Capehelm.
 - All CTA links work.
+
+## Task 4 Evidence — September 24, 2026
+
+- **Shared destination:** `config/site.ts` keeps `macAppStoreUrl` as the one authoritative future listing value. `resolveMacAppStoreDestination` accepts only an HTTPS `apps.apple.com` app listing and otherwise returns `/download`; `AppStoreLink` supplies that resolved destination to every conversion CTA.
+- **CTA locations:** the responsive header, homepage hero, homepage post-features section, Features-page closing section, homepage final section and footer now use `AppStoreLink`. The hero remains the dominant action and its existing trial line is preserved.
+- **Pre-launch handoff:** `/download` states that Capehelm is coming to the Mac App Store, that no listing or direct-download build is currently available and that the page will link to the official listing once live. No fake Apple, TestFlight, App Store Connect or guessed listing URL exists in the repository.
+- **Official badge:** no official Apple-provided badge asset is present in `public/`; the existing branded CTA button is retained rather than imitating the badge. Obtaining and adding Apple&apos;s approved asset remains a manual follow-up.
+- **Responsive and accessibility:** the header uses the full CTA label on desktop and the shorter “Download” label at phone widths; CTA anchors remain keyboard accessible with the shared visible focus treatment. No new tab is forced, and a configured external listing receives `rel="external"`. Layout validation covers 1440px, 1280px, tablet and approximately 390px widths with no intended horizontal overflow or text truncation.
+- **Sticky CTA decision:** no separate phone-width sticky CTA was added. The existing sticky header keeps one conversion action reachable without obscuring content or competing with Safari chrome.
+- **Validation results:** `npm run lint` passed; `npm test` passed all 20 tests and its production build prerendered all public routes; the CTA/link regressions passed; and `git diff --check` passed. The final browser pass confirmed the shared `/download` fallback, stable accessible header label, non-truncated CTA text and no user-scrollable horizontal overflow at 1440px, 1280px, 834px and 390px.
+- **Post-launch activation:** set `macAppStoreUrl` to the real production listing, rebuild, verify every rendered CTA, then complete Safari and physical mobile-device link checks. Those three launch-dependent checklist items remain open.
 
 ---
 

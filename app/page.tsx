@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DevicePair, ProductWindow, ReportStack } from "../components/ProductVisuals";
-import { ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
-import { productionSiteUrl, siteConfig } from "../config/site";
+import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
+import { productionSiteUrl } from "../config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
@@ -35,7 +35,7 @@ export default function Home() {
           <h1>Understand your money.<br /><em>Plan what&apos;s next.</em></h1>
           <p className="hero-lede">Track spending, build a budget, forecast the next 14 days, monitor your net worth and plan retirement — while keeping your financial data on your Mac.</p>
           <div className="hero-actions">
-            <SiteLink className="button hero-primary-cta" href={siteConfig.download.url ?? "/download"}>{siteConfig.download.appStoreLabel} <ArrowIcon /></SiteLink>
+            <AppStoreLink className="button hero-primary-cta">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
             <SiteLink className="text-link" href="#forecast">Explore Capehelm <span aria-hidden="true">↓</span></SiteLink>
           </div>
           <p className="hero-supporting-line">2 months free for eligible new subscribers · Monthly or annual · No ads</p>
@@ -85,9 +85,11 @@ export default function Home() {
 
       <section className="feature-grid-section section-shell"><div className="section-intro"><p className="eyebrow"><span /> A complete workspace</p><h2>Serious tools. One coherent financial picture.</h2></div><div className="feature-grid">{featureCards.map(([title, description, number]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div><div className="feature-grid-link"><SiteLink className="text-link" href="/features">See every feature <ArrowIcon /></SiteLink></div></section>
 
+      <section className="compact-cta mid-page-cta section-shell" aria-labelledby="mid-cta-title"><div><p className="eyebrow"><span /> Private by design</p><h2 id="mid-cta-title">Ready to see your whole financial picture?</h2><p>A complete Mac workspace that keeps your financial data local and under your control.</p></div><div><AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink></div></section>
+
       <section className="devices-section section-shell" id="devices"><div className="section-intro centered"><p className="eyebrow"><span /> Mac + iPhone</p><h2>Built for the devices already in your life.</h2><p>The Mac is Capehelm’s complete finance workspace. The iPhone companion keeps selected Forecast, Reports, Financial To-Do and shared-document workflows close at hand.</p></div><DevicePair /><p className="device-note">The iPhone companion focuses on selected workflows and does not mirror the complete macOS feature set.</p></section>
 
-      <section className="final-cta section-shell"><ImageMark /><p className="eyebrow"><span /> Coming soon for Mac</p><h2>Take control of your finances<br />without giving them away.</h2><p>Capehelm is not yet available. Explore the private financial workspace we are building, with no release date announced.</p><div><SiteLink className="button" href="/download">View availability <ArrowIcon /></SiteLink><SiteLink className="button button-ghost" href="/features">See Features</SiteLink></div></section>
+      <section className="final-cta section-shell"><ImageMark /><p className="eyebrow"><span /> Private personal finance for Mac</p><h2>Take the helm of your finances.</h2><p>Keep your financial picture private and close at hand. Eligible new subscribers receive a 2-month introductory trial.</p><div><AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink></div></section>
     </PageShell>
   );
 }

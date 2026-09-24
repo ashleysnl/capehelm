@@ -45,9 +45,8 @@ All finance UI displayed on the website is constructed from clearly synthetic de
 
 Edit `config/site.ts`:
 
-- `download.status`: keep `coming-soon` until public distribution is approved.
-- `download.url`: keep `null` until a notarized, approved public artifact exists.
-- `download.label` and `download.note`: public-facing release status.
+- `macAppStoreUrl`: keep `null` until the production `apps.apple.com` listing is live, then set it once to activate every App Store CTA.
+- `download.status`, `download.url`, link handling and public availability copy are resolved automatically from `macAppStoreUrl`, with `/download` as the safe pre-launch fallback.
 - `version`: internal product version; it is not shown while Capehelm is unavailable.
 
 Capehelm is not yet available from the Mac App Store or as a direct download. The website deliberately makes no release-date commitment and does not link an installable binary.

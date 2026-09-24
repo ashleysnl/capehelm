@@ -67,3 +67,12 @@ test("homepage hero communicates the Task 3 positioning and one dominant App Sto
   assert.equal((hero.match(/class="button hero-primary-cta"/g) ?? []).length, 1);
   assert.match(hero, /role="img" aria-label="Synthetic Capehelm dashboard showing monthly position, budget health, forecast and net worth"/);
 });
+
+test("download page accurately communicates the pre-launch handoff", async () => {
+  const html = await render("/download");
+  const visibleHtml = html.match(/<body>([\s\S]*?)<script/)?.[1] ?? html;
+  assert.match(html, /Capehelm is coming to the <em>Mac App Store\.<\/em>/);
+  assert.match(html, /this page and every download button on the site will link directly to the Mac App Store/i);
+  assert.match(html, /No download or direct-download build is available at this time\./);
+  assert.doesNotMatch(visibleHtml, /href="https?:\/\//i);
+});
