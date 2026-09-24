@@ -85,7 +85,30 @@ export default function Home() {
 
       <section className="feature-grid-section section-shell"><div className="section-intro"><p className="eyebrow"><span /> A complete workspace</p><h2>Serious tools. One coherent financial picture.</h2></div><div className="feature-grid">{featureCards.map(([title, description, number]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div><div className="feature-grid-link"><SiteLink className="text-link" href="/features">See every feature <ArrowIcon /></SiteLink></div></section>
 
-      <section className="compact-cta mid-page-cta section-shell" aria-labelledby="mid-cta-title"><div><p className="eyebrow"><span /> Private by design</p><h2 id="mid-cta-title">Ready to see your whole financial picture?</h2><p>A complete Mac workspace that keeps your financial data local and under your control.</p></div><div><AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink></div></section>
+      <section className="pricing-section mid-page-cta section-shell" aria-labelledby="pricing-title">
+        <div className="pricing-intro">
+          <p className="eyebrow"><span /> Pricing</p>
+          <h2 id="pricing-title">Try Capehelm free for two months.</h2>
+          <p>Eligible new subscribers can access the full Capehelm experience during Apple&apos;s two-month introductory free trial.</p>
+          <p>The introductory trial is available with either Capehelm subscription option, subject to Apple eligibility.</p>
+        </div>
+        <div className="pricing-options" aria-label="Capehelm subscription options">
+          <article>
+            <div><span>Monthly</span><strong><small>US$</small>4.99</strong><p>/month</p></div>
+            <span className="pricing-tier-note">Full Capehelm experience</span>
+          </article>
+          <article className="pricing-option-featured">
+            <div><span>Annual</span><strong><small>US$</small>49.99</strong><p>/year</p></div>
+            <span className="pricing-tier-note">Full Capehelm experience</span>
+          </article>
+        </div>
+        <div className="pricing-details">
+          <p><strong>Monthly and Annual unlock the same Capehelm features.</strong></p>
+          <p>Subscriptions are purchased, renewed, cancelled, restored and managed through Apple. Introductory-trial eligibility is determined by Apple.</p>
+          <p className="pricing-disclosure">Pricing may vary by storefront, region, currency and applicable taxes.</p>
+          <AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
+        </div>
+      </section>
 
       <section className="devices-section section-shell" id="devices"><div className="section-intro centered"><p className="eyebrow"><span /> Mac + iPhone</p><h2>Built for the devices already in your life.</h2><p>The Mac is Capehelm’s complete finance workspace. The iPhone companion keeps selected Forecast, Reports, Financial To-Do and shared-document workflows close at hand.</p></div><DevicePair /><p className="device-note">The iPhone companion focuses on selected workflows and does not mirror the complete macOS feature set.</p></section>
 

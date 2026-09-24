@@ -21,7 +21,7 @@ const sections = [
   "Imported Files",
   "Backups, Reports and Exports",
   "Demo Mode",
-  "Purchases, Trial and Apple StoreKit",
+  "Subscriptions, Introductory Trial and Apple StoreKit",
   "Terms Acceptance Information",
   "App Analytics and Tracking",
   "Information You Send to Capehelm",
@@ -162,10 +162,11 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <SectionHeading number={9}>Purchases, Trial and Apple StoreKit</SectionHeading>
+            <SectionHeading number={9}>Subscriptions, Introductory Trial and Apple StoreKit</SectionHeading>
             <p>Capehelm uses Apple&apos;s App Store and StoreKit services for matters such as:</p>
-            <ul><li>determining access to the Capehelm trial;</li><li>determining whether Full Unlock has been purchased;</li><li>processing purchases; and</li><li>restoring purchases.</li></ul>
-            <p>Apple processes App Store purchases and associated Apple account and payment information according to Apple&apos;s own terms and privacy practices.</p>
+            <ul><li>determining access to Capehelm subscription features;</li><li>determining eligibility for an introductory trial;</li><li>processing and renewing subscriptions;</li><li>cancelling and managing subscriptions; and</li><li>restoring purchases.</li></ul>
+            <p>Eligible new subscribers may receive Apple&apos;s two-month introductory free trial with either the Monthly or Annual subscription option, subject to Apple&apos;s introductory-offer eligibility rules.</p>
+            <p>Apple processes and manages App Store subscriptions and associated Apple account and payment information according to Apple&apos;s own terms and privacy practices.</p>
             <p>Capehelm does not receive your payment-card number.</p>
             <p>Capehelm may receive or evaluate StoreKit information necessary to determine whether the device or Apple account has an applicable Capehelm entitlement.</p>
             <p>Capehelm does not send your transactions, budgets, account balances, Finance Documents, or other personal financial information to Apple as part of the Capehelm purchase or entitlement process.</p>

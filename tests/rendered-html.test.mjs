@@ -68,6 +68,29 @@ test("homepage hero communicates the Task 3 positioning and one dominant App Sto
   assert.match(hero, /role="img" aria-label="Synthetic Capehelm dashboard showing monthly position, budget health, forecast and net worth"/);
 });
 
+test("homepage pricing section communicates the current subscriptions and introductory trial", async () => {
+  const html = await render("/");
+  const pricing = html.match(/<section class="pricing-section[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";
+
+  assert.match(pricing, /Try Capehelm free for two months/);
+  assert.match(pricing, /Eligible new subscribers/);
+  assert.match(pricing, /two-month introductory free trial/);
+  assert.match(pricing, /available with either Capehelm subscription option, subject to Apple eligibility/);
+  assert.match(pricing, /Monthly[\s\S]*US\$[\s\S]*4\.99[\s\S]*\/month/);
+  assert.match(pricing, /Annual[\s\S]*US\$[\s\S]*49\.99[\s\S]*\/year/);
+  assert.match(pricing, /Monthly and Annual unlock the same Capehelm features/);
+  assert.match(pricing, /purchased, renewed, cancelled, restored and managed through Apple/);
+  assert.match(pricing, /Pricing may vary by storefront, region, currency and applicable taxes/);
+  assert.match(pricing, /Download on the Mac App Store/);
+});
+
+test("public pages omit obsolete purchase models", async () => {
+  const pages = await Promise.all(["/", "/features", "/privacy", "/support", "/download"].map(render));
+  const publicHtml = pages.join("\n");
+
+  assert.doesNotMatch(publicHtml, /45[- ]day trial|Full Unlock|one[- ]time purchase/i);
+});
+
 test("download page accurately communicates the pre-launch handoff", async () => {
   const html = await render("/download");
   const visibleHtml = html.match(/<body>([\s\S]*?)<script/)?.[1] ?? html;
