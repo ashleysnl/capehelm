@@ -110,6 +110,27 @@ test("homepage privacy section explains Capehelm's local-first boundaries", asyn
   assert.match(privacy, /Read our Privacy Policy/);
 });
 
+test("homepage presents Task 7 capabilities as five user outcomes", async () => {
+  const html = await render("/");
+  const outcomes = html.match(/<section class="outcome-hierarchy[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";
+
+  assert.match(outcomes, /Where did my money go\?/);
+  assert.match(outcomes, /Am I staying on track\?/);
+  assert.match(outcomes, /What(?:'|&#x27;)s going to happen next\?/);
+  assert.match(outcomes, /How am I doing long term\?/);
+  assert.match(outcomes, /Can I share what matters\?/);
+  assert.match(outcomes, /Trends/);
+  assert.match(outcomes, /Budget Health/);
+  assert.match(outcomes, /Budget Builder/);
+  assert.match(outcomes, /14-day Forecast/);
+  assert.match(outcomes, /Forecast Coverage/);
+  assert.match(outcomes, /Net Worth \+ Retirement/);
+  assert.match(outcomes, /weekly and month-end PDF check-ins/);
+  assert.match(outcomes, /href="\/features"/);
+  assert.match(outcomes, /Explore all features/);
+  assert.doesNotMatch(html, /class="feature-grid-section|class="reports-section|A complete workspace/);
+});
+
 test("public privacy claims preserve the StoreKit commerce exception", async () => {
   const pages = await Promise.all(["/", "/features", "/privacy", "/support", "/download"].map(render));
   const publicHtml = pages.join("\n");

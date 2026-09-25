@@ -17,7 +17,7 @@
 - [ ] **Task 4 — Mac App Store conversion path**
 - [x] **Task 5 — Pricing and free-trial clarity**
 - [x] **Task 6 — Privacy/local-first positioning**
-- [ ] **Task 7 — Homepage feature hierarchy**
+- [x] **Task 7 — Homepage feature hierarchy**
 - [ ] **Task 8 — Screenshot storytelling and product proof**
 - [ ] **Task 9 — FAQ and purchase-objection handling**
 - [ ] **Task 10 — Launch verification and regression audit**
@@ -456,7 +456,7 @@ Your Finance Document, backups and exports remain under your control.
 # Task 7 — Homepage Feature Hierarchy
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x]
 **Goal:** Replace feature inventory with user-oriented outcomes.
 
 ## Recommended Structure
@@ -499,19 +499,32 @@ Your Finance Document, backups and exports remain under your control.
 
 ## Work
 
-- [ ] Reorganize feature presentation around user questions.
-- [ ] Keep detailed feature inventory on `/features`.
-- [ ] Reduce the amount of text on the homepage.
-- [ ] Lead with Forecast, Budget, Trends, Net Worth, and Retirement.
-- [ ] Make reports a supporting value proposition.
-- [ ] Avoid presenting technical/internal names without explanation.
-- [ ] Use short, outcome-oriented copy.
+- [x] Reorganize feature presentation around user questions.
+- [x] Keep detailed feature inventory on `/features`.
+- [x] Reduce the amount of text on the homepage.
+- [x] Lead with Forecast, Budget, Trends, Net Worth, and Retirement.
+- [x] Make reports a supporting value proposition.
+- [x] Avoid presenting technical/internal names without explanation.
+- [x] Use short, outcome-oriented copy.
 
 ## Acceptance Criteria
 
 - Homepage feels understandable to a non-technical user.
 - The homepage does not read like a product specification.
 - Major differentiators are obvious without scrolling through a long feature list.
+
+## Task 7 Evidence — September 25, 2026
+
+- **Files changed for Task 7:** `app/page.tsx`, `app/globals.css`, `tests/rendered-html.test.mjs`, and this improvement plan.
+- **Homepage hierarchy:** replaced the Past / Present / Future strip, separate Forecast, Budget, Trends and Net Worth spotlights, the dominant Reports showcase, and the ten-card capability inventory with one concise five-question section: “Where did my money go?”, “Am I staying on track?”, “What's going to happen next?”, “How am I doing long term?”, and “Can I share what matters?”.
+- **Major capability emphasis:** Trends and Budget lead into a full-width 14-day Forecast centerpiece with the existing synthetic product visual; Net Worth and Retirement share a dedicated long-term card. Outcome copy explains each capability before naming supporting workflows.
+- **Reports repositioning:** reports now appear once, after the core analytical and planning workflows, as concise weekly and month-end PDF check-ins for a partner or household member rather than as a primary purchase driver.
+- **Copy reduction:** consolidated repeated product explanations, metric lists, callout chips, report badges, and the ten-item homepage inventory. The homepage now points visitors to `Explore all features` for deeper evaluation.
+- **`/features` verification:** the detailed feature inventory remains intact and reachable at `/features`; its Forecast, Budget, Trends, Net Worth, Retirement, reporting, import and local-control content continues to render and pass route/fragment validation.
+- **Regression coverage:** added a homepage assertion for all five questions, the major differentiators, supporting PDF-report language, the `/features` CTA, and removal of the former feature-grid and Reports structures. Existing Pricing, Privacy, App Store and public-route checks remain green.
+- **Validation results:** the production export prerendered all six routes; all 25 tests passed; `npm run lint` and `git diff --check` passed. Browser inspection at 1440×900 and 390×844 confirmed the hierarchy, Forecast visual, CTA, card wrapping and typography; Task 7 elements stayed within the narrow viewport and the browser console reported no warnings or errors.
+- **Responsive note:** the previously documented site-wide four-pixel mobile width overrun remains attributable to the existing intentionally clipped device mockup; every Task 7 element stays within the viewport and introduces no horizontal overflow.
+- **Remaining manual check:** verify the revised hierarchy and `/features` link once on the live GitHub Pages custom domain after publication.
 
 ---
 

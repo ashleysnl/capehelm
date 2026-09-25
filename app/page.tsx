@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DevicePair, ProductWindow, ReportStack } from "../components/ProductVisuals";
+import { DevicePair, ProductWindow } from "../components/ProductVisuals";
 import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
 import { productionSiteUrl } from "../config/site";
 
@@ -11,19 +11,6 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = "force-static";
-
-const featureCards = [
-  ["Dashboard", "Your financial position at a glance.", "01"],
-  ["Budget Health", "Know what is on track and what needs attention.", "02"],
-  ["14-Day Forecast", "See upcoming cash flow before it happens.", "03"],
-  ["Trends", "Explore spending by group, category and merchant.", "04"],
-  ["Transactions", "Search, inspect and organize your financial history.", "05"],
-  ["Categories & Rules", "Teach Capehelm how your financial life works.", "06"],
-  ["Net Worth", "Track long-term financial progress.", "07"],
-  ["Retirement", "Compare long-term paths, timing and contributions.", "08"],
-  ["Reports", "Turn complexity into clear household updates.", "09"],
-  ["Financial To-Do", "Remember payments, reimbursements and follow-ups.", "10"],
-];
 
 export default function Home() {
   return (
@@ -43,39 +30,51 @@ export default function Home() {
         <div className="hero-visual reveal reveal-late"><ProductWindow visual="dashboard" /></div>
       </section>
 
-      <section className="story section-shell" aria-labelledby="story-title">
-        <div className="section-intro centered"><p className="eyebrow"><span /> One clear financial picture</p><h2 id="story-title">Your finances shouldn’t require detective work.</h2><p>Capehelm brings the past, present and next two weeks into one calm environment—so the numbers lead to decisions.</p></div>
-        <div className="story-grid">
-          <article><span>01 — Past</span><h3>Understand what happened</h3><p>Transactions and Trends reveal the categories, merchants and patterns behind your spending.</p><SiteLink href="/features#understand">Transactions + Trends <ArrowIcon /></SiteLink></article>
-          <article><span>02 — Present</span><h3>Know where you stand</h3><p>Dashboard and Budget Health show whether the month is steady, drifting or needs attention.</p><SiteLink href="/features#stand">Dashboard + Budget <ArrowIcon /></SiteLink></article>
-          <article><span>03 — Future</span><h3>Plan what comes next</h3><p>Forecast and Financial To-Do help you prepare for commitments before they put pressure on cash flow.</p><SiteLink href="/features#plan">Forecast + To-Do <ArrowIcon /></SiteLink></article>
+      <section className="outcome-hierarchy section-shell" id="forecast" aria-labelledby="outcomes-title">
+        <div className="section-intro centered">
+          <p className="eyebrow"><span /> What Capehelm helps you answer</p>
+          <h2 id="outcomes-title">Five questions. One clear financial picture.</h2>
+          <p>Start with the decision you need to make—not a list of software features.</p>
         </div>
-      </section>
-
-      <section className="spotlight section-shell" id="forecast">
-        <div className="spotlight-copy"><p className="eyebrow"><span /> Forecast</p><h2>See the next two weeks before they happen.</h2><p>Capehelm combines upcoming income, expenses, card payments and recurring commitments into a day-by-day view of your checking balance.</p><ul className="feature-list"><li>Projected checking balance</li><li>Safety-floor awareness</li><li>Upcoming commitments</li><li>Flexible spending room</li><li>Forecast Coverage</li><li>Daily planning</li></ul><SiteLink className="text-link" href="/features#plan">Explore Forecast <ArrowIcon /></SiteLink></div>
-        <ProductWindow visual="forecast" />
-      </section>
-
-      <section className="spotlight reverse section-shell soft-band">
-        <div className="spotlight-copy"><p className="eyebrow"><span /> Budget Health</p><h2>A budget that tells you how you’re actually doing.</h2><p>Compare your monthly plan with actual spending and projected month-end results. Capehelm calls out what is on track, what deserves a watch and what is already over plan.</p><div className="metric-row"><div><strong>Actual MTD</strong><span>What has happened</span></div><div><strong>Projected</strong><span>Where the month is heading</span></div><div><strong>Health</strong><span>What needs attention</span></div></div><SiteLink className="text-link" href="/features#stand">See Budget Health <ArrowIcon /></SiteLink></div>
-        <ProductWindow visual="budget" />
-      </section>
-
-      <section className="trend-feature section-shell">
-        <div className="section-intro centered"><p className="eyebrow"><span /> Trends</p><h2>Turn thousands of transactions into something you can see.</h2><p>Move from a spending treemap to category and merchant detail without losing the larger picture.</p></div>
-        <ProductWindow visual="trends" />
-        <div className="trend-callouts"><span>Group / Category / Merchant</span><span>Month / 3M / 6M / YTD</span><span>Local merchant aliases</span><span>Drill-down details</span></div>
-      </section>
-
-      <section className="spotlight section-shell networth-feature">
-        <div className="spotlight-copy"><p className="eyebrow"><span /> Net Worth</p><h2>Measure progress beyond this month’s spending.</h2><p>Bring organizations, accounts, assets and liabilities into one long-term view. See contribution-adjusted growth alongside liquid assets and secured debt.</p><ul className="feature-list"><li>Assets and liabilities</li><li>Account histories</li><li>Contribution-adjusted growth</li><li>Account and institution organization</li></ul></div>
-        <ProductWindow visual="networth" />
-      </section>
-
-      <section className="reports-section section-shell">
-        <ReportStack />
-        <div className="spotlight-copy"><p className="eyebrow dark"><span /> Reports</p><h2>Financial clarity you can actually share.</h2><p>Capehelm turns complex household finances into concise reports designed for a partner or family money conversation.</p><div className="report-badges"><span>Weekly Family Plan</span><span>Weekly Spending Review</span><span>Weekly Money Check-In</span><span>Month-End Money Review</span></div><p className="fine-print">Report imagery uses synthetic demonstration data.</p></div>
+        <div className="outcome-grid">
+          <article className="outcome-card">
+            <div className="outcome-card-top"><span>01</span><strong>Trends</strong></div>
+            <h3>Where did my money go?</h3>
+            <p>See spending across transactions, categories and merchants. Understand what changed over time, then correct or organize the details behind it.</p>
+            <div className="outcome-capabilities"><span>Spending patterns</span><span>Merchant analysis</span><span>Categories</span></div>
+          </article>
+          <article className="outcome-card">
+            <div className="outcome-card-top"><span>02</span><strong>Budget</strong></div>
+            <h3>Am I staying on track?</h3>
+            <p>Compare actual spending with your plan, spot categories worth watching and adjust monthly targets before the month gets away from you.</p>
+            <div className="outcome-capabilities"><span>Budget Health</span><span>Budget Builder</span><span>Month-end projection</span></div>
+          </article>
+          <article className="outcome-card outcome-card-forecast" id="forecast-outlook">
+            <div className="outcome-card-copy">
+              <div className="outcome-card-top"><span>03</span><strong>14-day Forecast</strong></div>
+              <h3>What&apos;s going to happen next?</h3>
+              <p>See upcoming commitments and projected account balances before they arrive. Forecast Coverage shows whether planned expenses were covered by real transactions, so cash-flow pressure is easier to spot.</p>
+              <div className="outcome-capabilities"><span>Upcoming commitments</span><span>Projected balance</span><span>Forecast Coverage</span></div>
+            </div>
+            <ProductWindow visual="forecast" />
+          </article>
+          <article className="outcome-card">
+            <div className="outcome-card-top"><span>04</span><strong>Net Worth + Retirement</strong></div>
+            <h3>How am I doing long term?</h3>
+            <p>Track assets, liabilities and the accounts driving your Net Worth. Model how included retirement accounts may grow from contributions and assumptions over time.</p>
+            <div className="outcome-capabilities"><span>Assets and liabilities</span><span>Account projections</span><span>Retirement</span></div>
+          </article>
+          <article className="outcome-card outcome-card-supporting">
+            <div className="outcome-card-top"><span>05</span><strong>Reports</strong></div>
+            <h3>Can I share what matters?</h3>
+            <p>Turn your numbers into concise weekly and month-end PDF check-ins that are easy to review with a partner or household member.</p>
+            <div className="outcome-capabilities"><span>Weekly check-in</span><span>Spending review</span><span>Month-end PDF</span></div>
+          </article>
+        </div>
+        <div className="outcome-explore">
+          <p>Looking for a specific workflow or capability?</p>
+          <SiteLink className="text-link" href="/features">Explore all features <ArrowIcon /></SiteLink>
+        </div>
       </section>
 
       <section className="privacy-banner section-shell" aria-labelledby="privacy-title">
@@ -96,8 +95,6 @@ export default function Home() {
           <p><strong>Apple handles subscription commerce.</strong> StoreKit is used for product, offer, purchase, entitlement and restore operations—not your personal finance content.</p>
         </div>
       </section>
-
-      <section className="feature-grid-section section-shell"><div className="section-intro"><p className="eyebrow"><span /> A complete workspace</p><h2>Serious tools. One coherent financial picture.</h2></div><div className="feature-grid">{featureCards.map(([title, description, number]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div><div className="feature-grid-link"><SiteLink className="text-link" href="/features">See every feature <ArrowIcon /></SiteLink></div></section>
 
       <section className="pricing-section mid-page-cta section-shell" aria-labelledby="pricing-title">
         <div className="pricing-intro">
