@@ -524,7 +524,7 @@ Your Finance Document, backups and exports remain under your control.
 - **Regression coverage:** added a homepage assertion for all five questions, the major differentiators, supporting PDF-report language, the `/features` CTA, and removal of the former feature-grid and Reports structures. Existing Pricing, Privacy, App Store and public-route checks remain green.
 - **Validation results:** the production export prerendered all six routes; all 25 tests passed; `npm run lint` and `git diff --check` passed. Browser inspection at 1440×900 and 390×844 confirmed the hierarchy, Forecast visual, CTA, card wrapping and typography; Task 7 elements stayed within the narrow viewport and the browser console reported no warnings or errors.
 - **Responsive note:** the previously documented site-wide four-pixel mobile width overrun remains attributable to the existing intentionally clipped device mockup; every Task 7 element stays within the viewport and introduces no horizontal overflow.
-- **Remaining manual check:** verify the revised hierarchy and `/features` link once on the live GitHub Pages custom domain after publication.
+- **Publication verification:** GitHub Pages workflow run 16 completed successfully for the Task 7 commit. The live `capehelm.com` homepage exposed all five questions, the `Explore all features` link, and the preserved Privacy and Pricing sections; the live `/features` page retained its detailed capability content. No Task 7 manual checks remain.
 
 ---
 
