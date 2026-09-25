@@ -2,7 +2,7 @@
 
 **Status:** Active  
 **Owner:** Skinner  
-**Last updated:** 2026-09-23  
+**Last updated:** 2026-09-24
 **Primary goal:** Improve Capehelm website discoverability, clarity, trust, usefulness, and click-through rate to the Mac App Store before and immediately after launch.
 
 ---
@@ -12,11 +12,11 @@
 ## P0 — Launch-Critical
 
 - [x] **Task 1 — Search engine indexing foundation**
-- [ ] **Task 2 — Technical SEO baseline**
+- [x] **Task 2 — Technical SEO baseline**
 - [x] **Task 3 — Homepage positioning and hero rewrite**
 - [ ] **Task 4 — Mac App Store conversion path**
-- [ ] **Task 5 — Pricing and free-trial clarity**
-- [ ] **Task 6 — Privacy/local-first positioning**
+- [x] **Task 5 — Pricing and free-trial clarity**
+- [x] **Task 6 — Privacy/local-first positioning**
 - [ ] **Task 7 — Homepage feature hierarchy**
 - [ ] **Task 8 — Screenshot storytelling and product proof**
 - [ ] **Task 9 — FAQ and purchase-objection handling**
@@ -343,58 +343,70 @@ when the desired action is specifically App Store conversion.
 # Task 5 — Pricing and Free-Trial Clarity
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x]
 **Goal:** Remove uncertainty about cost and trial structure before the App Store click.
 
 ## Work
 
-- [ ] Add the current monthly subscription price.
-- [ ] Add the current annual subscription price.
-- [ ] State that eligible new subscribers receive Apple's two-month introductory free trial.
-- [ ] Explain that Monthly and Annual unlock the same Capehelm feature tier.
-- [ ] Explain that subscriptions are managed through Apple.
-- [ ] Avoid implying the trial is available to every user regardless of Apple eligibility.
-- [ ] Keep website pricing synchronized with App Store Connect.
-- [ ] Add a clear note that pricing may vary by storefront/currency where appropriate.
+- [x] Add the current monthly subscription price.
+- [x] Add the current annual subscription price.
+- [x] State that eligible new subscribers receive Apple's two-month introductory free trial.
+- [x] Explain that Monthly and Annual unlock the same Capehelm feature tier.
+- [x] Explain that subscriptions are managed through Apple.
+- [x] Avoid implying the trial is available to every user regardless of Apple eligibility.
+- [x] Keep website pricing synchronized with App Store Connect.
+- [x] Add a clear note that pricing may vary by storefront/currency where appropriate.
 
 ## Recommended Section
 
 ### Try Capehelm free for two months
 
-Eligible new subscribers can access the full Capehelm experience during Apple's introductory trial.
+Eligible new subscribers can access the full Capehelm experience during Apple's two-month introductory free trial. The introductory trial is available with either subscription option, subject to Apple eligibility.
 
-**Monthly — [current price]**  
-**Annual — [current price]**
+**Monthly — US$4.99/month**
 
-Cancel or manage your subscription through Apple.
+**Annual — US$49.99/year**
+
+Monthly and Annual unlock the same Capehelm features. Subscriptions are purchased and managed through Apple. Pricing may vary by storefront, region, currency and applicable taxes.
 
 ## Acceptance Criteria
 
-- Pricing matches App Store Connect.
-- Trial language matches Apple's configured offer.
-- No outdated 45-day trial language remains anywhere.
-- No legacy Full Unlock / one-time purchase language remains.
+- [x] Pricing matches the current authoritative subscription configuration.
+- [x] Trial language matches Apple's configured offer.
+- [x] No outdated 45-day trial language remains anywhere on the public website.
+- [x] No legacy Full Unlock / one-time purchase language remains on the public website.
+
+## Task 5 Evidence — September 24, 2026
+
+- **Pricing and tier structure:** the homepage conversion section now shows Monthly at **US$4.99/month** and Annual at **US$49.99/year**, and states that both options unlock the same Capehelm features.
+- **Trial eligibility:** the section states that eligible new subscribers can receive Apple's two-month introductory free trial with either Monthly or Annual, subject to Apple eligibility. It does not promise a trial to every visitor.
+- **Apple management and variation disclosure:** the homepage states that subscriptions are purchased, renewed, cancelled, restored and managed through Apple, that Apple determines introductory-trial eligibility, and that pricing may vary by storefront, region, currency and applicable taxes.
+- **Conversion placement:** the pricing section appears after the complete feature overview and includes the existing Mac App Store download CTA. Its two-card presentation adapts to a single-column phone layout.
+- **Legacy-copy cleanup:** the public Privacy Policy now describes subscriptions and the introductory trial through Apple StoreKit. Obsolete Full Unlock language was removed, and no public-facing 45-day Trial or one-time-purchase wording remains.
+- **Files changed:** `app/page.tsx`, `app/globals.css`, `app/privacy/page.tsx`, and `tests/rendered-html.test.mjs`.
+- **Validation results:** the production build completed successfully; all 22 tests passed; lint and `git diff --check` passed; and browser QA confirmed clean layouts at 1440×900 and 390×844.
+- **Repository status:** commit `095e0da` (`Add subscription pricing and trial clarity`) was pushed to `origin/main`.
 
 ---
 
 # Task 6 — Privacy / Local-First Positioning
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x]
 **Goal:** Turn Capehelm's privacy model into a primary product differentiator.
 
 ## Work
 
-- [ ] Add a prominent privacy section to the homepage.
-- [ ] State that transaction and finance-document data stay local.
-- [ ] State that Capehelm does not require online banking credentials.
-- [ ] State that Capehelm does not upload finance data to Capehelm servers.
-- [ ] State that there is no finance-data telemetry.
-- [ ] State that there is no advertising model.
-- [ ] Link clearly to the full Privacy Policy.
-- [ ] Avoid absolute claims that exceed the app's actual privacy architecture.
-- [ ] Preserve the narrow StoreKit exception for subscription commerce.
-- [ ] Keep privacy wording consistent with the App Store privacy disclosure.
+- [x] Add a prominent privacy section to the homepage.
+- [x] State that transaction and finance-document data stay local.
+- [x] State that Capehelm does not require online banking credentials.
+- [x] State that Capehelm does not upload finance data to Capehelm servers.
+- [x] State that there is no finance-data telemetry.
+- [x] State that there is no advertising model.
+- [x] Link clearly to the full Privacy Policy.
+- [x] Avoid absolute claims that exceed the app's actual privacy architecture.
+- [x] Preserve the narrow StoreKit exception for subscription commerce.
+- [x] Keep privacy wording consistent with the App Store privacy disclosure.
 
 ## Suggested Section
 
@@ -414,9 +426,30 @@ Your Finance Document, backups and exports remain under your control.
 
 ## Acceptance Criteria
 
-- Privacy appears on the homepage, not only on `/privacy`.
-- Claims accurately reflect the app.
-- No conflicting website/App Store wording exists.
+- [x] Privacy appears prominently on the homepage, not only on `/privacy`.
+- [x] Transaction and Finance Document data are accurately described as local-first.
+- [x] No online-banking credentials are required by Capehelm.
+- [x] Personal finance data is not uploaded to Capehelm-operated servers.
+- [x] No finance-data telemetry or advertising-funded business model is implied.
+- [x] User control of Finance Documents, backups, reports and exports is clear.
+- [x] The homepage links clearly to the full Privacy Policy.
+- [x] Claims avoid implying zero network activity.
+- [x] The Apple StoreKit subscription-commerce exception remains explicit.
+- [x] No conflicting public website or App Store privacy wording exists.
+- [x] Production build, automated validation and responsive review pass.
+
+## Task 6 Evidence — September 24, 2026
+
+- **Homepage section:** expanded the existing mid-funnel local-first banner after Reports and before the complete feature overview. The section now leads with “Your finances don't belong on our servers,” presents four concise privacy principles and includes a direct “Read our Privacy Policy” action.
+- **Final privacy claims:** transaction data stays local; Capehelm works with local Finance Documents rather than a hosted Capehelm financial account; Capehelm does not require online-banking credentials; Capehelm is a paid product rather than an advertising platform; Finance Documents, backups, reports and exports remain local or in user-chosen storage; Capehelm does not upload transaction data or Finance Document contents to its servers; and Capehelm does not use finance-data telemetry.
+- **Network boundary:** the homepage does not claim that Capehelm never connects to the internet or that no data ever leaves the computer. It states that Apple handles subscription commerce and that StoreKit is used for product, offer, purchase, entitlement and restore operations—not personal finance content.
+- **Privacy Policy consistency:** the StoreKit section now explicitly covers Monthly and Annual product loading, introductory-offer eligibility, purchase and renewal processing, entitlement verification, Apple-managed subscription-state changes and restore through `AppStore.sync()`. It continues to state that personal finance content is not sent to Apple for purchase or entitlement processing.
+- **Site-wide audit:** reviewed the homepage, Privacy, Features, Download, Support, footer, shared metadata/configuration and tracked repository documentation. The broad homepage phrase “no telemetry” was the only conflicting claim found; it was narrowed to “no finance-data telemetry.” No separate tracked App Store privacy-disclosure document exists in this repository.
+- **Files changed for Task 6:** `app/page.tsx`, `app/globals.css`, `app/privacy/page.tsx`, `tests/rendered-html.test.mjs`, and this improvement plan.
+- **Privacy link verification:** the homepage action resolved to `/privacy`, loaded the current Privacy Policy title and exposed the StoreKit section.
+- **Validation results:** the production export prerendered all public routes; all 24 tests passed; lint and `git diff --check` passed; desktop QA at 1440×900 and mobile QA at 390×844 were clean; and the browser reported no console errors. The small site-wide mobile width overrun remains attributable only to the existing intentionally clipped Mac device mockup, not the Task 6 section.
+- **App Store privacy position:** the final website wording matches the supplied production privacy architecture and preserves StoreKit as a narrow subscription-commerce service rather than a finance-data collection path.
+- **Remaining manual check:** after these changes are committed and deployed, verify the section and `/privacy` link once on the live GitHub Pages custom domain.
 
 ---
 

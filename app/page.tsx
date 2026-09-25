@@ -78,9 +78,23 @@ export default function Home() {
         <div className="spotlight-copy"><p className="eyebrow dark"><span /> Reports</p><h2>Financial clarity you can actually share.</h2><p>Capehelm turns complex household finances into concise reports designed for a partner or family money conversation.</p><div className="report-badges"><span>Weekly Family Plan</span><span>Weekly Spending Review</span><span>Weekly Money Check-In</span><span>Month-End Money Review</span></div><p className="fine-print">Report imagery uses synthetic demonstration data.</p></div>
       </section>
 
-      <section className="privacy-banner section-shell">
-        <div><p className="eyebrow"><span /> Local-first architecture</p><h2>Your financial history isn’t our business.</h2><p>Capehelm has no app-owned cloud service, login, telemetry or remote analytics. Your Finance Documents, backups, reports and exports stay under your control.</p><SiteLink className="button button-secondary" href="/privacy">Read about privacy <ArrowIcon /></SiteLink></div>
-        <div className="privacy-flow" role="img" aria-label="Your statements flow into Capehelm and then into your finance document on your devices"><div><b>Your statements</b><span>Built-in or configured bank CSV import</span></div><i>→</i><div className="flow-core"><b>Capehelm</b><span>Analysis on your device</span></div><i>→</i><div><b>Your finance document</b><span>Stored where you choose</span></div><small>Nothing in this core flow requires a Capehelm financial account.</small></div>
+      <section className="privacy-banner section-shell" aria-labelledby="privacy-title">
+        <div className="privacy-heading">
+          <p className="eyebrow"><span /> Local-first by design</p>
+          <h2 id="privacy-title">Your finances don&apos;t belong on our servers.</h2>
+          <p>Capehelm is deliberately different from hosted personal-finance services: your financial picture is built from local Finance Documents and files you control.</p>
+          <SiteLink className="button button-secondary" href="/privacy">Read our Privacy Policy <ArrowIcon /></SiteLink>
+        </div>
+        <div className="privacy-points">
+          <article><span>01</span><h3>Your transaction data stays local.</h3><p>Capehelm works with local Finance Documents instead of storing your financial life in a Capehelm-hosted account.</p></article>
+          <article><span>02</span><h3>No online banking credentials.</h3><p>Import supported statement and CSV files you select instead of giving Capehelm your online-banking username or password.</p></article>
+          <article><span>03</span><h3>No finance-data advertising profile.</h3><p>Capehelm is a paid product, not an advertising platform. Your transaction history is not used to build an advertising profile.</p></article>
+          <article><span>04</span><h3>You control your files.</h3><p>Your Finance Document, backups, reports and exports remain local or in storage locations you choose and control.</p></article>
+        </div>
+        <div className="privacy-assurance">
+          <p>Capehelm does not upload your transaction data or Finance Document contents to Capehelm servers and does not use finance-data telemetry.</p>
+          <p><strong>Apple handles subscription commerce.</strong> StoreKit is used for product, offer, purchase, entitlement and restore operations—not your personal finance content.</p>
+        </div>
       </section>
 
       <section className="feature-grid-section section-shell"><div className="section-intro"><p className="eyebrow"><span /> A complete workspace</p><h2>Serious tools. One coherent financial picture.</h2></div><div className="feature-grid">{featureCards.map(([title, description, number]) => <article key={title}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div><div className="feature-grid-link"><SiteLink className="text-link" href="/features">See every feature <ArrowIcon /></SiteLink></div></section>

@@ -164,7 +164,7 @@ export default function PrivacyPage() {
           <section>
             <SectionHeading number={9}>Subscriptions, Introductory Trial and Apple StoreKit</SectionHeading>
             <p>Capehelm uses Apple&apos;s App Store and StoreKit services for matters such as:</p>
-            <ul><li>determining access to Capehelm subscription features;</li><li>determining eligibility for an introductory trial;</li><li>processing and renewing subscriptions;</li><li>cancelling and managing subscriptions; and</li><li>restoring purchases.</li></ul>
+            <ul><li>loading Monthly and Annual subscription product information;</li><li>determining eligibility for an introductory trial;</li><li>processing purchases and renewals;</li><li>verifying entitlements;</li><li>reflecting subscription-state changes managed through Apple; and</li><li>restoring purchases through <code>AppStore.sync()</code>.</li></ul>
             <p>Eligible new subscribers may receive Apple&apos;s two-month introductory free trial with either the Monthly or Annual subscription option, subject to Apple&apos;s introductory-offer eligibility rules.</p>
             <p>Apple processes and manages App Store subscriptions and associated Apple account and payment information according to Apple&apos;s own terms and privacy practices.</p>
             <p>Capehelm does not receive your payment-card number.</p>

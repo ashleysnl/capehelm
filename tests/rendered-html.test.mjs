@@ -91,6 +91,39 @@ test("public pages omit obsolete purchase models", async () => {
   assert.doesNotMatch(publicHtml, /45[- ]day trial|Full Unlock|one[- ]time purchase/i);
 });
 
+test("homepage privacy section explains Capehelm's local-first boundaries", async () => {
+  const html = await render("/");
+  const privacy = html.match(/<section class="privacy-banner[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";
+
+  assert.match(privacy, /Your finances don(?:'|&#x27;)t belong on our servers/);
+  assert.match(privacy, /Your transaction data stays local/);
+  assert.match(privacy, /local Finance Documents/);
+  assert.match(privacy, /No online banking credentials/);
+  assert.match(privacy, /online-banking username or password/);
+  assert.match(privacy, /does not upload your transaction data or Finance Document contents to Capehelm servers/);
+  assert.match(privacy, /does not use finance-data telemetry/);
+  assert.match(privacy, /paid product, not an advertising platform/);
+  assert.match(privacy, /backups, reports and exports remain local or in storage locations you choose and control/);
+  assert.match(privacy, /Apple handles subscription commerce/);
+  assert.match(privacy, /not your personal finance content/);
+  assert.match(privacy, /href="\/privacy"/);
+  assert.match(privacy, /Read our Privacy Policy/);
+});
+
+test("public privacy claims preserve the StoreKit commerce exception", async () => {
+  const pages = await Promise.all(["/", "/features", "/privacy", "/support", "/download"].map(render));
+  const publicHtml = pages.join("\n");
+  const policy = pages[2];
+
+  assert.match(policy, /loading Monthly and Annual subscription product information/);
+  assert.match(policy, /determining eligibility for an introductory trial/);
+  assert.match(policy, /verifying entitlements/);
+  assert.match(policy, /subscription-state changes managed through Apple/);
+  assert.match(policy, /AppStore\.sync\(\)/);
+  assert.match(policy, /does not send your transactions, budgets, account balances, Finance Documents, or other personal financial information to Apple/);
+  assert.doesNotMatch(publicHtml, /never connects to the internet|no data ever leaves your computer|sends nothing over the network|100% offline/i);
+});
+
 test("download page accurately communicates the pre-launch handoff", async () => {
   const html = await render("/download");
   const visibleHtml = html.match(/<body>([\s\S]*?)<script/)?.[1] ?? html;
