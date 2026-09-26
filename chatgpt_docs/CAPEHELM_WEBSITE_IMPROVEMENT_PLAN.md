@@ -694,7 +694,7 @@ All P0 website work is either:
 
 | Check | Result | Evidence / Notes |
 |---|---|---|
-| Production build | PASS — FIXED DURING AUDIT | A clean `npm ci` checkout produced all seven static routes. After the CSS fix, `npm test` rebuilt successfully and all 31 tests passed; `npm run lint` passed. The full install reports 20 advisories in development/build tooling, while `npm audit --omit=dev --audit-level=high` reports zero production vulnerabilities. |
+| Production build | PASS — FIXED DURING AUDIT | A clean `npm ci` checkout produced all seven static routes. After the CSS fix, `npm test` rebuilt successfully and all 31 tests passed; `npm run lint` passed. Commit `268035e` deployed successfully through GitHub Pages workflow run `36256132414`. The full install reports 20 advisories in development/build tooling, while `npm audit --omit=dev --audit-level=high` reports zero production vulnerabilities. |
 | Primary navigation | PASS | Safari exercised the logo/home link, Features, FAQ, Privacy, the mobile disclosure menu, and the homepage Forecast anchor on the deployed site. Routes resolved without 404s. |
 | Footer navigation | PASS | Safari exercised Support and Download; source/rendered-link tests verify the remaining footer routes. |
 | App Store links | LAUNCH WARNING | Every CTA consistently resolves to `/download`; no `apps.apple.com`, TestFlight, placeholder, or unrelated product ID exists. `macAppStoreUrl` is intentionally `null`, and `/download` clearly says Capehelm is not yet available. Set the official public listing URL before the App Store launch handoff. |
@@ -704,7 +704,7 @@ All P0 website work is either:
 | `capehelm.ca` redirect | PASS | HTTPS and HTTP root requests return 301 and finish at `https://capehelm.com/`; `/features` and `/faq?source=audit` preserve path/query and finish at the corresponding canonical `.com` URL. SSL verification succeeded and no loop or host error occurred. |
 | `www` behavior | PASS | HTTPS/HTTP `www.capehelm.com` and `www.capehelm.ca` return 301 to the canonical `.com` site, then 200. No DNS, certificate, host, or loop error occurred. |
 | Safari/macOS | PASS | Safari 26.6.2 was driven directly with WebDriver. The deployed homepage, hero, dashboard proof, product-tour section, header, CTA, navigation, pricing/privacy sections, images, and footer rendered cleanly at desktop width; all six routes had one H1 and no broken image. |
-| iPhone-sized layout | PASS — FIXED DURING AUDIT | Safari rendered at 430, 390, and 375 CSS px. Mobile navigation, CTAs, hero/dashboard image, FAQ disclosures, text, cards, and footer remained usable. A four-pixel decorative root overflow was fixed and reverified with `maxScrollX: 0`. This is desktop Safari responsive emulation, not physical Mobile Safari. |
+| iPhone-sized layout | PASS — FIXED DURING AUDIT | Safari rendered at 430, 390, and 375 CSS px. Mobile navigation, CTAs, hero/dashboard image, FAQ disclosures, text, cards, and footer remained usable. A four-pixel decorative root overflow was fixed; post-deployment Safari and Chromium checks at 390 px both reported a 390 px document width and no horizontal pan. This is desktop Safari responsive emulation, not physical Mobile Safari. |
 | Chrome/Chromium | PASS | The current Chromium-based in-app browser rendered the deployed desktop and 390×844 layouts, loaded every lazy product image after scrolling, exercised the mobile menu and FAQ navigation, and toggled native FAQ disclosures with Enter and Space. No warning/error console entries were reported. A standalone Google Chrome app is not installed, but the requested Chrome-or-Chromium path was directly tested. |
 | Firefox | LAUNCH WARNING | NOT TESTED reliably — environment limitation. Firefox 72.0.2 is obsolete, crashes in GUI on current macOS, and its headless screenshot fires before the entrance animation completes. A current Firefox smoke test is recommended; the site uses static HTML, native disclosure controls, and standard CSS rather than browser-specific application logic. |
 | Horizontal overflow | PASS — FIXED DURING AUDIT | Live Safari exposed a four-pixel root pan at 430 px and below. Adding root-level horizontal clipping removed it. The rebuilt local site reports `maxScrollX: 0` at 1440, 1280, 1024, 768, 430, 390, and 375 px and across all six routes at desktop/tablet/mobile widths. |
@@ -723,7 +723,7 @@ All P0 website work is either:
 - **Problem:** Safari allowed a four-pixel horizontal pan at 430, 390, and 375 px even though visible content stayed inside the viewport.
 - **Root cause:** a decorative section background extended beyond the root viewport; `overflow-x` existed on `body` but not on Safari’s scrolling root.
 - **Files changed:** `app/globals.css` adds `overflow-x: hidden` to `html`.
-- **Verification:** rebuilt from a clean checkout, passed all 31 tests and lint, and rechecked every target width in Safari with `maxScrollX: 0`.
+- **Verification:** rebuilt from a clean checkout, passed all 31 tests and lint, rechecked every target width in Safari with `maxScrollX: 0`, deployed commit `268035e` successfully, and confirmed the live production page remains 390 px wide with no horizontal pan in both Safari and Chromium.
 
 ### Launch warnings
 
