@@ -131,6 +131,32 @@ test("homepage presents Task 7 capabilities as five user outcomes", async () => 
   assert.doesNotMatch(html, /class="feature-grid-section|class="reports-section|A complete workspace/);
 });
 
+test("homepage screenshot stories provide responsive, accessible product proof", async () => {
+  const html = await render("/");
+  const productProof = html.match(/<section class="product-proof[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";
+
+  assert.match(productProof, /See Capehelm in action/);
+  assert.match(productProof, /Five connected views, shown with fictional demo data/);
+  assert.match(productProof, /See the next 14 days before they happen/);
+  assert.match(productProof, /Understand what(?:'|’|&(?:#x27|rsquo);)s actually changing/);
+  assert.match(productProof, /Know where the month is heading/);
+  assert.match(productProof, /Track the whole financial picture/);
+  assert.match(productProof, /Model the future using assumptions you control/);
+  assert.match(productProof, /recurring commitments and expected spending/);
+  assert.match(productProof, /categories and merchants/);
+  assert.match(productProof, /planned spending, actual spending, and projected month-end results/);
+  assert.match(productProof, /assets, liabilities, account balances, and changes over time/);
+  assert.match(productProof, /user-controlled assumptions, projected growth, contributions, and retirement outcomes/);
+  assert.equal((productProof.match(/<article class="product-proof-story/g) ?? []).length, 5);
+  assert.equal((productProof.match(/<img /g) ?? []).length, 5);
+  assert.equal((productProof.match(/loading="lazy"/g) ?? []).length, 5);
+  assert.equal((productProof.match(/decoding="async"/g) ?? []).length, 5);
+  assert.equal((productProof.match(/width="2560" height="1600"/g) ?? []).length, 5);
+  assert.equal((productProof.match(/-1400\.webp/g) ?? []).length, 10);
+  assert.equal((productProof.match(/-2560\.webp/g) ?? []).length, 5);
+  assert.doesNotMatch(productProof, /\.png|alt="(?:Capehelm|Budget|App) screenshot"/i);
+});
+
 test("public privacy claims preserve the StoreKit commerce exception", async () => {
   const pages = await Promise.all(["/", "/features", "/privacy", "/support", "/download"].map(render));
   const publicHtml = pages.join("\n");

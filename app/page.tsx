@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DevicePair, ProductWindow } from "../components/ProductVisuals";
 import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
-import { productionSiteUrl } from "../config/site";
+import { productionSiteUrl, siteAssetPath } from "../config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
@@ -11,6 +11,44 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = "force-static";
+
+const productStories = [
+  {
+    module: "Forecast",
+    headline: "See the next 14 days before they happen.",
+    body: "Capehelm combines recurring commitments and expected spending into a forward-looking cash-flow view.",
+    asset: "forecast",
+    alt: "Capehelm Forecast showing a 14-day forward-looking cash-flow plan with projected balances and upcoming commitments.",
+  },
+  {
+    module: "Trends",
+    headline: "Understand what’s actually changing.",
+    body: "Explore categories and merchants to see where spending patterns are moving.",
+    asset: "trends",
+    alt: "Capehelm Trends dashboard showing spending patterns across categories and merchants.",
+  },
+  {
+    module: "Budget",
+    headline: "Know where the month is heading.",
+    body: "Budget Health compares actual spending with your plan and projected month end.",
+    asset: "budget",
+    alt: "Capehelm Budget Health dashboard comparing planned spending, actual spending, and projected month-end results.",
+  },
+  {
+    module: "Net Worth",
+    headline: "Track the whole financial picture.",
+    body: "Bring assets and liabilities together and follow how they change over time.",
+    asset: "net-worth",
+    alt: "Capehelm Net Worth dashboard showing assets, liabilities, account balances, and changes over time.",
+  },
+  {
+    module: "Retirement",
+    headline: "Model the future using assumptions you control.",
+    body: "Project included retirement accounts and contributions without giving up control of your data.",
+    asset: "retirement",
+    alt: "Capehelm Retirement projection showing user-controlled assumptions, projected growth, contributions, and retirement outcomes.",
+  },
+];
 
 export default function Home() {
   return (
@@ -74,6 +112,39 @@ export default function Home() {
         <div className="outcome-explore">
           <p>Looking for a specific workflow or capability?</p>
           <SiteLink className="text-link" href="/features">Explore all features <ArrowIcon /></SiteLink>
+        </div>
+      </section>
+
+      <section className="product-proof section-shell" aria-labelledby="product-proof-title">
+        <div className="section-intro centered">
+          <p className="eyebrow"><span /> See Capehelm in action</p>
+          <h2 id="product-proof-title">Built to turn financial questions into clear next steps.</h2>
+          <p>Five connected views, shown with fictional demo data.</p>
+        </div>
+        <div className="product-proof-grid">
+          {productStories.map((story, index) => (
+            <article className={`product-proof-story ${index === 0 ? "product-proof-lead" : ""}`} key={story.module}>
+              <div className="product-proof-copy">
+                <p className="product-proof-module"><span>{String(index + 1).padStart(2, "0")}</span>{story.module}</p>
+                <h3>{story.headline}</h3>
+                <p>{story.body}</p>
+              </div>
+              <figure className="product-proof-frame">
+                {/* Build-time optimized responsive assets; no runtime image service is required. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={siteAssetPath(`/product/capehelm-${story.asset}-1400.webp`)}
+                  srcSet={`${siteAssetPath(`/product/capehelm-${story.asset}-1400.webp`)} 1400w, ${siteAssetPath(`/product/capehelm-${story.asset}-2560.webp`)} 2560w`}
+                  sizes={index === 0 ? "(max-width: 800px) calc(100vw - 48px), (max-width: 1400px) calc(100vw - 120px), 1260px" : "(max-width: 800px) calc(100vw - 48px), 620px"}
+                  width="2560"
+                  height="1600"
+                  loading="lazy"
+                  decoding="async"
+                  alt={story.alt}
+                />
+              </figure>
+            </article>
+          ))}
         </div>
       </section>
 

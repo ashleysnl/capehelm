@@ -2,7 +2,7 @@
 
 **Status:** Active  
 **Owner:** Skinner  
-**Last updated:** 2026-09-24
+**Last updated:** 2026-09-26
 **Primary goal:** Improve Capehelm website discoverability, clarity, trust, usefulness, and click-through rate to the Mac App Store before and immediately after launch.
 
 ---
@@ -18,7 +18,7 @@
 - [x] **Task 5 — Pricing and free-trial clarity**
 - [x] **Task 6 — Privacy/local-first positioning**
 - [x] **Task 7 — Homepage feature hierarchy**
-- [ ] **Task 8 — Screenshot storytelling and product proof**
+- [x] **Task 8 — Screenshot storytelling and product proof**
 - [ ] **Task 9 — FAQ and purchase-objection handling**
 - [ ] **Task 10 — Launch verification and regression audit**
 
@@ -531,21 +531,21 @@ Your Finance Document, backups and exports remain under your control.
 # Task 8 — Screenshot Storytelling and Product Proof
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x]
 **Goal:** Make screenshots explain the value of Capehelm rather than merely show UI.
 
 ## Work
 
-- [ ] Select 4–6 strongest production-quality screenshots.
-- [ ] Avoid screenshots containing personal finance data.
-- [ ] Use fictional/synthetic content only.
-- [ ] Write a headline for each screenshot.
-- [ ] Write a one-sentence explanation beneath each screenshot.
-- [ ] Ensure screenshots are optimized for web size.
-- [ ] Provide high-DPI assets.
-- [ ] Add descriptive alt text.
-- [ ] Verify screenshots on desktop and narrow layouts.
-- [ ] Keep screenshot styling consistent.
+- [x] Select 4–6 strongest production-quality screenshots.
+- [x] Avoid screenshots containing personal finance data.
+- [x] Use fictional/synthetic content only.
+- [x] Write a headline for each screenshot.
+- [x] Write a one-sentence explanation beneath each screenshot.
+- [x] Ensure screenshots are optimized for web size.
+- [x] Provide high-DPI assets.
+- [x] Add descriptive alt text.
+- [x] Verify screenshots on desktop and narrow layouts.
+- [x] Keep screenshot styling consistent.
 
 ## Recommended Screenshot Stories
 
@@ -576,10 +576,24 @@ Project included retirement accounts and contributions without giving up control
 
 ## Acceptance Criteria
 
-- Every screenshot has a purpose.
-- No private data appears.
-- Images load quickly.
-- Captions explain benefits in plain language.
+- [x] Every screenshot has a purpose.
+- [x] No private data appears.
+- [x] Images load quickly.
+- [x] Captions explain benefits in plain language.
+
+## Implementation Evidence — September 26, 2026
+
+- **Files changed:** `app/page.tsx`, `app/globals.css`, `tests/rendered-html.test.mjs`, this plan, and ten new responsive WebP assets in `public/product/`.
+- **Homepage placement:** added a prominent `See Capehelm in action` product-proof section directly after the five-question outcome hierarchy and before the local-first Privacy section. Forecast is the full-width lead story; Trends, Budget, Net Worth and Retirement follow in a compact editorial grid.
+- **Screenshot selection:** used all five supplied modules—Forecast, Trends, Budget, Net Worth and Retirement. Each tells a distinct product story, so no candidate was excluded for privacy, quality, redundancy or layout.
+- **Privacy review:** every source screenshot visibly identifies its content as `Demo — Fictional Data` and uses demo/fictional/example labels. No real names, account numbers, personally identifiable information or real Finance Document content was found. Source SHA-256 hashes were rechecked after optimization and remained unchanged.
+- **Asset work:** copied rather than moved the approved sources and created 1400×875 plus 2560×1600 WebP variants for each module. The ten delivered files total about 966 KB versus about 21.8 MB for the five source PNGs; metadata was removed and the 2560-pixel variants preserve high-DPI clarity.
+- **Product storytelling:** every story has a module label, benefit-led headline, one concise supporting sentence and descriptive alt text. The section explicitly identifies the screenshots as fictional demo data.
+- **Responsive/performance behavior:** images use responsive `srcset`/`sizes`, explicit 2560×1600 intrinsic dimensions, preserved 8:5 aspect ratios, asynchronous decoding and below-the-fold lazy loading. Cards share one border, radius, frame, shadow and background treatment.
+- **Validation results:** the production export prerendered all six routes; all 26 tests passed; `npm run lint` and `git diff --check` passed. Browser inspection at 1440×900, 1280×800, 834×1112 and 390×844 confirmed consistent framing, readable copy, clean stacking and loaded responsive assets; the console reported no warnings or errors.
+- **Overflow check:** every Task 8 card remains inside the viewport at 390 px. The previously documented site-wide four-pixel mobile overrun remains attributable to the existing intentionally clipped device mockup and was not increased by Task 8.
+- **Source integrity:** the originals in `docs/chatgpt-project` were not edited or moved, and no screenshot or financial information was uploaded to an external image service.
+- **Remaining manual check:** verify the deployed homepage and responsive assets on `capehelm.com` after publication.
 
 ---
 
