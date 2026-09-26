@@ -25,7 +25,7 @@
 ## P1 — High-Value Post-Launch / First Week
 
 - [ ] **Task 11 — Improve Support into a useful knowledge hub**
-- [ ] **Task 12 — Add structured data**
+- [x] **Task 12 — Add structured data**
 - [ ] **Task 13 — Add Open Graph / social sharing metadata**
 - [ ] **Task 14 — Create focused SEO landing pages**
 - [ ] **Task 15 — Improve the download / App Store handoff page**
@@ -801,22 +801,41 @@ Include a strong warning:
 # Task 12 — Add Structured Data
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [x] Complete — 2026-09-26
 **Goal:** Help search engines understand Capehelm as a software product.
 
 ## Work
 
-- [ ] Add `SoftwareApplication` schema.
-- [ ] Set application category to FinanceApplication where appropriate.
-- [ ] Set operating system to macOS.
-- [ ] Add Capehelm name and description.
-- [ ] Add App Store URL.
-- [ ] Add pricing information where valid.
-- [ ] Add screenshot URLs.
-- [ ] Add software requirements.
-- [ ] Add FAQ schema if supported by current search-engine guidance.
-- [ ] Add publisher/organization metadata where appropriate.
-- [ ] Validate schema using Google's structured-data tools.
+- [x] Add `SoftwareApplication` schema.
+- [x] Set application category to `FinanceApplication`.
+- [x] Set operating system to `macOS 14.0 or later`, verified against the production target.
+- [x] Add Capehelm name and a description consistent with the visible homepage.
+- [x] Evaluate the App Store URL; intentionally omit `installUrl` until a real public listing is configured.
+- [x] Add the visible Monthly US$4.99 and Annual US$49.99 subscription prices as separate USD offers with storefront-variation disclosure.
+- [x] Add six absolute, public screenshot URLs for Dashboard, Budget, Forecast, Trends, Net Worth and Retirement.
+- [x] Add the verified universal processor requirement for Apple silicon (`arm64`) and 64-bit Intel (`x86_64`).
+- [x] Evaluate FAQ schema; intentionally omit it because Capehelm is not an authoritative government or health publisher eligible for Google's FAQ rich-result treatment.
+- [x] Add minimal Capehelm `Organization` publisher metadata without personal or fabricated legal-entity details.
+- [x] Validate the live schema using Google's Rich Results Test and the Schema.org Validator.
+
+## Completion Record — 2026-09-26
+
+- Files changed:
+  - `config/structuredData.ts` — centralized first-party `SoftwareApplication` JSON-LD and safe serializer.
+  - `app/page.tsx` — renders the single JSON-LD entity on the homepage and gives the visible pricing section a stable `#pricing` target.
+  - `tests/structured-data.test.mjs` — validates the generated entity, offers, public screenshot assets and deliberate omissions.
+  - `chatgpt_docs/CAPEHELM_WEBSITE_IMPROVEMENT_PLAN.md` — records Task 12 completion evidence.
+- Render location: one `<script type="application/ld+json">` on the canonical homepage only; no conflicting `SoftwareApplication`, `FAQPage` or `QAPage` entity is emitted.
+- Identity fields: `Capehelm`, `FinanceApplication`, `https://capehelm.com/`, a current local-first Mac product description and `macOS 14.0 or later`.
+- Requirements: verified universal `arm64` and `x86_64` processor support; no unsupported Windows, Linux, Android or iOS product claims.
+- Commerce: two paid subscription offers match the visible US pricing. The introductory trial is not represented as a zero-price product. `installUrl` is absent because `config/site.ts` has no verified public Mac App Store listing URL.
+- Media: six `https://capehelm.com/product/capehelm-*-2560.webp` URLs use the existing public screenshots with fictional demonstration data; every URL returned HTTP 200 with `image/webp` after deployment.
+- Publisher: a minimal `Organization` named Capehelm at `https://capehelm.com/`; no developer personal information is exposed.
+- Rating/review policy: no `review` or `aggregateRating` was added because no genuine public rating data is available.
+- Schema.org Validator, live URL: one `SoftwareApplication`, **0 errors and 0 warnings**.
+- Google Rich Results Test, live URL using the smartphone crawler: **1 valid Software Apps item detected**. The only non-critical issue is the optional missing `aggregateRating`; it is intentionally unresolved rather than fabricating rating data.
+- Validation: clean isolated production export succeeded for all seven routes; ESLint passed; all **37/37** Node tests passed; generated JSON parsed successfully; GitHub Pages deployment for commit `459694f` completed successfully.
+- Remaining SEO follow-up: add the real `installUrl` only after the public App Store listing exists, and add rating/review metadata only if genuine eligible public data becomes available.
 
 ## Acceptance Criteria
 
