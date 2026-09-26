@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { ProductScreenshot, type ProductScreenshotAsset } from "../components/ProductScreenshot";
 import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
 import { productionSiteUrl, siteAssetPath } from "../config/site";
+import {
+  capehelmSoftwareApplicationStructuredData,
+  serializeStructuredData,
+} from "../config/structuredData";
 
 export const metadata: Metadata = {
   title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
@@ -59,6 +63,12 @@ const productStories: Array<{
 export default function Home() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(capehelmSoftwareApplicationStructuredData),
+        }}
+      />
       <section className="hero section-shell">
         <div className="hero-glow" />
         <div className="hero-copy reveal">
@@ -210,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pricing-section mid-page-cta section-shell" aria-labelledby="pricing-title">
+      <section className="pricing-section mid-page-cta section-shell" id="pricing" aria-labelledby="pricing-title">
         <div className="pricing-intro">
           <p className="eyebrow"><span /> Pricing</p>
           <h2 id="pricing-title">Try Capehelm free for two months.</h2>
