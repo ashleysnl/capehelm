@@ -594,6 +594,7 @@ Project included retirement accounts and contributions without giving up control
 - **Overflow check:** every Task 8 card remains inside the viewport at 390 px. The previously documented site-wide four-pixel mobile overrun remains attributable to the existing intentionally clipped device mockup and was not increased by Task 8.
 - **Source integrity:** the originals in `docs/chatgpt-project` were not edited or moved, and no screenshot or financial information was uploaded to an external image service.
 - **Publication verification:** GitHub Pages workflow run 36235061261 completed successfully for commit `7dc0c4e`. The live `capehelm.com` homepage exposed all five stories, loaded all five responsive WebP assets, retained the Features, Privacy and Pricing content, introduced no desktop overflow, and reported no browser warnings or errors. The live `/features` route and its detailed capability inventory remained reachable. No Task 8 manual checks remain.
+- **Real-screenshot cleanup — September 26, 2026:** removed the former code-generated `ProductVisuals` dashboard, Forecast, Budget, Trends, Net Worth, Retirement, report and device mockups. The homepage hero and five detailed `/features` chapters now use only the approved real Capehelm captures; unsupported report/iPhone imagery was replaced with accurate text. A rendered-page regression check prevents the retired synthetic UI classes and labels from returning.
 
 ---
 

@@ -90,11 +90,3 @@ export function siteHref(href: string): string {
   }
   return href.startsWith("/") ? href : `/${href}`;
 }
-
-export type ProductVisual =
-  | "dashboard"
-  | "forecast"
-  | "budget"
-  | "trends"
-  | "networth"
-  | "retirement";

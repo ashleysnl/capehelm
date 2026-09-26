@@ -65,7 +65,21 @@ test("homepage hero communicates the Task 3 positioning and one dominant App Sto
   assert.match(hero, /Download on the Mac App Store/);
   assert.match(hero, /2 months free for eligible new subscribers · Monthly or annual · No ads/);
   assert.equal((hero.match(/class="button hero-primary-cta"/g) ?? []).length, 1);
-  assert.match(hero, /role="img" aria-label="Synthetic Capehelm dashboard showing monthly position, budget health, forecast and net worth"/);
+  assert.match(hero, /capehelm-forecast-1400\.webp/);
+  assert.match(hero, /alt="Capehelm Forecast showing a real 14-day cash-flow view built with fictional demonstration data\."/);
+});
+
+test("public product imagery uses approved real application screenshots only", async () => {
+  const [home, features] = await Promise.all([render("/"), render("/features")]);
+  const productPages = `${home}\n${features}`;
+
+  assert.doesNotMatch(productPages, /Synthetic Capehelm|product-window|mock-sidebar|device-pair|report-stack/i);
+  assert.equal((home.match(/class="product-screenshot/g) ?? []).length, 6);
+  assert.equal((features.match(/class="product-screenshot/g) ?? []).length, 5);
+  for (const asset of ["budget", "forecast", "net-worth", "retirement", "trends"]) {
+    assert.match(productPages, new RegExp(`capehelm-${asset}-1400\\.webp`));
+    assert.match(productPages, new RegExp(`capehelm-${asset}-2560\\.webp`));
+  }
 });
 
 test("homepage pricing section communicates the current subscriptions and introductory trial", async () => {

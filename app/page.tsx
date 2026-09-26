@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { DevicePair, ProductWindow } from "../components/ProductVisuals";
+import { ProductScreenshot, type ProductScreenshotAsset } from "../components/ProductScreenshot";
 import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
-import { productionSiteUrl, siteAssetPath } from "../config/site";
+import { productionSiteUrl } from "../config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
@@ -12,7 +12,13 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-static";
 
-const productStories = [
+const productStories: Array<{
+  module: string;
+  headline: string;
+  body: string;
+  asset: ProductScreenshotAsset;
+  alt: string;
+}> = [
   {
     module: "Forecast",
     headline: "See the next 14 days before they happen.",
@@ -65,7 +71,15 @@ export default function Home() {
           </div>
           <p className="hero-supporting-line">2 months free for eligible new subscribers · Monthly or annual · No ads</p>
         </div>
-        <div className="hero-visual reveal reveal-late"><ProductWindow visual="dashboard" /></div>
+        <div className="hero-visual reveal reveal-late">
+          <ProductScreenshot
+            asset="forecast"
+            alt="Capehelm Forecast showing a real 14-day cash-flow view built with fictional demonstration data."
+            className="hero-real-screenshot"
+            eager
+            sizes="(max-width: 1160px) calc(100vw - 48px), 680px"
+          />
+        </div>
       </section>
 
       <section className="outcome-hierarchy section-shell" id="forecast" aria-labelledby="outcomes-title">
@@ -94,7 +108,6 @@ export default function Home() {
               <p>See upcoming commitments and projected account balances before they arrive. Forecast Coverage shows whether planned expenses were covered by real transactions, so cash-flow pressure is easier to spot.</p>
               <div className="outcome-capabilities"><span>Upcoming commitments</span><span>Projected balance</span><span>Forecast Coverage</span></div>
             </div>
-            <ProductWindow visual="forecast" />
           </article>
           <article className="outcome-card">
             <div className="outcome-card-top"><span>04</span><strong>Net Worth + Retirement</strong></div>
@@ -129,20 +142,12 @@ export default function Home() {
                 <h3>{story.headline}</h3>
                 <p>{story.body}</p>
               </div>
-              <figure className="product-proof-frame">
-                {/* Build-time optimized responsive assets; no runtime image service is required. */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={siteAssetPath(`/product/capehelm-${story.asset}-1400.webp`)}
-                  srcSet={`${siteAssetPath(`/product/capehelm-${story.asset}-1400.webp`)} 1400w, ${siteAssetPath(`/product/capehelm-${story.asset}-2560.webp`)} 2560w`}
-                  sizes={index === 0 ? "(max-width: 800px) calc(100vw - 48px), (max-width: 1400px) calc(100vw - 120px), 1260px" : "(max-width: 800px) calc(100vw - 48px), 620px"}
-                  width="2560"
-                  height="1600"
-                  loading="lazy"
-                  decoding="async"
-                  alt={story.alt}
-                />
-              </figure>
+              <ProductScreenshot
+                asset={story.asset}
+                alt={story.alt}
+                className="product-proof-frame"
+                sizes={index === 0 ? "(max-width: 800px) calc(100vw - 48px), (max-width: 1400px) calc(100vw - 120px), 1260px" : "(max-width: 800px) calc(100vw - 48px), 620px"}
+              />
             </article>
           ))}
         </div>
@@ -192,7 +197,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="devices-section section-shell" id="devices"><div className="section-intro centered"><p className="eyebrow"><span /> Mac + iPhone</p><h2>Built for the devices already in your life.</h2><p>The Mac is Capehelm’s complete finance workspace. The iPhone companion keeps selected Forecast, Reports, Financial To-Do and shared-document workflows close at hand.</p></div><DevicePair /><p className="device-note">The iPhone companion focuses on selected workflows and does not mirror the complete macOS feature set.</p></section>
+      <section className="devices-section section-shell" id="devices">
+        <div className="section-intro centered"><p className="eyebrow"><span /> Mac + iPhone</p><h2>Built for the devices already in your life.</h2><p>Capehelm’s complete finance workspace lives on the Mac, with selected companion workflows available on iPhone.</p></div>
+        <div className="device-facts">
+          <article><span>Mac</span><h3>Your complete finance workspace.</h3><p>Budget, Forecast, Trends, Net Worth, Retirement, imports and full document management stay together on your Mac.</p></article>
+          <article><span>iPhone companion</span><h3>Selected workflows, close at hand.</h3><p>Open selected Forecast, Reports, Financial To-Do and shared-document workflows without presenting the iPhone app as a full Mac replacement.</p></article>
+        </div>
+      </section>
 
       <section className="final-cta section-shell"><ImageMark /><p className="eyebrow"><span /> Private personal finance for Mac</p><h2>Take the helm of your finances.</h2><p>Keep your financial picture private and close at hand. Eligible new subscribers receive a 2-month introductory trial.</p><div><AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink></div></section>
     </PageShell>
