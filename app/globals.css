@@ -71,7 +71,7 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 .hero-supporting-line { max-width: 590px; margin: 14px 0 0; color: #78889d; font-size: 12px; line-height: 1.5; }
 .hero-visual { width: 106%; transform: translateX(-2%) perspective(1400px) rotateY(-2deg) rotateX(1deg); transform-origin: center; filter: drop-shadow(0 36px 70px rgba(0,0,0,.42)); }
 .product-screenshot { margin: 0; padding: 5px; overflow: hidden; border: 1px solid rgba(137,169,216,.2); border-radius: 18px; background: #06101e; box-shadow: 0 24px 64px rgba(0,0,0,.38); }
-.product-screenshot img { width: 100%; height: auto; aspect-ratio: 8 / 5; display: block; border-radius: 14px; object-fit: contain; background: #07111f; }
+.product-screenshot img { width: 100%; height: auto; display: block; border-radius: 14px; object-fit: contain; background: #07111f; }
 .hero-real-screenshot { border-color: rgba(109,158,234,.3); box-shadow: 0 30px 80px rgba(0,0,0,.42); }
 
 .section-intro { max-width: 760px; margin-bottom: 50px; }

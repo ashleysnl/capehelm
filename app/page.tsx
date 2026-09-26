@@ -73,8 +73,8 @@ export default function Home() {
         </div>
         <div className="hero-visual reveal reveal-late">
           <ProductScreenshot
-            asset="forecast"
-            alt="Capehelm Forecast showing a real 14-day cash-flow view built with fictional demonstration data."
+            asset="dashboard"
+            alt="Capehelm Dashboard showing a real monthly financial overview, spending pace, budget position, upcoming cash flow and financial progress using fictional demonstration data."
             className="hero-real-screenshot"
             eager
             sizes="(max-width: 1160px) calc(100vw - 48px), 680px"

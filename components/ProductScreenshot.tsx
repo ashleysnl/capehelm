@@ -2,6 +2,7 @@ import { siteAssetPath } from "../config/site";
 
 export type ProductScreenshotAsset =
   | "budget"
+  | "dashboard"
   | "forecast"
   | "net-worth"
   | "retirement"
@@ -24,6 +25,9 @@ export function ProductScreenshot({
 }: ProductScreenshotProps) {
   const smallAsset = siteAssetPath(`/product/capehelm-${asset}-1400.webp`);
   const largeAsset = siteAssetPath(`/product/capehelm-${asset}-2560.webp`);
+  const dimensions = asset === "dashboard"
+    ? { width: 2560, height: 1665 }
+    : { width: 2560, height: 1600 };
 
   return (
     <figure className={`product-screenshot ${className}`.trim()}>
@@ -33,8 +37,8 @@ export function ProductScreenshot({
         src={smallAsset}
         srcSet={`${smallAsset} 1400w, ${largeAsset} 2560w`}
         sizes={sizes}
-        width="2560"
-        height="1600"
+        width={dimensions.width}
+        height={dimensions.height}
         loading={eager ? "eager" : "lazy"}
         decoding="async"
         alt={alt}
