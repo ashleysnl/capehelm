@@ -128,6 +128,44 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="how-it-works section-shell" aria-labelledby="how-it-works-title">
+        <div className="section-intro centered">
+          <p className="eyebrow"><span /> From statement to financial picture</p>
+          <h2 id="how-it-works-title">How Capehelm Works</h2>
+          <p>No bank connection required. Import your statements, review them locally, and Capehelm turns your Finance Document into a clearer view of where your money has been—and where it is heading.</p>
+        </div>
+        <ol className="how-steps">
+          <li className="how-step">
+            <div className="how-step-top">
+              <span className="how-step-number">01</span>
+              <span className="how-step-icon how-step-icon-import" aria-hidden="true"><b>CSV</b><i>↓</i></span>
+            </div>
+            <h3>Import your statements</h3>
+            <p>Download a supported CSV statement from your financial institution and choose it in Capehelm. Built-in formats are recognized where available, and other usable CSVs can be mapped with the custom import workflow.</p>
+            <p className="how-step-note">You choose what enters Capehelm. Your financial data stays local in your Finance Document—there&apos;s no automatic bank connection or finance-data upload.</p>
+            <SiteLink className="text-link how-step-link" href="/faq#csv-imports">Learn about importing statements <ArrowIcon /></SiteLink>
+          </li>
+          <li className="how-step">
+            <div className="how-step-top">
+              <span className="how-step-number">02</span>
+              <span className="how-step-icon how-step-icon-review" aria-hidden="true"><b>✓</b><i>≡</i></span>
+            </div>
+            <h3>Review and organize</h3>
+            <p>Preview the import, confirm Categories, and review anything that needs attention. Capehelm saves reusable merchant rules locally in your Finance Document to keep future imports consistent.</p>
+            <p className="how-step-note">Your Categories and merchant rules stay local and are applied predictably—nothing is sent away to learn from your data.</p>
+          </li>
+          <li className="how-step">
+            <div className="how-step-top">
+              <span className="how-step-number">03</span>
+              <span className="how-step-icon how-step-icon-understand" aria-hidden="true"><b>↗</b><i>●</i></span>
+            </div>
+            <h3>See the bigger picture</h3>
+            <p>Once your Finance Document is set up, Capehelm turns your imported history into a connected view of your finances.</p>
+            <p className="how-step-products">Budget · Forecast · Trends · Net Worth · Retirement · Reports</p>
+          </li>
+        </ol>
+      </section>
+
       <section className="product-proof section-shell" aria-labelledby="product-proof-title">
         <div className="section-intro centered">
           <p className="eyebrow"><span /> See Capehelm in action</p>

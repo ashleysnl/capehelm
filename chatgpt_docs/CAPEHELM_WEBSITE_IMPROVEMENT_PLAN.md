@@ -19,7 +19,7 @@
 - [x] **Task 6 — Privacy/local-first positioning**
 - [x] **Task 7 — Homepage feature hierarchy**
 - [x] **Task 8 — Screenshot storytelling and product proof**
-- [ ] **Task 9 — FAQ and purchase-objection handling**
+- [x] **Task 9 — FAQ and purchase-objection handling**
 - [x] **Task 10 — Launch verification and regression audit**
 
 ## P1 — High-Value Post-Launch / First Week
@@ -29,7 +29,7 @@
 - [ ] **Task 13 — Add Open Graph / social sharing metadata**
 - [ ] **Task 14 — Create focused SEO landing pages**
 - [ ] **Task 15 — Improve the download / App Store handoff page**
-- [ ] **Task 16 — Add a clear “How Capehelm Works” section**
+- [x] **Task 16 — Add a clear “How Capehelm Works” section**
 - [ ] **Task 17 — Add privacy-respecting website measurement**
 - [ ] **Task 18 — Performance and Core Web Vitals pass**
 
@@ -947,7 +947,7 @@ The user never wonders:
 # Task 16 — Add “How Capehelm Works”
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [x] Complete — September 26, 2026
 **Goal:** Reduce perceived setup complexity.
 
 ## Recommended Three-Step Flow
@@ -966,15 +966,24 @@ Budget, Forecast, Trends, Net Worth, Retirement and reports build from your Fina
 
 ## Work
 
-- [ ] Add three-step section to homepage or Features page.
-- [ ] Include lightweight visuals/icons.
-- [ ] Avoid implying automatic bank sync.
-- [ ] Explain the benefit of local import.
-- [ ] Link to import support documentation.
+- [x] Add three-step section to homepage or Features page.
+- [x] Include lightweight visuals/icons.
+- [x] Avoid implying automatic bank sync.
+- [x] Explain the benefit of local import.
+- [x] Link to import support documentation.
 
 ## Acceptance Criteria
 
 A first-time visitor understands how data gets into Capehelm.
+
+## Implementation Evidence — September 26, 2026
+
+- **Placement:** added `How Capehelm Works` to the homepage after the five-question value hierarchy and before the detailed product-proof screenshots.
+- **Flow:** the ordered three-step presentation explains local CSV statement import, category review and reusable local merchant rules, then connects the Finance Document to Budget, Forecast, Trends, Net Worth, Retirement and Reports.
+- **Import help:** `Learn about importing statements` links to the existing `/faq#csv-imports` guidance, which covers local CSV files, built-in supported formats, configurable custom mappings and post-import review without inventing a new route.
+- **Privacy/control framing:** the section states that the visitor chooses what enters Capehelm, there is no automatic bank connection or finance-data upload, and merchant/category organization remains local rather than remotely learned.
+- **Accessibility and responsive behavior:** the steps use an ordered list, visible numbering, decorative icons hidden from assistive technology, descriptive link text and source-order stacking. Desktop uses three connected cards; tablet and mobile stack them without changing reading order.
+- **Validation:** the production export prerendered all seven routes, all 33 automated checks passed, `npm run lint` and `git diff --check` passed, and the existing route/fragment test confirmed `/faq#csv-imports` remains valid. Browser inspection at 1440×900, 1024×768 and 390×844 confirmed clean cards, readable copy, correct source-order stacking and zero horizontal overflow; the preview console reported no warnings or errors.
 
 ---
 

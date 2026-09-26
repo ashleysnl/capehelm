@@ -165,6 +165,29 @@ test("homepage presents Task 7 capabilities as five user outcomes", async () => 
   assert.doesNotMatch(html, /class="feature-grid-section|class="reports-section|A complete workspace/);
 });
 
+test("homepage explains Capehelm's local three-step import workflow", async () => {
+  const html = await render("/");
+  const howItWorks = html.match(/<section class="how-it-works[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";
+
+  assert.match(howItWorks, /How Capehelm Works/);
+  assert.equal((howItWorks.match(/<li class="how-step">/g) ?? []).length, 3);
+  assert.match(howItWorks, /Import your statements/);
+  assert.match(howItWorks, /supported CSV statement/);
+  assert.match(howItWorks, /custom import workflow/);
+  assert.match(howItWorks, /You choose what enters Capehelm/);
+  assert.match(howItWorks, /no automatic bank connection or finance-data upload/);
+  assert.match(howItWorks, /Review and organize/);
+  assert.match(howItWorks, /reusable merchant rules locally in your Finance Document/);
+  assert.match(howItWorks, /nothing is sent away to learn from your data/);
+  assert.match(howItWorks, /See the bigger picture/);
+  assert.match(howItWorks, /Budget · Forecast · Trends · Net Worth · Retirement · Reports/);
+  assert.match(howItWorks, /href="\/faq#csv-imports"/);
+  assert.match(howItWorks, /Learn about importing statements/);
+  assert.doesNotMatch(howItWorks, /Plaid|bank feed|linked account|automatic transaction download|cloud dashboard/i);
+  assert.ok(html.indexOf("how-it-works") > html.indexOf("outcome-hierarchy"));
+  assert.ok(html.indexOf("how-it-works") < html.indexOf("product-proof"));
+});
+
 test("homepage screenshot stories provide responsive, accessible product proof", async () => {
   const html = await render("/");
   const productProof = html.match(/<section class="product-proof[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";
