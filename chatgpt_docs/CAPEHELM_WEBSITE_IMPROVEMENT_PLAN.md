@@ -20,7 +20,7 @@
 - [x] **Task 7 — Homepage feature hierarchy**
 - [x] **Task 8 — Screenshot storytelling and product proof**
 - [ ] **Task 9 — FAQ and purchase-objection handling**
-- [ ] **Task 10 — Launch verification and regression audit**
+- [x] **Task 10 — Launch verification and regression audit**
 
 ## P1 — High-Value Post-Launch / First Week
 
@@ -650,30 +650,31 @@ Recommended framing:
 # Task 10 — Launch Verification and Regression Audit
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x] Complete with accepted launch warnings
+
 **Goal:** Run a final production-site audit after the P0 changes.
 
 ## Work
 
-- [ ] Test all navigation links.
-- [ ] Test all App Store links.
-- [ ] Test Privacy link.
-- [ ] Test Support link.
-- [ ] Test support email link.
-- [ ] Test `.ca` redirect.
-- [ ] Test `www` behavior.
-- [ ] Test homepage on Safari/macOS.
-- [ ] Test homepage on Safari/iPhone-sized viewport.
-- [ ] Test Chrome.
-- [ ] Test Firefox if practical.
-- [ ] Confirm no horizontal scrolling.
-- [ ] Confirm no missing images.
-- [ ] Confirm no placeholder content.
-- [ ] Confirm no outdated pricing/trial language.
-- [ ] Confirm no personal information or finance screenshots are exposed.
-- [ ] Confirm Search Console and sitemap remain valid after deployment.
-- [ ] Run Lighthouse or equivalent performance/accessibility review.
-- [ ] Record any launch warnings.
+- [x] Test all navigation links.
+- [x] Test all App Store links; accepted warning recorded for the intentionally staged `/download` fallback.
+- [x] Test Privacy link.
+- [x] Test Support link.
+- [x] Test support email link.
+- [x] Test `.ca` redirect.
+- [x] Test `www` behavior.
+- [x] Test homepage on Safari/macOS.
+- [x] Test homepage in Safari at an iPhone-sized viewport.
+- [x] Test Chrome/Chromium; Chromium browser verification completed.
+- [x] Test Firefox if practical; accepted environment warning recorded because the installed obsolete build cannot complete a reliable run.
+- [x] Confirm no horizontal scrolling.
+- [x] Confirm no missing images.
+- [x] Confirm no placeholder content.
+- [x] Confirm no outdated pricing/trial language.
+- [x] Confirm no personal information or finance screenshots are exposed.
+- [x] Confirm Search Console prerequisites and sitemap remain valid; authenticated Search Console review remains a manual check.
+- [x] Run a Lighthouse-equivalent performance/accessibility review.
+- [x] Record all launch warnings.
 
 ## Acceptance Criteria
 
@@ -682,6 +683,74 @@ All P0 website work is either:
 - PASS,
 - accepted as an explicit launch warning, or
 - tracked as a release blocker.
+
+## Task 10 — Launch Verification and Regression Audit
+
+### Overall result
+
+**PASS WITH LAUNCH WARNINGS.** No release blocker remains in the website implementation or verified production behavior.
+
+### Audit matrix
+
+| Check | Result | Evidence / Notes |
+|---|---|---|
+| Production build | PASS — FIXED DURING AUDIT | A clean `npm ci` checkout produced all seven static routes. After the CSS fix, `npm test` rebuilt successfully and all 31 tests passed; `npm run lint` passed. The full install reports 20 advisories in development/build tooling, while `npm audit --omit=dev --audit-level=high` reports zero production vulnerabilities. |
+| Primary navigation | PASS | Safari exercised the logo/home link, Features, FAQ, Privacy, the mobile disclosure menu, and the homepage Forecast anchor on the deployed site. Routes resolved without 404s. |
+| Footer navigation | PASS | Safari exercised Support and Download; source/rendered-link tests verify the remaining footer routes. |
+| App Store links | LAUNCH WARNING | Every CTA consistently resolves to `/download`; no `apps.apple.com`, TestFlight, placeholder, or unrelated product ID exists. `macAppStoreUrl` is intentionally `null`, and `/download` clearly says Capehelm is not yet available. Set the official public listing URL before the App Store launch handoff. |
+| Privacy | PASS | Live `/privacy` returns 200, uses the canonical production URL, contains no placeholder text, and accurately preserves local-first, user-selected storage, website-hosting, iCloud/file-provider, support, and StoreKit qualifications. |
+| Support | PASS | Live `/support` returns 200, displays `support@capehelm.com`, and clearly says not to send Finance Documents, statements, exports, backups, account details, or private financial screenshots. |
+| Support email | PASS | Four rendered `mailto:` links were activated with external Mail launch safely intercepted. Each resolved exactly to `mailto:support@capehelm.com`, with no subject/body parameters; source and generated-output searches found no other email address. |
+| `capehelm.ca` redirect | PASS | HTTPS and HTTP root requests return 301 and finish at `https://capehelm.com/`; `/features` and `/faq?source=audit` preserve path/query and finish at the corresponding canonical `.com` URL. SSL verification succeeded and no loop or host error occurred. |
+| `www` behavior | PASS | HTTPS/HTTP `www.capehelm.com` and `www.capehelm.ca` return 301 to the canonical `.com` site, then 200. No DNS, certificate, host, or loop error occurred. |
+| Safari/macOS | PASS | Safari 26.6.2 was driven directly with WebDriver. The deployed homepage, hero, dashboard proof, product-tour section, header, CTA, navigation, pricing/privacy sections, images, and footer rendered cleanly at desktop width; all six routes had one H1 and no broken image. |
+| iPhone-sized layout | PASS — FIXED DURING AUDIT | Safari rendered at 430, 390, and 375 CSS px. Mobile navigation, CTAs, hero/dashboard image, FAQ disclosures, text, cards, and footer remained usable. A four-pixel decorative root overflow was fixed and reverified with `maxScrollX: 0`. This is desktop Safari responsive emulation, not physical Mobile Safari. |
+| Chrome/Chromium | PASS | The current Chromium-based in-app browser rendered the deployed desktop and 390×844 layouts, loaded every lazy product image after scrolling, exercised the mobile menu and FAQ navigation, and toggled native FAQ disclosures with Enter and Space. No warning/error console entries were reported. A standalone Google Chrome app is not installed, but the requested Chrome-or-Chromium path was directly tested. |
+| Firefox | LAUNCH WARNING | NOT TESTED reliably — environment limitation. Firefox 72.0.2 is obsolete, crashes in GUI on current macOS, and its headless screenshot fires before the entrance animation completes. A current Firefox smoke test is recommended; the site uses static HTML, native disclosure controls, and standard CSS rather than browser-specific application logic. |
+| Horizontal overflow | PASS — FIXED DURING AUDIT | Live Safari exposed a four-pixel root pan at 430 px and below. Adding root-level horizontal clipping removed it. The rebuilt local site reports `maxScrollX: 0` at 1440, 1280, 1024, 768, 430, 390, and 375 px and across all six routes at desktop/tablet/mobile widths. |
+| Images | PASS | All brand, Open Graph, and 12 responsive product-image URLs return 200 with expected image content types. Safari loaded every lazy screenshot after scrolling. Assets use project-relative paths, explicit dimensions, meaningful alt text, internal 1400/2560 WebP variants, and no developer absolute path. |
+| Placeholder content | PASS | Source and generated-output searches found no TODO, TBD, Lorem ipsum, dummy/sample text, test email, fake App Store URL, or developer path. “Coming Soon” is intentional current availability copy and is consistently qualified with “not yet available” and no announced release date. |
+| Pricing/trial language | PASS | The public site shows US$4.99/month and US$49.99/year, the same feature tier, and Apple’s two-month introductory trial for eligible new subscribers with either plan. This matches the current App Store Connect release record. No public 45-day, Full Unlock, lifetime, or one-time-purchase language remains. |
+| Privacy/public data audit | PASS | Direct original-resolution review of all six published product screenshots confirmed visible “Demo — Fictional Data”/demo-household labeling and synthetic content. The public build contains no `.pfinance`, CSV, backup/archive, source map, private developer path, alternate email, or personal-finance download. |
+| Sitemap | PASS | `public/sitemap.xml` is valid XML, contains the six canonical routes exactly once, and uses only `https://capehelm.com`. The deployed sitemap and every listed route return 200. |
+| Canonical/robots/indexability | PASS | `robots.txt` allows crawling and advertises the production sitemap. Every public route has a unique title/description, one H1, a matching `.com` canonical, Open Graph image metadata, and no `noindex`; the generated 404 has one `noindex` and no canonical. |
+| Search Console | LAUNCH WARNING | Website-side prerequisites are intact, but authenticated Google Search Console access was not available. **MANUAL CHECK REQUIRED — confirm Search Console sees the current sitemap after deployment.** No repository verification file/meta tag is present; DNS-based verification may be in use. |
+| Lighthouse/accessibility | PASS | The PageSpeed API returned quota error 429, so no Lighthouse category score is claimed. Equivalent live Safari Web Performance API checks recorded mobile/desktop FCP 118/76 ms, LCP 161/88 ms, CLS 0/0, and no long tasks on a warm production run. Lint and rendered regression tests cover headings, alt text, canonicals, routes, and link integrity; native FAQ controls toggled with Enter. |
+| Console/network errors | PASS | Direct production requests found no failed page/image/CSS/JS resources, mixed-content redirect, or broken image. The Chromium console contained no warning/error entries after homepage load, navigation, mobile-menu use, and FAQ keyboard interaction. No normal site function failed during direct browser use. |
+
+### Defects fixed during audit
+
+- **Problem:** Safari allowed a four-pixel horizontal pan at 430, 390, and 375 px even though visible content stayed inside the viewport.
+- **Root cause:** a decorative section background extended beyond the root viewport; `overflow-x` existed on `body` but not on Safari’s scrolling root.
+- **Files changed:** `app/globals.css` adds `overflow-x: hidden` to `html`.
+- **Verification:** rebuilt from a clean checkout, passed all 31 tests and lint, and rechecked every target width in Safari with `maxScrollX: 0`.
+
+### Launch warnings
+
+1. The official public Mac App Store listing URL is not yet configured. This is non-breaking while the site truthfully remains pre-launch; replace the staged `/download` fallback before the listing becomes the intended conversion destination.
+2. A usable current Firefox was unavailable. Perform one current-Firefox smoke test when practical.
+3. Authenticated Search Console status could not be inspected. Confirm the deployed sitemap is still accepted after deployment.
+4. The dependency tree reports development/build-tool advisories; the deployed static output has no server runtime and `npm audit --omit=dev --audit-level=high` reports zero production vulnerabilities. Track toolchain upgrades separately rather than blocking this static launch.
+
+### Release blockers
+
+None.
+
+### External/manual verification still required
+
+- Insert and click-test the official `apps.apple.com` Capehelm listing when Apple makes it public.
+- Confirm the current sitemap in authenticated Google Search Console.
+- Run a short smoke test in a current Firefox build, plus physical Mobile Safari if available. Standalone Google Chrome remains optional because current Chromium was directly verified.
+- Optionally record formal Lighthouse category scores when a Chrome runtime or PageSpeed quota is available.
+
+### Files changed
+
+- `app/globals.css` — prevent root-level horizontal panning at narrow widths.
+- `chatgpt_docs/CAPEHELM_WEBSITE_IMPROVEMENT_PLAN.md` — record the complete Task 10 evidence matrix, fix, warnings, and final recommendation.
+
+### Final recommendation
+
+`Task 10 COMPLETE — PASS WITH LAUNCH WARNINGS`
 
 ---
 
