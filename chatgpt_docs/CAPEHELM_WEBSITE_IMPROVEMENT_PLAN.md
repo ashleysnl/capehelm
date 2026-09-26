@@ -593,7 +593,7 @@ Project included retirement accounts and contributions without giving up control
 - **Validation results:** the production export prerendered all six routes; all 26 tests passed; `npm run lint` and `git diff --check` passed. Browser inspection at 1440×900, 1280×800, 834×1112 and 390×844 confirmed consistent framing, readable copy, clean stacking and loaded responsive assets; the console reported no warnings or errors.
 - **Overflow check:** every Task 8 card remains inside the viewport at 390 px. The previously documented site-wide four-pixel mobile overrun remains attributable to the existing intentionally clipped device mockup and was not increased by Task 8.
 - **Source integrity:** the originals in `docs/chatgpt-project` were not edited or moved, and no screenshot or financial information was uploaded to an external image service.
-- **Remaining manual check:** verify the deployed homepage and responsive assets on `capehelm.com` after publication.
+- **Publication verification:** GitHub Pages workflow run 36235061261 completed successfully for commit `7dc0c4e`. The live `capehelm.com` homepage exposed all five stories, loaded all five responsive WebP assets, retained the Features, Privacy and Pricing content, introduced no desktop overflow, and reported no browser warnings or errors. The live `/features` route and its detailed capability inventory remained reachable. No Task 8 manual checks remain.
 
 ---
 
