@@ -82,6 +82,13 @@ test("public product imagery uses approved real application screenshots only", a
   }
 });
 
+test("homepage uses the official Capehelm mark instead of a CH placeholder", async () => {
+  const html = await render("/");
+
+  assert.match(html, /class="cta-mark"[\s\S]*?src="\/brand\/capehelm-mark\.png"/);
+  assert.doesNotMatch(html, /class="cta-mark"[^>]*>\s*CH\s*</);
+});
+
 test("homepage pricing section communicates the current subscriptions and introductory trial", async () => {
   const html = await render("/");
   const pricing = html.match(/<section class="pricing-section[^"]*"[\s\S]*?<\/section>/)?.[0] ?? "";

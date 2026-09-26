@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ProductScreenshot, type ProductScreenshotAsset } from "../components/ProductScreenshot";
 import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
-import { productionSiteUrl } from "../config/site";
+import { productionSiteUrl, siteAssetPath } from "../config/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
@@ -211,5 +211,10 @@ export default function Home() {
 }
 
 function ImageMark() {
-  return <div className="cta-mark" aria-hidden="true">CH</div>;
+  return (
+    <div className="cta-mark" aria-hidden="true">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={siteAssetPath("/brand/capehelm-mark.png")} alt="" width="455" height="429" />
+    </div>
+  );
 }

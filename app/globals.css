@@ -170,7 +170,8 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 .device-facts h3 { margin: 44px 0 12px; font-size: 28px; line-height: 1.18; letter-spacing: -.03em; }
 .device-facts p { margin: 0; color: #91a0b4; font-size: 14px; line-height: 1.7; }
 .final-cta { margin-top: 60px; margin-bottom: 120px; padding: 82px 40px; text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: radial-gradient(circle at 50% 45%,rgba(50,99,190,.15),transparent 50%); }
-.cta-mark { width: 68px; height: 68px; display: grid; place-items: center; margin: 0 auto 26px; border: 1px solid rgba(217,180,82,.5); border-radius: 50%; color: #e4c86e; font: 18px Georgia,serif; box-shadow: 0 0 30px rgba(217,180,82,.1); }
+.cta-mark { width: 90px; height: 86px; margin: 0 auto 26px; filter: drop-shadow(0 0 22px rgba(217,180,82,.16)); }
+.cta-mark img { width: 100%; height: 100%; display: block; object-fit: contain; }
 .final-cta .eyebrow { justify-content: center; }
 .final-cta h2 { margin: 0; font-size: clamp(38px,4.4vw,56px); line-height: 1.08; letter-spacing: -.045em; }
 .final-cta > p:not(.eyebrow) { max-width: 720px; margin: 22px auto 28px; color: var(--muted); font-size: 18px; }
