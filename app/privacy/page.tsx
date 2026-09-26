@@ -62,7 +62,7 @@ export default function PrivacyPage() {
         <p className="eyebrow"><span /> Legal</p>
         <h1>Capehelm<br /><em>Privacy Policy</em></h1>
         <div className="policy-intro">
-          <p className="policy-date">Effective Date: September 18, 2026</p>
+          <p className="policy-date">Effective Date: September 26, 2026</p>
           <p>Capehelm is a local-first personal finance application designed to help you understand, organize, and plan your finances while keeping your financial information under your control.</p>
           <p>This Privacy Policy explains how information is handled when you use the Capehelm application, visit the Capehelm website, or contact Capehelm for support.</p>
           <p>Capehelm is operated by a sole proprietor.</p>
@@ -206,16 +206,20 @@ export default function PrivacyPage() {
             <p>When you visit the Capehelm website, the infrastructure used to deliver the website may necessarily process basic technical information required to respond to web requests, such as:</p>
             <ul><li>IP address;</li><li>browser or device information;</li><li>requested page;</li><li>date and time of a request; and</li><li>standard network or server information.</li></ul>
             <p>Such information may be processed by the website hosting, domain, security, or content-delivery providers used to operate the website.</p>
+            <h3>Google Analytics</h3>
+            <p>Capehelm uses Google Analytics on this public website to understand aggregate website traffic and how visitors move between public pages. Google Analytics may process information such as the page visited, referring page, general device and browser information, approximate location derived from an IP address, and interactions with the website.</p>
+            <p>This website measurement is separate from the Capehelm application. Google Analytics cannot access your Capehelm Finance Documents, transactions, account information, categories, budgets, forecasts, Net Worth information, retirement information, reports, imported statements, backups, or other personal financial content.</p>
+            <p>Google processes website analytics information according to its own privacy practices. Capehelm uses this information to understand and improve the public website, not to build finance-data advertising profiles.</p>
             <p>Capehelm does not use the website as a mechanism for collecting your Capehelm financial records.</p>
-            <p>If Capehelm later introduces optional website analytics, cookies, mailing lists, accounts, contact forms, or other services that materially change the information collected through the website, this Privacy Policy will be updated accordingly.</p>
           </section>
 
           <section>
             <SectionHeading number={14}>Cookies and Advertising</SectionHeading>
             <p>The Capehelm application does not use browser cookies.</p>
+            <p>The Capehelm website uses Google Analytics, which may use cookies or similar browser technologies to measure website visits and interactions.</p>
+            <p>Capehelm does not use Google Analytics to send personal financial content or to provide targeted advertising.</p>
             <p>Capehelm does not use your personal financial information for targeted advertising.</p>
             <p>Capehelm does not sell personal information to advertisers or data brokers.</p>
-            <p>If website functionality that uses cookies or similar technologies is introduced in the future, this policy will be updated to describe those practices.</p>
           </section>
 
           <section>
@@ -302,7 +306,7 @@ export default function PrivacyPage() {
           <section>
             <SectionHeading number={24}>Third-Party Services</SectionHeading>
             <p>Capehelm may interact with or allow you to use services provided by others, including:</p>
-            <ul><li>Apple&apos;s App Store;</li><li>Apple StoreKit;</li><li>iCloud Drive or other user-selected file-storage services;</li><li>your financial institution when you obtain an export independently of Capehelm;</li><li>email services used to contact Capehelm; and</li><li>infrastructure used to host the Capehelm website.</li></ul>
+            <ul><li>Apple&apos;s App Store;</li><li>Apple StoreKit;</li><li>iCloud Drive or other user-selected file-storage services;</li><li>your financial institution when you obtain an export independently of Capehelm;</li><li>email services used to contact Capehelm;</li><li>Google Analytics for public website measurement; and</li><li>infrastructure used to host the Capehelm website.</li></ul>
             <p>Capehelm does not control the privacy practices of those third parties.</p>
             <p>Their use of information is governed by their own policies and terms.</p>
           </section>

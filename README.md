@@ -7,7 +7,8 @@ Official product website for Capehelm, a local-first personal-finance applicatio
 - TypeScript and React
 - vinext / Vite
 - Cloudflare Workers-compatible Sites output
-- Static product content with no database, authentication, analytics, or finance-data processing
+- Static product content with no database, authentication, or finance-data processing
+- Google Analytics for public website traffic measurement; no application or personal finance content is sent
 
 ## Development
 

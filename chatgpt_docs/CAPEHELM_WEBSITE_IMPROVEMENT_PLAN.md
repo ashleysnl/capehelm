@@ -1011,6 +1011,8 @@ Choose one:
 - [ ] Cloudflare Web Analytics if appropriate.
 - [ ] No website analytics initially; use Search Console + App Store Connect only.
 
+**Decision (September 26, 2026):** Google Analytics measurement ID `G-PJ6ZQQVMPR` is enabled for public website traffic. The Privacy Policy distinguishes website measurement from Capehelm application data and finance-data telemetry. Funnel-event instrumentation remains future work.
+
 ## Acceptance Criteria
 
 Measurement does not conflict with Capehelm's stated privacy posture.

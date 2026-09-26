@@ -11,6 +11,7 @@ export const viewport: Viewport = {
 
 const title = "Capehelm — Coming Soon for Mac";
 const description = "Capehelm is a private, local-first personal finance workspace coming soon for Mac. It is not yet available and no release date has been announced.";
+const googleAnalyticsId = "G-PJ6ZQQVMPR";
 
 export const metadata: Metadata = {
   metadataBase: new URL(productionSiteUrl),
@@ -38,5 +39,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return (
+    <html lang="en">
+      <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${googleAnalyticsId}');`,
+          }}
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
 }
