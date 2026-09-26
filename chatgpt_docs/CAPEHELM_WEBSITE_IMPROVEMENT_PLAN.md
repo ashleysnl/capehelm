@@ -601,23 +601,23 @@ Project included retirement accounts and contributions without giving up control
 # Task 9 — FAQ and Purchase-Objection Handling
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x] Complete — September 26, 2026
 **Goal:** Answer common questions before they prevent a trial.
 
 ## Questions to Include
 
-- [ ] Does Capehelm connect directly to my bank?
-- [ ] Does Capehelm upload my financial information?
-- [ ] Which financial institutions can I use with Capehelm?
-- [ ] Can I import CSV statements?
-- [ ] Where is my Capehelm data stored?
-- [ ] Can I back up my data?
-- [ ] What happens if my subscription expires?
-- [ ] How does the two-month introductory trial work?
-- [ ] What version of macOS does Capehelm require?
-- [ ] Is Capehelm available on iPhone or iPad?
-- [ ] How do I contact support?
-- [ ] Can I send my Finance Document or bank statement to support?
+- [x] Does Capehelm connect directly to my bank?
+- [x] Does Capehelm upload my financial information?
+- [x] Which financial institutions can I use with Capehelm?
+- [x] Can I import CSV statements?
+- [x] Where is my Capehelm data stored?
+- [x] Can I back up my data?
+- [x] What happens if my subscription expires?
+- [x] How does the two-month introductory trial work?
+- [x] What version of macOS does Capehelm require?
+- [x] Is Capehelm available on iPhone or iPad?
+- [x] How do I contact support?
+- [x] Can I send my Finance Document or bank statement to support?
 
 ## Important Framing
 
@@ -633,6 +633,17 @@ Recommended framing:
 - Answers match actual app behavior.
 - Privacy/support warnings are accurate.
 - FAQ can later be reused for structured data.
+
+## Completion Record — September 26, 2026
+
+- **Files changed:** added `app/faq/page.tsx` and `content/faq.ts`; updated `app/globals.css`, `components/SiteShell.tsx`, `config/site.ts`, `app/page.tsx`, `app/features/page.tsx`, `app/download/page.tsx`, `app/support/page.tsx`, `app/privacy/page.tsx`, `public/sitemap.xml`, and the rendered/indexing/SEO regression tests.
+- **FAQ implementation:** added a dedicated, canonical `/faq` page with 12 native `<details>/<summary>` disclosures. All questions and answers come from one typed collection so the same content can later generate structured data without duplicating copy.
+- **Discoverability:** added FAQ links to desktop/mobile primary navigation, every footer, homepage subscription copy, Download, and Support. The route is included in the sitemap and technical SEO coverage.
+- **Verified behavior:** the release package and Xcode project both specify macOS 14.0; App Store Connect documentation records macOS as the only configured platform. Product documentation confirms local statement/CSV imports, reusable custom-institution CSV mappings, user-controlled `.pfinance` files, local `.pfbackup.zip` backup/restore, StoreKit entitlement gating, Apple-native two-month introductory offers for eligible new Monthly or Annual subscribers, and expiry that locks access without mutating or deleting a Finance Document.
+- **Cross-site corrections:** removed present-tense public iPhone-companion availability from the homepage and Features page; Download now states that iPhone/iPad is not part of the current public release. Support and Privacy no longer allow sensitive financial attachments under an “if necessary” exception and instead clearly tell users not to email Finance Documents, statements, exports, backups, account details, or private financial screenshots.
+- **Build and tests:** the production export prerendered all seven routes; all 31 tests passed; `npm run lint` and `git diff --check` passed.
+- **Responsive and accessibility verification:** browser inspection at 1440×900, 834×1112, and 390×844 confirmed clean desktop, tablet, and stacked mobile layouts with no FAQ overflow. The native disclosures retained keyboard focus and toggled with both Enter and Space. All 12 questions and answers remain present in rendered markup, and the browser console reported no warnings or errors.
+- **Remaining manual checks:** none for Task 9.
 
 ---
 

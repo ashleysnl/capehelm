@@ -21,6 +21,14 @@ const pages = [
     canonical: `${productionOrigin}/features`,
   },
   {
+    route: "/faq",
+    file: "faq.html",
+    title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",
+    description:
+      "Answers about Capehelm’s local-first Mac personal finance app, CSV statement imports, privacy, backups, subscriptions, compatibility and support.",
+    canonical: `${productionOrigin}/faq`,
+  },
+  {
     route: "/privacy",
     file: "privacy.html",
     title: "Private, Local-First Personal Finance for Mac | Capehelm",

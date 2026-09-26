@@ -20,6 +20,7 @@ test("features page includes current planning, import and local-control capabili
 for (const [path, expected] of [
   ["/", "Understand your money"],
   ["/features", "Past, present and future"],
+  ["/faq", "Clear answers before you"],
   ["/privacy", "Privacy Policy"],
   ["/support", "Capehelm Support"],
   ["/download", "No release date announced"],
@@ -42,7 +43,8 @@ for (const [path, expected] of [
     if (path === "/support") {
       assert.match(html, /mailto:support@capehelm\.com/);
       assert.match(html, /href="\/privacy"/);
-      assert.match(html, /Capehelm does not require your online banking password, bank login, or personal Finance Document/);
+      assert.match(html, /Do not email your Finance Document, bank statements, transaction exports, backup archives/);
+      assert.doesNotMatch(html, /unless they are genuinely necessary|unless there is a clear reason/i);
     }
     if (process.env.GITHUB_PAGES_BUILD === "true") {
       assert.match(html, /\/_next\//);
@@ -106,7 +108,7 @@ test("homepage pricing section communicates the current subscriptions and introd
 });
 
 test("public pages omit obsolete purchase models", async () => {
-  const pages = await Promise.all(["/", "/features", "/privacy", "/support", "/download"].map(render));
+  const pages = await Promise.all(["/", "/features", "/faq", "/privacy", "/support", "/download"].map(render));
   const publicHtml = pages.join("\n");
 
   assert.doesNotMatch(publicHtml, /45[- ]day trial|Full Unlock|one[- ]time purchase/i);
@@ -190,6 +192,59 @@ test("public privacy claims preserve the StoreKit commerce exception", async () 
   assert.match(policy, /AppStore\.sync\(\)/);
   assert.match(policy, /does not send your transactions, budgets, account balances, Finance Documents, or other personal financial information to Apple/);
   assert.doesNotMatch(publicHtml, /never connects to the internet|no data ever leaves your computer|sends nothing over the network|100% offline/i);
+});
+
+test("FAQ answers all Task 9 purchase and support objections accurately", async () => {
+  const html = await render("/faq");
+  const visibleHtml = html.match(/<body>([\s\S]*?)<script/)?.[1] ?? html;
+  const faqList = visibleHtml.match(/<div class="faq-list">([\s\S]*?)<\/div><\/section>/)?.[1] ?? "";
+
+  for (const question of [
+    "Does Capehelm connect directly to my bank?",
+    "Does Capehelm upload my financial information?",
+    "Which financial institutions can I use with Capehelm?",
+    "Can I import CSV statements?",
+    "Where is my Capehelm data stored?",
+    "Can I back up my data?",
+    "What happens if my subscription expires?",
+    "How does the two-month introductory trial work?",
+    "What version of macOS does Capehelm require?",
+    "Is Capehelm available on iPhone or iPad?",
+    "How do I contact support?",
+    "Can I send my Finance Document or bank statement to support?",
+  ]) {
+    assert.match(visibleHtml, new RegExp(question.replace(/[?]/g, "\\?")));
+  }
+
+  assert.equal((faqList.match(/<details /g) ?? []).length, 12);
+  assert.equal((faqList.match(/<summary>/g) ?? []).length, 12);
+  assert.match(visibleHtml, /Capehelm does not require your online-banking credentials\. Transactions are imported from local statement files instead\./);
+  assert.match(visibleHtml, /does not upload transactions, categories, account information, Net Worth information, Forecast information, budgets, reports, or Finance Documents/);
+  assert.match(visibleHtml, /Apple StoreKit may communicate with Apple/);
+  assert.match(visibleHtml, /configurable custom CSV workflow/);
+  assert.match(visibleHtml, /Your Finance Document is a local file you control/);
+  assert.match(visibleHtml, /local \.pfbackup\.zip archive/);
+  assert.match(visibleHtml, /Your Finance Document is not deleted, rewritten, migrated, or reset when a subscription expires/);
+  assert.match(visibleHtml, /Eligible new subscribers can receive Apple(?:'|’|&#x27;)s native two-month introductory free trial with either option/);
+  assert.match(visibleHtml, /macOS 14 Sonoma or later/);
+  assert.match(visibleHtml, /An iPhone or iPad companion is not part of the current public release/);
+  assert.match(visibleHtml, /mailto:support@capehelm\.com/);
+  assert.match(visibleHtml, /No\. Please do not email your Finance Document, bank statements, transaction exports, backup archives/);
+  assert.doesNotMatch(visibleHtml, /never uses the internet|every bank|direct bank connectivity exists|45[- ]day|Full Unlock|one[- ]time purchase/i);
+});
+
+test("FAQ is discoverable and public iPhone wording matches the release configuration", async () => {
+  const pages = await Promise.all(["/", "/features", "/faq", "/privacy", "/support", "/download"].map(render));
+  const publicHtml = pages.join("\n");
+  const home = pages[0];
+  const download = pages[5];
+
+  assert.match(home, /href="\/faq"/);
+  assert.match(download, /href="\/faq"/);
+  assert.ok(pages.every((html) => /<footer[\s\S]*?href="\/faq"/.test(html)));
+  assert.doesNotMatch(publicHtml, /selected companion workflows available on iPhone|The iPhone companion opens|Selected iPhone workflows/i);
+  assert.match(home, /Not part of the current public release/);
+  assert.match(download, /Mac only in the current public release/);
 });
 
 test("download page accurately communicates the pre-launch handoff", async () => {

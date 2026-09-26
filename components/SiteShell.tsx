@@ -87,6 +87,7 @@ export function SiteFooter() {
         </div>
         <nav aria-label="Footer navigation">
           <SiteLink href="/features">Features</SiteLink>
+          <SiteLink href="/faq">FAQ</SiteLink>
           <SiteLink href="/privacy">Privacy</SiteLink>
           <SiteLink href="/support">Support</SiteLink>
           <AppStoreLink>{isAvailable ? "Mac App Store" : siteConfig.download.appStoreLabel}</AppStoreLink>

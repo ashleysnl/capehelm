@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const productionOrigin = "https://capehelm.com";
-const publicRoutes = ["/", "/features", "/privacy", "/support", "/download"];
+const publicRoutes = ["/", "/features", "/faq", "/privacy", "/support", "/download"];
 
 async function readBuiltAsset(name) {
   return readFile(new URL(`../dist/client/${name}`, import.meta.url), "utf8");

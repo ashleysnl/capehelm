@@ -194,10 +194,10 @@ export default function PrivacyPage() {
             <p>For example, if you email <SupportEmail />, we may receive:</p>
             <ul><li>your email address;</li><li>your name, if included in your email account or message;</li><li>the contents of your message;</li><li>attachments you choose to send; and</li><li>information necessary to respond to your request.</li></ul>
             <p>We use this information to respond to support requests, questions, privacy inquiries, complaints, or other correspondence.</p>
-            <h3>Please do not send sensitive financial files unless specifically necessary</h3>
-            <p>Because Capehelm is designed to keep financial information local, you should avoid sending:</p>
+            <h3>Do not send sensitive financial files to support</h3>
+            <p>Because Capehelm is designed to keep financial information local, do not email:</p>
             <ul><li>bank statements;</li><li>transaction exports;</li><li><code>.pfinance</code> Finance Documents;</li><li>Capehelm backups;</li><li>financial reports containing personal information;</li><li>account numbers; or</li><li>other sensitive financial information</li></ul>
-            <p>through ordinary support email unless there is a clear reason to do so and you understand the risks.</p>
+            <p>Describe the issue instead, using non-sensitive details such as the error message, Capehelm version, macOS version, and the screen or workflow you were using.</p>
             <p>We will never ask for your online banking password.</p>
           </section>
 
@@ -326,7 +326,7 @@ export default function PrivacyPage() {
             <SectionHeading number={27}>Contact and Privacy Questions</SectionHeading>
             <p>Questions, complaints, privacy requests, access requests, or concerns regarding this Privacy Policy or Capehelm&apos;s privacy practices may be directed to:</p>
             <p className="policy-contact"><SupportEmail /></p>
-            <p>When contacting Capehelm about privacy, please avoid sending sensitive financial records unless they are genuinely necessary to resolve your request.</p>
+            <p>When contacting Capehelm about privacy, do not send Finance Documents, bank statements, transaction exports, backup archives, account details, private financial screenshots, or other sensitive financial records.</p>
           </section>
 
           <p className="policy-closing"><strong>Capehelm is designed to help you understand your finances without requiring you to hand your financial life to another cloud service.</strong></p>

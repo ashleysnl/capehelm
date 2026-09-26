@@ -35,7 +35,7 @@ export const siteConfig = {
   version: "1.1.0",
   platforms: {
     macOS: "macOS 14 or later",
-    iOS: "iOS 17 or later companion",
+    iOS: "Not part of the current public release",
   },
   download: {
     status: isMacAppStoreLive ? "available" as const : "coming-soon" as const,
@@ -49,8 +49,8 @@ export const siteConfig = {
   },
   navigation: [
     { href: "/features", label: "Features" },
+    { href: "/faq", label: "FAQ" },
     { href: "/privacy", label: "Privacy" },
-    { href: "/#devices", label: "Mac + iPhone" },
   ],
   featureGroups: [
     {
@@ -71,7 +71,7 @@ export const siteConfig = {
     },
     {
       title: "Keep your household aligned",
-      features: ["Reports", "Mac + iPhone"],
+      features: ["Reports", "Finance Documents"],
     },
     {
       title: "Keep control",

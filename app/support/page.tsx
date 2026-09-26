@@ -19,6 +19,7 @@ export default function SupportPage() {
         <h1>Get help while keeping your data <em>in your control.</em></h1>
         <p>Capehelm is a local-first personal finance app. Email support for help with the app, Finance Documents, imports, backups, reports, or privacy questions.</p>
         <div className="page-subnav" aria-label="Support links">
+          <SiteLink href="/faq">Read common questions</SiteLink>
           <a href="mailto:support@capehelm.com">Email support@capehelm.com</a>
           <SiteLink href="/privacy">Read the Privacy Policy</SiteLink>
         </div>
@@ -29,15 +30,15 @@ export default function SupportPage() {
           <p className="eyebrow"><span /> Contact</p>
           <h2>Contact Capehelm Support</h2>
           <p><a className="text-link" href="mailto:support@capehelm.com">support@capehelm.com</a></p>
-          <p>Describe what you were trying to do, what happened, and the Capehelm version and macOS version you are using. Redacted screenshots can be useful when they do not reveal financial information.</p>
-          <p>Capehelm does not require your online banking password, bank login, or personal Finance Document to provide ordinary support. Please do not send sensitive financial files, account numbers, transaction exports, backups, or reports unless they are genuinely necessary and you understand the risks of email.</p>
+          <p>Describe what you were trying to do, what happened, any error message, and the Capehelm version and macOS version you are using.</p>
+          <p><strong>Do not email your Finance Document, bank statements, transaction exports, backup archives, account details, screenshots containing private financial information, or other personal finance data.</strong> Capehelm does not require your online-banking credentials or private financial files to begin support.</p>
         </div>
         <aside className="requirements" aria-label="Support checklist">
           <h3>Before you email</h3>
           <ul>
             <li><CheckIcon /><span><b>Describe the issue</b>Include the feature and the steps that led to it.</span></li>
             <li><CheckIcon /><span><b>Include version details</b>Share the Capehelm and macOS versions if available.</span></li>
-            <li><CheckIcon /><span><b>Keep financial data private</b>Redact sensitive details and do not send bank credentials.</span></li>
+            <li><CheckIcon /><span><b>Keep financial data private</b>Do not send financial files, screenshots, account details, or bank credentials.</span></li>
           </ul>
           <SiteLink className="button button-secondary" href="/privacy">Privacy Policy</SiteLink>
         </aside>

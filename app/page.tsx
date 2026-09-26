@@ -191,17 +191,17 @@ export default function Home() {
         </div>
         <div className="pricing-details">
           <p><strong>Monthly and Annual unlock the same Capehelm features.</strong></p>
-          <p>Subscriptions are purchased, renewed, cancelled, restored and managed through Apple. Introductory-trial eligibility is determined by Apple.</p>
+          <p>Subscriptions are purchased, renewed, cancelled, restored and managed through Apple. Introductory-trial eligibility is determined by Apple. <SiteLink href="/faq">Read subscription FAQs.</SiteLink></p>
           <p className="pricing-disclosure">Pricing may vary by storefront, region, currency and applicable taxes.</p>
           <AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
         </div>
       </section>
 
       <section className="devices-section section-shell" id="devices">
-        <div className="section-intro centered"><p className="eyebrow"><span /> Mac + iPhone</p><h2>Built for the devices already in your life.</h2><p>Capehelm’s complete finance workspace lives on the Mac, with selected companion workflows available on iPhone.</p></div>
+        <div className="section-intro centered"><p className="eyebrow"><span /> Made for Mac</p><h2>Your complete finance workspace, on your Mac.</h2><p>Capehelm’s current public product is focused on a full native Mac experience.</p></div>
         <div className="device-facts">
           <article><span>Mac</span><h3>Your complete finance workspace.</h3><p>Budget, Forecast, Trends, Net Worth, Retirement, imports and full document management stay together on your Mac.</p></article>
-          <article><span>iPhone companion</span><h3>Selected workflows, close at hand.</h3><p>Open selected Forecast, Reports, Financial To-Do and shared-document workflows without presenting the iPhone app as a full Mac replacement.</p></article>
+          <article><span>iPhone and iPad</span><h3>Not part of the current public release.</h3><p>Capehelm is currently being prepared as a Mac App Store product. No iPhone or iPad release date has been announced.</p></article>
         </div>
       </section>
 
