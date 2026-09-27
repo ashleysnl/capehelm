@@ -934,9 +934,9 @@ For each page:
 - Added contextual inbound links from the homepage, Features, Privacy, Support and FAQ content, plus useful cross-links between the four guides.
 - Added all four canonical production URLs to `public/sitemap.xml` and expanded indexing, rendered-output, technical-SEO and landing-page regression coverage.
 - Preserved the centralized App Store behavior: because no verified public App Store listing URL is configured, every CTA continues to route through the existing `/download` coming-soon handoff rather than inventing an Apple URL.
-- Validation: the production export prerendered all 10 public routes with 0 skipped; all 45 Node tests passed; targeted ESLint over application, component, configuration and test sources passed.
+- Validation: the production export prerendered all 10 public routes with 0 skipped; all 45 Node tests passed; targeted ESLint over application, component, configuration and test sources passed. GitHub Pages workflow run 30 completed successfully for commit `0670307`; every new canonical production route returned HTTP 200 with its intended title, description and self-canonical URL.
 - Responsive QA: all four pages were rendered and visually inspected in Firefox at 1440 px desktop, 1280 px laptop and 390/375 px narrow widths. Headings, screenshots, links and CTAs remained within the viewport with no visible horizontal overflow.
-- Remaining follow-up: recheck public crawlability and search-console discovery after the GitHub Pages deployment finishes; replace the `/download` fallback only when a verified Mac App Store listing URL is available.
+- Remaining follow-up: submit or confirm the updated sitemap in Google Search Console after crawlers discover the deployed pages; replace the `/download` fallback only when a verified Mac App Store listing URL is available.
 
 ## Acceptance Criteria
 
