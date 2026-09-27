@@ -1,10 +1,12 @@
-import { CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
+import { PageShell, SiteLink } from "../../components/SiteShell";
+import { SupportContact, SupportPrivacyWarning } from "../../components/Support";
+import { SupportSearch } from "../../components/SupportSearch";
 import { createPageMetadata } from "../../config/pageMetadata";
 
 export const metadata = createPageMetadata({
-  title: "Capehelm Support | Help, Setup & Troubleshooting",
+  title: "Capehelm Support",
   description:
-    "Get help with Capehelm setup, importing transactions, Finance Documents, backups, subscriptions and common troubleshooting for the Mac app.",
+    "Find Capehelm setup guides and troubleshooting for Finance Documents, CSV imports, Categories, Budget, Forecast, backups, and subscription access.",
   path: "/support",
 });
 
@@ -13,41 +15,36 @@ export const dynamic = "force-static";
 export default function SupportPage() {
   return (
     <PageShell>
-      <section className="page-hero section-shell">
-        <p className="eyebrow"><span /> Capehelm Support</p>
-        <h1>Get help while keeping your data <em>in your control.</em></h1>
-        <p>Capehelm is a local-first personal finance app. Email support for help with the app, Finance Documents, imports, backups, reports, or privacy questions.</p>
-        <div className="page-subnav" aria-label="Support links">
-          <SiteLink href="/faq">Read common questions</SiteLink>
-          <SiteLink href="/csv-bank-statement-import">Learn about CSV imports</SiteLink>
-          <a href="mailto:support@capehelm.com">Email support@capehelm.com</a>
-          <SiteLink href="/privacy">Read the Privacy Policy</SiteLink>
-        </div>
-      </section>
-
-      <section className="download-card section-shell">
+      <section className="support-hero section-shell">
         <div>
-          <p className="eyebrow"><span /> Contact</p>
-          <h2>Contact Capehelm Support</h2>
-          <p><a className="text-link" href="mailto:support@capehelm.com">support@capehelm.com</a></p>
-          <p>Describe what you were trying to do, what happened, any error message, and the Capehelm version and macOS version you are using.</p>
-          <p><strong>Do not email your Finance Document, bank statements, transaction exports, backup archives, account details, screenshots containing private financial information, or other personal finance data.</strong> Capehelm does not require your online-banking credentials or private financial files to begin support.</p>
+          <p className="eyebrow"><span /> Capehelm Knowledge Hub</p>
+          <h1>How can we help?</h1>
+          <p>Follow clear, product-specific guides for getting started or resolving common Capehelm problems—without sending your financial data anywhere.</p>
         </div>
-        <aside className="requirements" aria-label="Support checklist">
-          <h3>Before you email</h3>
-          <ul>
-            <li><CheckIcon /><span><b>Describe the issue</b>Include the feature and the steps that led to it.</span></li>
-            <li><CheckIcon /><span><b>Include version details</b>Share the Capehelm and macOS versions if available.</span></li>
-            <li><CheckIcon /><span><b>Keep financial data private</b>Do not send financial files, screenshots, account details, or bank credentials.</span></li>
-          </ul>
-          <SiteLink className="button button-secondary" href="/privacy">Privacy Policy</SiteLink>
-        </aside>
+        <nav className="support-hero-nav" aria-label="Support categories">
+          <SiteLink href="#category-getting-started">
+            <span>01</span>
+            <strong>Getting Started</strong>
+            <small>Set up and learn key workflows</small>
+            <i aria-hidden="true">↓</i>
+          </SiteLink>
+          <SiteLink href="#category-troubleshooting">
+            <span>02</span>
+            <strong>Troubleshooting</strong>
+            <small>Resolve common problems</small>
+            <i aria-hidden="true">↓</i>
+          </SiteLink>
+        </nav>
       </section>
 
-      <section className="download-footer-cta section-shell">
-        <p>For privacy requests or concerns about information you sent to Capehelm, email support@capehelm.com and review the Privacy Policy.</p>
-        <a className="button button-secondary" href="mailto:support@capehelm.com">Email support</a>
+      <section className="section-shell support-hub" aria-label="Support articles">
+        <SupportSearch />
       </section>
+
+      <div className="section-shell support-hub-contact">
+        <SupportPrivacyWarning />
+        <SupportContact />
+      </div>
     </PageShell>
   );
 }

@@ -3,6 +3,23 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const productionOrigin = "https://capehelm.com";
+const supportArticlePages = [
+  ["/support/getting-started/create-finance-document", "support/getting-started/create-finance-document.html", "Create a Finance Document in Capehelm", "Learn how to create a Capehelm Finance Document with the standard macOS save flow and choose CAD or USD."],
+  ["/support/getting-started/open-finance-document", "support/getting-started/open-finance-document.html", "Open a Finance Document in Capehelm", "Open an existing Capehelm .pfinance package from Settings, General, and Current Finance File."],
+  ["/support/getting-started/import-transactions", "support/getting-started/import-transactions.html", "Import Transactions in Capehelm", "Use Capehelm’s local Statement, Confirm, Review, and Import workflow for a downloaded CSV bank statement."],
+  ["/support/getting-started/review-categories", "support/getting-started/review-categories.html", "Review Categories in Capehelm", "Use Categories, Review, and Needs Attention to work through category groups that require review in Capehelm."],
+  ["/support/getting-started/setup-budget", "support/getting-started/setup-budget.html", "Set Up Budget in Capehelm", "Use Capehelm Budget Builder to review or edit group and Category targets and apply them to the monthly budget."],
+  ["/support/getting-started/use-forecast", "support/getting-started/use-forecast.html", "Use the 14-Day Forecast in Capehelm", "Understand Capehelm Forecast, including safe-to-spend, projected balances, upcoming forecast items, and workspace tabs."],
+  ["/support/getting-started/back-up-capehelm", "support/getting-started/back-up-capehelm.html", "Back Up Capehelm", "Use Settings, General, Backup Status, Back Up Now, and Manage Backups to begin protecting Capehelm data."],
+  ["/support/troubleshooting/csv-will-not-import", "support/troubleshooting/csv-will-not-import.html", "Capehelm CSV Import Troubleshooting", "Resolve Capehelm CSV import problems involving headers, delimiters, dates, mappings, currencies, row diagnostics, and duplicates."],
+  ["/support/troubleshooting/finance-document-will-not-open", "support/troubleshooting/finance-document-will-not-open.html", "Capehelm Finance Document Will Not Open", "Use Locate Document, Open Another Document, or Create New Finance Document when a Capehelm .pfinance package will not open."],
+  ["/support/troubleshooting/restore-purchases", "support/troubleshooting/restore-purchases.html", "Restore Capehelm Purchases", "Use Settings, Capehelm Access, and Restore Purchases to refresh verified Monthly or Annual subscription access."],
+  ["/support/troubleshooting/subscription-access", "support/troubleshooting/subscription-access.html", "Capehelm Subscription Access Help", "Use Try Again, Restore Purchases, or Continue with Demo when Capehelm subscription access is unavailable."],
+  ["/support/troubleshooting/backup-and-restore", "support/troubleshooting/backup-and-restore.html", "Back Up and Restore Capehelm", "Select a Capehelm backup destination, use Back Up Now, manage backups, and restore a validated .pfbackup.zip archive."],
+  ["/support/troubleshooting/moving-renaming-finance-document", "support/troubleshooting/moving-renaming-finance-document.html", "Move or Rename a Capehelm Finance Document", "Learn how Capehelm follows a moved or renamed .pfinance package and how to locate it again when needed."],
+  ["/support/troubleshooting/remembered-document-issues", "support/troubleshooting/remembered-document-issues.html", "Capehelm Remembered-Document Launch Help", "Recover at app launch with Locate Document, Open Another Document, or Create New Finance Document."],
+].map(([route, file, title, description]) => ({ route, file, title, description, canonical: `${productionOrigin}${route}` }));
+
 const pages = [
   {
     route: "/",
@@ -39,11 +56,12 @@ const pages = [
   {
     route: "/support",
     file: "support.html",
-    title: "Capehelm Support | Help, Setup & Troubleshooting",
+    title: "Capehelm Support",
     description:
-      "Get help with Capehelm setup, importing transactions, Finance Documents, backups, subscriptions and common troubleshooting for the Mac app.",
+      "Find Capehelm setup guides and troubleshooting for Finance Documents, CSV imports, Categories, Budget, Forecast, backups, and subscription access.",
     canonical: `${productionOrigin}/support`,
   },
+  ...supportArticlePages,
   {
     route: "/download",
     file: "download.html",

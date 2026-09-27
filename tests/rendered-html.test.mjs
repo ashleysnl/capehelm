@@ -49,7 +49,8 @@ for (const [path, expected] of [
     if (path === "/support") {
       assert.match(html, /mailto:support@capehelm\.com/);
       assert.match(html, /href="\/privacy"/);
-      assert.match(html, /Do not email your Finance Document, bank statements, transaction exports, backup archives/);
+      assert.match(html, /Never email personal financial data to Capehelm Support\./);
+      assert.match(html, /bank statements, Capehelm Finance Documents, transaction exports, backup archives/);
       assert.doesNotMatch(html, /unless they are genuinely necessary|unless there is a clear reason/i);
     }
     if (process.env.GITHUB_PAGES_BUILD === "true") {

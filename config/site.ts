@@ -51,6 +51,7 @@ export const siteConfig = {
     { href: "/features", label: "Features" },
     { href: "/faq", label: "FAQ" },
     { href: "/privacy", label: "Privacy" },
+    { href: "/support", label: "Support" },
   ],
   featureGroups: [
     {
