@@ -26,7 +26,7 @@
 
 - [ ] **Task 11 — Improve Support into a useful knowledge hub**
 - [x] **Task 12 — Add structured data**
-- [ ] **Task 13 — Add Open Graph / social sharing metadata**
+- [x] **Task 13 — Add Open Graph / social sharing metadata**
 - [x] **Task 14 — Create focused SEO landing pages**
 - [ ] **Task 15 — Improve the download / App Store handoff page**
 - [x] **Task 16 — Add a clear “How Capehelm Works” section**
@@ -848,24 +848,37 @@ Include a strong warning:
 # Task 13 — Open Graph / Social Sharing Metadata
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [x] Complete — 2026-09-27
 **Goal:** Make shared Capehelm links look intentional and trustworthy.
 
 ## Work
 
-- [ ] Add `og:title`.
-- [ ] Add `og:description`.
-- [ ] Add `og:image`.
-- [ ] Add `og:url`.
-- [ ] Add Twitter/X card metadata.
-- [ ] Create one 1200×630 Capehelm social image.
-- [ ] Include Capehelm branding and a product screenshot.
-- [ ] Use the message: `Private personal finance for Mac` or similar.
-- [ ] Test link previews.
+- [x] Add `og:title`.
+- [x] Add `og:description`.
+- [x] Add `og:image`.
+- [x] Add `og:url`.
+- [x] Add Twitter/X card metadata.
+- [x] Create one 1200×630 Capehelm social image.
+- [x] Include Capehelm branding and a product screenshot.
+- [x] Use the message: `Private personal finance for Mac` or similar.
+- [x] Test generated and deployed preview metadata; platform-specific cache refresh remains a manual follow-up.
+
+## Completion Record — 2026-09-27
+
+- Centralized page-specific Open Graph and Twitter/X metadata in `config/pageMetadata.ts`, with complete defaults retained in `app/layout.tsx`.
+- Converted Home, Features, FAQ, Privacy, Support and Download to the same helper already used by the four focused SEO landing pages; every public route now shares one maintainable metadata path.
+- Added exactly one Open Graph and Twitter/X card set to all 10 public pages: page-specific title and description, canonical `og:url`, `website` type, `Capehelm` site name, absolute image URL, 1200×630 dimensions and descriptive image alt text.
+- Created `public/assets/capehelm-social-1200x630.png` at exactly 1200×630 and 363,843 bytes using the official Capehelm logo and the approved current Dashboard screenshot with fictional demo data. Removed the obsolete synthetic `public/og.png` asset.
+- Homepage social identity: `Capehelm — Private Personal Finance for Mac` with the description `Budget, forecast, understand spending, track net worth and plan retirement while keeping your financial data local on your Mac.`
+- Twitter/X metadata uses `summary_large_image`; no unverified `twitter:site` or creator account was added.
+- Preserved canonical URLs, titles, meta descriptions, favicon configuration, sitemap behavior and the homepage `SoftwareApplication` JSON-LD. No Facebook, Meta, Twitter or other social script was introduced.
+- Validation: production export prerendered all 10 public routes with zero skipped; all 49 Node tests passed; ESLint passed on all changed source and test files; rendered HTML contains no duplicate/conflicting social tags or development URLs.
+- Deployment: GitHub Pages completed successfully for commit `9ad27de`; the production PNG returned HTTP 200 with `image/png` and the correct content length. All 10 live public routes exposed exactly one Open Graph title and one Twitter card, referenced the shared image, and contained no development URL.
+- Remaining manual preview checks: paste the live URL into iMessage, Slack, Discord, LinkedIn Post Inspector and Meta Sharing Debugger as desired. These platforms cache cards, and authenticated platform inspectors were not available in this environment.
 
 ## Acceptance Criteria
 
-Capehelm links render cleanly when shared in messaging apps and social platforms.
+Complete. Capehelm pages publish deliberate, consistent social-card metadata backed by a current product screenshot and public production asset.
 
 ---
 
