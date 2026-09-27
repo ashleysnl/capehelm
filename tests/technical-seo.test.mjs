@@ -42,7 +42,7 @@ const pages = [
     file: "why-capehelm.html",
     title: "Why I Built Capehelm | Founder Story",
     description:
-      "Ashley Skinner, founder of Capehelm and a project engineer, shares why he built a private personal finance app for Mac.",
+      "Ashley Skinner, founder of Capehelm and a project engineer, shares the story behind Capehelm, a private personal finance app for Mac.",
     canonical: `${productionOrigin}/why-capehelm`,
   },
   {
