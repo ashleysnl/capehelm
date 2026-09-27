@@ -49,6 +49,7 @@ export const siteConfig = {
   },
   navigation: [
     { href: "/features", label: "Features" },
+    { href: "/why-capehelm", label: "Why Capehelm" },
     { href: "/faq", label: "FAQ" },
     { href: "/privacy", label: "Privacy" },
     { href: "/support", label: "Support" },

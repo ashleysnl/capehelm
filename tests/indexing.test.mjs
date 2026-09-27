@@ -6,6 +6,7 @@ const productionOrigin = "https://capehelm.com";
 const publicRoutes = [
   "/",
   "/features",
+  "/why-capehelm",
   "/faq",
   "/privacy",
   "/support",
