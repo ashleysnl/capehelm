@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
 import { ProductScreenshot, type ProductScreenshotAsset } from "../../components/ProductScreenshot";
 import { AppStoreLink, ArrowIcon, CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
-import { productionSiteUrl } from "../../config/site";
+import { createPageMetadata } from "../../config/pageMetadata";
 
-export const metadata: Metadata = {
-  title: { absolute: "Capehelm Features | Private Personal Finance for Mac" },
+export const metadata = createPageMetadata({
+  title: "Capehelm Features | Private Personal Finance for Mac",
   description:
     "Explore Capehelm features for Mac, including budgeting, 14-day cash-flow forecasting, transaction analysis, Trends, Net Worth, Retirement and local CSV import.",
-  alternates: { canonical: `${productionSiteUrl}/features` },
-};
+  path: "/features",
+});
 
 export const dynamic = "force-static";
 

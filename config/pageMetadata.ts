@@ -5,9 +5,23 @@ type PageMetadataInput = {
   title: string;
   description: string;
   path: string;
+  socialTitle?: string;
+  socialDescription?: string;
 };
 
-export function createPageMetadata({ title, description, path }: PageMetadataInput): Metadata {
+export const defaultSocialTitle = "Capehelm — Private Personal Finance for Mac";
+export const defaultSocialDescription =
+  "A local-first personal finance app for Mac with budgeting, cash-flow forecasting, trends, net worth, retirement planning and local statement imports.";
+export const socialImageUrl = `${productionSiteUrl}/assets/capehelm-social-1200x630.png`;
+export const socialImageAlt = "Capehelm personal finance app for Mac showing the financial dashboard";
+
+export function createPageMetadata({
+  title,
+  description,
+  path,
+  socialTitle = title,
+  socialDescription = description,
+}: PageMetadataInput): Metadata {
   const url = `${productionSiteUrl}${path}`;
 
   return {
@@ -17,23 +31,23 @@ export function createPageMetadata({ title, description, path }: PageMetadataInp
     openGraph: {
       type: "website",
       siteName: "Capehelm",
-      title,
-      description,
+      title: socialTitle,
+      description: socialDescription,
       url,
       images: [
         {
-          url: `${productionSiteUrl}/og.png`,
+          url: socialImageUrl,
           width: 1200,
           height: 630,
-          alt: "Capehelm — Understand your money. Keep it yours.",
+          alt: socialImageAlt,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
-      images: [`${productionSiteUrl}/og.png`],
+      title: socialTitle,
+      description: socialDescription,
+      images: [{ url: socialImageUrl, alt: socialImageAlt }],
     },
   };
 }

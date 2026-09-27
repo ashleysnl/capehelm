@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import type { Metadata } from "next";
 import { AppStoreLink, CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
-import { productionSiteUrl, siteAssetPath, siteConfig } from "../../config/site";
+import { createPageMetadata } from "../../config/pageMetadata";
+import { siteAssetPath, siteConfig } from "../../config/site";
 
-export const metadata: Metadata = {
-  title: { absolute: "Download Capehelm for Mac | Capehelm" },
+export const metadata = createPageMetadata({
+  title: "Download Capehelm for Mac | Capehelm",
   description:
     "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
-  alternates: { canonical: `${productionSiteUrl}/download` },
-};
+  path: "/download",
+});
 
 export const dynamic = "force-static";
 

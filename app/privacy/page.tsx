@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { PageShell, SiteLink } from "../../components/SiteShell";
-import { productionSiteUrl } from "../../config/site";
+import { createPageMetadata } from "../../config/pageMetadata";
 
-export const metadata: Metadata = {
-  title: { absolute: "Capehelm Privacy Policy | Local-First Finance Data" },
+export const metadata = createPageMetadata({
+  title: "Capehelm Privacy Policy | Local-First Finance Data",
   description:
     "Learn how Capehelm keeps personal finance data local on your Mac, avoids bank credentials, and limits network use to services such as Apple StoreKit.",
-  alternates: { canonical: `${productionSiteUrl}/privacy` },
-};
+  path: "/privacy",
+});
 
 export const dynamic = "force-static";
 

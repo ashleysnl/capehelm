@@ -1,0 +1,169 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import test from "node:test";
+
+const productionOrigin = "https://capehelm.com";
+const socialImage = `${productionOrigin}/assets/capehelm-social-1200x630.png`;
+const socialImageAlt = "Capehelm personal finance app for Mac showing the financial dashboard";
+
+const pages = [
+  {
+    route: "/",
+    file: "index.html",
+    title: "Capehelm — Private Personal Finance for Mac",
+    description:
+      "Budget, forecast, understand spending, track net worth and plan retirement while keeping your financial data local on your Mac.",
+    canonical: productionOrigin,
+  },
+  {
+    route: "/features",
+    file: "features.html",
+    title: "Capehelm Features | Private Personal Finance for Mac",
+    description:
+      "Explore Capehelm features for Mac, including budgeting, 14-day cash-flow forecasting, transaction analysis, Trends, Net Worth, Retirement and local CSV import.",
+  },
+  {
+    route: "/faq",
+    file: "faq.html",
+    title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",
+    description:
+      "Answers about Capehelm’s local-first Mac personal finance app, CSV statement imports, privacy, backups, subscriptions, compatibility and support.",
+  },
+  {
+    route: "/privacy",
+    file: "privacy.html",
+    title: "Capehelm Privacy Policy | Local-First Finance Data",
+    description:
+      "Learn how Capehelm keeps personal finance data local on your Mac, avoids bank credentials, and limits network use to services such as Apple StoreKit.",
+  },
+  {
+    route: "/support",
+    file: "support.html",
+    title: "Capehelm Support | Help, Setup & Troubleshooting",
+    description:
+      "Get help with Capehelm setup, importing transactions, Finance Documents, backups, subscriptions and common troubleshooting for the Mac app.",
+  },
+  {
+    route: "/download",
+    file: "download.html",
+    title: "Download Capehelm for Mac | Capehelm",
+    description:
+      "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
+  },
+  {
+    route: "/personal-finance-for-mac",
+    file: "personal-finance-for-mac.html",
+    title: "Personal Finance Software Built for Mac | Capehelm",
+    description:
+      "Explore Capehelm, a local-first personal finance app for macOS that connects transactions, budgets, 14-day forecasting, trends, net worth and retirement in one Finance Document.",
+  },
+  {
+    route: "/cash-flow-forecast",
+    file: "cash-flow-forecast.html",
+    title: "Household Cash Flow Forecast for Mac | Capehelm",
+    description:
+      "See upcoming income, bills, planned spending and projected checking balances with Capehelm’s rolling 14-day household cash-flow Forecast for Mac.",
+  },
+  {
+    route: "/private-personal-finance",
+    file: "private-personal-finance.html",
+    title: "Private, Local-First Personal Finance for Mac | Capehelm",
+    description:
+      "Learn how Capehelm keeps transactions, budgets, forecasts and Finance Documents local while limiting network use to clearly defined services such as Apple StoreKit.",
+  },
+  {
+    route: "/csv-bank-statement-import",
+    file: "csv-bank-statement-import.html",
+    title: "Import Bank Statement CSVs on Mac | Capehelm",
+    description:
+      "Import bank and card statement CSV files locally on your Mac, confirm column mapping, review transactions and Categories, and turn that history into useful financial context.",
+  },
+].map((page) => ({ ...page, canonical: page.canonical ?? `${productionOrigin}${page.route}` }));
+
+function decodeHtml(value) {
+  return value
+    .replaceAll("&amp;", "&")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#x27;", "'")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">");
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function values(html, attribute, key) {
+  const pattern = new RegExp(
+    `<meta ${attribute}="${escapeRegExp(key)}" content="([^"]*)"`,
+    "g",
+  );
+  return [...html.matchAll(pattern)].map((match) => decodeHtml(match[1]));
+}
+
+async function readBuiltPage(file) {
+  return readFile(new URL(`../dist/client/${file}`, import.meta.url), "utf8");
+}
+
+test("every public page renders one complete, canonical Open Graph and Twitter card", async () => {
+  for (const page of pages) {
+    const html = await readBuiltPage(page.file);
+    const expected = new Map([
+      ["og:title", page.title],
+      ["og:description", page.description],
+      ["og:image", socialImage],
+      ["og:image:width", "1200"],
+      ["og:image:height", "630"],
+      ["og:image:alt", socialImageAlt],
+      ["og:url", page.canonical],
+      ["og:type", "website"],
+      ["og:site_name", "Capehelm"],
+    ]);
+
+    for (const [key, expectedValue] of expected) {
+      assert.deepEqual(values(html, "property", key), [expectedValue], `${page.route} ${key}`);
+    }
+
+    const twitter = new Map([
+      ["twitter:card", "summary_large_image"],
+      ["twitter:title", page.title],
+      ["twitter:description", page.description],
+      ["twitter:image", socialImage],
+      ["twitter:image:alt", socialImageAlt],
+    ]);
+
+    for (const [key, expectedValue] of twitter) {
+      assert.deepEqual(values(html, "name", key), [expectedValue], `${page.route} ${key}`);
+    }
+
+    assert.doesNotMatch(html, /twitter:(?:site|creator)/i, `${page.route} invented account`);
+    assert.doesNotMatch(
+      html,
+      /localhost|github\.io|file:\/\/|connect\.facebook\.net|platform\.twitter\.com/i,
+      `${page.route} preview metadata`,
+    );
+  }
+});
+
+test("social titles and descriptions remain page-specific", () => {
+  assert.equal(new Set(pages.map(({ title }) => title)).size, pages.length);
+  assert.equal(new Set(pages.map(({ description }) => description)).size, pages.length);
+});
+
+test("the shared social image is an exact, reasonably sized 1200 by 630 PNG", async () => {
+  const image = await readFile(
+    new URL("../public/assets/capehelm-social-1200x630.png", import.meta.url),
+  );
+
+  assert.deepEqual([...image.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+  assert.equal(image.readUInt32BE(16), 1200);
+  assert.equal(image.readUInt32BE(20), 630);
+  assert.ok(image.byteLength < 750_000, `social image is ${image.byteLength} bytes`);
+});
+
+test("Open Graph changes preserve the homepage SoftwareApplication JSON-LD", async () => {
+  const html = await readBuiltPage("index.html");
+
+  assert.equal((html.match(/type="application\/ld\+json"/g) ?? []).length, 1);
+  assert.match(html, /"@type":"SoftwareApplication"/);
+});

@@ -26,21 +26,22 @@ npm run lint
 npm test
 ```
 
-`npm test` creates the production build, verifies all five public routes render,
+`npm test` creates the production build, verifies all ten public routes render,
 and checks the published robots and sitemap files.
 
 ## Project map
 
 - `app/` — Home, Features, Privacy and Download routes, global metadata and styling
-- `components/` — shared site chrome and synthetic product visuals
+- `components/` — shared site chrome, product screenshots and landing-page presentation
+- `config/pageMetadata.ts` — canonical, Open Graph and Twitter/X metadata shared by public pages
 - `config/site.ts` — product name, navigation and availability status
 - `public/CNAME` — GitHub Pages custom-domain declaration for `capehelm.com`
 - `public/robots.txt` — crawler access rules and production sitemap declaration
 - `public/sitemap.xml` — canonical production URLs for all public marketing pages
 - `public/brand/` — approved Capehelm logo, mark and app icon copied from the product repository
-- `public/og.png` — bespoke social-sharing card
+- `public/assets/capehelm-social-1200x630.png` — canonical social-sharing card using the approved Dashboard screenshot
 
-All finance UI displayed on the website is constructed from clearly synthetic demonstration data. No product screenshots containing personal finance information are used.
+All finance UI displayed on the website uses approved current Capehelm screenshots with clearly fictional demonstration data. No product screenshots containing personal finance information are used.
 
 ## Download configuration
 

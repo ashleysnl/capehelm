@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
 import { PageShell, SiteLink } from "../../components/SiteShell";
-import { productionSiteUrl } from "../../config/site";
+import { createPageMetadata } from "../../config/pageMetadata";
 import { faqEntries } from "../../content/faq";
 
-export const metadata: Metadata = {
-  title: { absolute: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions" },
+export const metadata = createPageMetadata({
+  title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",
   description:
     "Answers about Capehelm’s local-first Mac personal finance app, CSV statement imports, privacy, backups, subscriptions, compatibility and support.",
-  alternates: { canonical: `${productionSiteUrl}/faq` },
-};
+  path: "/faq",
+});
 
 export const dynamic = "force-static";
 

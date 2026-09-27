@@ -1,13 +1,12 @@
-import type { Metadata } from "next";
 import { CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
-import { productionSiteUrl } from "../../config/site";
+import { createPageMetadata } from "../../config/pageMetadata";
 
-export const metadata: Metadata = {
-  title: { absolute: "Capehelm Support | Help, Setup & Troubleshooting" },
+export const metadata = createPageMetadata({
+  title: "Capehelm Support | Help, Setup & Troubleshooting",
   description:
     "Get help with Capehelm setup, importing transactions, Finance Documents, backups, subscriptions and common troubleshooting for the Mac app.",
-  alternates: { canonical: `${productionSiteUrl}/support` },
-};
+  path: "/support",
+});
 
 export const dynamic = "force-static";
 

@@ -1,4 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import {
+  defaultSocialDescription,
+  defaultSocialTitle,
+  socialImageAlt,
+  socialImageUrl,
+} from "../config/pageMetadata";
 import { productionSiteUrl, siteAssetPath } from "../config/site";
 import "./globals.css";
 
@@ -26,15 +32,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Capehelm",
-    title,
-    description,
-    images: [{ url: `${productionSiteUrl}/og.png`, width: 1200, height: 630, alt: "Capehelm — Understand your money. Keep it yours." }],
+    title: defaultSocialTitle,
+    description: defaultSocialDescription,
+    url: `${productionSiteUrl}/`,
+    images: [{ url: socialImageUrl, width: 1200, height: 630, alt: socialImageAlt }],
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
-    images: [`${productionSiteUrl}/og.png`],
+    title: defaultSocialTitle,
+    description: defaultSocialDescription,
+    images: [{ url: socialImageUrl, alt: socialImageAlt }],
   },
 };
 

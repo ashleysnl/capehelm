@@ -1,18 +1,21 @@
-import type { Metadata } from "next";
 import { ProductScreenshot, type ProductScreenshotAsset } from "../components/ProductScreenshot";
 import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
-import { productionSiteUrl, siteAssetPath } from "../config/site";
+import { createPageMetadata, defaultSocialTitle } from "../config/pageMetadata";
+import { siteAssetPath } from "../config/site";
 import {
   capehelmSoftwareApplicationStructuredData,
   serializeStructuredData,
 } from "../config/structuredData";
 
-export const metadata: Metadata = {
-  title: { absolute: "Capehelm | Private Personal Finance & Budgeting for Mac" },
+export const metadata = createPageMetadata({
+  title: "Capehelm | Private Personal Finance & Budgeting for Mac",
   description:
     "Capehelm is a private personal finance app for Mac with budgeting, 14-day cash-flow forecasting, spending analysis, net worth and retirement planning. Your financial data stays local.",
-  alternates: { canonical: `${productionSiteUrl}/` },
-};
+  path: "/",
+  socialTitle: defaultSocialTitle,
+  socialDescription:
+    "Budget, forecast, understand spending, track net worth and plan retirement while keeping your financial data local on your Mac.",
+});
 
 export const dynamic = "force-static";
 
