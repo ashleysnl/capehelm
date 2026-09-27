@@ -39,7 +39,7 @@ When a task changes state, update both its Overview Dashboard entry and its task
 - [~] **Task 15 — Improve the download / App Store handoff page**
 - [x] **Task 16 — Add a clear “How Capehelm Works” section**
 - [~] **Task 17 — Add privacy-respecting website measurement**
-- [~] **Task 18 — Performance and Core Web Vitals pass**
+- [x] **Task 18 — Performance and Core Web Vitals pass**
 
 ## P2 — Growth / Ongoing Discoverability
 
@@ -1085,7 +1085,7 @@ Measurement does not conflict with Capehelm's stated privacy posture.
 # Task 18 — Performance and Core Web Vitals Pass
 
 **Priority:** P1  
-**Status:** [~] Implementation and local verification complete; live post-deployment Lighthouse comparison pending
+**Status:** [x] Complete — 2026-09-27
 **Goal:** Keep the site fast, responsive, and pleasant.
 
 ## Work
@@ -1105,10 +1105,24 @@ Measurement does not conflict with Capehelm's stated privacy posture.
 
 ## Acceptance Criteria
 
-- No major layout shift.
-- No extremely large image payloads.
-- Page becomes usable quickly on ordinary connections.
-- Accessibility score has no severe unresolved issues.
+- [x] No major layout shift.
+- [x] No extremely large image payloads.
+- [x] Pages become usable quickly on ordinary connections.
+- [x] Accessibility score has no severe unresolved issues.
+
+## Completion Record — 2026-09-27
+
+- **Measurement method:** ran Lighthouse 13.0.3 with Chromium 151 against the live production site in the default mobile profile and the Lighthouse desktop preset. Each baseline and final page run used a fresh headless browser. Baseline represented deployment `71f8e1b`; final production measurement followed successful GitHub Pages deployment of `3321679`. Google PageSpeed Insights was also attempted but its public API returned a daily quota error, so no PageSpeed API score is claimed.
+- **Representative coverage:** measured the homepage, Features, Personal Finance for Mac, Cash Flow Forecast, Private Personal Finance and CSV Bank Statement Import in both mobile and desktop modes. Inspected the Download page's unusually large app icon separately and replaced its 881 KB display source with a 33 KB WebP variant while preserving the original PNG for Apple-touch metadata.
+- **Core metrics:** every baseline and final run recorded CLS `0`. Final mobile Performance scores were 95–99 across the six pages, with Accessibility, Best Practices and SEO all at 100. The two baseline accessibility defects were corrected: Cash Flow Forecast improved from 95 to 100 and Private Personal Finance from 96 to 100. Lab INP was not meaningful without field interaction data; final mobile Total Blocking Time remained low at 39–90 ms, and direct native mobile-menu and FAQ keyboard interaction checks passed.
+- **LCP findings:** the homepage improved from 1.89 s to 1.79 s mobile and 1.01 s to 0.62 s desktop; Private Personal Finance improved from 2.95 s to 2.41 s mobile. The final desktop sample set showed CDN/network variance: the first Personal Finance run had 1.54 s document response time and 4.45 s LCP, then reran at 1.19 s; Cash Flow recorded 0.93 s initially and 4.50 s on a rerun. These outliers were retained as warnings rather than represented as deterministic code regressions.
+- **Payload results:** median mobile transfer fell from about 760 KB to 347 KB (approximately 54%); median mobile image transfer fell from about 454 KB to 41 KB (approximately 91%). Individual mobile image reductions were 84–92%; desktop image reductions were 70–91%. The request count fell by one on each representative page because the below-the-fold footer mark no longer loads in the initial viewport.
+- **Asset work:** added 720 px and 1080 px WebP tiers for all six approved screenshots while retaining the 1400 px and 2560 px Retina tiers. Added display-optimized brand assets: horizontal logo 199,352 → 12,580 bytes, mark 189,860 → 32,166 bytes, and download-page icon 880,759 → 32,766 bytes. Visual inspection confirmed readable screenshot text and crisp branding.
+- **Loading and stability:** responsive screenshots now expose 720/1080/1400/2560 candidates, reserve intrinsic dimensions and use `fetchpriority="high"` only when the screenshot is marked eager. Below-the-fold screenshots and brand marks use native lazy loading; the header logo and download hero icon reserve dimensions. No custom preload list was added; the framework emits discovery hints only for initially rendered critical images.
+- **JavaScript, CSS and fonts:** production JavaScript remained about 290 KB per tested page, including roughly 177 KB from the explicitly configured Google Analytics tag; no page-specific library or unnecessary dependency was found to remove. The first-party CSS transfer remained about 15 KB. The site uses the local macOS/system font stack and makes no remote font request.
+- **Responsive and interaction QA:** automated rendered checks covered all six representative pages at 1440, 1024, 768, 430, 390 and 375 CSS pixels. All 36 page/viewport combinations had zero horizontal overflow, zero unsized images and zero broken images after scrolling through lazy content. Native mobile navigation opened correctly and a closed FAQ disclosure opened with Enter.
+- **Validation and deployment:** lint passed; the production build prerendered all 10 public routes; all 49 tests passed; canonical, structured-data, Open Graph, Twitter and sitemap regression checks remained intact. GitHub Actions deployment `36317515553` completed successfully. All six representative live routes, optimized asset URLs and `robots.txt` returned HTTP 200 after deployment.
+- **Remaining warnings:** Lighthouse still identifies unused JavaScript in Google Analytics, and GitHub Pages serves a fixed 10-minute asset cache policy; both are external/configured tradeoffs rather than regressions. Two Lighthouse SEO runs could not download `robots.txt`, but direct production checks immediately before and after returned HTTP 200 with the correct crawl and sitemap directives. Real-user INP and Core Web Vitals should be reviewed in field data once sufficient launch traffic exists.
 
 ---
 
