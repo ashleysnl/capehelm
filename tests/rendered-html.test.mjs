@@ -24,6 +24,10 @@ for (const [path, expected] of [
   ["/privacy", "Privacy Policy"],
   ["/support", "Capehelm Support"],
   ["/download", "No release date announced"],
+  ["/personal-finance-for-mac", "Personal Finance Software"],
+  ["/cash-flow-forecast", "Household Cash Flow"],
+  ["/private-personal-finance", "Financial Data"],
+  ["/csv-bank-statement-import", "Bank Statement CSVs"],
 ]) {
   test(`statically renders ${path}`, async () => {
     const html = await render(path);
@@ -56,7 +60,7 @@ for (const [path, expected] of [
 }
 
 test("every public page includes the configured Google Analytics tag", async () => {
-  const pages = await Promise.all(["/", "/features", "/faq", "/privacy", "/support", "/download"].map(render));
+  const pages = await Promise.all(["/", "/features", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
 
   for (const html of pages) {
     assert.equal((html.match(/<script async="" src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-PJ6ZQQVMPR"><\/script>/g) ?? []).length, 1);
@@ -181,7 +185,7 @@ test("homepage explains Capehelm's local three-step import workflow", async () =
   assert.match(howItWorks, /nothing is sent away to learn from your data/);
   assert.match(howItWorks, /See the bigger picture/);
   assert.match(howItWorks, /Budget · Forecast · Trends · Net Worth · Retirement · Reports/);
-  assert.match(howItWorks, /href="\/faq#csv-imports"/);
+  assert.match(howItWorks, /href="\/csv-bank-statement-import"/);
   assert.match(howItWorks, /Learn about importing statements/);
   assert.doesNotMatch(howItWorks, /Plaid|bank feed|linked account|automatic transaction download|cloud dashboard/i);
   assert.ok(html.indexOf("how-it-works") > html.indexOf("outcome-hierarchy"));

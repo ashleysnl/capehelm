@@ -20,6 +20,7 @@ export default function SupportPage() {
         <p>Capehelm is a local-first personal finance app. Email support for help with the app, Finance Documents, imports, backups, reports, or privacy questions.</p>
         <div className="page-subnav" aria-label="Support links">
           <SiteLink href="/faq">Read common questions</SiteLink>
+          <SiteLink href="/csv-bank-statement-import">Learn about CSV imports</SiteLink>
           <a href="mailto:support@capehelm.com">Email support@capehelm.com</a>
           <SiteLink href="/privacy">Read the Privacy Policy</SiteLink>
         </div>

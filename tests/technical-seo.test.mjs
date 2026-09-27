@@ -31,7 +31,7 @@ const pages = [
   {
     route: "/privacy",
     file: "privacy.html",
-    title: "Private, Local-First Personal Finance for Mac | Capehelm",
+    title: "Capehelm Privacy Policy | Local-First Finance Data",
     description:
       "Learn how Capehelm keeps personal finance data local on your Mac, avoids bank credentials, and limits network use to services such as Apple StoreKit.",
     canonical: `${productionOrigin}/privacy`,
@@ -51,6 +51,38 @@ const pages = [
     description:
       "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
     canonical: `${productionOrigin}/download`,
+  },
+  {
+    route: "/personal-finance-for-mac",
+    file: "personal-finance-for-mac.html",
+    title: "Personal Finance Software Built for Mac | Capehelm",
+    description:
+      "Explore Capehelm, a local-first personal finance app for macOS that connects transactions, budgets, 14-day forecasting, trends, net worth and retirement in one Finance Document.",
+    canonical: `${productionOrigin}/personal-finance-for-mac`,
+  },
+  {
+    route: "/cash-flow-forecast",
+    file: "cash-flow-forecast.html",
+    title: "Household Cash Flow Forecast for Mac | Capehelm",
+    description:
+      "See upcoming income, bills, planned spending and projected checking balances with Capehelm’s rolling 14-day household cash-flow Forecast for Mac.",
+    canonical: `${productionOrigin}/cash-flow-forecast`,
+  },
+  {
+    route: "/private-personal-finance",
+    file: "private-personal-finance.html",
+    title: "Private, Local-First Personal Finance for Mac | Capehelm",
+    description:
+      "Learn how Capehelm keeps transactions, budgets, forecasts and Finance Documents local while limiting network use to clearly defined services such as Apple StoreKit.",
+    canonical: `${productionOrigin}/private-personal-finance`,
+  },
+  {
+    route: "/csv-bank-statement-import",
+    file: "csv-bank-statement-import.html",
+    title: "Import Bank Statement CSVs on Mac | Capehelm",
+    description:
+      "Import bank and card statement CSV files locally on your Mac, confirm column mapping, review transactions and Categories, and turn that history into useful financial context.",
+    canonical: `${productionOrigin}/csv-bank-statement-import`,
   },
 ];
 

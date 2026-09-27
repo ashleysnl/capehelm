@@ -42,6 +42,10 @@ export const faqEntries: readonly FaqEntry[] = [
       "Yes. Capehelm imports local CSV statement files and provides mapping, preview, categorization, duplicate-detection, and review tools before imported transactions become part of your financial picture.",
       "Built-in workflows cover supported formats, while the custom financial-institution importer can create a reusable local profile for other usable CSV layouts.",
     ],
+    link: {
+      href: "/csv-bank-statement-import",
+      label: "Follow the full CSV import workflow",
+    },
   },
   {
     id: "data-storage",

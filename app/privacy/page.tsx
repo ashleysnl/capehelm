@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { PageShell } from "../../components/SiteShell";
+import { PageShell, SiteLink } from "../../components/SiteShell";
 import { productionSiteUrl } from "../../config/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Private, Local-First Personal Finance for Mac | Capehelm" },
+  title: { absolute: "Capehelm Privacy Policy | Local-First Finance Data" },
   description:
     "Learn how Capehelm keeps personal finance data local on your Mac, avoids bank credentials, and limits network use to services such as Apple StoreKit.",
   alternates: { canonical: `${productionSiteUrl}/privacy` },
@@ -65,6 +65,7 @@ export default function PrivacyPage() {
           <p className="policy-date">Effective Date: September 26, 2026</p>
           <p>Capehelm is a local-first personal finance application designed to help you understand, organize, and plan your finances while keeping your financial information under your control.</p>
           <p>This Privacy Policy explains how information is handled when you use the Capehelm application, visit the Capehelm website, or contact Capehelm for support.</p>
+          <p>For a shorter product-level explanation, read <SiteLink href="/private-personal-finance">what local-first personal finance means in Capehelm</SiteLink>.</p>
           <p>Capehelm is operated by a sole proprietor.</p>
           <p>For privacy questions, requests, or concerns, contact <SupportEmail />.</p>
         </div>

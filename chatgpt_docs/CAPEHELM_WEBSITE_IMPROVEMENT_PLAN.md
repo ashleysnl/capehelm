@@ -27,7 +27,7 @@
 - [ ] **Task 11 — Improve Support into a useful knowledge hub**
 - [x] **Task 12 — Add structured data**
 - [ ] **Task 13 — Add Open Graph / social sharing metadata**
-- [ ] **Task 14 — Create focused SEO landing pages**
+- [x] **Task 14 — Create focused SEO landing pages**
 - [ ] **Task 15 — Improve the download / App Store handoff page**
 - [x] **Task 16 — Add a clear “How Capehelm Works” section**
 - [ ] **Task 17 — Add privacy-respecting website measurement**
@@ -810,7 +810,7 @@ Include a strong warning:
 - [x] Set application category to `FinanceApplication`.
 - [x] Set operating system to `macOS 14.0 or later`, verified against the production target.
 - [x] Add Capehelm name and a description consistent with the visible homepage.
-- [x] Evaluate the App Store URL; intentionally omit `installUrl` until a real public listing is configured.
+- [ ] Evaluate the App Store URL; intentionally omit `installUrl` until a real public listing is configured.
 - [x] Add the visible Monthly US$4.99 and Annual US$49.99 subscription prices as separate USD offers with storefront-variation disclosure.
 - [x] Add six absolute, public screenshot URLs for Dashboard, Budget, Forecast, Trends, Net Worth and Retirement.
 - [x] Add the verified universal processor requirement for Apple silicon (`arm64`) and 64-bit Intel (`x86_64`).
@@ -872,7 +872,7 @@ Capehelm links render cleanly when shared in messaging apps and social platforms
 # Task 14 — Create Focused SEO Landing Pages
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [x] Complete — 2026-09-26
 **Goal:** Capture high-intent search traffic without creating low-value SEO pages.
 
 ## Initial Pages
@@ -914,20 +914,33 @@ Target topics:
 
 For each page:
 
-- [ ] Create a unique H1.
-- [ ] Create a unique page title.
-- [ ] Create a unique meta description.
-- [ ] Provide genuinely useful content.
-- [ ] Include at least one relevant screenshot.
-- [ ] Link to Features.
-- [ ] Link to Privacy where relevant.
-- [ ] Add Mac App Store CTA.
-- [ ] Add the page to `sitemap.xml`.
-- [ ] Add internal links from relevant pages.
+- [x] Create a unique H1.
+- [x] Create a unique page title.
+- [x] Create a unique meta description.
+- [x] Provide genuinely useful content.
+- [x] Include at least one relevant screenshot.
+- [x] Link to Features.
+- [x] Link to Privacy where relevant.
+- [x] Add Mac App Store CTA.
+- [x] Add the page to `sitemap.xml`.
+- [x] Add internal links from relevant pages.
+
+## Completion Record — 2026-09-26
+
+- Created four indexable, self-canonical pages at `/personal-finance-for-mac`, `/cash-flow-forecast`, `/private-personal-finance` and `/csv-bank-statement-import`.
+- Each page has a distinct intent and content model: a Mac-workspace decision guide, a 14-day Forecast explainer, a transparent local-first architecture guide and a practical five-step CSV import walkthrough.
+- Added unique titles, meta descriptions, H1s, Open Graph/X metadata and concise calls to action through the shared page-metadata and landing-page components.
+- Reused the approved Dashboard, Forecast and Trends product screenshots with fictional demonstration data; no binaries were duplicated and no private finance data was introduced.
+- Added contextual inbound links from the homepage, Features, Privacy, Support and FAQ content, plus useful cross-links between the four guides.
+- Added all four canonical production URLs to `public/sitemap.xml` and expanded indexing, rendered-output, technical-SEO and landing-page regression coverage.
+- Preserved the centralized App Store behavior: because no verified public App Store listing URL is configured, every CTA continues to route through the existing `/download` coming-soon handoff rather than inventing an Apple URL.
+- Validation: the production export prerendered all 10 public routes with 0 skipped; all 45 Node tests passed; targeted ESLint over application, component, configuration and test sources passed.
+- Responsive QA: all four pages were rendered and visually inspected in Firefox at 1440 px desktop, 1280 px laptop and 390/375 px narrow widths. Headings, screenshots, links and CTAs remained within the viewport with no visible horizontal overflow.
+- Remaining follow-up: recheck public crawlability and search-console discovery after the GitHub Pages deployment finishes; replace the `/download` fallback only when a verified Mac App Store listing URL is available.
 
 ## Acceptance Criteria
 
-Each page provides standalone value and is not merely duplicated homepage copy.
+Complete. Each page provides standalone value and is not merely duplicated homepage copy.
 
 ---
 

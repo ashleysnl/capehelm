@@ -3,7 +3,18 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const productionOrigin = "https://capehelm.com";
-const publicRoutes = ["/", "/features", "/faq", "/privacy", "/support", "/download"];
+const publicRoutes = [
+  "/",
+  "/features",
+  "/faq",
+  "/privacy",
+  "/support",
+  "/download",
+  "/personal-finance-for-mac",
+  "/cash-flow-forecast",
+  "/private-personal-finance",
+  "/csv-bank-statement-import",
+];
 
 async function readBuiltAsset(name) {
   return readFile(new URL(`../dist/client/${name}`, import.meta.url), "utf8");

@@ -117,6 +117,7 @@ export default function Home() {
               <h3>What&apos;s going to happen next?</h3>
               <p>See upcoming commitments and projected account balances before they arrive. Forecast Coverage shows whether planned expenses were covered by real transactions, so cash-flow pressure is easier to spot.</p>
               <div className="outcome-capabilities"><span>Upcoming commitments</span><span>Projected balance</span><span>Forecast Coverage</span></div>
+              <SiteLink className="text-link outcome-deep-link" href="/cash-flow-forecast">Understand the 14-day Forecast <ArrowIcon /></SiteLink>
             </div>
           </article>
           <article className="outcome-card">
@@ -153,7 +154,7 @@ export default function Home() {
             <h3>Import your statements</h3>
             <p>Download a supported CSV statement from your financial institution and choose it in Capehelm. Built-in formats are recognized where available, and other usable CSVs can be mapped with the custom import workflow.</p>
             <p className="how-step-note">You choose what enters Capehelm. Your financial data stays local in your Finance Document—there&apos;s no automatic bank connection or finance-data upload.</p>
-            <SiteLink className="text-link how-step-link" href="/faq#csv-imports">Learn about importing statements <ArrowIcon /></SiteLink>
+            <SiteLink className="text-link how-step-link" href="/csv-bank-statement-import">Learn about importing statements <ArrowIcon /></SiteLink>
           </li>
           <li className="how-step">
             <div className="how-step-top">
@@ -206,7 +207,7 @@ export default function Home() {
           <p className="eyebrow"><span /> Local-first by design</p>
           <h2 id="privacy-title">Your finances don&apos;t belong on our servers.</h2>
           <p>Capehelm is deliberately different from hosted personal-finance services: your financial picture is built from local Finance Documents and files you control.</p>
-          <SiteLink className="button button-secondary" href="/privacy">Read our Privacy Policy <ArrowIcon /></SiteLink>
+          <div className="privacy-heading-actions"><SiteLink className="button button-secondary" href="/privacy">Read our Privacy Policy <ArrowIcon /></SiteLink><SiteLink className="text-link" href="/private-personal-finance">Explore the local-first approach <ArrowIcon /></SiteLink></div>
         </div>
         <div className="privacy-points">
           <article><span>01</span><h3>Your transaction data stays local.</h3><p>Capehelm works with local Finance Documents instead of storing your financial life in a Capehelm-hosted account.</p></article>
@@ -248,7 +249,7 @@ export default function Home() {
       <section className="devices-section section-shell" id="devices">
         <div className="section-intro centered"><p className="eyebrow"><span /> Made for Mac</p><h2>Your complete finance workspace, on your Mac.</h2><p>Capehelm’s current public product is focused on a full native Mac experience.</p></div>
         <div className="device-facts">
-          <article><span>Mac</span><h3>Your complete finance workspace.</h3><p>Budget, Forecast, Trends, Net Worth, Retirement, imports and full document management stay together on your Mac.</p></article>
+          <article><span>Mac</span><h3>Your complete finance workspace.</h3><p>Budget, Forecast, Trends, Net Worth, Retirement, imports and full document management stay together on your Mac.</p><SiteLink className="text-link" href="/personal-finance-for-mac">Why Capehelm is built for Mac <ArrowIcon /></SiteLink></article>
           <article><span>iPhone and iPad</span><h3>Not part of the current public release.</h3><p>Capehelm is currently being prepared as a Mac App Store product. No iPhone or iPad release date has been announced.</p></article>
         </div>
       </section>
