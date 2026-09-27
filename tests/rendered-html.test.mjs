@@ -102,7 +102,7 @@ test("public product imagery uses approved real application screenshots only", a
 test("homepage uses the official Capehelm mark instead of a CH placeholder", async () => {
   const html = await render("/");
 
-  assert.match(html, /class="cta-mark"[\s\S]*?src="\/brand\/capehelm-mark\.png"/);
+  assert.match(html, /class="cta-mark"[\s\S]*?src="\/brand\/capehelm-mark-320\.webp"/);
   assert.doesNotMatch(html, /class="cta-mark"[^>]*>\s*CH\s*</);
 });
 
@@ -213,7 +213,9 @@ test("homepage screenshot stories provide responsive, accessible product proof",
   assert.equal((productProof.match(/loading="lazy"/g) ?? []).length, 5);
   assert.equal((productProof.match(/decoding="async"/g) ?? []).length, 5);
   assert.equal((productProof.match(/width="2560" height="1600"/g) ?? []).length, 5);
-  assert.equal((productProof.match(/-1400\.webp/g) ?? []).length, 10);
+  assert.equal((productProof.match(/-720\.webp/g) ?? []).length, 5);
+  assert.equal((productProof.match(/-1080\.webp/g) ?? []).length, 10);
+  assert.equal((productProof.match(/-1400\.webp/g) ?? []).length, 5);
   assert.equal((productProof.match(/-2560\.webp/g) ?? []).length, 5);
   assert.doesNotMatch(productProof, /\.png|alt="(?:Capehelm|Budget|App) screenshot"/i);
 });

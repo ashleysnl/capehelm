@@ -2,19 +2,27 @@
 
 **Status:** Active  
 **Owner:** Skinner  
-**Last updated:** 2026-09-26
+**Last updated:** 2026-09-27
 **Primary goal:** Improve Capehelm website discoverability, clarity, trust, usefulness, and click-through rate to the Mac App Store before and immediately after launch.
 
 ---
 
 # Overview Dashboard
 
+## Status Process
+
+- `[ ]` **Not started** — implementation has not begun.
+- `[~]` **In progress** — work has begun, some acceptance criteria remain open, or completion depends on an unresolved external prerequisite such as a live App Store URL.
+- `[x]` **Complete** — all required implementation and validation criteria are satisfied. Optional future enhancements do not reopen a completed task.
+
+When a task changes state, update both its Overview Dashboard entry and its task-level `Status` line in the same change. Move a task from `[ ]` to `[~]` as soon as substantive work begins or a partial implementation exists. Keep it at `[~]` while required manual checks or external launch dependencies remain. Use `[x]` only after the task's acceptance criteria are complete and its completion evidence is recorded. Individual work-item checkboxes may also use `[~]` when that specific step is actively underway; leave untouched steps as `[ ]`.
+
 ## P0 — Launch-Critical
 
 - [x] **Task 1 — Search engine indexing foundation**
 - [x] **Task 2 — Technical SEO baseline**
 - [x] **Task 3 — Homepage positioning and hero rewrite**
-- [ ] **Task 4 — Mac App Store conversion path**
+- [~] **Task 4 — Mac App Store conversion path**
 - [x] **Task 5 — Pricing and free-trial clarity**
 - [x] **Task 6 — Privacy/local-first positioning**
 - [x] **Task 7 — Homepage feature hierarchy**
@@ -28,10 +36,10 @@
 - [x] **Task 12 — Add structured data**
 - [x] **Task 13 — Add Open Graph / social sharing metadata**
 - [x] **Task 14 — Create focused SEO landing pages**
-- [ ] **Task 15 — Improve the download / App Store handoff page**
+- [~] **Task 15 — Improve the download / App Store handoff page**
 - [x] **Task 16 — Add a clear “How Capehelm Works” section**
-- [ ] **Task 17 — Add privacy-respecting website measurement**
-- [ ] **Task 18 — Performance and Core Web Vitals pass**
+- [~] **Task 17 — Add privacy-respecting website measurement**
+- [~] **Task 18 — Performance and Core Web Vitals pass**
 
 ## P2 — Growth / Ongoing Discoverability
 
@@ -94,7 +102,7 @@ The core website funnel is:
 # Task 1 — Search Engine Indexing Foundation
 
 **Priority:** P0  
-**Status:** [ ]  
+**Status:** [x] Complete — 2026-09-23
 **Goal:** Ensure Google, Bing, and other search engines can discover and index Capehelm quickly.
 
 ## Work
@@ -285,7 +293,7 @@ A new visitor should immediately understand:
 # Task 4 — Mac App Store Conversion Path
 
 **Priority:** P0  
-**Status:** [ ] Repository work complete; App Store launch checks pending
+**Status:** [~] Repository work complete; live App Store URL and launch checks pending
 **Goal:** Minimize friction between the website and the Mac App Store.
 
 ## Work
@@ -757,7 +765,7 @@ None.
 # Task 11 — Improve Support into a Useful Knowledge Hub
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [ ]
 **Goal:** Make the website useful after the user has downloaded Capehelm.
 
 ## Suggested Support Structure
@@ -960,7 +968,7 @@ Complete. Each page provides standalone value and is not merely duplicated homep
 # Task 15 — Improve the Download / App Store Handoff Page
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [~] Pre-launch handoff page complete; live App Store destination pending
 **Goal:** Make `/download` a direct conversion page once Capehelm is live.
 
 ## Option A — Preferred
@@ -1035,19 +1043,19 @@ A first-time visitor understands how data gets into Capehelm.
 # Task 17 — Privacy-Respecting Website Measurement
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [~] Google Analytics page measurement enabled; funnel-event instrumentation pending
 **Goal:** Measure whether the website converts without compromising Capehelm's product principles.
 
 ## Minimum Useful Funnel
 
 Track:
 
-- [ ] Landing page.
-- [ ] Referrer/source.
+- [x] Landing page.
+- [x] Referrer/source.
 - [ ] App Store CTA click.
 - [ ] Support link click.
-- [ ] Major page visits.
-- [ ] Search-engine traffic.
+- [x] Major page visits.
+- [x] Search-engine traffic.
 
 Do **not** attempt to track:
 
@@ -1064,6 +1072,7 @@ Choose one:
 - [ ] Minimal privacy-friendly analytics.
 - [ ] Cloudflare Web Analytics if appropriate.
 - [ ] No website analytics initially; use Search Console + App Store Connect only.
+- [x] Google Analytics for public-site page measurement, with finance-data boundaries documented in the Privacy Policy.
 
 **Decision (September 26, 2026):** Google Analytics measurement ID `G-PJ6ZQQVMPR` is enabled for public website traffic. The Privacy Policy distinguishes website measurement from Capehelm application data and finance-data telemetry. Funnel-event instrumentation remains future work.
 
@@ -1076,23 +1085,23 @@ Measurement does not conflict with Capehelm's stated privacy posture.
 # Task 18 — Performance and Core Web Vitals Pass
 
 **Priority:** P1  
-**Status:** [ ]  
+**Status:** [~] Implementation and local verification complete; live post-deployment Lighthouse comparison pending
 **Goal:** Keep the site fast, responsive, and pleasant.
 
 ## Work
 
-- [ ] Run Lighthouse.
-- [ ] Review Largest Contentful Paint.
-- [ ] Review Cumulative Layout Shift.
-- [ ] Review Interaction to Next Paint.
-- [ ] Compress screenshots.
-- [ ] Use modern image formats where practical.
-- [ ] Avoid unnecessarily large JS bundles.
-- [ ] Lazy-load below-the-fold imagery.
-- [ ] Preload only genuinely critical assets.
-- [ ] Verify fonts do not delay rendering excessively.
-- [ ] Check mobile layout.
-- [ ] Check accessibility findings.
+- [x] Run Lighthouse on the live production baseline and isolated production build.
+- [x] Review Largest Contentful Paint.
+- [x] Review Cumulative Layout Shift.
+- [x] Review Interaction to Next Paint using lab proxies and native-interaction checks; local Lighthouse does not provide meaningful field INP.
+- [x] Compress and resize screenshot delivery variants without replacing Retina-quality sources.
+- [x] Use modern WebP image formats where they provide a measured benefit.
+- [x] Audit JavaScript payload and retain only the required first-party runtime plus the explicitly configured Google Analytics tag.
+- [x] Lazy-load below-the-fold imagery.
+- [x] Limit eager loading/resource priority to above-the-fold product imagery and shared header branding.
+- [x] Verify the site uses a local system-font stack with no render-blocking font downloads.
+- [x] Check the six representative pages at 1440, 1024, 768, 430, 390 and 375 CSS pixels.
+- [x] Check Lighthouse accessibility findings and native keyboard interactions.
 
 ## Acceptance Criteria
 

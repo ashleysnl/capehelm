@@ -23,6 +23,8 @@ export function ProductScreenshot({
   eager = false,
   sizes = "(max-width: 800px) calc(100vw - 48px), 620px",
 }: ProductScreenshotProps) {
+  const mobileAsset = siteAssetPath(`/product/capehelm-${asset}-720.webp`);
+  const compactAsset = siteAssetPath(`/product/capehelm-${asset}-1080.webp`);
   const smallAsset = siteAssetPath(`/product/capehelm-${asset}-1400.webp`);
   const largeAsset = siteAssetPath(`/product/capehelm-${asset}-2560.webp`);
   const dimensions = asset === "dashboard"
@@ -34,12 +36,13 @@ export function ProductScreenshot({
       {/* Build-time optimized responsive assets; no runtime image service is required. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={smallAsset}
-        srcSet={`${smallAsset} 1400w, ${largeAsset} 2560w`}
+        src={compactAsset}
+        srcSet={`${mobileAsset} 720w, ${compactAsset} 1080w, ${smallAsset} 1400w, ${largeAsset} 2560w`}
         sizes={sizes}
         width={dimensions.width}
         height={dimensions.height}
         loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : "auto"}
         decoding="async"
         alt={alt}
       />

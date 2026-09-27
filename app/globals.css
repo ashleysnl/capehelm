@@ -247,7 +247,7 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
 .landing-document-flow { padding: 120px 0; }
 .landing-document-flow ol { margin: 58px 0 30px; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .landing-document-flow li { min-height: 275px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: linear-gradient(145deg,rgba(16,34,58,.58),rgba(6,15,28,.82)); }
-.landing-document-flow li > span, .landing-model-grid article > span, .landing-private-principles article > span { color: #647893; font: 10px ui-monospace,monospace; letter-spacing: .12em; }
+.landing-document-flow li > span, .landing-model-grid article > span, .landing-private-principles article > span { color: #7085a0; font: 10px ui-monospace,monospace; letter-spacing: .12em; }
 .landing-document-flow h3, .landing-model-grid h3 { margin: 44px 0 11px; font-size: 22px; line-height: 1.25; }
 .landing-document-flow li p, .landing-model-grid article p { margin: 0; color: #8e9db1; font-size: 14px; line-height: 1.7; }
 

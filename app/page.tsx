@@ -266,7 +266,14 @@ function ImageMark() {
   return (
     <div className="cta-mark" aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={siteAssetPath("/brand/capehelm-mark.png")} alt="" width="455" height="429" />
+      <img
+        src={siteAssetPath("/brand/capehelm-mark-320.webp")}
+        alt=""
+        width="320"
+        height="302"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   );
 }

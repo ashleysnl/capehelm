@@ -24,7 +24,6 @@ export function SiteHeader() {
     <header className="site-header">
       <AppStoreLink
         className="availability-bar"
-        aria-label={isAvailable ? "Capehelm is available on the Mac App Store." : "Capehelm for Mac is coming soon. View availability details."}
       >
         <strong>{isAvailable ? "Available" : "Coming Soon"}</strong>
         <span>{isAvailable ? "Capehelm is on the Mac App Store." : "Capehelm for Mac is not yet available."}</span>
@@ -34,7 +33,10 @@ export function SiteHeader() {
         <SiteLink className="brand" href="/" aria-label="Capehelm home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={siteAssetPath("/brand/capehelm-horizontal.png")}
+            src={siteAssetPath("/brand/capehelm-horizontal-400.webp")}
+            width="400"
+            height="107"
+            decoding="async"
             alt="Capehelm"
           />
         </SiteLink>
@@ -54,7 +56,7 @@ export function SiteHeader() {
             <span className="header-cta-short">Download</span>
           </AppStoreLink>
           <details className="mobile-menu">
-            <summary aria-label="Open navigation">Menu</summary>
+            <summary>Menu</summary>
             <nav aria-label="Mobile navigation">
               {siteConfig.navigation.map((item) => (
                 <SiteLink key={item.href} href={item.href}>
@@ -79,7 +81,11 @@ export function SiteFooter() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="footer-mark"
-            src={siteAssetPath("/brand/capehelm-mark.png")}
+            src={siteAssetPath("/brand/capehelm-mark-320.webp")}
+            width="320"
+            height="302"
+            loading="lazy"
+            decoding="async"
             alt=""
           />
           <p className="footer-title">Capehelm</p>
