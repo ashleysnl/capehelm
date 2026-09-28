@@ -74,7 +74,7 @@ export function FounderStory() {
           <p className="eyebrow"><span /> The story behind Capehelm</p>
           <h1 id="founder-story-title">Why I built <em>Capehelm</em></h1>
           <div className="founder-narrative">
-            <p>I&apos;m a project engineer. I&apos;ve spent years digging through the details of complex projects — tracking costs, understanding trends, forecasting what comes next, and turning a lot of information into something useful.</p>
+            <p>I&apos;m a project engineer. I&apos;ve spent years digging through the details of complex projects, tracking costs, understanding trends, forecasting what comes next, and turning a lot of information into something useful.</p>
             <p>Then I realized I wasn&apos;t applying those same skills to my own finances.</p>
             <p>So I built Capehelm.</p>
           </div>
