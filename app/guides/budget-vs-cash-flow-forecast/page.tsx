@@ -197,6 +197,7 @@ export default function BudgetVsCashFlowForecastGuide() {
             <p>And Net Worth and Retirement pull the camera back further to help you understand the bigger picture.</p>
             <p>Capehelm&apos;s Forecast focuses on the next 14 days because I wanted something practical enough to use regularly—not an elaborate financial model that gets abandoned after a week.</p>
             <p>Because Capehelm is <SiteLink href="/private-personal-finance">local-first</SiteLink>, that analysis can be done from financial data you import yourself rather than requiring you to connect your bank accounts.</p>
+            <p>If you&apos;re weighing that choice, the guide to <SiteLink href="/guides/do-personal-finance-apps-need-bank-access">personal finance apps and bank access</SiteLink> explains the convenience-and-control trade-off.</p>
           </div>
           <div>
             <ProductScreenshot

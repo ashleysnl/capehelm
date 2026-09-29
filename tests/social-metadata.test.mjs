@@ -54,6 +54,14 @@ const pages = [
     openGraphType: "article",
   },
   {
+    route: "/guides/do-personal-finance-apps-need-bank-access",
+    file: "guides/do-personal-finance-apps-need-bank-access.html",
+    title: "Do Personal Finance Apps Need Access to Your Bank Account? | Capehelm",
+    description:
+      "Personal finance apps don’t always need access to your bank account. Compare automatic bank connections with local CSV-based money management and understand the trade-offs.",
+    openGraphType: "article",
+  },
+  {
     route: "/faq",
     file: "faq.html",
     title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",

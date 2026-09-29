@@ -9,6 +9,7 @@ const publicRoutes = [
   "/why-capehelm",
   "/guides",
   "/guides/budget-vs-cash-flow-forecast",
+  "/guides/do-personal-finance-apps-need-bank-access",
   "/faq",
   "/privacy",
   "/support",
