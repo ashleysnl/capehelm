@@ -38,6 +38,22 @@ const pages = [
     canonical: `${productionOrigin}/features`,
   },
   {
+    route: "/guides",
+    file: "guides.html",
+    title: "Personal Finance Guides | Capehelm",
+    description:
+      "Practical Capehelm guides to budgeting, cash-flow forecasting and understanding what your household money needs to do next.",
+    canonical: `${productionOrigin}/guides`,
+  },
+  {
+    route: "/guides/budget-vs-cash-flow-forecast",
+    file: "guides/budget-vs-cash-flow-forecast.html",
+    title: "Budget vs. Cash-Flow Forecast: What’s the Difference? | Capehelm",
+    description:
+      "Learn the difference between a monthly budget and a short-term cash-flow forecast, why both matter, and how a 14-day forecast can help you see what’s coming next.",
+    canonical: `${productionOrigin}/guides/budget-vs-cash-flow-forecast`,
+  },
+  {
     route: "/why-capehelm",
     file: "why-capehelm.html",
     title: "Why I Built Capehelm | Founder Story",

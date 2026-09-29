@@ -94,6 +94,7 @@ export function SiteFooter() {
         <nav aria-label="Footer navigation">
           <SiteLink href="/features">Features</SiteLink>
           <SiteLink href="/why-capehelm">Why Capehelm</SiteLink>
+          <SiteLink href="/guides">Guides</SiteLink>
           <SiteLink href="/faq">FAQ</SiteLink>
           <SiteLink href="/privacy">Privacy</SiteLink>
           <SiteLink href="/support">Support</SiteLink>

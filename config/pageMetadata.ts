@@ -7,6 +7,8 @@ type PageMetadataInput = {
   path: string;
   socialTitle?: string;
   socialDescription?: string;
+  openGraphType?: "website" | "article";
+  publishedTime?: string;
 };
 
 export const defaultSocialTitle = "Capehelm — Private Personal Finance for Mac";
@@ -21,6 +23,8 @@ export function createPageMetadata({
   path,
   socialTitle = title,
   socialDescription = description,
+  openGraphType = "website",
+  publishedTime,
 }: PageMetadataInput): Metadata {
   const url = `${productionSiteUrl}${path}`;
 
@@ -29,11 +33,12 @@ export function createPageMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      type: "website",
+      type: openGraphType,
       siteName: "Capehelm",
       title: socialTitle,
       description: socialDescription,
       url,
+      ...(openGraphType === "article" && publishedTime ? { publishedTime } : {}),
       images: [
         {
           url: socialImageUrl,

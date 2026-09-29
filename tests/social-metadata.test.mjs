@@ -39,6 +39,21 @@ const pages = [
       "Explore Capehelm features for Mac, including budgeting, 14-day cash-flow forecasting, transaction analysis, Trends, Net Worth, Retirement and local CSV import.",
   },
   {
+    route: "/guides",
+    file: "guides.html",
+    title: "Personal Finance Guides | Capehelm",
+    description:
+      "Practical Capehelm guides to budgeting, cash-flow forecasting and understanding what your household money needs to do next.",
+  },
+  {
+    route: "/guides/budget-vs-cash-flow-forecast",
+    file: "guides/budget-vs-cash-flow-forecast.html",
+    title: "Budget vs. Cash-Flow Forecast: What’s the Difference? | Capehelm",
+    description:
+      "Learn the difference between a monthly budget and a short-term cash-flow forecast, why both matter, and how a 14-day forecast can help you see what’s coming next.",
+    openGraphType: "article",
+  },
+  {
     route: "/faq",
     file: "faq.html",
     title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",
@@ -133,7 +148,7 @@ test("every public page renders one complete, canonical Open Graph and Twitter c
       ["og:image:height", "630"],
       ["og:image:alt", socialImageAlt],
       ["og:url", page.canonical],
-      ["og:type", "website"],
+      ["og:type", page.openGraphType ?? "website"],
       ["og:site_name", "Capehelm"],
     ]);
 

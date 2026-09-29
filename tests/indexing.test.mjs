@@ -7,6 +7,8 @@ const publicRoutes = [
   "/",
   "/features",
   "/why-capehelm",
+  "/guides",
+  "/guides/budget-vs-cash-flow-forecast",
   "/faq",
   "/privacy",
   "/support",

@@ -20,6 +20,8 @@ test("features page includes current planning, import and local-control capabili
 for (const [path, expected] of [
   ["/", "Understand your money"],
   ["/features", "Past, present and future"],
+  ["/guides", "Clear thinking"],
+  ["/guides/budget-vs-cash-flow-forecast", "Budget vs. Cash-Flow Forecast"],
   ["/faq", "Clear answers before you"],
   ["/privacy", "Privacy Policy"],
   ["/support", "Capehelm Support"],
@@ -61,7 +63,7 @@ for (const [path, expected] of [
 }
 
 test("every public page includes the configured Google Analytics tag", async () => {
-  const pages = await Promise.all(["/", "/features", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
+  const pages = await Promise.all(["/", "/features", "/guides", "/guides/budget-vs-cash-flow-forecast", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
 
   for (const html of pages) {
     assert.equal((html.match(/<script async="" src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-PJ6ZQQVMPR"><\/script>/g) ?? []).length, 1);

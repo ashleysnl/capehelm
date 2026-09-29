@@ -3,6 +3,7 @@ import {
   macAppStoreUrl,
   productionSiteUrl,
 } from "./site";
+import { socialImageUrl } from "./pageMetadata";
 
 const productUrl = `${productionSiteUrl}/`;
 
@@ -70,4 +71,42 @@ export const capehelmSoftwareApplicationStructuredData = {
 
 export function serializeStructuredData(value: object): string {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
+}
+
+type ArticleStructuredDataInput = {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+};
+
+export function createArticleStructuredData({
+  headline,
+  description,
+  path,
+  datePublished,
+}: ArticleStructuredDataInput) {
+  const url = `${productionSiteUrl}${path}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline,
+    description,
+    url,
+    mainEntityOfPage: url,
+    datePublished,
+    image: socialImageUrl,
+    author: {
+      "@type": "Person",
+      name: "Ashley Skinner",
+      url: `${productionSiteUrl}/why-capehelm`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Capehelm",
+      url: `${productionSiteUrl}/`,
+    },
+  } as const;
 }
