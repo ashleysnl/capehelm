@@ -42,7 +42,7 @@ const pages = [
     file: "guides.html",
     title: "Personal Finance Guides | Capehelm",
     description:
-      "Practical Capehelm guides to budgeting, cash-flow forecasting, local-first personal finance and understanding what your household money needs to do next.",
+      "Practical Capehelm guides to transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
     canonical: `${productionOrigin}/guides`,
   },
   {
@@ -68,6 +68,14 @@ const pages = [
     description:
       "Learn how to build a simple 14-day personal cash-flow forecast, identify your lowest projected balance, and see upcoming financial pressure before it arrives.",
     canonical: `${productionOrigin}/guides/how-to-forecast-personal-cash-flow-14-days`,
+  },
+  {
+    route: "/guides/how-to-analyze-bank-transactions-csv",
+    file: "guides/how-to-analyze-bank-transactions-csv.html",
+    title: "How to Analyze Your Bank Transactions From a CSV File | Capehelm",
+    description:
+      "Learn how to analyze bank transactions from a CSV file, clean merchant names, categorize spending, identify recurring expenses, and avoid double-counting transfers.",
+    canonical: `${productionOrigin}/guides/how-to-analyze-bank-transactions-csv`,
   },
   {
     route: "/why-capehelm",

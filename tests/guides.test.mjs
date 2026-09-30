@@ -5,21 +5,24 @@ import test from "node:test";
 const articleRoute = "/guides/budget-vs-cash-flow-forecast";
 const bankAccessRoute = "/guides/do-personal-finance-apps-need-bank-access";
 const forecastHowToRoute = "/guides/how-to-forecast-personal-cash-flow-14-days";
+const csvAnalysisRoute = "/guides/how-to-analyze-bank-transactions-csv";
 
 async function readBuiltPage(file) {
   return readFile(new URL(`../dist/client/${file}`, import.meta.url), "utf8");
 }
 
-test("guides index exposes all three educational articles", async () => {
+test("guides index exposes all four educational articles", async () => {
   const html = await readBuiltPage("guides.html");
 
   assert.match(html, /<h1>Clear thinking for <em>everyday finances\.<\/em><\/h1>/);
   assert.match(html, /Budget vs\. Cash-Flow Forecast/);
   assert.match(html, /Do Personal Finance Apps Need Access to Your Bank Account/);
   assert.match(html, /How to Forecast Your Personal Cash Flow for the Next 14 Days/);
+  assert.match(html, /How to Analyze Your Bank Transactions From a CSV File/);
   assert.match(html, new RegExp(`href="${articleRoute}"`));
   assert.match(html, new RegExp(`href="${bankAccessRoute}"`));
   assert.match(html, new RegExp(`href="${forecastHowToRoute}"`));
+  assert.match(html, new RegExp(`href="${csvAnalysisRoute}"`));
   assert.match(html, /Budget[^<]*<\/span><i[^>]*>→<\/i><span>Actuals/);
   assert.match(html, /Bank[^<]*<\/span><i[^>]*>→<\/i><span>CSV/);
 });
@@ -66,6 +69,7 @@ test("bank-access guide preserves the balanced trade-off and product boundaries"
   assert.match(html, /a little less automation in exchange for more control/);
   assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
   assert.match(html, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
+  assert.match(html, /href="\/guides\/how-to-analyze-bank-transactions-csv"/);
   assert.match(html, /href="\/csv-bank-statement-import"/);
   assert.match(html, /href="\/private-personal-finance"/);
   assert.match(html, /href="\/privacy"/);
@@ -153,6 +157,7 @@ test("14-day forecast guide preserves the worked example and cross-links", async
   assert.match(html, /\$2,560 on Day 11/);
   assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
   assert.match(html, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
+  assert.match(html, /href="\/guides\/how-to-analyze-bank-transactions-csv"/);
   assert.match(html, /href="\/cash-flow-forecast"/);
   assert.match(html, /capehelm-forecast-1400\.webp/);
   assert.doesNotMatch(html, /revolutionary|game-changing|guaranteed outcome|financial advice/i);
@@ -191,4 +196,77 @@ test("14-day forecast visuals reconcile to the article values", async () => {
   assert.match(html, /Start with available cash[\s\S]*Add income[\s\S]*Add obligations[\s\S]*Estimate variable spend[\s\S]*Find the low point/);
   assert.match(html, /<caption>Illustrative 14-day personal cash-flow forecast<\/caption>/);
   assert.equal((html.match(/<tr><th scope="row">(?:Today|Day \d+)<\/th>/g) ?? []).length, 8);
+});
+
+test("CSV analysis guide preserves the workflow, accuracy and cross-links", async () => {
+  const html = await readBuiltPage("guides/how-to-analyze-bank-transactions-csv.html");
+
+  assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) ?? []).length, 1);
+  for (const heading of [
+    "What is a CSV file",
+    "Why analyze transactions",
+    "Keep the original files",
+    "Understand the columns",
+    "Standardize the data",
+    "Clean up merchant names",
+    "Categorize your spending",
+    "Be careful with transfers and credit-card payments",
+    "Ask five useful questions",
+    "Look at groups, categories and merchants differently",
+    "Don(?:'|&#x27;)t confuse unusual spending with bad spending",
+    "Compare your spending with your plan",
+    "Historical transactions can help you look forward",
+    "You can do all of this in a spreadsheet",
+    "Where Capehelm fits",
+    "A note about sensitive financial data",
+  ]) {
+    assert.match(
+      html,
+      heading.startsWith("Don(?:")
+        ? new RegExp(heading)
+        : new RegExp(heading.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+    );
+  }
+  assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
+  assert.match(html, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
+  assert.match(html, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
+  assert.match(html, /href="\/csv-bank-statement-import"/);
+  assert.match(html, /href="\/privacy"/);
+  assert.match(html, /wouldn(?:'|&#x27;)t delete the original description/i);
+  assert.match(html, /\$1,000[\s\S]*\$2,000/);
+  assert.match(html, /depends on what you(?:'|&#x27;)re trying to measure/i);
+  assert.doesNotMatch(html, /revolutionary|game-changing|guaranteed privacy|financial advice/i);
+});
+
+test("CSV analysis metadata and Article schema describe the canonical article", async () => {
+  const html = await readBuiltPage("guides/how-to-analyze-bank-transactions-csv.html");
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+
+  assert.match(html, /<title>How to Analyze Your Bank Transactions From a CSV File \| Capehelm<\/title>/);
+  assert.match(html, /<meta name="description" content="Learn how to analyze bank transactions from a CSV file/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-analyze-bank-transactions-csv"/);
+  assert.match(html, /<meta property="og:type" content="article"/);
+  assert.match(html, /<meta property="article:published_time" content="2026-09-30"/);
+  assert.equal(scripts.length, 1);
+
+  const schema = JSON.parse(scripts[0][1]);
+  assert.equal(schema["@type"], "Article");
+  assert.equal(schema.url, `https://capehelm.com${csvAnalysisRoute}`);
+  assert.equal(schema.datePublished, "2026-09-30");
+  assert.equal(schema.author.name, "Ashley Skinner");
+  assert.equal(schema.publisher.name, "Capehelm");
+});
+
+test("CSV analysis visuals use semantic, mobile-safe structures", async () => {
+  const html = await readBuiltPage("guides/how-to-analyze-bank-transactions-csv.html");
+
+  assert.match(html, /<figure class="guide-process-strip" aria-labelledby="csv-analysis-process-caption"/);
+  assert.match(html, /Export[\s\S]*Clean[\s\S]*Categorize[\s\S]*Analyze/);
+  assert.match(html, /<figure class="guide-comparison guide-transform-table"/);
+  assert.match(html, /MCDONALDS #1234 ST JOHNS NL[\s\S]*McDonald’s[\s\S]*Fast Food/);
+  assert.match(html, /<figure class="guide-process-strip guide-hierarchy-strip"/);
+  assert.match(html, /Variable Necessities[\s\S]*Groceries[\s\S]*Sobeys/);
+  assert.match(html, /<aside class="guide-analysis-questions"/);
+  const questions = html.match(/<aside class="guide-analysis-questions"[\s\S]*?<\/aside>/)?.[0] ?? "";
+  assert.equal((questions.match(/<li>/g) ?? []).length, 5);
 });

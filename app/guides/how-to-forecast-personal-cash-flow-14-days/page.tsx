@@ -312,6 +312,7 @@ export default function ForecastPersonalCashFlowGuide() {
             <p>For each row, calculate: <strong>previous balance + change = new projected balance.</strong></p>
             <p>Then look for the lowest projected balance.</p>
             <p>That&apos;s enough to build a useful two-week cash-flow forecast. I&apos;d recommend trying it at least once manually; it makes the concept very easy to understand.</p>
+            <p>If your starting point is a bank export, the guide to <SiteLink href="/guides/how-to-analyze-bank-transactions-csv">analyzing transactions from a CSV file</SiteLink> explains how to preserve, clean and categorize that history first.</p>
           </section>
         </div>
 

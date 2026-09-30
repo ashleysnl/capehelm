@@ -120,6 +120,7 @@ export default function PersonalFinanceAppsBankAccessGuide() {
             </p>
             <p>That&apos;s less automatic. But it has an important advantage: <strong>you decide when your financial information moves and where you put it.</strong></p>
             <p>If you want the practical details, Capehelm&apos;s <SiteLink href="/csv-bank-statement-import">CSV import guide</SiteLink> explains its user-directed statement workflow.</p>
+            <p>To work with an export yourself, read <SiteLink href="/guides/how-to-analyze-bank-transactions-csv">how to analyze bank transactions from a CSV file</SiteLink>.</p>
           </section>
 
           <section aria-labelledby="tradeoff-title">

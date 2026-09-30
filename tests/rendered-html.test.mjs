@@ -24,6 +24,7 @@ for (const [path, expected] of [
   ["/guides/budget-vs-cash-flow-forecast", "Budget vs. Cash-Flow Forecast"],
   ["/guides/do-personal-finance-apps-need-bank-access", "Do Personal Finance Apps Need Access"],
   ["/guides/how-to-forecast-personal-cash-flow-14-days", "How to Forecast Your Personal Cash Flow"],
+  ["/guides/how-to-analyze-bank-transactions-csv", "How to Analyze Your Bank Transactions"],
   ["/faq", "Clear answers before you"],
   ["/privacy", "Privacy Policy"],
   ["/support", "Capehelm Support"],
@@ -65,7 +66,7 @@ for (const [path, expected] of [
 }
 
 test("every public page includes the configured Google Analytics tag", async () => {
-  const pages = await Promise.all(["/", "/features", "/guides", "/guides/budget-vs-cash-flow-forecast", "/guides/do-personal-finance-apps-need-bank-access", "/guides/how-to-forecast-personal-cash-flow-14-days", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
+  const pages = await Promise.all(["/", "/features", "/guides", "/guides/budget-vs-cash-flow-forecast", "/guides/do-personal-finance-apps-need-bank-access", "/guides/how-to-forecast-personal-cash-flow-14-days", "/guides/how-to-analyze-bank-transactions-csv", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
 
   for (const html of pages) {
     assert.equal((html.match(/<script async="" src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-PJ6ZQQVMPR"><\/script>/g) ?? []).length, 1);

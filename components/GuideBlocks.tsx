@@ -279,6 +279,111 @@ export function ForecastProcessStrip() {
   );
 }
 
+const csvAnalysisSteps = ["Export", "Clean", "Categorize", "Analyze"] as const;
+
+export function CsvAnalysisProcessStrip() {
+  return (
+    <figure className="guide-process-strip" aria-labelledby="csv-analysis-process-caption">
+      <ol>
+        {csvAnalysisSteps.map((step, index) => (
+          <li key={step}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step}</strong>
+          </li>
+        ))}
+      </ol>
+      <figcaption id="csv-analysis-process-caption">Preserve the export, clean a working copy, add useful categories and then look for patterns.</figcaption>
+    </figure>
+  );
+}
+
+const transactionTransformationRows = [
+  ["MCDONALDS #1234 ST JOHNS NL", "McDonald’s", "Fast Food"],
+  ["SOBEYS #123", "Sobeys", "Groceries"],
+  ["SHELL 12345", "Shell", "Fuel"],
+  ["NETFLIX.COM", "Netflix", "Streaming"],
+] as const;
+
+export function TransactionTransformation() {
+  return (
+    <figure className="guide-comparison guide-transform-table" aria-labelledby="transaction-transformation-caption">
+      <div className="guide-comparison-heading">
+        <span>Keep the source · Add useful structure</span>
+        <strong>Raw descriptions become easier to analyze without being overwritten.</strong>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Raw description</th>
+            <th scope="col">Clean merchant</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {transactionTransformationRows.map(([raw, merchant, category]) => (
+            <tr key={raw}>
+              <th scope="row">{raw}</th>
+              <td data-label="Clean merchant">{merchant}</td>
+              <td data-label="Category">{category}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <figcaption id="transaction-transformation-caption">The original bank description remains available while a normalized merchant and category support analysis.</figcaption>
+    </figure>
+  );
+}
+
+const spendingHierarchy = [
+  ["Group", "Variable Necessities", "A broad area of household spending"],
+  ["Category", "Groceries", "The type of expense inside that group"],
+  ["Merchant", "Sobeys", "Where the money was actually spent"],
+] as const;
+
+export function SpendingHierarchyGraphic() {
+  return (
+    <figure className="guide-process-strip guide-hierarchy-strip" aria-labelledby="spending-hierarchy-caption">
+      <ol>
+        {spendingHierarchy.map(([level, example, explanation], index) => (
+          <li key={level}>
+            <span>{String(index + 1).padStart(2, "0")} · {level}</span>
+            <strong>{example}</strong>
+            <small>{explanation}</small>
+          </li>
+        ))}
+      </ol>
+      <figcaption id="spending-hierarchy-caption">Moving from group to category to merchant changes the level of detail—and the question you can answer.</figcaption>
+    </figure>
+  );
+}
+
+const analysisQuestions = [
+  "Where did most of my money go?",
+  "Which merchants appear most often?",
+  "What repeats every month?",
+  "Which expenses are growing?",
+  "Which transactions deserve another look?",
+] as const;
+
+export function AnalysisQuestionsCard() {
+  return (
+    <aside className="guide-analysis-questions" aria-labelledby="analysis-questions-title">
+      <div className="guide-analysis-questions-heading">
+        <span>Five useful questions</span>
+        <strong id="analysis-questions-title">Start simple. Look for patterns that help you understand what happened.</strong>
+      </div>
+      <ol>
+        {analysisQuestions.map((question, index) => (
+          <li key={question}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{question}</strong>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  );
+}
+
 type GuideCtaProps = {
   eyebrow?: string;
   title?: string;

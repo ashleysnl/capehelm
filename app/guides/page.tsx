@@ -4,7 +4,7 @@ import { createPageMetadata } from "../../config/pageMetadata";
 export const metadata = createPageMetadata({
   title: "Personal Finance Guides | Capehelm",
   description:
-    "Practical Capehelm guides to budgeting, cash-flow forecasting, local-first personal finance and understanding what your household money needs to do next.",
+    "Practical Capehelm guides to transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
   path: "/guides",
 });
 
@@ -27,11 +27,26 @@ export default function GuidesPage() {
         <div className="guides-list">
           <article className="guide-index-card">
             <div className="guide-index-meta">
+              <span>CSV · Transaction analysis</span>
+              <time dateTime="2026-09-30">September 30, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">How to Analyze Your Bank Transactions From a CSV File</h2>
+              <p>Turn a bank or credit-card CSV into something useful by cleaning transactions, organizing merchants and categories, and finding the spending patterns hidden in the data.</p>
+              <SiteLink className="text-link" href="/guides/how-to-analyze-bank-transactions-csv">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>Export</span><i>→</i><span>Clean</span><i>→</i><span>Analyze</span>
+            </div>
+          </article>
+
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
               <span>Forecasting · How-to</span>
               <time dateTime="2026-09-29">September 29, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">How to Forecast Your Personal Cash Flow for the Next 14 Days</h2>
+              <h2>How to Forecast Your Personal Cash Flow for the Next 14 Days</h2>
               <p>Build a simple two-week cash-flow forecast and learn why the lowest point in your projected balance can matter more than where you end.</p>
               <SiteLink className="text-link" href="/guides/how-to-forecast-personal-cash-flow-14-days">Read the guide <ArrowIcon /></SiteLink>
             </div>
