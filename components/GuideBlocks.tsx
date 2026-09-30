@@ -169,6 +169,116 @@ export function LocalFirstProcessStrip() {
   );
 }
 
+export const fourteenDayForecastRows = [
+  { day: 0, label: "Today", item: "Starting balance", change: "—", balance: 4800 },
+  { day: 2, label: "Day 2", item: "Mortgage", change: "−$1,850", balance: 2950 },
+  { day: 4, label: "Day 4", item: "Paycheque", change: "+$3,900", balance: 6850 },
+  { day: 5, label: "Day 5", item: "Groceries", change: "−$250", balance: 6600 },
+  { day: 7, label: "Day 7", item: "Credit card", change: "−$3,200", balance: 3400 },
+  { day: 9, label: "Day 9", item: "Electricity", change: "−$240", balance: 3160 },
+  { day: 11, label: "Day 11", item: "Childcare", change: "−$600", balance: 2560 },
+  { day: 14, label: "Day 14", item: "Paycheque", change: "+$3,900", balance: 6460 },
+] as const;
+
+const formatBalance = (value: number) => `$${value.toLocaleString("en-CA")}`;
+
+export function FourteenDayBalancePath() {
+  const width = 920;
+  const height = 300;
+  const plot = { left: 62, right: 56, top: 38, bottom: 56 };
+  const minimum = 2000;
+  const maximum = 7000;
+  const x = (day: number) => plot.left + (day / 14) * (width - plot.left - plot.right);
+  const y = (balance: number) => plot.top + ((maximum - balance) / (maximum - minimum)) * (height - plot.top - plot.bottom);
+  const points = fourteenDayForecastRows.map((row) => `${x(row.day)},${y(row.balance)}`).join(" ");
+  const lowPoint = fourteenDayForecastRows.reduce((lowest, row) => row.balance < lowest.balance ? row : lowest);
+
+  return (
+    <figure className="guide-balance-path" aria-labelledby="balance-path-caption">
+      <div className="guide-balance-path-heading">
+        <div>
+          <span>Illustrative example</span>
+          <strong>A 14-day projected balance path</strong>
+        </div>
+        <small>Lowest point highlighted</small>
+      </div>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label="Illustrative 14-day projected balance path, with the lowest point of $2,560 on Day 11 highlighted"
+        aria-labelledby="balance-path-title balance-path-description"
+      >
+        <title id="balance-path-title">Projected chequing balance over fourteen days</title>
+        <desc id="balance-path-description">The balance starts at $4,800, reaches a high of $6,850 on Day 4, falls to its lowest point of $2,560 on Day 11 and ends at $6,460 on Day 14.</desc>
+        {[2000, 4000, 6000].map((value) => (
+          <g className="guide-chart-grid" key={value}>
+            <line x1={plot.left} x2={width - plot.right} y1={y(value)} y2={y(value)} />
+            <text x={plot.left - 12} y={y(value) + 4} textAnchor="end">${value / 1000}k</text>
+          </g>
+        ))}
+        <polyline className="guide-chart-line-glow" points={points} />
+        <polyline className="guide-chart-line" points={points} />
+        {fourteenDayForecastRows.map((row) => (
+          <g className={row.day === lowPoint.day ? "guide-chart-point guide-chart-point-low" : "guide-chart-point"} key={row.day}>
+            <circle cx={x(row.day)} cy={y(row.balance)} r={row.day === lowPoint.day ? 7 : 4.5} />
+            {[0, 4, 7, 11, 14].includes(row.day) ? <text x={x(row.day)} y={height - 24} textAnchor="middle">{row.label}</text> : null}
+          </g>
+        ))}
+        <g className="guide-chart-low-label">
+          <line x1={x(lowPoint.day)} x2={x(lowPoint.day)} y1={y(lowPoint.balance) - 11} y2={y(lowPoint.balance) - 40} />
+          <text x={x(lowPoint.day)} y={y(lowPoint.balance) - 49} textAnchor="middle">Low point · {formatBalance(lowPoint.balance)}</text>
+        </g>
+      </svg>
+      <figcaption id="balance-path-caption">The path reveals the pressure between the starting and ending balances. The same values are listed in the accessible forecast table above.</figcaption>
+    </figure>
+  );
+}
+
+export function ForecastHighlights() {
+  const balances = fourteenDayForecastRows.map((row) => row.balance);
+  const highlights = [
+    ["Starting balance", balances[0]],
+    ["Highest projected balance", Math.max(...balances)],
+    ["Lowest projected balance", Math.min(...balances)],
+    ["Ending balance", balances.at(-1) ?? 0],
+  ] as const;
+
+  return (
+    <aside className="guide-forecast-highlights" aria-label="Fourteen-day forecast highlights">
+      {highlights.map(([label, value]) => (
+        <div className={label.startsWith("Lowest") ? "guide-forecast-highlight-low" : undefined} key={label}>
+          <span>{label}</span>
+          <strong>{formatBalance(value)}</strong>
+        </div>
+      ))}
+    </aside>
+  );
+}
+
+const forecastProcessSteps = [
+  "Start with available cash",
+  "Add income",
+  "Add obligations",
+  "Estimate variable spend",
+  "Find the low point",
+] as const;
+
+export function ForecastProcessStrip() {
+  return (
+    <figure className="guide-process-strip guide-process-strip-forecast" aria-labelledby="forecast-process-caption">
+      <ol>
+        {forecastProcessSteps.map((step, index) => (
+          <li key={step}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{step}</strong>
+          </li>
+        ))}
+      </ol>
+      <figcaption id="forecast-process-caption">A practical forecast starts with available cash, adds what is expected and then looks for the point where the projected balance is lowest.</figcaption>
+    </figure>
+  );
+}
+
 type GuideCtaProps = {
   eyebrow?: string;
   title?: string;

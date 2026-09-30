@@ -4,19 +4,22 @@ import test from "node:test";
 
 const articleRoute = "/guides/budget-vs-cash-flow-forecast";
 const bankAccessRoute = "/guides/do-personal-finance-apps-need-bank-access";
+const forecastHowToRoute = "/guides/how-to-forecast-personal-cash-flow-14-days";
 
 async function readBuiltPage(file) {
   return readFile(new URL(`../dist/client/${file}`, import.meta.url), "utf8");
 }
 
-test("guides index exposes both educational articles", async () => {
+test("guides index exposes all three educational articles", async () => {
   const html = await readBuiltPage("guides.html");
 
   assert.match(html, /<h1>Clear thinking for <em>everyday finances\.<\/em><\/h1>/);
   assert.match(html, /Budget vs\. Cash-Flow Forecast/);
   assert.match(html, /Do Personal Finance Apps Need Access to Your Bank Account/);
+  assert.match(html, /How to Forecast Your Personal Cash Flow for the Next 14 Days/);
   assert.match(html, new RegExp(`href="${articleRoute}"`));
   assert.match(html, new RegExp(`href="${bankAccessRoute}"`));
+  assert.match(html, new RegExp(`href="${forecastHowToRoute}"`));
   assert.match(html, /Budget[^<]*<\/span><i[^>]*>→<\/i><span>Actuals/);
   assert.match(html, /Bank[^<]*<\/span><i[^>]*>→<\/i><span>CSV/);
 });
@@ -39,6 +42,7 @@ test("budget and cash-flow guide preserves the editorial substance and restraine
   assert.match(body, /href="\/features#plan"/);
   assert.match(body, /href="\/private-personal-finance"/);
   assert.match(body, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
+  assert.match(body, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
   assert.match(body, /href="\/cash-flow-forecast"/);
   assert.match(body, /capehelm-forecast-1400\.webp/);
   assert.match(body, /fictional demo data/i);
@@ -61,6 +65,7 @@ test("bank-access guide preserves the balanced trade-off and product boundaries"
   assert.match(html, /Neither answer is universally correct/);
   assert.match(html, /a little less automation in exchange for more control/);
   assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
+  assert.match(html, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
   assert.match(html, /href="\/csv-bank-statement-import"/);
   assert.match(html, /href="\/private-personal-finance"/);
   assert.match(html, /href="\/privacy"/);
@@ -130,4 +135,60 @@ test("bank-access visuals are semantic and present both models neutrally", async
   assert.match(html, /<figure class="guide-process-strip"/);
   assert.match(html, /Export[\s\S]*Import[\s\S]*Review[\s\S]*Understand/);
   assert.match(html, /<caption>Example transaction CSV<\/caption>/);
+});
+
+test("14-day forecast guide preserves the worked example and cross-links", async () => {
+  const html = await readBuiltPage("guides/how-to-forecast-personal-cash-flow-14-days.html");
+
+  assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) ?? []).length, 1);
+  assert.match(html, /A simple two-week cash-flow forecast can show you where your bank balance is headed/);
+  assert.match(html, /What is a personal cash-flow forecast/);
+  assert.match(html, /The lowest point matters more than the ending point/);
+  assert.match(html, /Start with money actually available/);
+  assert.match(html, /Estimate variable spending/);
+  assert.match(html, /Your bank balance isn(?:'|&#x27;)t the same as available money/);
+  assert.match(html, /Why use 14 days/);
+  assert.match(html, /You can build this in a spreadsheet/);
+  assert.match(html, /How Capehelm approaches forecasting/);
+  assert.match(html, /\$2,560 on Day 11/);
+  assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
+  assert.match(html, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
+  assert.match(html, /href="\/cash-flow-forecast"/);
+  assert.match(html, /capehelm-forecast-1400\.webp/);
+  assert.doesNotMatch(html, /revolutionary|game-changing|guaranteed outcome|financial advice/i);
+});
+
+test("14-day forecast metadata and Article schema describe the canonical article", async () => {
+  const html = await readBuiltPage("guides/how-to-forecast-personal-cash-flow-14-days.html");
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+
+  assert.match(html, /<title>How to Forecast Your Personal Cash Flow for the Next 14 Days \| Capehelm<\/title>/);
+  assert.match(html, /<meta name="description" content="Learn how to build a simple 14-day personal cash-flow forecast/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
+  assert.match(html, /<meta property="og:type" content="article"/);
+  assert.match(html, /<meta property="article:published_time" content="2026-09-29"/);
+  assert.equal(scripts.length, 1);
+
+  const schema = JSON.parse(scripts[0][1]);
+  assert.equal(schema["@type"], "Article");
+  assert.equal(schema.url, `https://capehelm.com${forecastHowToRoute}`);
+  assert.equal(schema.datePublished, "2026-09-29");
+  assert.equal(schema.author.name, "Ashley Skinner");
+  assert.equal(schema.publisher.name, "Capehelm");
+});
+
+test("14-day forecast visuals reconcile to the article values", async () => {
+  const html = await readBuiltPage("guides/how-to-forecast-personal-cash-flow-14-days.html");
+
+  assert.match(html, /<figure class="guide-balance-path"/);
+  assert.match(html, /Low point · [\s\S]*?\$2,560/);
+  assert.match(html, /<aside class="guide-forecast-highlights"/);
+  assert.match(html, /Starting balance[\s\S]*\$4,800/);
+  assert.match(html, /Highest projected balance[\s\S]*\$6,850/);
+  assert.match(html, /Lowest projected balance[\s\S]*\$2,560/);
+  assert.match(html, /Ending balance[\s\S]*\$6,460/);
+  assert.match(html, /<figure class="guide-process-strip guide-process-strip-forecast"/);
+  assert.match(html, /Start with available cash[\s\S]*Add income[\s\S]*Add obligations[\s\S]*Estimate variable spend[\s\S]*Find the low point/);
+  assert.match(html, /<caption>Illustrative 14-day personal cash-flow forecast<\/caption>/);
+  assert.equal((html.match(/<tr><th scope="row">(?:Today|Day \d+)<\/th>/g) ?? []).length, 8);
 });

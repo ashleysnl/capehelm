@@ -42,7 +42,7 @@ const pages = [
     file: "guides.html",
     title: "Personal Finance Guides | Capehelm",
     description:
-      "Practical Capehelm guides to budgeting, cash-flow forecasting and understanding what your household money needs to do next.",
+      "Practical Capehelm guides to budgeting, cash-flow forecasting, local-first personal finance and understanding what your household money needs to do next.",
     canonical: `${productionOrigin}/guides`,
   },
   {
@@ -60,6 +60,14 @@ const pages = [
     description:
       "Personal finance apps don’t always need access to your bank account. Compare automatic bank connections with local CSV-based money management and understand the trade-offs.",
     canonical: `${productionOrigin}/guides/do-personal-finance-apps-need-bank-access`,
+  },
+  {
+    route: "/guides/how-to-forecast-personal-cash-flow-14-days",
+    file: "guides/how-to-forecast-personal-cash-flow-14-days.html",
+    title: "How to Forecast Your Personal Cash Flow for the Next 14 Days | Capehelm",
+    description:
+      "Learn how to build a simple 14-day personal cash-flow forecast, identify your lowest projected balance, and see upcoming financial pressure before it arrives.",
+    canonical: `${productionOrigin}/guides/how-to-forecast-personal-cash-flow-14-days`,
   },
   {
     route: "/why-capehelm",

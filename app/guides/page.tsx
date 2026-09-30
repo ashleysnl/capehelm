@@ -4,7 +4,7 @@ import { createPageMetadata } from "../../config/pageMetadata";
 export const metadata = createPageMetadata({
   title: "Personal Finance Guides | Capehelm",
   description:
-    "Practical Capehelm guides to budgeting, cash-flow forecasting and understanding what your household money needs to do next.",
+    "Practical Capehelm guides to budgeting, cash-flow forecasting, local-first personal finance and understanding what your household money needs to do next.",
   path: "/guides",
 });
 
@@ -27,11 +27,26 @@ export default function GuidesPage() {
         <div className="guides-list">
           <article className="guide-index-card">
             <div className="guide-index-meta">
+              <span>Forecasting · How-to</span>
+              <time dateTime="2026-09-29">September 29, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">How to Forecast Your Personal Cash Flow for the Next 14 Days</h2>
+              <p>Build a simple two-week cash-flow forecast and learn why the lowest point in your projected balance can matter more than where you end.</p>
+              <SiteLink className="text-link" href="/guides/how-to-forecast-personal-cash-flow-14-days">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>$4,800</span><i>→</i><span>$2,560 low</span><i>→</i><span>$6,460</span>
+            </div>
+          </article>
+
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
               <span>Privacy · Local-first</span>
               <time dateTime="2026-09-28">September 28, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">Do Personal Finance Apps Need Access to Your Bank Account?</h2>
+              <h2>Do Personal Finance Apps Need Access to Your Bank Account?</h2>
               <p>Automatic bank connections are convenient, but they aren&apos;t the only way to manage money. Here&apos;s the trade-off between connected and local-first personal finance.</p>
               <SiteLink className="text-link" href="/guides/do-personal-finance-apps-need-bank-access">Read the guide <ArrowIcon /></SiteLink>
             </div>

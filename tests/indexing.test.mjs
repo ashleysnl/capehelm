@@ -10,6 +10,7 @@ const publicRoutes = [
   "/guides",
   "/guides/budget-vs-cash-flow-forecast",
   "/guides/do-personal-finance-apps-need-bank-access",
+  "/guides/how-to-forecast-personal-cash-flow-14-days",
   "/faq",
   "/privacy",
   "/support",

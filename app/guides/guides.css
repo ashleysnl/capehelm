@@ -101,6 +101,29 @@
 .guide-forecast-income .guide-forecast-amount { color: #66d3bc; }
 .guide-forecast-expense .guide-forecast-amount { color: #d49aad; }
 .guide-forecast-starting { background: rgba(79,140,255,.045); }
+.guide-balance-path { margin: 0; padding: 34px; overflow: hidden; border: 1px solid rgba(79,140,255,.27); border-radius: 24px; background: radial-gradient(circle at 82% 12%,rgba(79,140,255,.13),transparent 34%),linear-gradient(145deg,#0b1a2e,#06101d); box-shadow: 0 30px 80px rgba(0,0,0,.24); }
+.guide-balance-path-heading { padding-bottom: 24px; display: flex; align-items: end; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+.guide-balance-path-heading span, .guide-balance-path-heading strong { display: block; }
+.guide-balance-path-heading span { color: #87ace7; font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+.guide-balance-path-heading strong { margin-top: 7px; color: #e5edf7; font-size: 23px; }
+.guide-balance-path-heading small { color: #7588a1; font-size: 11px; }
+.guide-balance-path svg { width: 100%; height: auto; margin-top: 18px; display: block; overflow: visible; }
+.guide-chart-grid line { stroke: rgba(255,255,255,.075); stroke-width: 1; }
+.guide-chart-grid text, .guide-chart-point text { fill: #6d819a; font-size: 11px; font-family: ui-sans-serif,system-ui,sans-serif; }
+.guide-chart-line-glow { fill: none; stroke: rgba(79,140,255,.22); stroke-linecap: round; stroke-linejoin: round; stroke-width: 13; }
+.guide-chart-line { fill: none; stroke: #6fa2f8; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+.guide-chart-point circle { fill: #0a1728; stroke: #93b9f7; stroke-width: 3; }
+.guide-chart-point-low circle { fill: #102846; stroke: #ffafc5; stroke-width: 4; filter: drop-shadow(0 0 8px rgba(255,135,170,.44)); }
+.guide-chart-low-label line { stroke: #bd718b; stroke-width: 1; stroke-dasharray: 3 4; }
+.guide-chart-low-label text { fill: #f0c7d3; font-size: 12px; font-family: ui-sans-serif,system-ui,sans-serif; font-weight: 700; }
+.guide-balance-path figcaption { margin-top: 10px; color: #667991; font-size: 11px; line-height: 1.55; }
+.guide-forecast-highlights { margin: 42px -44px; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.guide-forecast-highlights > div { min-width: 0; min-height: 138px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.017); }
+.guide-forecast-highlights span { color: #7e91aa; font-size: 10px; font-weight: 750; letter-spacing: .09em; line-height: 1.45; text-transform: uppercase; }
+.guide-forecast-highlights strong { color: #e7eef8; font-size: clamp(22px,2.3vw,30px); font-variant-numeric: tabular-nums; }
+.guide-forecast-highlights .guide-forecast-highlight-low { background: rgba(255,135,170,.055); }
+.guide-forecast-highlights .guide-forecast-highlight-low span { color: #d69aac; }
+.guide-forecast-highlights .guide-forecast-highlight-low strong { color: #f4d2dc; }
 .guide-comparison { margin: 0; overflow: hidden; border: 1px solid rgba(79,140,255,.27); border-radius: 24px; background: radial-gradient(circle at 84% 10%,rgba(79,140,255,.11),transparent 35%),linear-gradient(145deg,#0b1a2e,#06101d); box-shadow: 0 30px 80px rgba(0,0,0,.24); }
 .guide-comparison-heading { padding: 30px 34px 26px; border-bottom: 1px solid var(--line); }
 .guide-comparison-heading span, .guide-comparison-heading strong { display: block; }
@@ -121,6 +144,9 @@
 .guide-process-strip li:not(:last-child)::after { content: "→"; width: 26px; height: 26px; display: grid; place-items: center; position: absolute; z-index: 2; right: -14px; top: calc(50% - 13px); color: #7792b8; border: 1px solid rgba(112,145,194,.25); border-radius: 50%; background: #081321; font-size: 11px; }
 .guide-process-strip li span { color: #60748f; font: 10px ui-monospace,monospace; letter-spacing: .12em; }
 .guide-process-strip li strong { color: #e6eef8; font-size: 20px; }
+.guide-process-strip-forecast ol { grid-template-columns: repeat(5,minmax(0,1fr)); }
+.guide-process-strip-forecast li { min-height: 158px; padding: 22px; }
+.guide-process-strip-forecast li strong { font-size: 17px; line-height: 1.35; }
 .guide-prose-continued { margin-top: 70px; }
 .guide-three-views { margin: 42px -44px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .guide-three-views article { min-height: 220px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.017); }
@@ -205,6 +231,9 @@
   .guide-three-views article { min-height: 170px; }
   .guide-three-views h3 { margin-top: 38px; }
   .guide-forecast-card { padding: 26px 22px; }
+  .guide-balance-path { padding: 26px 22px; }
+  .guide-balance-path-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .guide-forecast-highlights { margin-inline: 0; grid-template-columns: repeat(2,minmax(0,1fr)); }
   .guide-forecast-labels { display: none; }
   .guide-forecast-timeline li { padding: 17px 8px 17px 30px; grid-template-columns: minmax(0,1fr) auto; gap: 5px 18px; }
   .guide-forecast-timeline time { grid-column: 1; }
@@ -225,6 +254,8 @@
   .guide-comparison figcaption { padding: 0 24px 20px; }
   .guide-process-strip ol { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .guide-process-strip li:nth-child(2)::after { content: none; }
+  .guide-process-strip-forecast ol { grid-template-columns: 1fr; }
+  .guide-process-strip-forecast li:not(:last-child)::after { content: "↓"; right: calc(50% - 13px); top: auto; bottom: -14px; }
   .guide-path-pair, .guide-choice-cards { margin-inline: 0; grid-template-columns: 1fr; }
   .guide-product-fit { margin-top: 96px; padding: 44px 32px; gap: 42px; }
   .guide-product-fit-text { grid-template-columns: 1fr; }
@@ -262,6 +293,10 @@
   .guide-budget-table { font-size: 14px; }
   .guide-breakout { width: min(calc(100% - 24px),var(--guide-wide)); }
   .guide-forecast-card { padding: 24px 16px; border-radius: 18px; }
+  .guide-balance-path { padding: 24px 16px; border-radius: 18px; }
+  .guide-balance-path-heading strong { font-size: 19px; }
+  .guide-forecast-highlights { grid-template-columns: 1fr; }
+  .guide-forecast-highlights > div { min-height: 112px; padding: 20px 22px; }
   .guide-forecast-card-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
   .guide-forecast-timeline li { gap: 4px 10px; font-size: 13px; }
   .guide-forecast-amount::before, .guide-forecast-timeline strong::before { display: block; }

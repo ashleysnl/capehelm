@@ -179,6 +179,7 @@ export default function BudgetVsCashFlowForecastGuide() {
               <li><span>04</span><div><strong>Notice the low points.</strong><p>Look for the places where your projected balance becomes uncomfortable.</p></div></li>
             </ol>
             <p>A spreadsheet can do this perfectly well.</p>
+            <p>If you want to build one step by step, the guide to <SiteLink href="/guides/how-to-forecast-personal-cash-flow-14-days">forecasting your personal cash flow for the next 14 days</SiteLink> walks through the timeline, estimates and low point.</p>
             <p>Maybe the month looks fine overall, but three large payments land before your next paycheque. That&apos;s useful information before those payments happen.</p>
           </section>
         </div>

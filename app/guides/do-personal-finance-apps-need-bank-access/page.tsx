@@ -259,7 +259,7 @@ export default function PersonalFinanceAppsBankAccessGuide() {
           </dl>
           <div className="guide-product-fit-copy guide-product-fit-note">
             <p>The philosophy is simple: your financial information should be useful without requiring Capehelm to continuously retrieve it from your bank.</p>
-            <p>You can explore those connected views on the <SiteLink href="/features">Capehelm features page</SiteLink>. For a closer look at the planning views, read about <SiteLink href="/guides/budget-vs-cash-flow-forecast">the difference between a budget and a cash-flow forecast</SiteLink>.</p>
+            <p>You can explore those connected views on the <SiteLink href="/features">Capehelm features page</SiteLink>. For a closer look at the planning views, read about <SiteLink href="/guides/budget-vs-cash-flow-forecast">the difference between a budget and a cash-flow forecast</SiteLink>, then try <SiteLink href="/guides/how-to-forecast-personal-cash-flow-14-days">building a 14-day personal cash-flow forecast</SiteLink>.</p>
           </div>
         </section>
 
