@@ -16,8 +16,12 @@ async function softwareApplication() {
     ),
   ];
 
-  assert.equal(scripts.length, 1, "homepage should contain one JSON-LD entity");
-  return JSON.parse(scripts[0][1]);
+  assert.equal(scripts.length, 1, "homepage should contain one JSON-LD script");
+  const data = JSON.parse(scripts[0][1]);
+  const entities = Array.isArray(data) ? data : [data];
+  const applications = entities.filter((entity) => entity["@type"] === "SoftwareApplication");
+  assert.equal(applications.length, 1, "homepage should contain one SoftwareApplication entity");
+  return applications[0];
 }
 
 test("homepage publishes one accurate SoftwareApplication entity", async () => {
@@ -37,9 +41,7 @@ test("homepage publishes one accurate SoftwareApplication entity", async () => {
   assert.match(schema.description, /local-first personal finance app for macOS/);
   assert.match(schema.description, /imported transactions/);
   assert.deepEqual(schema.publisher, {
-    "@type": "Organization",
-    name: "Capehelm",
-    url: `${productionOrigin}/`,
+    "@id": `${productionOrigin}/#organization`,
   });
 });
 
