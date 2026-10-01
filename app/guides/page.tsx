@@ -4,7 +4,7 @@ import { createPageMetadata } from "../../config/pageMetadata";
 export const metadata = createPageMetadata({
   title: "Personal Finance Guides | Capehelm",
   description:
-    "Practical Capehelm guides to net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+    "Practical Capehelm guides to subscriptions, recurring charges, net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
   path: "/guides",
 });
 
@@ -27,11 +27,26 @@ export default function GuidesPage() {
         <div className="guides-list">
           <article className="guide-index-card">
             <div className="guide-index-meta">
+              <span>Subscriptions · Recurring spending</span>
+              <time dateTime="2026-10-01">October 1, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">How to Find Subscriptions and Recurring Charges on Your Bank Statement</h2>
+              <p>Find forgotten subscriptions and repeating charges, convert small monthly payments into annual cost, and build a recurring-spending audit from your own transaction history.</p>
+              <SiteLink className="text-link" href="/guides/how-to-find-subscriptions-recurring-charges-bank-statement">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>$20 / month</span><i>→</i><span>$240 / year</span>
+            </div>
+          </article>
+
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
               <span>Net worth · Long-term progress</span>
               <time dateTime="2026-10-01">October 1, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">How to Track Your Net Worth Without Connecting Your Bank Accounts</h2>
+              <h2>How to Track Your Net Worth Without Connecting Your Bank Accounts</h2>
               <p>Track assets and liabilities over time, understand what actually drives changes in your net worth, and build a long-term financial picture without connecting your accounts.</p>
               <SiteLink className="text-link" href="/guides/how-to-track-net-worth-without-bank-connections">Read the guide <ArrowIcon /></SiteLink>
             </div>
