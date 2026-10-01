@@ -13,6 +13,7 @@ const publicRoutes = [
   "/guides/how-to-forecast-personal-cash-flow-14-days",
   "/guides/how-to-analyze-bank-transactions-csv",
   "/guides/how-to-track-net-worth-without-bank-connections",
+  "/guides/how-to-find-subscriptions-recurring-charges-bank-statement",
   "/faq",
   "/privacy",
   "/support",
