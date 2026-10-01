@@ -17,7 +17,28 @@ const publicScreenshotUrls = [
 ].map((name) => `${productionSiteUrl}/product/capehelm-${name}-2560.webp`);
 
 const appStoreMetadata =
-  isMacAppStoreLive && macAppStoreUrl ? { installUrl: macAppStoreUrl } : {};
+  isMacAppStoreLive && macAppStoreUrl
+    ? { installUrl: macAppStoreUrl, sameAs: [macAppStoreUrl] }
+    : {};
+
+export const capehelmOrganizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${productUrl}#organization`,
+  name: "Capehelm",
+  url: productUrl,
+  logo: `${productionSiteUrl}/brand/capehelm-icon.png`,
+  ...(isMacAppStoreLive && macAppStoreUrl ? { sameAs: [macAppStoreUrl] } : {}),
+} as const;
+
+export const capehelmWebSiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${productUrl}#website`,
+  name: "Capehelm",
+  url: productUrl,
+  publisher: { "@id": `${productUrl}#organization` },
+} as const;
 
 export const capehelmSoftwareApplicationStructuredData = {
   "@context": "https://schema.org",
@@ -61,11 +82,7 @@ export const capehelmSoftwareApplicationStructuredData = {
       url: `${productUrl}#pricing`,
     },
   ],
-  publisher: {
-    "@type": "Organization",
-    name: "Capehelm",
-    url: productUrl,
-  },
+  publisher: { "@id": `${productUrl}#organization` },
   ...appStoreMetadata,
 } as const;
 
@@ -108,5 +125,26 @@ export function createArticleStructuredData({
       name: "Capehelm",
       url: `${productionSiteUrl}/`,
     },
+  } as const;
+}
+
+export function createFaqStructuredData(
+  entries: readonly {
+    question: string;
+    answer: readonly string[];
+    bullets?: readonly string[];
+  }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: entries.map((entry) => ({
+      "@type": "Question",
+      name: entry.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: [...entry.answer, ...(entry.bullets ?? [])].join(" "),
+      },
+    })),
   } as const;
 }

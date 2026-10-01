@@ -1,6 +1,7 @@
 import { PageShell, SiteLink } from "../../components/SiteShell";
 import { createPageMetadata } from "../../config/pageMetadata";
 import { faqEntries } from "../../content/faq";
+import { createFaqStructuredData, serializeStructuredData } from "../../config/structuredData";
 
 export const metadata = createPageMetadata({
   title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",
@@ -14,6 +15,12 @@ export const dynamic = "force-static";
 export default function FaqPage() {
   return (
     <PageShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(createFaqStructuredData(faqEntries)),
+        }}
+      />
       <section className="page-hero faq-hero section-shell">
         <p className="eyebrow"><span /> Capehelm FAQ</p>
         <h1>Clear answers before you <em>start your trial.</em></h1>

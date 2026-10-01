@@ -3,12 +3,14 @@ import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/Site
 import { createPageMetadata, defaultSocialTitle } from "../config/pageMetadata";
 import { siteAssetPath } from "../config/site";
 import {
+  capehelmOrganizationStructuredData,
   capehelmSoftwareApplicationStructuredData,
+  capehelmWebSiteStructuredData,
   serializeStructuredData,
 } from "../config/structuredData";
 
 export const metadata = createPageMetadata({
-  title: "Capehelm | Private Personal Finance & Budgeting for Mac",
+  title: "Personal Finance App for Mac | Capehelm",
   description:
     "Capehelm is a private personal finance app for Mac with budgeting, 14-day cash-flow forecasting, spending analysis, net worth and retirement planning. Your financial data stays local.",
   path: "/",
@@ -69,14 +71,18 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: serializeStructuredData(capehelmSoftwareApplicationStructuredData),
+          __html: serializeStructuredData([
+            capehelmOrganizationStructuredData,
+            capehelmWebSiteStructuredData,
+            capehelmSoftwareApplicationStructuredData,
+          ]),
         }}
       />
       <section className="hero section-shell">
         <div className="hero-glow" />
         <div className="hero-copy reveal">
           <p className="hero-positioning">Private personal finance for Mac.</p>
-          <h1>Understand your money.<br /><em>Plan what&apos;s next.</em></h1>
+          <h1>Personal finance for Mac.<br /><em>Understand your money. Plan what&apos;s next.</em></h1>
           <p className="hero-lede">Track spending, build a budget, forecast the next 14 days, monitor your net worth and plan retirement — while keeping your financial data on your Mac.</p>
           <div className="hero-actions">
             <AppStoreLink className="button hero-primary-cta">Download on the Mac App Store <ArrowIcon /></AppStoreLink>

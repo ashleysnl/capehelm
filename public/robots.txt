@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://capehelm.com/sitemap.xml
+Host: capehelm.com
