@@ -80,7 +80,7 @@ test("homepage hero communicates the Task 3 positioning and one dominant App Sto
   const html = await render("/");
   const hero = html.match(/<section class="hero section-shell">([\s\S]*?)<\/section>/)?.[1] ?? "";
 
-  assert.match(hero, /<h1>Understand your money\.<br\/><em>Plan what(?:'|&#x27;)s next\.<\/em><\/h1>/);
+  assert.match(hero, /<h1>Personal finance for Mac\.<br\/><em>Understand your money\. Plan what(?:'|&#x27;)s next\.<\/em><\/h1>/);
   assert.match(hero, /Private personal finance for Mac\./);
   assert.match(hero, /forecast the next 14 days/i);
   assert.match(hero, /build a budget/i);

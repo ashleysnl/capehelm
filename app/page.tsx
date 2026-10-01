@@ -72,9 +72,9 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: serializeStructuredData([
+            capehelmSoftwareApplicationStructuredData,
             capehelmOrganizationStructuredData,
             capehelmWebSiteStructuredData,
-            capehelmSoftwareApplicationStructuredData,
           ]),
         }}
       />
