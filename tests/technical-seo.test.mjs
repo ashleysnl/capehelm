@@ -24,7 +24,7 @@ const pages = [
   {
     route: "/",
     file: "index.html",
-    title: "Capehelm | Private Personal Finance & Budgeting for Mac",
+    title: "Personal Finance App for Mac | Capehelm",
     description:
       "Capehelm is a private personal finance app for Mac with budgeting, 14-day cash-flow forecasting, spending analysis, net worth and retirement planning. Your financial data stays local.",
     canonical: productionOrigin,
