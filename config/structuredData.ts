@@ -129,7 +129,11 @@ export function createArticleStructuredData({
 }
 
 export function createFaqStructuredData(
-  entries: Array<{ question: string; answer: string[]; bullets?: string[] }>,
+  entries: readonly {
+    question: string;
+    answer: readonly string[];
+    bullets?: readonly string[];
+  }[],
 ) {
   return {
     "@context": "https://schema.org",
