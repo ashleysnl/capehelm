@@ -43,7 +43,7 @@ const pages = [
     file: "guides.html",
     title: "Personal Finance Guides | Capehelm",
     description:
-      "Practical Capehelm guides to net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+      "Practical Capehelm guides to subscriptions, recurring charges, net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
   },
   {
     route: "/guides/budget-vs-cash-flow-forecast",
@@ -83,6 +83,14 @@ const pages = [
     title: "How to Track Your Net Worth Without Connecting Your Bank Accounts | Capehelm",
     description:
       "Learn how to track assets, liabilities and net-worth history manually, understand contributions and debt repayment, and monitor long-term financial progress without linking your bank accounts.",
+    openGraphType: "article",
+  },
+  {
+    route: "/guides/how-to-find-subscriptions-recurring-charges-bank-statement",
+    file: "guides/how-to-find-subscriptions-recurring-charges-bank-statement.html",
+    title: "How to Find Subscriptions and Recurring Charges on Your Bank Statement | Capehelm",
+    description:
+      "Learn how to find subscriptions and recurring charges on bank or credit-card statements, spot forgotten renewals, calculate annual cost, and audit recurring spending without linking your bank account.",
     openGraphType: "article",
   },
   {
