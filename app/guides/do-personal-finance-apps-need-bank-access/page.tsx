@@ -147,7 +147,7 @@ export default function PersonalFinanceAppsBankAccessGuide() {
               <li>Where is our money actually going?</li>
               <li>How are we doing against our budget?</li>
               <li>What&apos;s going to happen over the next couple of weeks?</li>
-              <li>Is our net worth moving in the right direction?</li>
+              <li>Is our <SiteLink href="/guides/how-to-track-net-worth-without-bank-connections">net worth moving in the right direction</SiteLink>?</li>
               <li>What could retirement eventually look like?</li>
             </ul>
             <p>None of those questions inherently requires a permanent connection to my bank account. What I needed was the underlying information.</p>

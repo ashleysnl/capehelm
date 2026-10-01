@@ -42,7 +42,7 @@ const pages = [
     file: "guides.html",
     title: "Personal Finance Guides | Capehelm",
     description:
-      "Practical Capehelm guides to transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+      "Practical Capehelm guides to net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
     canonical: `${productionOrigin}/guides`,
   },
   {
@@ -76,6 +76,14 @@ const pages = [
     description:
       "Learn how to analyze bank transactions from a CSV file, clean merchant names, categorize spending, identify recurring expenses, and avoid double-counting transfers.",
     canonical: `${productionOrigin}/guides/how-to-analyze-bank-transactions-csv`,
+  },
+  {
+    route: "/guides/how-to-track-net-worth-without-bank-connections",
+    file: "guides/how-to-track-net-worth-without-bank-connections.html",
+    title: "How to Track Your Net Worth Without Connecting Your Bank Accounts | Capehelm",
+    description:
+      "Learn how to track assets, liabilities and net-worth history manually, understand contributions and debt repayment, and monitor long-term financial progress without linking your bank accounts.",
+    canonical: `${productionOrigin}/guides/how-to-track-net-worth-without-bank-connections`,
   },
   {
     route: "/why-capehelm",
@@ -115,7 +123,7 @@ const pages = [
     file: "download.html",
     title: "Download Capehelm for Mac | Capehelm",
     description:
-      "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
+      "Download Capehelm from the Mac App Store. Budget, forecast cash flow, understand spending and track long-term progress while keeping your financial data local.",
     canonical: `${productionOrigin}/download`,
   },
   {
@@ -236,7 +244,7 @@ test("public images have alt text or an accessible image label", async () => {
       assert.match(image, /\salt="[^"]*"/i, `${page.route} image alt attribute`);
     }
     for (const image of roleImages) {
-      assert.match(image, /\saria-label="[^"]+"/i, `${page.route} role=img label`);
+      assert.match(image, /\saria-(?:label|labelledby)="[^"]+"/i, `${page.route} role=img label`);
     }
   }
 });
@@ -253,7 +261,7 @@ test("internal links use real clean routes and valid fragments", async () => {
 
     for (const href of links) {
       assert.doesNotMatch(href, /localhost|github\.io/i, `${route} link origin`);
-      if (href.startsWith("mailto:")) continue;
+      if (/^[a-z][a-z0-9+.-]*:/i.test(href)) continue;
 
       const [rawPath, fragment] = href.split("#");
       const targetRoute = rawPath || route;

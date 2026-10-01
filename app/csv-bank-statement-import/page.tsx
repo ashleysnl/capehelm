@@ -151,7 +151,7 @@ export default function CsvBankStatementImportPage() {
         <LandingCta
           eyebrow="Bring your own statements"
           title="Build useful history without handing over a banking password."
-          body="Capehelm is being prepared for the Mac App Store. The shared CTA keeps the site’s current Coming Soon behavior until a verified listing is available."
+          body="Capehelm is available on the Mac App Store. Import the statement files you choose and keep the resulting financial picture in your local Finance Document."
           secondaryHref="/features#understand"
           secondaryLabel="Explore Transactions and Trends"
         />

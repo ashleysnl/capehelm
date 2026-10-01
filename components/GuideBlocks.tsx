@@ -384,6 +384,131 @@ export function AnalysisQuestionsCard() {
   );
 }
 
+export function NetWorthEquationCard() {
+  return (
+    <figure className="guide-net-worth-equation" aria-labelledby="net-worth-equation-caption">
+      <div className="guide-net-worth-equation-heading">
+        <span>Illustrative household</span>
+        <strong>Net worth brings assets and liabilities into one view.</strong>
+      </div>
+      <div className="guide-net-worth-equation-values" role="img" aria-label="Assets of $878,000 minus liabilities of $438,000 equals net worth of $440,000">
+        <div><span>Assets</span><strong>$878,000</strong></div>
+        <i aria-hidden="true">−</i>
+        <div><span>Liabilities</span><strong>$438,000</strong></div>
+        <i aria-hidden="true">=</i>
+        <div className="guide-net-worth-equation-result"><span>Net worth</span><strong>$440,000</strong></div>
+      </div>
+      <figcaption id="net-worth-equation-caption">Assets minus liabilities equals net worth. The example matches the account values used throughout this guide.</figcaption>
+    </figure>
+  );
+}
+
+const netWorthHistory = [
+  { month: "January", value: 405000 },
+  { month: "April", value: 416000 },
+  { month: "July", value: 427000 },
+  { month: "October", value: 440000 },
+] as const;
+
+export function NetWorthHistoryChart() {
+  const width = 920;
+  const height = 300;
+  const plot = { left: 74, right: 50, top: 40, bottom: 62 };
+  const minimum = 400000;
+  const maximum = 445000;
+  const x = (index: number) => plot.left + (index / (netWorthHistory.length - 1)) * (width - plot.left - plot.right);
+  const y = (value: number) => plot.top + ((maximum - value) / (maximum - minimum)) * (height - plot.top - plot.bottom);
+  const points = netWorthHistory.map((entry, index) => `${x(index)},${y(entry.value)}`).join(" ");
+
+  return (
+    <figure className="guide-balance-path guide-net-worth-history" aria-labelledby="net-worth-history-caption">
+      <div className="guide-balance-path-heading">
+        <div>
+          <span>Illustrative example</span>
+          <strong>Net-worth history reveals the direction.</strong>
+        </div>
+        <small>January to October</small>
+      </div>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-labelledby="net-worth-history-title net-worth-history-description"
+      >
+        <title id="net-worth-history-title">Illustrative net-worth history</title>
+        <desc id="net-worth-history-description">Net worth increases from $405,000 in January to $416,000 in April, $427,000 in July and $440,000 in October.</desc>
+        {[400000, 420000, 440000].map((value) => (
+          <g className="guide-chart-grid" key={value}>
+            <line x1={plot.left} x2={width - plot.right} y1={y(value)} y2={y(value)} />
+            <text x={plot.left - 14} y={y(value) + 4} textAnchor="end">${value / 1000}k</text>
+          </g>
+        ))}
+        <polyline className="guide-chart-line-glow" points={points} />
+        <polyline className="guide-chart-line" points={points} />
+        {netWorthHistory.map((entry, index) => (
+          <g className="guide-chart-point guide-net-worth-history-point" key={entry.month}>
+            <circle cx={x(index)} cy={y(entry.value)} r="6" />
+            <text x={x(index)} y={height - 28} textAnchor="middle">{entry.month}</text>
+            <text className="guide-net-worth-history-value" x={x(index)} y={y(entry.value) - 18} textAnchor="middle">${entry.value.toLocaleString("en-CA")}</text>
+          </g>
+        ))}
+      </svg>
+      <figcaption id="net-worth-history-caption">The household&apos;s estimated net worth rises by $35,000 across four snapshots. The values also appear in the accessible history table in the article.</figcaption>
+    </figure>
+  );
+}
+
+const netWorthDrivers = [
+  ["Asset growth", "Changes in the value of investments, property or other assets"],
+  ["Contributions", "New money added to savings or investment accounts"],
+  ["Withdrawals", "Money removed from an account or moved elsewhere"],
+  ["Debt repayment", "Liabilities reduced through mortgage or loan payments"],
+  ["Valuation changes", "Updates to estimates for homes, vehicles or other assets"],
+] as const;
+
+export function NetWorthDriversCard() {
+  return (
+    <aside className="guide-net-worth-drivers" aria-labelledby="net-worth-drivers-title">
+      <div className="guide-analysis-questions-heading">
+        <span>What changed?</span>
+        <strong id="net-worth-drivers-title">The total matters less when you can&apos;t explain what moved it.</strong>
+      </div>
+      <dl>
+        {netWorthDrivers.map(([driver, description], index) => (
+          <div key={driver}>
+            <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <dt>{driver}</dt>
+            <dd>{description}</dd>
+          </div>
+        ))}
+      </dl>
+    </aside>
+  );
+}
+
+const financialTimeHorizons = [
+  ["Transactions", "Past"],
+  ["Budget", "Plan"],
+  ["Forecast", "Near term"],
+  ["Net Worth", "Bigger picture"],
+  ["Retirement", "Long term"],
+] as const;
+
+export function FinancialTimeHorizonsStrip() {
+  return (
+    <figure className="guide-process-strip guide-time-horizons" aria-labelledby="financial-time-horizons-caption">
+      <ol>
+        {financialTimeHorizons.map(([view, horizon], index) => (
+          <li key={view}>
+            <span>{String(index + 1).padStart(2, "0")} · {horizon}</span>
+            <strong>{view}</strong>
+          </li>
+        ))}
+      </ol>
+      <figcaption id="financial-time-horizons-caption">Each view answers a different question, from what already happened to where the longer-term direction could lead.</figcaption>
+    </figure>
+  );
+}
+
 type GuideCtaProps = {
   eyebrow?: string;
   title?: string;

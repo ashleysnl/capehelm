@@ -15,8 +15,8 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
-const title = "Capehelm — Coming Soon for Mac";
-const description = "Capehelm is a private, local-first personal finance workspace coming soon for Mac. It is not yet available and no release date has been announced.";
+const title = "Capehelm — Private Personal Finance for Mac";
+const description = "Capehelm is a private, local-first personal finance app for macOS, available on the Mac App Store.";
 const googleAnalyticsId = "G-PJ6ZQQVMPR";
 
 export const metadata: Metadata = {

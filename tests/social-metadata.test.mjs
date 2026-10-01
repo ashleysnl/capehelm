@@ -43,7 +43,7 @@ const pages = [
     file: "guides.html",
     title: "Personal Finance Guides | Capehelm",
     description:
-      "Practical Capehelm guides to transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+      "Practical Capehelm guides to net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
   },
   {
     route: "/guides/budget-vs-cash-flow-forecast",
@@ -78,6 +78,14 @@ const pages = [
     openGraphType: "article",
   },
   {
+    route: "/guides/how-to-track-net-worth-without-bank-connections",
+    file: "guides/how-to-track-net-worth-without-bank-connections.html",
+    title: "How to Track Your Net Worth Without Connecting Your Bank Accounts | Capehelm",
+    description:
+      "Learn how to track assets, liabilities and net-worth history manually, understand contributions and debt repayment, and monitor long-term financial progress without linking your bank accounts.",
+    openGraphType: "article",
+  },
+  {
     route: "/faq",
     file: "faq.html",
     title: "Capehelm FAQ | Privacy, CSV Imports & Subscriptions",
@@ -104,7 +112,7 @@ const pages = [
     file: "download.html",
     title: "Download Capehelm for Mac | Capehelm",
     description:
-      "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
+      "Download Capehelm from the Mac App Store. Budget, forecast cash flow, understand spending and track long-term progress while keeping your financial data local.",
   },
   {
     route: "/personal-finance-for-mac",

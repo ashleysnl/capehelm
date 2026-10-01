@@ -129,7 +129,7 @@ export default function PersonalFinanceForMacPage() {
         <LandingCta
           eyebrow="Capehelm for Mac"
           title="Bring the whole financial picture onto your Mac."
-          body="Capehelm is being prepared for the Mac App Store. The shared download action preserves the current availability status until the public listing is live."
+          body="Capehelm is available on the Mac App Store. Bring budgeting, forecasting, spending analysis and long-term planning together on your Mac."
           secondaryHref="/features"
           secondaryLabel="See every feature"
         />

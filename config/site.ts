@@ -1,8 +1,6 @@
 export const productionSiteUrl = "https://capehelm.com";
 
-// Set this to the production apps.apple.com listing when it is available.
-// Until then, App Store CTAs use the existing /download availability page.
-export const macAppStoreUrl: string | null = null;
+export const macAppStoreUrl = "https://apps.apple.com/us/app/capehelm/id6813935886";
 export const macAppStoreFallbackUrl = "/download";
 
 export function resolveMacAppStoreDestination(url: string | null | undefined): string {
@@ -35,17 +33,15 @@ export const siteConfig = {
   version: "1.1.0",
   platforms: {
     macOS: "macOS 14 or later",
-    iOS: "Not part of the current public release",
+    iOS: "No iPhone or iPad companion is currently offered",
   },
   download: {
-    status: isMacAppStoreLive ? "available" as const : "coming-soon" as const,
+    status: "available" as const,
     url: macAppStoreDestination,
-    isExternal: isMacAppStoreLive,
-    label: isMacAppStoreLive ? "Available on the Mac App Store" : "Coming Soon",
+    isExternal: true,
+    label: "Available on the Mac App Store",
     appStoreLabel: "Download on the Mac App Store",
-    note: isMacAppStoreLive
-      ? "Capehelm is available from the Mac App Store."
-      : "Capehelm is not yet available from the Mac App Store or as a direct download. No release date has been announced.",
+    note: "Capehelm is available from the Mac App Store.",
   },
   navigation: [
     { href: "/features", label: "Features" },

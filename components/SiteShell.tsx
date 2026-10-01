@@ -7,27 +7,26 @@ export function SiteLink({ href, children, ...props }: AnchorHTMLAttributes<HTML
 
 export function AppStoreLink({ children, ...props }: Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
   const rel = siteConfig.download.isExternal
-    ? [props.rel, "external"].filter(Boolean).join(" ")
+    ? [props.rel, "external", "noopener", "noreferrer"].filter(Boolean).join(" ")
     : props.rel;
+  const target = props.target ?? (siteConfig.download.isExternal ? "_blank" : undefined);
 
   return (
-    <SiteLink {...props} href={siteConfig.download.url} rel={rel || undefined}>
+    <SiteLink {...props} href={siteConfig.download.url} target={target} rel={rel || undefined}>
       {children ?? siteConfig.download.appStoreLabel}
     </SiteLink>
   );
 }
 
 export function SiteHeader() {
-  const isAvailable = siteConfig.download.status === "available";
-
   return (
     <header className="site-header">
       <AppStoreLink
         className="availability-bar"
       >
-        <strong>{isAvailable ? "Available" : "Coming Soon"}</strong>
-        <span>{isAvailable ? "Capehelm is on the Mac App Store." : "Capehelm for Mac is not yet available."}</span>
-        <span aria-hidden="true">{isAvailable ? "View on the App Store ↗" : "View status ↗"}</span>
+        <strong>Available now</strong>
+        <span>Capehelm is on the Mac App Store.</span>
+        <span aria-hidden="true">View on the App Store ↗</span>
       </AppStoreLink>
       <div className="nav-wrap">
         <SiteLink className="brand" href="/" aria-label="Capehelm home">
@@ -72,8 +71,6 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
-  const isAvailable = siteConfig.download.status === "available";
-
   return (
     <footer className="site-footer">
       <div className="footer-grid">
@@ -89,7 +86,7 @@ export function SiteFooter() {
             alt=""
           />
           <p className="footer-title">Capehelm</p>
-          <p>Private personal finance for Mac. {isAvailable ? "Available on the Mac App Store." : "Coming soon."}</p>
+          <p>Private personal finance for Mac. Available on the Mac App Store.</p>
         </div>
         <nav aria-label="Footer navigation">
           <SiteLink href="/features">Features</SiteLink>
@@ -98,13 +95,13 @@ export function SiteFooter() {
           <SiteLink href="/faq">FAQ</SiteLink>
           <SiteLink href="/privacy">Privacy</SiteLink>
           <SiteLink href="/support">Support</SiteLink>
-          <AppStoreLink>{isAvailable ? "Mac App Store" : siteConfig.download.appStoreLabel}</AppStoreLink>
+          <AppStoreLink>Mac App Store</AppStoreLink>
           <a href="mailto:support@capehelm.com">Email support</a>
         </nav>
       </div>
       <div className="footer-bottom">
         <span>© 2026 Capehelm</span>
-        <span>{isAvailable ? "Available on the Mac App Store." : "Coming Soon · No release date announced."}</span>
+        <span>Available on the Mac App Store.</span>
       </div>
     </footer>
   );

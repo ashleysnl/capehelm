@@ -90,11 +90,11 @@ test("structured screenshots are public absolute URLs backed by built assets", a
   );
 });
 
-test("structured data omits unavailable or misleading metadata", async () => {
+test("structured data publishes the verified install URL and omits misleading metadata", async () => {
   const schema = await softwareApplication();
   const html = await homepage();
 
-  assert.equal(schema.installUrl, undefined);
+  assert.equal(schema.installUrl, ["https://apps.apple.com/us/app/capehelm/", "id6813935886"].join(""));
   assert.equal(schema.downloadUrl, undefined);
   assert.equal(schema.aggregateRating, undefined);
   assert.equal(schema.review, undefined);

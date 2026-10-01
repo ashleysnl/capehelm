@@ -47,11 +47,11 @@ All finance UI displayed on the website uses approved current Capehelm screensho
 
 Edit `config/site.ts`:
 
-- `macAppStoreUrl`: keep `null` until the production `apps.apple.com` listing is live, then set it once to activate every App Store CTA.
-- `download.status`, `download.url`, link handling and public availability copy are resolved automatically from `macAppStoreUrl`, with `/download` as the safe pre-launch fallback.
-- `version`: internal product version; it is not shown while Capehelm is unavailable.
+- `macAppStoreUrl`: the production Capehelm listing used by every App Store CTA and structured-data install link.
+- `download.status`, `download.url`, link handling and public availability copy are resolved from the shared site configuration.
+- `version`: internal product version; it is intentionally not shown in marketing copy.
 
-Capehelm is not yet available from the Mac App Store or as a direct download. The website deliberately makes no release-date commitment and does not link an installable binary.
+Capehelm is available from the Mac App Store. The website links to the shared production listing rather than a version-specific download.
 
 ## SEO and deployment
 

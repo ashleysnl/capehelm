@@ -90,7 +90,7 @@ export const faqEntries: readonly FaqEntry[] = [
     id: "iphone-ipad",
     question: "Is Capehelm available on iPhone or iPad?",
     answer: [
-      "Capehelm is currently being prepared as a Mac App Store product. An iPhone or iPad companion is not part of the current public release, and no release date has been announced.",
+      "Capehelm is available for macOS through the Mac App Store. An iPhone or iPad companion is not currently offered.",
     ],
   },
   {

@@ -25,10 +25,11 @@ for (const [path, expected] of [
   ["/guides/do-personal-finance-apps-need-bank-access", "Do Personal Finance Apps Need Access"],
   ["/guides/how-to-forecast-personal-cash-flow-14-days", "How to Forecast Your Personal Cash Flow"],
   ["/guides/how-to-analyze-bank-transactions-csv", "How to Analyze Your Bank Transactions"],
+  ["/guides/how-to-track-net-worth-without-bank-connections", "How to Track Your Net Worth"],
   ["/faq", "Clear answers before you"],
   ["/privacy", "Privacy Policy"],
   ["/support", "Capehelm Support"],
-  ["/download", "No release date announced"],
+  ["/download", "Capehelm is available on the"],
   ["/personal-finance-for-mac", "Personal Finance Software"],
   ["/cash-flow-forecast", "Household Cash Flow"],
   ["/private-personal-finance", "Financial Data"],
@@ -40,8 +41,9 @@ for (const [path, expected] of [
     assert.match(html, new RegExp(expected, "i"));
     assert.match(html, /Capehelm/);
     assert.match(html, /mailto:support@capehelm\.com/);
-    assert.match(html, /Coming Soon/i);
-    assert.doesNotMatch(visibleHtml, /Download Capehelm|Download for Mac|Private beta/i);
+    assert.match(html, /Available now/i);
+    assert.match(html, /href="https:\/\/apps\.apple\.com\/us\/app\/capehelm\/id6813935886"/);
+    assert.doesNotMatch(visibleHtml, /Coming Soon|not yet available|No release date announced|Private beta/i);
     assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
     if (path === "/privacy") {
       assert.match(html, /Effective Date: September 26, 2026/);
@@ -66,7 +68,7 @@ for (const [path, expected] of [
 }
 
 test("every public page includes the configured Google Analytics tag", async () => {
-  const pages = await Promise.all(["/", "/features", "/guides", "/guides/budget-vs-cash-flow-forecast", "/guides/do-personal-finance-apps-need-bank-access", "/guides/how-to-forecast-personal-cash-flow-14-days", "/guides/how-to-analyze-bank-transactions-csv", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
+  const pages = await Promise.all(["/", "/features", "/guides", "/guides/budget-vs-cash-flow-forecast", "/guides/do-personal-finance-apps-need-bank-access", "/guides/how-to-forecast-personal-cash-flow-14-days", "/guides/how-to-analyze-bank-transactions-csv", "/guides/how-to-track-net-worth-without-bank-connections", "/faq", "/privacy", "/support", "/download", "/personal-finance-for-mac", "/cash-flow-forecast", "/private-personal-finance", "/csv-bank-statement-import"].map(render));
 
   for (const html of pages) {
     assert.equal((html.match(/<script async="" src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-PJ6ZQQVMPR"><\/script>/g) ?? []).length, 1);
@@ -273,7 +275,7 @@ test("FAQ answers all Task 9 purchase and support objections accurately", async 
   assert.match(visibleHtml, /Your Finance Document is not deleted, rewritten, migrated, or reset when a subscription expires/);
   assert.match(visibleHtml, /Eligible new subscribers can receive Apple(?:'|’|&#x27;)s native two-month introductory free trial with either option/);
   assert.match(visibleHtml, /macOS 14 Sonoma or later/);
-  assert.match(visibleHtml, /An iPhone or iPad companion is not part of the current public release/);
+  assert.match(visibleHtml, /An iPhone or iPad companion is not currently offered/);
   assert.match(visibleHtml, /mailto:support@capehelm\.com/);
   assert.match(visibleHtml, /No\. Please do not email your Finance Document, bank statements, transaction exports, backup archives/);
   assert.doesNotMatch(visibleHtml, /never uses the internet|every bank|direct bank connectivity exists|45[- ]day|Full Unlock|one[- ]time purchase/i);
@@ -289,15 +291,21 @@ test("FAQ is discoverable and public iPhone wording matches the release configur
   assert.match(download, /href="\/faq"/);
   assert.ok(pages.every((html) => /<footer[\s\S]*?href="\/faq"/.test(html)));
   assert.doesNotMatch(publicHtml, /selected companion workflows available on iPhone|The iPhone companion opens|Selected iPhone workflows/i);
-  assert.match(home, /Not part of the current public release/);
-  assert.match(download, /Mac only in the current public release/);
+  assert.match(home, /Capehelm is focused on Mac/);
+  assert.match(download, /Available for Mac/);
 });
 
-test("download page accurately communicates the pre-launch handoff", async () => {
+test("download page provides a complete live Mac App Store handoff", async () => {
   const html = await render("/download");
   const visibleHtml = html.match(/<body>([\s\S]*?)<script/)?.[1] ?? html;
-  assert.match(html, /Capehelm is coming to the <em>Mac App Store\.<\/em>/);
-  assert.match(html, /this page and every download button on the site will link directly to the Mac App Store/i);
-  assert.match(html, /No download or direct-download build is available at this time\./);
-  assert.doesNotMatch(visibleHtml, /href="https?:\/\//i);
+  assert.match(html, /Capehelm is available on the <em>Mac App Store\.<\/em>/);
+  assert.match(html, /macOS 14 or later/);
+  assert.match(html, /local Capehelm Finance Document/);
+  assert.match(html, /Apple handles distribution, subscriptions and introductory-offer eligibility/);
+  assert.match(html, /href="\/support"/);
+  assert.match(html, /href="\/privacy"/);
+  assert.ok((html.match(/href="https:\/\/apps\.apple\.com\/us\/app\/capehelm\/id6813935886"/g) ?? []).length >= 4);
+  assert.match(html, /target="_blank"/);
+  assert.match(html, /rel="external noopener noreferrer"/);
+  assert.doesNotMatch(visibleHtml, /Coming Soon|not yet available|No release date announced|planned features/i);
 });

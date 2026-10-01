@@ -4,7 +4,7 @@ import { createPageMetadata } from "../../config/pageMetadata";
 export const metadata = createPageMetadata({
   title: "Personal Finance Guides | Capehelm",
   description:
-    "Practical Capehelm guides to transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+    "Practical Capehelm guides to net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
   path: "/guides",
 });
 
@@ -27,11 +27,26 @@ export default function GuidesPage() {
         <div className="guides-list">
           <article className="guide-index-card">
             <div className="guide-index-meta">
+              <span>Net worth · Long-term progress</span>
+              <time dateTime="2026-10-01">October 1, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">How to Track Your Net Worth Without Connecting Your Bank Accounts</h2>
+              <p>Track assets and liabilities over time, understand what actually drives changes in your net worth, and build a long-term financial picture without connecting your accounts.</p>
+              <SiteLink className="text-link" href="/guides/how-to-track-net-worth-without-bank-connections">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>$878k assets</span><i>−</i><span>$438k owed</span><i>=</i><span>$440k net worth</span>
+            </div>
+          </article>
+
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
               <span>CSV · Transaction analysis</span>
               <time dateTime="2026-09-30">September 30, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">How to Analyze Your Bank Transactions From a CSV File</h2>
+              <h2>How to Analyze Your Bank Transactions From a CSV File</h2>
               <p>Turn a bank or credit-card CSV into something useful by cleaning transactions, organizing merchants and categories, and finding the spending patterns hidden in the data.</p>
               <SiteLink className="text-link" href="/guides/how-to-analyze-bank-transactions-csv">Read the guide <ArrowIcon /></SiteLink>
             </div>

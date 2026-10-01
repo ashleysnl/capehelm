@@ -164,6 +164,32 @@
 .guide-analysis-questions li:last-child { border-right: 0; }
 .guide-analysis-questions li > span { color: #617694; font: 10px ui-monospace,monospace; letter-spacing: .12em; }
 .guide-analysis-questions li strong { color: #dbe5f1; font-size: 15px; line-height: 1.45; }
+.guide-net-worth-equation { margin: 66px 0 0; padding: 32px; overflow: hidden; border: 1px solid rgba(79,140,255,.27); border-radius: 24px; background: radial-gradient(circle at 84% 12%,rgba(79,140,255,.13),transparent 34%),linear-gradient(145deg,#0b1a2e,#06101d); box-shadow: 0 30px 80px rgba(0,0,0,.22); }
+.guide-net-worth-equation-heading { padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.guide-net-worth-equation-heading span, .guide-net-worth-equation-heading strong { display: block; }
+.guide-net-worth-equation-heading span { color: #87ace7; font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+.guide-net-worth-equation-heading strong { max-width: 680px; margin-top: 7px; color: #e5edf7; font-size: 22px; line-height: 1.4; }
+.guide-net-worth-equation-values { padding: 34px 4px 20px; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); gap: 18px; align-items: center; }
+.guide-net-worth-equation-values > div { min-width: 0; padding: 24px; border: 1px solid rgba(255,255,255,.075); border-radius: 16px; background: rgba(3,9,20,.34); }
+.guide-net-worth-equation-values span, .guide-net-worth-equation-values strong { display: block; }
+.guide-net-worth-equation-values span { color: #71849f; font-size: 10px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.guide-net-worth-equation-values strong { margin-top: 9px; color: #e7eef8; font-size: clamp(24px,3vw,34px); font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.guide-net-worth-equation-values > i { color: #617896; font-style: normal; font-size: 24px; }
+.guide-net-worth-equation-values .guide-net-worth-equation-result { border-color: rgba(79,140,255,.32); background: rgba(79,140,255,.08); }
+.guide-net-worth-equation-values .guide-net-worth-equation-result strong { color: #9fc0fb; }
+.guide-net-worth-equation figcaption { color: #667991; font-size: 11px; line-height: 1.55; }
+.guide-net-worth-history .guide-net-worth-history-value { fill: #c5d8f6; font-size: 12px; font-weight: 700; }
+.guide-net-worth-history-point circle { fill: #0b1a2d; stroke: #91b7f5; }
+.guide-net-worth-drivers { margin: 42px -44px; overflow: hidden; border: 1px solid rgba(79,140,255,.27); border-radius: 22px; background: radial-gradient(circle at 82% 8%,rgba(79,140,255,.12),transparent 35%),linear-gradient(145deg,#0b1a2e,#06101d); }
+.guide-net-worth-drivers dl { margin: 0; }
+.guide-net-worth-drivers dl > div { min-height: 94px; padding: 20px 30px; display: grid; grid-template-columns: 38px 150px minmax(0,1fr); gap: 18px; align-items: center; border-bottom: 1px solid var(--line); }
+.guide-net-worth-drivers dl > div:last-child { border-bottom: 0; }
+.guide-net-worth-drivers dl span { color: #617694; font: 10px ui-monospace,monospace; letter-spacing: .12em; }
+.guide-net-worth-drivers dt { color: #dbe5f1; font-size: 15px; font-weight: 700; }
+.guide-net-worth-drivers dd { margin: 0; color: #8fa1b7; font-size: 14px; line-height: 1.55; }
+.guide-time-horizons ol { grid-template-columns: repeat(5,minmax(0,1fr)); }
+.guide-time-horizons li { min-height: 158px; padding: 22px; }
+.guide-time-horizons li strong { font-size: 17px; line-height: 1.35; }
 .guide-prose-continued { margin-top: 70px; }
 .guide-three-views { margin: 42px -44px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .guide-three-views article { min-height: 220px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,.017); }
@@ -280,6 +306,12 @@
   .guide-analysis-questions ol { grid-template-columns: 1fr; }
   .guide-analysis-questions li { min-height: 112px; border-right: 0; border-bottom: 1px solid var(--line); }
   .guide-analysis-questions li:last-child { border-bottom: 0; }
+  .guide-net-worth-equation-values { grid-template-columns: 1fr; }
+  .guide-net-worth-equation-values > i { text-align: center; }
+  .guide-net-worth-drivers { margin-inline: 0; }
+  .guide-net-worth-drivers dl > div { grid-template-columns: 34px 130px minmax(0,1fr); padding-inline: 24px; }
+  .guide-time-horizons ol { grid-template-columns: 1fr; }
+  .guide-time-horizons li:not(:last-child)::after { content: "↓"; right: calc(50% - 13px); top: auto; bottom: -14px; }
   .guide-path-pair, .guide-choice-cards { margin-inline: 0; grid-template-columns: 1fr; }
   .guide-product-fit { margin-top: 96px; padding: 44px 32px; gap: 42px; }
   .guide-product-fit-text { grid-template-columns: 1fr; }
@@ -316,6 +348,9 @@
   .guide-question { padding-left: 16px; font-size: 25px; }
   .guide-budget-table th, .guide-budget-table td { padding: 13px 16px; }
   .guide-budget-table { font-size: 14px; }
+  .guide-net-worth-snapshot-table { table-layout: fixed; font-size: 12px; }
+  .guide-net-worth-snapshot-table th, .guide-net-worth-snapshot-table td { padding: 12px 7px; overflow-wrap: anywhere; }
+  .guide-net-worth-snapshot-table thead th { font-size: 9px; letter-spacing: .04em; }
   .guide-breakout { width: min(calc(100% - 24px),var(--guide-wide)); }
   .guide-forecast-card { padding: 24px 16px; border-radius: 18px; }
   .guide-balance-path { padding: 24px 16px; border-radius: 18px; }
@@ -334,6 +369,14 @@
   .guide-analysis-questions-heading { padding: 24px 20px; }
   .guide-analysis-questions-heading strong { font-size: 18px; }
   .guide-analysis-questions li { padding: 20px; }
+  .guide-net-worth-equation { margin-top: 48px; padding: 24px 18px; border-radius: 18px; }
+  .guide-net-worth-equation-heading strong { font-size: 19px; }
+  .guide-net-worth-equation-values { padding-top: 24px; gap: 10px; }
+  .guide-net-worth-equation-values > div { padding: 20px; }
+  .guide-net-worth-history .guide-net-worth-history-value { font-size: 10px; }
+  .guide-net-worth-drivers { border-radius: 18px; }
+  .guide-net-worth-drivers dl > div { grid-template-columns: 28px minmax(0,1fr); gap: 8px 12px; padding: 20px; }
+  .guide-net-worth-drivers dd { grid-column: 2; }
   .guide-process-strip ol { grid-template-columns: 1fr; }
   .guide-process-strip li { min-height: 112px; padding: 20px 22px; }
   .guide-process-strip li:nth-child(2)::after, .guide-process-strip li:not(:last-child)::after { content: "↓"; right: calc(50% - 13px); top: auto; bottom: -14px; }

@@ -12,6 +12,7 @@ const publicRoutes = [
   "/guides/do-personal-finance-apps-need-bank-access",
   "/guides/how-to-forecast-personal-cash-flow-14-days",
   "/guides/how-to-analyze-bank-transactions-csv",
+  "/guides/how-to-track-net-worth-without-bank-connections",
   "/faq",
   "/privacy",
   "/support",

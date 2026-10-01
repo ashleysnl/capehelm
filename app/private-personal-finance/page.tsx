@@ -124,7 +124,7 @@ export default function PrivatePersonalFinancePage() {
         <LandingCta
           eyebrow="Local-first by design"
           title="Keep the financial picture on the Mac where you use it."
-          body="Capehelm is being prepared for the Mac App Store. The current shared CTA opens the availability page until a verified public listing exists."
+          body="Capehelm is available on the Mac App Store. Your financial data remains in the local Finance Document and storage locations you choose."
           secondaryHref="/privacy"
           secondaryLabel="Read the full privacy details"
         />

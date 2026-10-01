@@ -6,12 +6,13 @@ const articleRoute = "/guides/budget-vs-cash-flow-forecast";
 const bankAccessRoute = "/guides/do-personal-finance-apps-need-bank-access";
 const forecastHowToRoute = "/guides/how-to-forecast-personal-cash-flow-14-days";
 const csvAnalysisRoute = "/guides/how-to-analyze-bank-transactions-csv";
+const netWorthRoute = "/guides/how-to-track-net-worth-without-bank-connections";
 
 async function readBuiltPage(file) {
   return readFile(new URL(`../dist/client/${file}`, import.meta.url), "utf8");
 }
 
-test("guides index exposes all four educational articles", async () => {
+test("guides index exposes all five educational articles", async () => {
   const html = await readBuiltPage("guides.html");
 
   assert.match(html, /<h1>Clear thinking for <em>everyday finances\.<\/em><\/h1>/);
@@ -19,12 +20,15 @@ test("guides index exposes all four educational articles", async () => {
   assert.match(html, /Do Personal Finance Apps Need Access to Your Bank Account/);
   assert.match(html, /How to Forecast Your Personal Cash Flow for the Next 14 Days/);
   assert.match(html, /How to Analyze Your Bank Transactions From a CSV File/);
+  assert.match(html, /How to Track Your Net Worth Without Connecting Your Bank Accounts/);
   assert.match(html, new RegExp(`href="${articleRoute}"`));
   assert.match(html, new RegExp(`href="${bankAccessRoute}"`));
   assert.match(html, new RegExp(`href="${forecastHowToRoute}"`));
   assert.match(html, new RegExp(`href="${csvAnalysisRoute}"`));
+  assert.match(html, new RegExp(`href="${netWorthRoute}"`));
   assert.match(html, /Budget[^<]*<\/span><i[^>]*>→<\/i><span>Actuals/);
   assert.match(html, /Bank[^<]*<\/span><i[^>]*>→<\/i><span>CSV/);
+  assert.match(html, /\$878k assets[\s\S]*\$438k owed[\s\S]*\$440k net worth/);
 });
 
 test("budget and cash-flow guide preserves the editorial substance and restrained product links", async () => {
@@ -46,6 +50,7 @@ test("budget and cash-flow guide preserves the editorial substance and restraine
   assert.match(body, /href="\/private-personal-finance"/);
   assert.match(body, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
   assert.match(body, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
+  assert.match(body, /href="\/guides\/how-to-track-net-worth-without-bank-connections"/);
   assert.match(body, /href="\/cash-flow-forecast"/);
   assert.match(body, /capehelm-forecast-1400\.webp/);
   assert.match(body, /fictional demo data/i);
@@ -70,6 +75,7 @@ test("bank-access guide preserves the balanced trade-off and product boundaries"
   assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
   assert.match(html, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
   assert.match(html, /href="\/guides\/how-to-analyze-bank-transactions-csv"/);
+  assert.match(html, /href="\/guides\/how-to-track-net-worth-without-bank-connections"/);
   assert.match(html, /href="\/csv-bank-statement-import"/);
   assert.match(html, /href="\/private-personal-finance"/);
   assert.match(html, /href="\/privacy"/);
@@ -269,4 +275,79 @@ test("CSV analysis visuals use semantic, mobile-safe structures", async () => {
   assert.match(html, /<aside class="guide-analysis-questions"/);
   const questions = html.match(/<aside class="guide-analysis-questions"[\s\S]*?<\/aside>/)?.[0] ?? "";
   assert.equal((questions.match(/<li>/g) ?? []).length, 5);
+});
+
+test("net-worth guide preserves the method, examples and cross-links", async () => {
+  const html = await readBuiltPage("guides/how-to-track-net-worth-without-bank-connections.html");
+
+  assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) ?? []).length, 1);
+  for (const heading of [
+    "What is net worth",
+    "The direction matters more than today",
+    "Decide what you",
+    "Record the balances",
+    "Save the history",
+    "How often should you update your net worth",
+    "Consistency beats false precision",
+    "Be careful when your house dominates your net worth",
+    "Debt repayment is progress too",
+    "Contributions aren",
+    "Track contributions and withdrawals separately",
+    "Month-over-month and year-over-year tell different stories",
+    "Not every drop in net worth is a problem",
+    "use net worth as a score",
+    "You can track net worth in a spreadsheet",
+    "need to connect your accounts",
+    "Where Capehelm fits",
+    "Net worth and cash flow answer different questions",
+    "The takeaway",
+  ]) {
+    assert.match(html, new RegExp(heading));
+  }
+  assert.match(html, /\$878,000[^<]*−[^<]*\$438,000[^<]*=[^<]*\$440,000/);
+  assert.match(html, /January[\s\S]*\$405,000[\s\S]*April[\s\S]*\$416,000[\s\S]*July[\s\S]*\$427,000[\s\S]*October[\s\S]*\$440,000/);
+  assert.match(html, /\$126,000 ending value[^<]*−[^<]*\$100,000 starting value[^<]*−[^<]*\$20,000 contributions[^<]*=[^<]*\$6,000/);
+  assert.match(html, /Real investment-return calculations can become more complicated/);
+  assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
+  assert.match(html, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
+  assert.match(html, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
+  assert.match(html, /href="\/guides\/how-to-analyze-bank-transactions-csv"/);
+  assert.match(html, /href="\/features#progress"/);
+  assert.match(html, /capehelm-net-worth-1400\.webp/);
+  assert.match(html, /fictional demo data/i);
+  assert.doesNotMatch(html, /revolutionary|game-changing|guaranteed returns|financial advice/i);
+});
+
+test("net-worth metadata and Article schema describe the canonical article", async () => {
+  const html = await readBuiltPage("guides/how-to-track-net-worth-without-bank-connections.html");
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+
+  assert.match(html, /<title>How to Track Your Net Worth Without Connecting Your Bank Accounts \| Capehelm<\/title>/);
+  assert.match(html, /<meta name="description" content="Learn how to track assets, liabilities and net-worth history manually/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-track-net-worth-without-bank-connections"/);
+  assert.match(html, /<meta property="og:type" content="article"/);
+  assert.match(html, /<meta property="article:published_time" content="2026-10-01"/);
+  assert.equal(scripts.length, 1);
+
+  const schema = JSON.parse(scripts[0][1]);
+  assert.equal(schema["@type"], "Article");
+  assert.equal(schema.url, `https://capehelm.com${netWorthRoute}`);
+  assert.equal(schema.datePublished, "2026-10-01");
+  assert.equal(schema.author.name, "Ashley Skinner");
+  assert.equal(schema.publisher.name, "Capehelm");
+});
+
+test("net-worth visuals reconcile to the guide values and remain accessible", async () => {
+  const html = await readBuiltPage("guides/how-to-track-net-worth-without-bank-connections.html");
+
+  assert.match(html, /<figure class="guide-net-worth-equation"/);
+  assert.match(html, /aria-label="Assets of \$878,000 minus liabilities of \$438,000 equals net worth of \$440,000"/);
+  assert.match(html, /<figure class="guide-balance-path guide-net-worth-history"/);
+  assert.match(html, /Net worth increases from \$405,000 in January to \$416,000 in April, \$427,000 in July and \$440,000 in October/);
+  assert.match(html, /<aside class="guide-net-worth-drivers"/);
+  for (const driver of ["Asset growth", "Contributions", "Withdrawals", "Debt repayment", "Valuation changes"]) {
+    assert.match(html, new RegExp(driver));
+  }
+  assert.match(html, /<figure class="guide-process-strip guide-time-horizons"/);
+  assert.match(html, /Transactions[\s\S]*Budget[\s\S]*Forecast[\s\S]*Net Worth[\s\S]*Retirement/);
 });

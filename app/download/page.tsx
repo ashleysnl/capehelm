@@ -1,24 +1,95 @@
 /* eslint-disable @next/next/no-img-element */
-import { AppStoreLink, CheckIcon, PageShell, SiteLink } from "../../components/SiteShell";
+import {
+  AppStoreLink,
+  ArrowIcon,
+  CheckIcon,
+  PageShell,
+  SiteLink,
+} from "../../components/SiteShell";
 import { createPageMetadata } from "../../config/pageMetadata";
 import { siteAssetPath, siteConfig } from "../../config/site";
 
 export const metadata = createPageMetadata({
   title: "Download Capehelm for Mac | Capehelm",
   description:
-    "Capehelm is coming soon for Mac with private, local-first personal finance tools for budgeting, forecasting, Trends, Net Worth and retirement planning.",
+    "Download Capehelm from the Mac App Store. Budget, forecast cash flow, understand spending and track long-term progress while keeping your financial data local.",
   path: "/download",
 });
 
 export const dynamic = "force-static";
 
 export default function DownloadPage() {
-  const isAvailable = siteConfig.download.status === "available";
+  return (
+    <PageShell>
+      <section className="download-hero section-shell">
+        <div className="download-copy">
+          <p className="eyebrow"><span /> Available for Mac</p>
+          <h1>Capehelm is available on the <em>Mac App Store.</em></h1>
+          <p>Capehelm is a local-first personal finance app for budgeting, Forecast, Transactions, Trends, Net Worth, Retirement and reporting.</p>
+          <div className="download-status">
+            <span>Available now</span>
+            <b>Mac App Store</b>
+            <small>Open the official Capehelm listing</small>
+          </div>
+        </div>
+        <div className="app-icon-stage">
+          <div className="icon-glow" />
+          <img
+            src={siteAssetPath("/brand/capehelm-icon-512.webp")}
+            width="512"
+            height="512"
+            fetchPriority="high"
+            decoding="async"
+            alt="Capehelm app icon"
+          />
+        </div>
+      </section>
 
-  return <PageShell>
-      <section className="download-hero section-shell"><div className="download-copy"><p className="eyebrow"><span /> {isAvailable ? "Available for Mac" : "Coming soon for Mac"}</p><h1>{isAvailable ? <>Capehelm is available on the <em>Mac App Store.</em></> : <>Capehelm is coming to the <em>Mac App Store.</em></>}</h1><p>Capehelm is a local-first workspace for budgeting, Forecast, Transactions, Trends, Net Worth and reporting.</p><div className="download-status"><span>{isAvailable ? "Available" : "Coming Soon"}</span><b>{isAvailable ? "Mac App Store" : "Not yet available"}</b><small>{isAvailable ? "View the official listing" : "No release date announced"}</small></div></div><div className="app-icon-stage"><div className="icon-glow" /><img src={siteAssetPath("/brand/capehelm-icon-512.webp")} width="512" height="512" fetchPriority="high" decoding="async" alt="Capehelm app icon" /></div></section>
-    <section className="download-card section-shell"><div><p className="eyebrow"><span /> Availability</p><h2>{isAvailable ? "Get Capehelm from Apple." : "Capehelm is not yet available."}</h2><p>{siteConfig.download.note}</p><p>{isAvailable ? "Use the official Mac App Store listing to view current availability." : "Once the official listing is live, this page and every download button on the site will link directly to the Mac App Store."}</p></div><div className="requirements"><h3>{isAvailable ? "Get Capehelm" : "Release requirements"}</h3><ul><li><CheckIcon /><span><b>Platform</b>Mac only in the current public release</span></li><li><CheckIcon /><span><b>System</b>macOS 14 Sonoma or later</span></li><li><CheckIcon /><span><b>Distribution</b>{isAvailable ? "Mac App Store" : "Not yet available"}</span></li><li><CheckIcon /><span><b>Release date</b>{isAvailable ? "See the official listing" : "Not announced"}</span></li></ul>{isAvailable ? <AppStoreLink className="button">Download on the Mac App Store</AppStoreLink> : <><button disabled aria-disabled="true">Coming Soon</button><small>No download or direct-download build is available at this time.</small></>}</div></section>
-    <section className="install-notes section-shell"><article><span>01</span><h3>Mac is the complete workspace</h3><p>The Mac app is planned as the complete workspace for Dashboard, imports, Transactions, Budget Health, Forecast, Trends, Categories, Net Worth, Reports, backup and document management.</p></article><article><span>02</span><h3>iPhone and iPad availability</h3><p>An iPhone or iPad companion is not part of the current public release. No release date has been announced.</p></article><article><span>03</span><h3>Your documents remain yours</h3><p>Capehelm is designed around local application data and user-controlled finance documents rather than a hosted Capehelm financial account.</p></article></section>
-    <section className="download-footer-cta section-shell"><p>Capehelm is coming soon. No release date has been announced.</p><div><SiteLink className="button button-secondary" href="/features">Explore planned features</SiteLink><SiteLink className="text-link" href="/faq">Read the FAQ</SiteLink></div></section>
-  </PageShell>;
+      <section className="download-card section-shell">
+        <div>
+          <p className="eyebrow"><span /> Get Capehelm</p>
+          <h2>Download Capehelm from Apple.</h2>
+          <p>{siteConfig.download.note}</p>
+          <p>Apple handles distribution, subscriptions and introductory-offer eligibility. Your personal finance data remains in your local Capehelm Finance Document and is not uploaded to Capehelm servers.</p>
+        </div>
+        <div className="requirements">
+          <h3>Mac requirements</h3>
+          <ul>
+            <li><CheckIcon /><span><b>Platform</b>macOS</span></li>
+            <li><CheckIcon /><span><b>System</b>{siteConfig.platforms.macOS}</span></li>
+            <li><CheckIcon /><span><b>Distribution</b>Mac App Store</span></li>
+            <li><CheckIcon /><span><b>Subscriptions</b>Monthly or annual; eligible new subscribers can receive Apple&apos;s two-month introductory trial</span></li>
+          </ul>
+          <AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
+        </div>
+      </section>
+
+      <section className="install-notes section-shell">
+        <article>
+          <span>01</span>
+          <h3>Mac is the complete workspace</h3>
+          <p>The Mac app brings Dashboard, imports, Transactions, Budget Health, Forecast, Trends, Categories, Net Worth, Retirement, Reports, backup and document management together.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Apple manages access</h3>
+          <p>Monthly and annual subscriptions unlock the same Capehelm features. The Mac App Store shows current pricing and determines introductory-trial eligibility.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Your documents remain yours</h3>
+          <p>Capehelm is designed around local application data and user-controlled Finance Documents rather than a hosted Capehelm financial account.</p>
+        </article>
+      </section>
+
+      <section className="download-footer-cta section-shell">
+        <p>Ready to bring your financial picture together on your Mac?</p>
+        <div>
+          <AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
+          <SiteLink className="text-link" href="/support">Get support</SiteLink>
+          <SiteLink className="text-link" href="/privacy">Read the Privacy Policy</SiteLink>
+        </div>
+      </section>
+    </PageShell>
+  );
 }

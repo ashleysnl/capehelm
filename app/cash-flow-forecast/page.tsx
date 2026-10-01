@@ -116,7 +116,7 @@ export default function CashFlowForecastPage() {
         <LandingCta
           eyebrow="Plan the timing, not just the total"
           title="Know what the next two weeks may ask of your checking account."
-          body="Capehelm is being prepared for the Mac App Store. Until the public listing is live, this action opens the current availability page."
+          body="Capehelm is available on the Mac App Store, with a rolling 14-day Forecast alongside Budget, Trends and the rest of your local financial picture."
           secondaryHref="/features#plan"
           secondaryLabel="Review Forecast details"
         />

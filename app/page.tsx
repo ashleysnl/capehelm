@@ -253,7 +253,7 @@ export default function Home() {
         <div className="section-intro centered"><p className="eyebrow"><span /> Made for Mac</p><h2>Your complete finance workspace, on your Mac.</h2><p>Capehelm’s current public product is focused on a full native Mac experience.</p></div>
         <div className="device-facts">
           <article><span>Mac</span><h3>Your complete finance workspace.</h3><p>Budget, Forecast, Trends, Net Worth, Retirement, imports and full document management stay together on your Mac.</p><SiteLink className="text-link" href="/personal-finance-for-mac">Why Capehelm is built for Mac <ArrowIcon /></SiteLink></article>
-          <article><span>iPhone and iPad</span><h3>Not part of the current public release.</h3><p>Capehelm is currently being prepared as a Mac App Store product. No iPhone or iPad release date has been announced.</p></article>
+          <article><span>iPhone and iPad</span><h3>Capehelm is focused on Mac.</h3><p>Capehelm is available for macOS. An iPhone or iPad companion is not currently offered.</p></article>
         </div>
       </section>
 
