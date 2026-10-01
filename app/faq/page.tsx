@@ -15,12 +15,6 @@ export const dynamic = "force-static";
 export default function FaqPage() {
   return (
     <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: serializeStructuredData(createFaqStructuredData(faqEntries)),
-        }}
-      />
       <section className="page-hero faq-hero section-shell">
         <p className="eyebrow"><span /> Capehelm FAQ</p>
         <h1>Clear answers before you <em>start your trial.</em></h1>
@@ -62,6 +56,12 @@ export default function FaqPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(createFaqStructuredData(faqEntries)),
+        }}
+      />
       <section className="download-footer-cta faq-footer-cta section-shell">
         <p>Still deciding? Explore the complete capability list or review how Capehelm keeps personal finance data local.</p>
         <div>
