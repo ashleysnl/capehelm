@@ -7,12 +7,13 @@ const bankAccessRoute = "/guides/do-personal-finance-apps-need-bank-access";
 const forecastHowToRoute = "/guides/how-to-forecast-personal-cash-flow-14-days";
 const csvAnalysisRoute = "/guides/how-to-analyze-bank-transactions-csv";
 const netWorthRoute = "/guides/how-to-track-net-worth-without-bank-connections";
+const recurringChargesRoute = "/guides/how-to-find-subscriptions-recurring-charges-bank-statement";
 
 async function readBuiltPage(file) {
   return readFile(new URL(`../dist/client/${file}`, import.meta.url), "utf8");
 }
 
-test("guides index exposes all five educational articles", async () => {
+test("guides index exposes all six educational articles", async () => {
   const html = await readBuiltPage("guides.html");
 
   assert.match(html, /<h1>Clear thinking for <em>everyday finances\.<\/em><\/h1>/);
@@ -21,11 +22,13 @@ test("guides index exposes all five educational articles", async () => {
   assert.match(html, /How to Forecast Your Personal Cash Flow for the Next 14 Days/);
   assert.match(html, /How to Analyze Your Bank Transactions From a CSV File/);
   assert.match(html, /How to Track Your Net Worth Without Connecting Your Bank Accounts/);
+  assert.match(html, /How to Find Subscriptions and Recurring Charges on Your Bank Statement/);
   assert.match(html, new RegExp(`href="${articleRoute}"`));
   assert.match(html, new RegExp(`href="${bankAccessRoute}"`));
   assert.match(html, new RegExp(`href="${forecastHowToRoute}"`));
   assert.match(html, new RegExp(`href="${csvAnalysisRoute}"`));
   assert.match(html, new RegExp(`href="${netWorthRoute}"`));
+  assert.match(html, new RegExp(`href="${recurringChargesRoute}"`));
   assert.match(html, /Budget[^<]*<\/span><i[^>]*>→<\/i><span>Actuals/);
   assert.match(html, /Bank[^<]*<\/span><i[^>]*>→<\/i><span>CSV/);
   assert.match(html, /\$878k assets[\s\S]*\$438k owed[\s\S]*\$440k net worth/);
@@ -350,4 +353,57 @@ test("net-worth visuals reconcile to the guide values and remain accessible", as
   }
   assert.match(html, /<figure class="guide-process-strip guide-time-horizons"/);
   assert.match(html, /Transactions[\s\S]*Budget[\s\S]*Forecast[\s\S]*Net Worth[\s\S]*Retirement/);
+});
+
+
+test("recurring-charges guide preserves the audit workflow, product boundaries and cross-links", async () => {
+  const html = await readBuiltPage("guides/how-to-find-subscriptions-recurring-charges-bank-statement.html");
+
+  assert.equal((html.match(/<h1(?:\s[^>]*)?>/g) ?? []).length, 1);
+  for (const heading of [
+    "What counts as a recurring charge",
+    "Use several months of statements",
+    "How to spot recurring charges in a statement",
+    "The name on the statement may not match the service",
+    "The monthly price is not the real decision number",
+    "Pay special attention to forgotten and annual subscriptions",
+    "Create a simple subscription tracker",
+    "Do not turn a subscription audit into a cancellation contest",
+    "Subscriptions matter because they consume future cash flow",
+    "A CSV makes recurring patterns easier to inspect",
+    "Where Capehelm fits",
+    "Bank statements and CSV exports are sensitive",
+    "Make recurring spending visible",
+  ]) {
+    assert.match(html, new RegExp(heading));
+  }
+  assert.match(html, /\$20 monthly subscription costs \$240 per year/);
+  assert.match(html, /\$1,042\.64/);
+  assert.match(html, /does not currently claim to automatically identify or cancel every subscription/i);
+  assert.match(html, /href="\/guides\/how-to-analyze-bank-transactions-csv"/);
+  assert.match(html, /href="\/guides\/budget-vs-cash-flow-forecast"/);
+  assert.match(html, /href="\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
+  assert.match(html, /href="\/guides\/do-personal-finance-apps-need-bank-access"/);
+  assert.match(html, /href="\/csv-bank-statement-import"/);
+  assert.match(html, /href="\/privacy"/);
+  assert.doesNotMatch(html, /automatically detects your subscriptions|guaranteed savings|revolutionary|game-changing|financial advice/i);
+});
+
+test("recurring-charges metadata and Article schema describe the canonical article", async () => {
+  const html = await readBuiltPage("guides/how-to-find-subscriptions-recurring-charges-bank-statement.html");
+  const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+
+  assert.match(html, /<title>How to Find Subscriptions and Recurring Charges on Your Bank Statement \| Capehelm<\/title>/);
+  assert.match(html, /<meta name="description" content="Learn how to find subscriptions and recurring charges on bank or credit-card statements/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-find-subscriptions-recurring-charges-bank-statement"/);
+  assert.match(html, /<meta property="og:type" content="article"/);
+  assert.match(html, /<meta property="article:published_time" content="2026-10-01"/);
+  assert.equal(scripts.length, 1);
+
+  const schema = JSON.parse(scripts[0][1]);
+  assert.equal(schema["@type"], "Article");
+  assert.equal(schema.url, `https://capehelm.com${recurringChargesRoute}`);
+  assert.equal(schema.datePublished, "2026-10-01");
+  assert.equal(schema.author.name, "Ashley Skinner");
+  assert.equal(schema.publisher.name, "Capehelm");
 });
