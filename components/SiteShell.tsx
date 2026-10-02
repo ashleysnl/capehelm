@@ -35,6 +35,7 @@ export function SiteHeader() {
             src={siteAssetPath("/brand/capehelm-horizontal-400.webp")}
             width="400"
             height="107"
+            fetchPriority="high"
             decoding="async"
             alt="Capehelm"
           />

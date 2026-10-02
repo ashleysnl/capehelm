@@ -3,7 +3,13 @@ import { mkdir,readFile,writeFile } from 'node:fs/promises';
 const targets={home:'/',features:'/features',guide:'/guides/budget-vs-cash-flow-forecast',support:'/support/getting-started/create-finance-document'};
 const name=process.env.AUDIT_PAGE??'home';const url='https://capehelm.com'+targets[name];
 await mkdir('performance-reports',{recursive:true});
-const release=JSON.parse(execFileSync('curl',['-fsS','https://capehelm.com/seo-release.json'],{encoding:'utf8'}));
+let release;
+for(let attempt=0;attempt<18;attempt++){
+ release=JSON.parse(execFileSync('curl',['-fsS','--max-time','20','https://capehelm.com/seo-release.json?revision='+process.env.GITHUB_SHA+'&attempt='+attempt],{encoding:'utf8'}));
+ if(!process.env.GITHUB_SHA||release.revision===process.env.GITHUB_SHA)break;
+ if(attempt===17)throw new Error('Expected deployment is not live');
+ await new Promise(resolve=>setTimeout(resolve,10000));
+}
 const results=[];
 for(const device of ['mobile','desktop'])for(let run=1;run<=3;run++){
  const file=`performance-reports/${name}-${device}-${run}.json`;
@@ -16,7 +22,7 @@ for(const device of ['mobile','desktop'])for(let run=1;run<=3;run++){
  results.push({name,url,device,run,measuredAt:r.fetchTime,version:r.lighthouseVersion,browser:r.environment.hostUserAgent,settings:r.configSettings,score:r.categories.performance.score,lcp:value('largest-contentful-paint'),cls:value('cumulative-layout-shift'),tbt:value('total-blocking-time'),fcp:value('first-contentful-paint'),transferBytes:value('total-byte-weight'),mainThreadMs:value('mainthread-work-breakdown'),network:r.audits['network-requests']?.details?.items,diagnostics});
 }
 const median=values=>values.sort((a,b)=>a-b)[Math.floor(values.length/2)];
-const summaries=['mobile','desktop'].map(device=>{const rows=results.filter(r=>r.device===device);return {name,url,device,release:release.revision,lighthouse:'13.5.0',runs:3,medians:Object.fromEntries(['score','lcp','cls','tbt','fcp','transferBytes','mainThreadMs'].map(k=>[k,median(rows.map(r=>r[k]))])),diagnostics:rows[1].diagnostics};});
+const summaries=['mobile','desktop'].map(device=>{const rows=results.filter(r=>r.device===device);return {name,url,device,release:release.revision,lighthouse:'13.5.0',runs:3,browser:rows[0].browser,settings:rows[0].settings,measuredAt:rows.map(r=>r.measuredAt),individualRuns:rows.map(({diagnostics,network,settings,...r})=>r),medians:Object.fromEntries(['score','lcp','cls','tbt','fcp','transferBytes','mainThreadMs'].map(k=>[k,median(rows.map(r=>r[k]))])),diagnostics:rows[1].diagnostics};});
 await writeFile(`performance-reports/${name}-summary.json`,JSON.stringify({release,results,summaries},null,2));
 console.log('PERFORMANCE_SUMMARY '+JSON.stringify(summaries));
 // Public field-data query. Failure/insufficient data must remain explicit.
