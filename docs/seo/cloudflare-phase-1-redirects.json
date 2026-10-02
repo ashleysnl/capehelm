@@ -1,0 +1,81 @@
+{
+  "zone_id": "b511c956f35ff132dff5237557e4ad21",
+  "ruleset_id": "5b7dc2fc15124a328978958ad0df2d0c",
+  "baseline": {
+    "dynamic_redirect_ruleset": null,
+    "existing_zone_rulesets": [],
+    "note": "No existing zone-level rulesets on capehelm.com before this change. capehelm.ca ruleset c3b398841669439cbf00eaa95800b323 remains unchanged."
+  },
+  "rollback": "Delete only ruleset 5b7dc2fc15124a328978958ad0df2d0c, or disable its four rules. Do not touch capehelm.ca or managed rulesets.",
+  "configuration": {
+    "name": "Capehelm canonical page aliases",
+    "kind": "zone",
+    "phase": "http_request_dynamic_redirect",
+    "rules": [
+      {
+        "ref": "capehelm_home_index",
+        "description": "capehelm_home_index",
+        "expression": "(http.host in {\"capehelm.com\" \"www.capehelm.com\"}) and (http.request.uri.path in {\"/index.html\" \"/index.html/\"})",
+        "action": "redirect",
+        "enabled": true,
+        "action_parameters": {
+          "from_value": {
+            "status_code": 301,
+            "preserve_query_string": true,
+            "target_url": {
+              "value": "https://capehelm.com/"
+            }
+          }
+        }
+      },
+      {
+        "ref": "capehelm_known_trailing_slash",
+        "description": "capehelm_known_trailing_slash",
+        "expression": "(http.host in {\"capehelm.com\" \"www.capehelm.com\"}) and (http.request.uri.path in {\"/features/\" \"/why-capehelm/\" \"/guides/\" \"/guides/budget-vs-cash-flow-forecast/\" \"/guides/do-personal-finance-apps-need-bank-access/\" \"/guides/how-to-forecast-personal-cash-flow-14-days/\" \"/guides/how-to-analyze-bank-transactions-csv/\" \"/guides/how-to-track-net-worth-without-bank-connections/\" \"/guides/how-to-find-subscriptions-recurring-charges-bank-statement/\" \"/faq/\" \"/privacy/\" \"/support/\" \"/support/getting-started/create-finance-document/\" \"/support/getting-started/open-finance-document/\" \"/support/getting-started/import-transactions/\" \"/support/getting-started/review-categories/\" \"/support/getting-started/setup-budget/\" \"/support/getting-started/use-forecast/\" \"/support/getting-started/back-up-capehelm/\" \"/support/troubleshooting/csv-will-not-import/\" \"/support/troubleshooting/finance-document-will-not-open/\" \"/support/troubleshooting/restore-purchases/\" \"/support/troubleshooting/subscription-access/\" \"/support/troubleshooting/backup-and-restore/\" \"/support/troubleshooting/moving-renaming-finance-document/\" \"/support/troubleshooting/remembered-document-issues/\" \"/download/\" \"/personal-finance-for-mac/\" \"/cash-flow-forecast/\" \"/private-personal-finance/\" \"/csv-bank-statement-import/\"})",
+        "action": "redirect",
+        "enabled": true,
+        "action_parameters": {
+          "from_value": {
+            "status_code": 301,
+            "preserve_query_string": true,
+            "target_url": {
+              "expression": "concat(\"https://capehelm.com\", substring(http.request.uri.path, 0, -1))"
+            }
+          }
+        }
+      },
+      {
+        "ref": "capehelm_known_html",
+        "description": "capehelm_known_html",
+        "expression": "(http.host in {\"capehelm.com\" \"www.capehelm.com\"}) and (http.request.uri.path in {\"/features.html\" \"/why-capehelm.html\" \"/guides.html\" \"/guides/budget-vs-cash-flow-forecast.html\" \"/guides/do-personal-finance-apps-need-bank-access.html\" \"/guides/how-to-forecast-personal-cash-flow-14-days.html\" \"/guides/how-to-analyze-bank-transactions-csv.html\" \"/guides/how-to-track-net-worth-without-bank-connections.html\" \"/guides/how-to-find-subscriptions-recurring-charges-bank-statement.html\" \"/faq.html\" \"/privacy.html\" \"/support.html\" \"/support/getting-started/create-finance-document.html\" \"/support/getting-started/open-finance-document.html\" \"/support/getting-started/import-transactions.html\" \"/support/getting-started/review-categories.html\" \"/support/getting-started/setup-budget.html\" \"/support/getting-started/use-forecast.html\" \"/support/getting-started/back-up-capehelm.html\" \"/support/troubleshooting/csv-will-not-import.html\" \"/support/troubleshooting/finance-document-will-not-open.html\" \"/support/troubleshooting/restore-purchases.html\" \"/support/troubleshooting/subscription-access.html\" \"/support/troubleshooting/backup-and-restore.html\" \"/support/troubleshooting/moving-renaming-finance-document.html\" \"/support/troubleshooting/remembered-document-issues.html\" \"/download.html\" \"/personal-finance-for-mac.html\" \"/cash-flow-forecast.html\" \"/private-personal-finance.html\" \"/csv-bank-statement-import.html\"})",
+        "action": "redirect",
+        "enabled": true,
+        "action_parameters": {
+          "from_value": {
+            "status_code": 301,
+            "preserve_query_string": true,
+            "target_url": {
+              "expression": "concat(\"https://capehelm.com\", substring(http.request.uri.path, 0, -5))"
+            }
+          }
+        }
+      },
+      {
+        "ref": "capehelm_known_nested_index",
+        "description": "capehelm_known_nested_index",
+        "expression": "(http.host in {\"capehelm.com\" \"www.capehelm.com\"}) and (http.request.uri.path in {\"/features/index.html\" \"/why-capehelm/index.html\" \"/guides/index.html\" \"/guides/budget-vs-cash-flow-forecast/index.html\" \"/guides/do-personal-finance-apps-need-bank-access/index.html\" \"/guides/how-to-forecast-personal-cash-flow-14-days/index.html\" \"/guides/how-to-analyze-bank-transactions-csv/index.html\" \"/guides/how-to-track-net-worth-without-bank-connections/index.html\" \"/guides/how-to-find-subscriptions-recurring-charges-bank-statement/index.html\" \"/faq/index.html\" \"/privacy/index.html\" \"/support/index.html\" \"/support/getting-started/create-finance-document/index.html\" \"/support/getting-started/open-finance-document/index.html\" \"/support/getting-started/import-transactions/index.html\" \"/support/getting-started/review-categories/index.html\" \"/support/getting-started/setup-budget/index.html\" \"/support/getting-started/use-forecast/index.html\" \"/support/getting-started/back-up-capehelm/index.html\" \"/support/troubleshooting/csv-will-not-import/index.html\" \"/support/troubleshooting/finance-document-will-not-open/index.html\" \"/support/troubleshooting/restore-purchases/index.html\" \"/support/troubleshooting/subscription-access/index.html\" \"/support/troubleshooting/backup-and-restore/index.html\" \"/support/troubleshooting/moving-renaming-finance-document/index.html\" \"/support/troubleshooting/remembered-document-issues/index.html\" \"/download/index.html\" \"/personal-finance-for-mac/index.html\" \"/cash-flow-forecast/index.html\" \"/private-personal-finance/index.html\" \"/csv-bank-statement-import/index.html\"})",
+        "action": "redirect",
+        "enabled": true,
+        "action_parameters": {
+          "from_value": {
+            "status_code": 301,
+            "preserve_query_string": true,
+            "target_url": {
+              "expression": "concat(\"https://capehelm.com\", substring(http.request.uri.path, 0, -11))"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
