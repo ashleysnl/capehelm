@@ -43,7 +43,7 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 | Phase | Work | Status |
 | --- | --- | --- |
 | 1 | Normalize alternate page URLs | Complete — verified in production |
-| 2 | Add automated technical SEO regression checks | Implemented — verification pending |
+| 2 | Add automated technical SEO regression checks | Complete — verified in production |
 | 3 | Generate and validate the sitemap | Not started |
 | 4 | Add breadcrumb structured data | Not started |
 | 5 | Measure performance and fix demonstrated bottlenecks | Not started |
@@ -128,7 +128,7 @@ Remaining limitations:
 ## Phase 2 — Automated technical SEO regression checks
 
 Priority: High
-Status: Implemented — verification pending
+Status: Complete — verified in production
 Dependency: Phase 1
 
 ### Tasks
@@ -154,10 +154,12 @@ Dependency: Phase 1
 
 ### Evidence
 
-Implementation: this commit; see [regression-check documentation](seo/REGRESSION_CHECKS.md).
+Implementation commit: 0cb2b1e733203679fa47841421efe77a9952f064; see [regression-check documentation](seo/REGRESSION_CHECKS.md).
 Commands/results: Pages-mode npm test passed 82/82 tests. Targeted ESLint checks passed for the new scripts and tests.
 Failure-path verification: controlled fixtures detect missing route coverage, incorrect canonical, missing first-party asset, broken internal page link, crawler noindex metadata, and X-Robots-Tag noindex headers.
-Production smoke-check result: pending execution and deployed workflow verification.
+Production smoke-check result: passed on 2026-10-02 at 10:40:09 UTC in [GitHub Actions run 36996653213](https://github.com/ashleysnl/capehelm/actions/runs/36996653213). Both build and deploy jobs succeeded. The post-deployment step verified commit 0cb2b1e733203679fa47841421efe77a9952f064 via the release marker, then passed 32 canonical page checks, 45 unique first-party asset checks, 94 alias redirect checks, robots/sitemap checks, unknown-page 404 checks, and representative domain redirects, with zero failures.
+
+During development, the title validator initially counted SVG accessibility titles as document titles. It was corrected to inspect document-head titles; both affected live guides and the complete deployed check passed afterward. No website-content change was required.
 Remaining limitations: browser behavior, full CSS/JS dependency graphs, third-party endpoints, field performance and Google indexing remain outside these checks. Generated sitemap work remains Phase 3.
 
 ## Phase 3 — Generate and validate the sitemap
@@ -286,4 +288,4 @@ Outstanding follow-ups:
 
 ## Completion rules
 
-A phase is complete only when its applicable acceptance checks pass and evidence is recorded. If deployment or external verification remains unavailable, mark it “Implemented — verification pending.” New content and keyword strategy remain outside this plan.
+A phase is complete only when its applicable acceptance checks pass and evidence is recorded. If deployment or external verification remains unavailable, mark it “Complete — verified in production.” New content and keyword strategy remain outside this plan.
