@@ -27,3 +27,5 @@ await writeFile(`performance-reports/${name}-summary.json`,JSON.stringify({relea
 console.log('PERFORMANCE_SUMMARY '+JSON.stringify(summaries));
 // Public field-data query. Failure/insufficient data must remain explicit.
 try {const field=execFileSync('curl',['-sS','--max-time','90','https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url='+encodeURIComponent(url)+'&strategy=mobile'],{encoding:'utf8'});await writeFile(`performance-reports/${name}-field.json`,field);const r=JSON.parse(field);console.log('FIELD_DATA '+JSON.stringify({name,loadingExperience:r.loadingExperience,originLoadingExperience:r.originLoadingExperience,error:r.error}));}catch(e){console.log('FIELD_DATA_UNAVAILABLE '+e.message);}
+
+// Cache comparison: successful responses only; errors retain origin cache policy.

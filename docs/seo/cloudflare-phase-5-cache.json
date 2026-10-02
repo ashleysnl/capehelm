@@ -2,35 +2,38 @@
   "zone": "capehelm.com",
   "zoneId": "b511c956f35ff132dff5237557e4ad21",
   "before": {
+    "responseHeaderRuleset": null,
     "cacheRuleset": null
   },
   "after": {
     "description": "",
-    "id": "701d11a7b190401bbfa349d814011060",
+    "id": "de94cd6089aa4985a3a5434fb9aaf446",
     "kind": "zone",
-    "last_updated": "2026-10-02T11:01:46.467497Z",
-    "name": "Capehelm versioned asset browser cache",
-    "phase": "http_request_cache_settings",
+    "last_updated": "2026-10-02T11:04:51.919666Z",
+    "name": "Capehelm successful versioned asset browser cache",
+    "phase": "http_response_headers_transform",
     "rules": [
       {
-        "action": "set_cache_settings",
+        "action": "rewrite",
         "action_parameters": {
-          "browser_ttl": {
-            "default": 31536000,
-            "mode": "override_origin"
-          },
-          "cache": true
+          "headers": {
+            "cache-control": {
+              "operation": "set",
+              "value": "public, max-age=31536000, immutable"
+            }
+          }
         },
-        "description": "One-year browser cache only for versioned Next static assets",
+        "description": "Cache successful versioned assets in browsers for one year",
         "enabled": true,
-        "expression": "(http.host eq \"capehelm.com\") and starts_with(http.request.uri.path, \"/_next/static/\")",
-        "id": "dde3c4bf0e7b4cb6a98a8809cb7b652e",
-        "last_updated": "2026-10-02T11:01:46.467497Z",
-        "ref": "capehelm_versioned_assets_browser_cache",
+        "expression": "(http.host eq \"capehelm.com\") and starts_with(http.request.uri.path, \"/_next/static/\") and (http.response.code eq 200)",
+        "id": "85ea3b0bd5aa4bcab7ee80f3823874b3",
+        "last_updated": "2026-10-02T11:04:51.919666Z",
+        "ref": "capehelm_successful_versioned_assets",
         "version": "1"
       }
     ],
     "version": "1"
   },
-  "rollback": "Delete this newly created cache ruleset (701d11a7b190401bbfa349d814011060). No pre-existing cache rules were changed."
+  "rollback": "Delete newly created response-header ruleset de94cd6089aa4985a3a5434fb9aaf446. No existing rules changed.",
+  "verification": "Only HTTP 200 under /_next/static/ receives public, max-age=31536000, immutable. Missing assets and HTML retain original caching. The earlier request-cache rule 701d11a7b190401bbfa349d814011060 was removed."
 }
