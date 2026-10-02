@@ -1,0 +1,1070 @@
+{
+  "release": {
+    "revision": "f5522017305cdf90e53371ab8e5e1eda5835c48a"
+  },
+  "results": [
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "mobile",
+      "run": 1,
+      "measuredAt": "2026-10-02T10:56:23.399Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.48,
+      "lcp": 5276.417,
+      "cls": 0,
+      "tbt": 914.9999999999995,
+      "fcp": 3587.793,
+      "transferBytes": 574487,
+      "mainThreadMs": 2716.059999999993,
+      "transferBytesByType": {
+        "Document": 13414,
+        "Image": 42364,
+        "Stylesheet": 19559,
+        "Script": 307479,
+        "Fetch": 546,
+        "XHR": 485,
+        "Other": 190640
+      }
+    },
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "mobile",
+      "run": 2,
+      "measuredAt": "2026-10-02T10:56:37.151Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.97,
+      "lcp": 2352.8399999999997,
+      "cls": 0,
+      "tbt": 44,
+      "fcp": 1878.6679999999997,
+      "transferBytes": 576414,
+      "mainThreadMs": 985.0840000000006,
+      "transferBytesByType": {
+        "Document": 13452,
+        "Image": 42846,
+        "Stylesheet": 19790,
+        "Script": 308707,
+        "Fetch": 546,
+        "XHR": 447,
+        "Other": 190626
+      }
+    },
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "mobile",
+      "run": 3,
+      "measuredAt": "2026-10-02T10:56:48.465Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.95,
+      "lcp": 2623.392,
+      "cls": 0,
+      "tbt": 38,
+      "fcp": 1972.252,
+      "transferBytes": 576405,
+      "mainThreadMs": 919.748000000001,
+      "transferBytesByType": {
+        "Document": 13450,
+        "Image": 42850,
+        "Stylesheet": 19789,
+        "Script": 308707,
+        "Fetch": 546,
+        "XHR": 442,
+        "Other": 190621
+      }
+    },
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "desktop",
+      "run": 1,
+      "measuredAt": "2026-10-02T10:56:59.884Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.99,
+      "lcp": 841.2895000000001,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 588.461,
+      "transferBytes": 576462,
+      "mainThreadMs": 211.45900000000017,
+      "transferBytesByType": {
+        "Document": 13466,
+        "Image": 42857,
+        "Stylesheet": 19791,
+        "Script": 308727,
+        "Fetch": 546,
+        "XHR": 444,
+        "Other": 190631
+      }
+    },
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "desktop",
+      "run": 2,
+      "measuredAt": "2026-10-02T10:57:11.181Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 651.3900000000001,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 573.251,
+      "transferBytes": 576453,
+      "mainThreadMs": 218.93400000000003,
+      "transferBytesByType": {
+        "Document": 13468,
+        "Image": 42842,
+        "Stylesheet": 19790,
+        "Script": 308729,
+        "Fetch": 546,
+        "XHR": 442,
+        "Other": 190636
+      }
+    },
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "desktop",
+      "run": 3,
+      "measuredAt": "2026-10-02T10:57:22.379Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.99,
+      "lcp": 826.3409999999999,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 578.597,
+      "transferBytes": 576459,
+      "mainThreadMs": 221.18500000000014,
+      "transferBytesByType": {
+        "Document": 13473,
+        "Image": 42849,
+        "Stylesheet": 19790,
+        "Script": 308737,
+        "Fetch": 546,
+        "XHR": 441,
+        "Other": 190623
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "mobile",
+      "release": "f5522017305cdf90e53371ab8e5e1eda5835c48a",
+      "lighthouse": "13.5.0",
+      "runs": 3,
+      "medians": {
+        "score": 0.95,
+        "lcp": 2623.392,
+        "cls": 0,
+        "tbt": 44,
+        "fcp": 1972.252,
+        "transferBytes": 576405,
+        "mainThreadMs": 985.0840000000006
+      },
+      "diagnostics": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 131\u00a0KiB",
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-PJ6ZQQVMPR",
+              "totalBytes": 180806,
+              "wastedBytes": 75239,
+              "wastedPercent": 41.61324933285647
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-CpPlVYux.js",
+              "totalBytes": 52654,
+              "wastedBytes": 33058,
+              "wastedPercent": 62.78315608755782
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "totalBytes": 59678,
+              "wastedBytes": 26103,
+              "wastedPercent": 43.74027094114182
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "displayValue": "Est savings of 123\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 60453,
+              "wastedBytes": 41108.03999999999
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-CpPlVYux.js",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 53432,
+              "wastedBytes": 36333.759999999995
+            },
+            {
+              "url": "https://capehelm.com/product/capehelm-dashboard-720.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 29527,
+              "wastedBytes": 20078.359999999997
+            },
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 19790,
+              "wastedBytes": 13457.199999999999
+            },
+            {
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 13319,
+              "wastedBytes": 9056.92
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 10\u00a0KiB",
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-0-IMG",
+                "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+                "selector": "header.site-header > div.nav-wrap > a.brand > img",
+                "boundingRect": {
+                  "top": 57,
+                  "bottom": 91,
+                  "left": 12,
+                  "right": 142,
+                  "width": 130,
+                  "height": 35
+                },
+                "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" decoding=\"async\" alt=\"Capehelm\">",
+                "nodeLabel": "Capehelm"
+              },
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "totalBytes": 12580,
+              "wastedBytes": 10273,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 5447
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (400x107) for its displayed dimensions (228x61). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 8512
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": [
+            {
+              "type": "checklist",
+              "items": {
+                "priorityHinted": {
+                  "label": "fetchpriority=high should be applied to the image preload request",
+                  "value": false
+                },
+                "requestDiscoverable": {
+                  "label": "Request is discoverable in initial document",
+                  "value": true
+                },
+                "eagerlyLoaded": {
+                  "label": "LCP resources should not use loading=lazy",
+                  "value": true
+                }
+              }
+            },
+            {
+              "type": "node",
+              "lhId": "page-0-IMG",
+              "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+              "selector": "header.site-header > div.nav-wrap > a.brand > img",
+              "boundingRect": {
+                "top": 57,
+                "bottom": 91,
+                "left": 12,
+                "right": 142,
+                "width": 130,
+                "height": 35
+              },
+              "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" decoding=\"async\" alt=\"Capehelm\">",
+              "nodeLabel": "Capehelm"
+            }
+          ]
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "wastedBytes": 10840,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "signal": "Array.prototype.at",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19367
+                    }
+                  },
+                  {
+                    "signal": "Array.prototype.findLast",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19137
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "F7F3C5213DDBF5FF4C7A5D0301467107": {
+                    "url": "https://capehelm.com/",
+                    "navStartToEndTime": 60,
+                    "transferSize": 13452,
+                    "isLongest": true,
+                    "children": {
+                      "2428.15": {
+                        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                        "navStartToEndTime": 140,
+                        "transferSize": 10338,
+                        "isLongest": true,
+                        "children": {
+                          "2428.39": {
+                            "url": "https://capehelm.com/cdn-cgi/rum?",
+                            "navStartToEndTime": 271,
+                            "transferSize": 447,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "2428.4": {
+                        "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+                        "navStartToEndTime": 99,
+                        "transferSize": 19790,
+                        "children": {}
+                      },
+                      "2428.7": {
+                        "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+                        "navStartToEndTime": 93,
+                        "transferSize": 60453,
+                        "children": {}
+                      },
+                      "2428.6": {
+                        "url": "https://capehelm.com/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 84,
+                        "transferSize": 1202,
+                        "children": {}
+                      },
+                      "2428.13": {
+                        "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+                        "navStartToEndTime": 75,
+                        "transferSize": 1043,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 271
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "totalBytes": 19790,
+              "wastedMs": 630
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "url": "https://capehelm.com/",
+      "device": "desktop",
+      "release": "f5522017305cdf90e53371ab8e5e1eda5835c48a",
+      "lighthouse": "13.5.0",
+      "runs": 3,
+      "medians": {
+        "score": 0.99,
+        "lcp": 826.3409999999999,
+        "cls": 0,
+        "tbt": 0,
+        "fcp": 578.597,
+        "transferBytes": 576459,
+        "mainThreadMs": 218.93400000000003
+      },
+      "diagnostics": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 131\u00a0KiB",
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-PJ6ZQQVMPR",
+              "totalBytes": 180807,
+              "wastedBytes": 75062,
+              "wastedPercent": 41.51481232470419
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-XPJ0h5Du.js",
+              "totalBytes": 52655,
+              "wastedBytes": 33059,
+              "wastedPercent": 62.78315608755782
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "totalBytes": 59681,
+              "wastedBytes": 26105,
+              "wastedPercent": 43.74027094114182
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "displayValue": "Est savings of 123\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 60453,
+              "wastedBytes": 41108.03999999999
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-XPJ0h5Du.js",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 53437,
+              "wastedBytes": 36337.159999999996
+            },
+            {
+              "url": "https://capehelm.com/product/capehelm-dashboard-720.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 29524,
+              "wastedBytes": 20076.32
+            },
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 19790,
+              "wastedBytes": 13457.199999999999
+            },
+            {
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 13318,
+              "wastedBytes": 9056.24
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-0-IMG",
+                "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+                "selector": "header.site-header > div.nav-wrap > a.brand > img",
+                "boundingRect": {
+                  "top": 50,
+                  "bottom": 98,
+                  "left": 24,
+                  "right": 200,
+                  "width": 176,
+                  "height": 47
+                },
+                "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" decoding=\"async\" alt=\"Capehelm\">",
+                "nodeLabel": "Capehelm"
+              },
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "totalBytes": 12580,
+              "wastedBytes": 11199,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 5447
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (400x107) for its displayed dimensions (176x47). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 10145
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": [
+            {
+              "type": "checklist",
+              "items": {
+                "priorityHinted": {
+                  "label": "fetchpriority=high should be applied to the image preload request",
+                  "value": false
+                },
+                "requestDiscoverable": {
+                  "label": "Request is discoverable in initial document",
+                  "value": true
+                },
+                "eagerlyLoaded": {
+                  "label": "LCP resources should not use loading=lazy",
+                  "value": true
+                }
+              }
+            },
+            {
+              "type": "node",
+              "lhId": "page-0-IMG",
+              "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+              "selector": "header.site-header > div.nav-wrap > a.brand > img",
+              "boundingRect": {
+                "top": 50,
+                "bottom": 98,
+                "left": 24,
+                "right": 200,
+                "width": 176,
+                "height": 47
+              },
+              "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" decoding=\"async\" alt=\"Capehelm\">",
+              "nodeLabel": "Capehelm"
+            }
+          ]
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "wastedBytes": 10840,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "signal": "Array.prototype.at",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19367
+                    }
+                  },
+                  {
+                    "signal": "Array.prototype.findLast",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19137
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "8408EB73459BE072DCF5B1D088842600": {
+                    "url": "https://capehelm.com/",
+                    "navStartToEndTime": 60,
+                    "transferSize": 13468,
+                    "isLongest": true,
+                    "children": {
+                      "3003.15": {
+                        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                        "navStartToEndTime": 136,
+                        "transferSize": 10338,
+                        "isLongest": true,
+                        "children": {
+                          "3003.39": {
+                            "url": "https://capehelm.com/cdn-cgi/rum?",
+                            "navStartToEndTime": 269,
+                            "transferSize": 442,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "3003.7": {
+                        "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+                        "navStartToEndTime": 131,
+                        "transferSize": 60453,
+                        "children": {}
+                      },
+                      "3003.6": {
+                        "url": "https://capehelm.com/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 79,
+                        "transferSize": 1199,
+                        "children": {}
+                      },
+                      "3003.4": {
+                        "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+                        "navStartToEndTime": 79,
+                        "transferSize": 19790,
+                        "children": {}
+                      },
+                      "3003.13": {
+                        "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+                        "navStartToEndTime": 73,
+                        "transferSize": 1047,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 269
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 50\u00a0ms",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "totalBytes": 19790,
+              "wastedMs": 126
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1213 @@
+{
+  "release": {
+    "revision": "d797ebd95c0fdb5769fe1d6656d431a09abed4a5"
+  },
+  "results": [
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "mobile",
+      "run": 1,
+      "measuredAt": "2026-10-02T11:06:41.406Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.67,
+      "lcp": 4898.652999999999,
+      "cls": 0,
+      "tbt": 536,
+      "fcp": 1789.1329999999998,
+      "transferBytes": 552730,
+      "mainThreadMs": 2128.7280000000073,
+      "transferBytesByType": {
+        "Document": 13858,
+        "Stylesheet": 26462,
+        "Script": 307652,
+        "Image": 13070,
+        "Fetch": 546,
+        "XHR": 483,
+        "Other": 190659
+      }
+    },
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "mobile",
+      "run": 2,
+      "measuredAt": "2026-10-02T11:06:53.939Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.96,
+      "lcp": 2367.541,
+      "cls": 0,
+      "tbt": 41,
+      "fcp": 2050.711,
+      "transferBytes": 554726,
+      "mainThreadMs": 933.8440000000026,
+      "transferBytesByType": {
+        "Document": 13883,
+        "Stylesheet": 27133,
+        "Script": 308753,
+        "Image": 13338,
+        "Fetch": 546,
+        "XHR": 444,
+        "Other": 190629
+      }
+    },
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "mobile",
+      "run": 3,
+      "measuredAt": "2026-10-02T11:07:05.228Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.96,
+      "lcp": 2369.652,
+      "cls": 0,
+      "tbt": 93,
+      "fcp": 2034.71,
+      "transferBytes": 554724,
+      "mainThreadMs": 695.1560000000018,
+      "transferBytesByType": {
+        "Document": 13887,
+        "Stylesheet": 27135,
+        "Script": 308755,
+        "Image": 13333,
+        "Fetch": 546,
+        "XHR": 444,
+        "Other": 190624
+      }
+    },
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "desktop",
+      "run": 1,
+      "measuredAt": "2026-10-02T11:07:16.465Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 618.014,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 564.971,
+      "transferBytes": 554732,
+      "mainThreadMs": 204.0320000000008,
+      "transferBytesByType": {
+        "Document": 13891,
+        "Stylesheet": 27131,
+        "Script": 308763,
+        "Image": 13335,
+        "Fetch": 546,
+        "XHR": 445,
+        "Other": 190621
+      }
+    },
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "desktop",
+      "run": 2,
+      "measuredAt": "2026-10-02T11:07:27.705Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 608.511,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 544.14,
+      "transferBytes": 554679,
+      "mainThreadMs": 177.7980000000004,
+      "transferBytesByType": {
+        "Document": 13878,
+        "Stylesheet": 27136,
+        "Script": 308720,
+        "Image": 13329,
+        "Fetch": 546,
+        "XHR": 446,
+        "Other": 190624
+      }
+    },
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "desktop",
+      "run": 3,
+      "measuredAt": "2026-10-02T11:07:39.006Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 567.0459999999999,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 512.068,
+      "transferBytes": 554675,
+      "mainThreadMs": 180.65000000000046,
+      "transferBytesByType": {
+        "Document": 13876,
+        "Stylesheet": 27131,
+        "Script": 308718,
+        "Image": 13335,
+        "Fetch": 546,
+        "XHR": 447,
+        "Other": 190622
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "mobile",
+      "release": "d797ebd95c0fdb5769fe1d6656d431a09abed4a5",
+      "lighthouse": "13.5.0",
+      "runs": 3,
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "measuredAt": [
+        "2026-10-02T11:06:41.406Z",
+        "2026-10-02T11:06:53.939Z",
+        "2026-10-02T11:07:05.228Z"
+      ],
+      "individualRuns": [
+        {
+          "name": "guide",
+          "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+          "device": "mobile",
+          "run": 1,
+          "measuredAt": "2026-10-02T11:06:41.406Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 0.67,
+          "lcp": 4898.652999999999,
+          "cls": 0,
+          "tbt": 536,
+          "fcp": 1789.1329999999998,
+          "transferBytes": 552730,
+          "mainThreadMs": 2128.7280000000073
+        },
+        {
+          "name": "guide",
+          "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+          "device": "mobile",
+          "run": 2,
+          "measuredAt": "2026-10-02T11:06:53.939Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 0.96,
+          "lcp": 2367.541,
+          "cls": 0,
+          "tbt": 41,
+          "fcp": 2050.711,
+          "transferBytes": 554726,
+          "mainThreadMs": 933.8440000000026
+        },
+        {
+          "name": "guide",
+          "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+          "device": "mobile",
+          "run": 3,
+          "measuredAt": "2026-10-02T11:07:05.228Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 0.96,
+          "lcp": 2369.652,
+          "cls": 0,
+          "tbt": 93,
+          "fcp": 2034.71,
+          "transferBytes": 554724,
+          "mainThreadMs": 695.1560000000018
+        }
+      ],
+      "medians": {
+        "score": 0.96,
+        "lcp": 2369.652,
+        "cls": 0,
+        "tbt": 93,
+        "fcp": 2034.71,
+        "transferBytes": 554724,
+        "mainThreadMs": 933.8440000000026
+      },
+      "diagnostics": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 131\u00a0KiB",
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-PJ6ZQQVMPR",
+              "totalBytes": 180807,
+              "wastedBytes": 74754,
+              "wastedPercent": 41.34437444404706
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-BNIGkK3q.js",
+              "totalBytes": 52652,
+              "wastedBytes": 32989,
+              "wastedPercent": 62.6543945824789
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "totalBytes": 59681,
+              "wastedBytes": 26165,
+              "wastedPercent": 43.841768690310914
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "displayValue": "Est savings of 13\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 13338,
+              "wastedBytes": 9069.839999999998
+            },
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "cacheLifetimeMs": 86400000,
+              "totalBytes": 10339,
+              "wastedBytes": 4135.6
+            },
+            {
+              "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+              "cacheLifetimeMs": 172797000,
+              "totalBytes": 1041,
+              "wastedBytes": 312.30361458333334
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 10\u00a0KiB",
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-0-IMG",
+                "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+                "selector": "header.site-header > div.nav-wrap > a.brand > img",
+                "boundingRect": {
+                  "top": 57,
+                  "bottom": 91,
+                  "left": 12,
+                  "right": 142,
+                  "width": 130,
+                  "height": 35
+                },
+                "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" fetchpriority=\"high\" decoding=\"async\" alt=\"Capehelm\">",
+                "nodeLabel": "Capehelm"
+              },
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "totalBytes": 12580,
+              "wastedBytes": 10273,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 5447
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (400x107) for its displayed dimensions (228x61). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 8512
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "wastedBytes": 10841,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "signal": "Array.prototype.at",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19367
+                    }
+                  },
+                  {
+                    "signal": "Array.prototype.findLast",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19137
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "2CD49D543AF6E477FF1851BC76660CE7": {
+                    "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+                    "navStartToEndTime": 120,
+                    "transferSize": 13883,
+                    "isLongest": true,
+                    "children": {
+                      "2463.13": {
+                        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                        "navStartToEndTime": 202,
+                        "transferSize": 10339,
+                        "isLongest": true,
+                        "children": {
+                          "2463.29": {
+                            "url": "https://capehelm.com/cdn-cgi/rum?",
+                            "navStartToEndTime": 437,
+                            "transferSize": 444,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "2463.6": {
+                        "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+                        "navStartToEndTime": 156,
+                        "transferSize": 60466,
+                        "children": {}
+                      },
+                      "2463.3": {
+                        "url": "https://capehelm.com/_next/static/css/layout.DAszrAVG.css",
+                        "navStartToEndTime": 155,
+                        "transferSize": 7327,
+                        "children": {}
+                      },
+                      "2463.5": {
+                        "url": "https://capehelm.com/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 152,
+                        "transferSize": 1213,
+                        "children": {}
+                      },
+                      "2463.2": {
+                        "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+                        "navStartToEndTime": 142,
+                        "transferSize": 19806,
+                        "children": {}
+                      },
+                      "2463.11": {
+                        "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+                        "navStartToEndTime": 138,
+                        "transferSize": 1041,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 437
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 160\u00a0ms",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/layout.DAszrAVG.css",
+              "totalBytes": 7327,
+              "wastedMs": 638
+            },
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "totalBytes": 19806,
+              "wastedMs": 796
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "guide",
+      "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+      "device": "desktop",
+      "release": "d797ebd95c0fdb5769fe1d6656d431a09abed4a5",
+      "lighthouse": "13.5.0",
+      "runs": 3,
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "measuredAt": [
+        "2026-10-02T11:07:16.465Z",
+        "2026-10-02T11:07:27.705Z",
+        "2026-10-02T11:07:39.006Z"
+      ],
+      "individualRuns": [
+        {
+          "name": "guide",
+          "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+          "device": "desktop",
+          "run": 1,
+          "measuredAt": "2026-10-02T11:07:16.465Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 1,
+          "lcp": 618.014,
+          "cls": 0,
+          "tbt": 0,
+          "fcp": 564.971,
+          "transferBytes": 554732,
+          "mainThreadMs": 204.0320000000008
+        },
+        {
+          "name": "guide",
+          "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+          "device": "desktop",
+          "run": 2,
+          "measuredAt": "2026-10-02T11:07:27.705Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 1,
+          "lcp": 608.511,
+          "cls": 0,
+          "tbt": 0,
+          "fcp": 544.14,
+          "transferBytes": 554679,
+          "mainThreadMs": 177.7980000000004
+        },
+        {
+          "name": "guide",
+          "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+          "device": "desktop",
+          "run": 3,
+          "measuredAt": "2026-10-02T11:07:39.006Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 1,
+          "lcp": 567.0459999999999,
+          "cls": 0,
+          "tbt": 0,
+          "fcp": 512.068,
+          "transferBytes": 554675,
+          "mainThreadMs": 180.65000000000046
+        }
+      ],
+      "medians": {
+        "score": 1,
+        "lcp": 608.511,
+        "cls": 0,
+        "tbt": 0,
+        "fcp": 544.14,
+        "transferBytes": 554679,
+        "mainThreadMs": 180.65000000000046
+      },
+      "diagnostics": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 131\u00a0KiB",
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-PJ6ZQQVMPR",
+              "totalBytes": 180807,
+              "wastedBytes": 75237,
+              "wastedPercent": 41.611722955314484
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-BNIGkK3q.js",
+              "totalBytes": 52648,
+              "wastedBytes": 32986,
+              "wastedPercent": 62.6543945824789
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "totalBytes": 59678,
+              "wastedBytes": 26164,
+              "wastedPercent": 43.841768690310914
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "displayValue": "Est savings of 13\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 13329,
+              "wastedBytes": 9063.72
+            },
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "cacheLifetimeMs": 86400000,
+              "totalBytes": 10338,
+              "wastedBytes": 4135.2
+            },
+            {
+              "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+              "cacheLifetimeMs": 172796000,
+              "totalBytes": 1041,
+              "wastedBytes": 312.30481944444455
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-1-IMG",
+                "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+                "selector": "header.site-header > div.nav-wrap > a.brand > img",
+                "boundingRect": {
+                  "top": 50,
+                  "bottom": 98,
+                  "left": 24,
+                  "right": 200,
+                  "width": 176,
+                  "height": 47
+                },
+                "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" fetchpriority=\"high\" decoding=\"async\" alt=\"Capehelm\">",
+                "nodeLabel": "Capehelm"
+              },
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "totalBytes": 12580,
+              "wastedBytes": 11199,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 5447
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (400x107) for its displayed dimensions (176x47). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 10145
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "wastedBytes": 10840,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "signal": "Array.prototype.at",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19367
+                    }
+                  },
+                  {
+                    "signal": "Array.prototype.findLast",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19137
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "46EA23161177B6FC8556AFC05AB4FB5E": {
+                    "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+                    "navStartToEndTime": 155,
+                    "transferSize": 13878,
+                    "isLongest": true,
+                    "children": {
+                      "3042.13": {
+                        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                        "navStartToEndTime": 196,
+                        "transferSize": 10338,
+                        "isLongest": true,
+                        "children": {
+                          "3042.29": {
+                            "url": "https://capehelm.com/cdn-cgi/rum?",
+                            "navStartToEndTime": 482,
+                            "transferSize": 446,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "3042.3": {
+                        "url": "https://capehelm.com/_next/static/css/layout.DAszrAVG.css",
+                        "navStartToEndTime": 199,
+                        "transferSize": 7340,
+                        "children": {}
+                      },
+                      "3042.6": {
+                        "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+                        "navStartToEndTime": 181,
+                        "transferSize": 60464,
+                        "children": {}
+                      },
+                      "3042.5": {
+                        "url": "https://capehelm.com/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 178,
+                        "transferSize": 1186,
+                        "children": {}
+                      },
+                      "3042.2": {
+                        "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+                        "navStartToEndTime": 178,
+                        "transferSize": 19796,
+                        "children": {}
+                      },
+                      "3042.11": {
+                        "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+                        "navStartToEndTime": 166,
+                        "transferSize": 1041,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 482
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "displayValue": "Est savings of 50\u00a0ms",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/layout.DAszrAVG.css",
+              "totalBytes": 7340,
+              "wastedMs": 160
+            },
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "totalBytes": 19796,
+              "wastedMs": 112
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

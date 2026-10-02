@@ -225,17 +225,17 @@ Remaining limitations: support categories are real section anchors on /support, 
 ## Phase 5 — Performance measurement and targeted fixes
 
 Priority: Measure first
-Status: Not started
+Status: Complete — measured and verified in production
 
 ### Tasks
 
-- [ ] Establish repeatable mobile and desktop lab baselines for home, features, a guide, and a support page.
-- [ ] Record tool/version, device/network settings, run dates, and the median of repeated comparable runs.
-- [ ] Inspect available field Core Web Vitals data; record “insufficient data” if the site is too new.
-- [ ] Measure LCP, CLS, lab blocking time, JS/CSS transfer sizes, image sizes, compression, and caching.
-- [ ] Inspect hydration/main-thread costs and third-party script impact.
-- [ ] Fix only demonstrated bottlenecks while preserving analytics and existing image optimizations.
-- [ ] Compare before/after under the same conditions and verify navigation and visual behavior.
+- [x] Establish repeatable mobile and desktop lab baselines for home, features, a guide, and a support page.
+- [x] Record tool/version, device/network settings, run dates, and the median of repeated comparable runs.
+- [x] Inspect available field Core Web Vitals data; record unavailable/insufficient data accurately (API quota prevented field retrieval).
+- [x] Measure LCP, CLS, lab blocking time, JS/CSS transfer sizes, image sizes, compression, and caching.
+- [x] Inspect hydration/main-thread costs and third-party script impact.
+- [x] Fix only demonstrated bottlenecks while preserving analytics and existing image optimizations.
+- [x] Compare before/after under the same conditions and verify navigation and visual behavior.
 
 ### Acceptance
 
@@ -247,11 +247,12 @@ Status: Not started
 
 ### Evidence
 
-Implementation commit (if changes required):
-Measurement setup and dates:
-Before/after results:
-Field data availability:
-Remaining limitations:
+Implementation: `926b09e9ed28052a04503c00f2ef5148dfc706c5` (logo priority), `d797ebd95c0fdb5769fe1d6656d431a09abed4a5` (successful-response cache policy snapshot).
+Measurement: 2026-10-02, Lighthouse 13.5.0 / Chrome 154, three mobile and three desktop runs on each of four routes before and after; exact settings and per-run metrics retained in [performance evidence](seo/performance/).
+Report and before/after table: [PHASE_5_REPORT.md](seo/performance/PHASE_5_REPORT.md). Mobile scores 95–97 after; desktop 100; CLS zero. Versioned JS/CSS cache warnings and logo priority recommendation resolved. Small timing variations are documented, not treated as causal gains.
+Field data: unavailable because PageSpeed Insights returned quota error 429; no field CWV pass claimed.
+Verification: 85 tests, targeted ESLint, successful Pages deployment/live SEO checks (32 pages, 45 assets, 94 aliases, 20 breadcrumbs); homepage mobile before/after screenshot checked.
+Limitations: four-page lab sample, no field INP; lazy support PNGs, framework/analytics JS and CSS tradeoffs documented in the report. Phase 6 remains not started.
 
 ## Phase 6 — Production crawlability and indexing verification
 

@@ -1,0 +1,1242 @@
+{
+  "release": {
+    "revision": "d797ebd95c0fdb5769fe1d6656d431a09abed4a5"
+  },
+  "results": [
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "mobile",
+      "run": 1,
+      "measuredAt": "2026-10-02T11:06:41.572Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.94,
+      "lcp": 2112.7915000000003,
+      "cls": 0,
+      "tbt": 224.5,
+      "fcp": 1812.7915,
+      "transferBytes": 539968,
+      "mainThreadMs": 912.1080000000002,
+      "transferBytesByType": {
+        "Document": 8161,
+        "Stylesheet": 19526,
+        "Script": 307435,
+        "Image": 13164,
+        "Fetch": 546,
+        "XHR": 477,
+        "Other": 190659
+      }
+    },
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "mobile",
+      "run": 2,
+      "measuredAt": "2026-10-02T11:06:53.631Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.95,
+      "lcp": 2276.6160000000004,
+      "cls": 0,
+      "tbt": 138,
+      "fcp": 1942.036,
+      "transferBytes": 541735,
+      "mainThreadMs": 737.7160000000007,
+      "transferBytesByType": {
+        "Document": 8209,
+        "Stylesheet": 19806,
+        "Script": 308760,
+        "Image": 13335,
+        "Fetch": 546,
+        "XHR": 442,
+        "Other": 190637
+      }
+    },
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "mobile",
+      "run": 3,
+      "measuredAt": "2026-10-02T11:07:05.447Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 0.95,
+      "lcp": 2318.1720000000005,
+      "cls": 0,
+      "tbt": 139,
+      "fcp": 1966.8100000000002,
+      "transferBytes": 541756,
+      "mainThreadMs": 743.3240000000006,
+      "transferBytesByType": {
+        "Document": 8215,
+        "Stylesheet": 19800,
+        "Script": 308765,
+        "Image": 13332,
+        "Fetch": 546,
+        "XHR": 455,
+        "Other": 190643
+      }
+    },
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "desktop",
+      "run": 1,
+      "measuredAt": "2026-10-02T11:07:17.214Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 670.346,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 561.344,
+      "transferBytes": 574909,
+      "mainThreadMs": 219.07000000000025,
+      "transferBytesByType": {
+        "Document": 8215,
+        "Stylesheet": 19808,
+        "Script": 308750,
+        "Image": 46513,
+        "Fetch": 546,
+        "XHR": 442,
+        "Other": 190635
+      }
+    },
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "desktop",
+      "run": 2,
+      "measuredAt": "2026-10-02T11:07:29.167Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 655.849,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 549.136,
+      "transferBytes": 574680,
+      "mainThreadMs": 189.94200000000023,
+      "transferBytesByType": {
+        "Document": 8220,
+        "Stylesheet": 19806,
+        "Script": 308769,
+        "Image": 46257,
+        "Fetch": 546,
+        "XHR": 443,
+        "Other": 190639
+      }
+    },
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "desktop",
+      "run": 3,
+      "measuredAt": "2026-10-02T11:07:40.953Z",
+      "version": "13.5.0",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "score": 1,
+      "lcp": 630.165,
+      "cls": 0,
+      "tbt": 0,
+      "fcp": 568.48,
+      "transferBytes": 574653,
+      "mainThreadMs": 196.85500000000025,
+      "transferBytesByType": {
+        "Document": 8203,
+        "Stylesheet": 19804,
+        "Script": 308761,
+        "Image": 46256,
+        "Fetch": 546,
+        "XHR": 448,
+        "Other": 190635
+      }
+    }
+  ],
+  "summaries": [
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "mobile",
+      "release": "d797ebd95c0fdb5769fe1d6656d431a09abed4a5",
+      "lighthouse": "13.5.0",
+      "runs": 3,
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "measuredAt": [
+        "2026-10-02T11:06:41.572Z",
+        "2026-10-02T11:06:53.631Z",
+        "2026-10-02T11:07:05.447Z"
+      ],
+      "individualRuns": [
+        {
+          "name": "support",
+          "url": "https://capehelm.com/support/getting-started/create-finance-document",
+          "device": "mobile",
+          "run": 1,
+          "measuredAt": "2026-10-02T11:06:41.572Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 0.94,
+          "lcp": 2112.7915000000003,
+          "cls": 0,
+          "tbt": 224.5,
+          "fcp": 1812.7915,
+          "transferBytes": 539968,
+          "mainThreadMs": 912.1080000000002
+        },
+        {
+          "name": "support",
+          "url": "https://capehelm.com/support/getting-started/create-finance-document",
+          "device": "mobile",
+          "run": 2,
+          "measuredAt": "2026-10-02T11:06:53.631Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 0.95,
+          "lcp": 2276.6160000000004,
+          "cls": 0,
+          "tbt": 138,
+          "fcp": 1942.036,
+          "transferBytes": 541735,
+          "mainThreadMs": 737.7160000000007
+        },
+        {
+          "name": "support",
+          "url": "https://capehelm.com/support/getting-started/create-finance-document",
+          "device": "mobile",
+          "run": 3,
+          "measuredAt": "2026-10-02T11:07:05.447Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 0.95,
+          "lcp": 2318.1720000000005,
+          "cls": 0,
+          "tbt": 139,
+          "fcp": 1966.8100000000002,
+          "transferBytes": 541756,
+          "mainThreadMs": 743.3240000000006
+        }
+      ],
+      "medians": {
+        "score": 0.95,
+        "lcp": 2276.6160000000004,
+        "cls": 0,
+        "tbt": 139,
+        "fcp": 1942.036,
+        "transferBytes": 541735,
+        "mainThreadMs": 743.3240000000006
+      },
+      "diagnostics": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 129\u00a0KiB",
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-PJ6ZQQVMPR",
+              "totalBytes": 180807,
+              "wastedBytes": 72783,
+              "wastedPercent": 40.25475253789651
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-BNIGkK3q.js",
+              "totalBytes": 52648,
+              "wastedBytes": 33024,
+              "wastedPercent": 62.72592875196719
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "totalBytes": 59678,
+              "wastedBytes": 26164,
+              "wastedPercent": 43.841768690310914
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "displayValue": "Est savings of 13\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 13335,
+              "wastedBytes": 9067.8
+            },
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "cacheLifetimeMs": 86400000,
+              "totalBytes": 10338,
+              "wastedBytes": 4135.2
+            },
+            {
+              "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+              "cacheLifetimeMs": 172796000,
+              "totalBytes": 1049,
+              "wastedBytes": 314.70485648148156
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 10\u00a0KiB",
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-1-IMG",
+                "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+                "selector": "header.site-header > div.nav-wrap > a.brand > img",
+                "boundingRect": {
+                  "top": 57,
+                  "bottom": 91,
+                  "left": 12,
+                  "right": 142,
+                  "width": 130,
+                  "height": 35
+                },
+                "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" fetchpriority=\"high\" decoding=\"async\" alt=\"Capehelm\">",
+                "nodeLabel": "Capehelm"
+              },
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "totalBytes": 12580,
+              "wastedBytes": 10273,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 5447
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (400x107) for its displayed dimensions (228x61). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 8512
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "wastedBytes": 10840,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "signal": "Array.prototype.at",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19367
+                    }
+                  },
+                  {
+                    "signal": "Array.prototype.findLast",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19137
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "D0F7E4526728379730DC80EE7053C823": {
+                    "url": "https://capehelm.com/support/getting-started/create-finance-document",
+                    "navStartToEndTime": 98,
+                    "transferSize": 8209,
+                    "isLongest": true,
+                    "children": {
+                      "2674.12": {
+                        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                        "navStartToEndTime": 125,
+                        "transferSize": 10338,
+                        "isLongest": true,
+                        "children": {
+                          "2674.26": {
+                            "url": "https://capehelm.com/cdn-cgi/rum?",
+                            "navStartToEndTime": 441,
+                            "transferSize": 442,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "2674.5": {
+                        "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+                        "navStartToEndTime": 183,
+                        "transferSize": 60470,
+                        "children": {}
+                      },
+                      "2674.4": {
+                        "url": "https://capehelm.com/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 182,
+                        "transferSize": 1211,
+                        "children": {}
+                      },
+                      "2674.10": {
+                        "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+                        "navStartToEndTime": 132,
+                        "transferSize": 1049,
+                        "children": {}
+                      },
+                      "2674.2": {
+                        "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+                        "navStartToEndTime": 131,
+                        "transferSize": 19806,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 441
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "totalBytes": 19806,
+              "wastedMs": 659
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "support",
+      "url": "https://capehelm.com/support/getting-started/create-finance-document",
+      "device": "desktop",
+      "release": "d797ebd95c0fdb5769fe1d6656d431a09abed4a5",
+      "lighthouse": "13.5.0",
+      "runs": 3,
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      },
+      "measuredAt": [
+        "2026-10-02T11:07:17.214Z",
+        "2026-10-02T11:07:29.167Z",
+        "2026-10-02T11:07:40.953Z"
+      ],
+      "individualRuns": [
+        {
+          "name": "support",
+          "url": "https://capehelm.com/support/getting-started/create-finance-document",
+          "device": "desktop",
+          "run": 1,
+          "measuredAt": "2026-10-02T11:07:17.214Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 1,
+          "lcp": 670.346,
+          "cls": 0,
+          "tbt": 0,
+          "fcp": 561.344,
+          "transferBytes": 574909,
+          "mainThreadMs": 219.07000000000025
+        },
+        {
+          "name": "support",
+          "url": "https://capehelm.com/support/getting-started/create-finance-document",
+          "device": "desktop",
+          "run": 2,
+          "measuredAt": "2026-10-02T11:07:29.167Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 1,
+          "lcp": 655.849,
+          "cls": 0,
+          "tbt": 0,
+          "fcp": 549.136,
+          "transferBytes": 574680,
+          "mainThreadMs": 189.94200000000023
+        },
+        {
+          "name": "support",
+          "url": "https://capehelm.com/support/getting-started/create-finance-document",
+          "device": "desktop",
+          "run": 3,
+          "measuredAt": "2026-10-02T11:07:40.953Z",
+          "version": "13.5.0",
+          "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+          "score": 1,
+          "lcp": 630.165,
+          "cls": 0,
+          "tbt": 0,
+          "fcp": 568.48,
+          "transferBytes": 574653,
+          "mainThreadMs": 196.85500000000025
+        }
+      ],
+      "medians": {
+        "score": 1,
+        "lcp": 655.849,
+        "cls": 0,
+        "tbt": 0,
+        "fcp": 561.344,
+        "transferBytes": 574680,
+        "mainThreadMs": 196.85500000000025
+      },
+      "diagnostics": [
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "displayValue": "Est savings of 10\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "wastedBytes": 10535,
+              "wastedPercent": 55.37496084836011,
+              "totalBytes": 19024
+            }
+          ]
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "displayValue": "Est savings of 131\u00a0KiB",
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-PJ6ZQQVMPR",
+              "totalBytes": 180827,
+              "wastedBytes": 75099,
+              "wastedPercent": 41.53106068516514
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/index-BNIGkK3q.js",
+              "totalBytes": 52651,
+              "wastedBytes": 33026,
+              "wastedPercent": 62.72592875196719
+            },
+            {
+              "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+              "totalBytes": 59678,
+              "wastedBytes": 26164,
+              "wastedPercent": 43.841768690310914
+            }
+          ]
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "displayValue": "Est savings of 35\u00a0KiB",
+          "items": [
+            {
+              "url": "https://capehelm.com/brand/capehelm-mark-320.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 32925,
+              "wastedBytes": 22388.999999999996
+            },
+            {
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "cacheLifetimeMs": 14400000,
+              "totalBytes": 13332,
+              "wastedBytes": 9065.759999999998
+            },
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "cacheLifetimeMs": 86400000,
+              "totalBytes": 10338,
+              "wastedBytes": 4135.2
+            },
+            {
+              "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+              "cacheLifetimeMs": 172797000,
+              "totalBytes": 1044,
+              "wastedBytes": 313.203625
+            }
+          ]
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "displayValue": "Est savings of 42\u00a0KiB",
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-1-IMG",
+                "path": "1,HTML,1,BODY,2,FOOTER,0,DIV,0,DIV,0,IMG",
+                "selector": "footer.site-footer > div.footer-grid > div > img.footer-mark",
+                "boundingRect": {
+                  "top": 3050,
+                  "bottom": 3082,
+                  "left": 24,
+                  "right": 56,
+                  "width": 32,
+                  "height": 32
+                },
+                "snippet": "<img class=\"footer-mark\" src=\"/brand/capehelm-mark-320.webp\" width=\"320\" height=\"302\" loading=\"lazy\" decoding=\"async\" alt=\"\">",
+                "nodeLabel": "footer.site-footer > div.footer-grid > div > img.footer-mark"
+              },
+              "url": "https://capehelm.com/brand/capehelm-mark-320.webp",
+              "totalBytes": 32166,
+              "wastedBytes": 32005,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 16059
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (320x302) for its displayed dimensions (32x30). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 31844
+                  }
+                ]
+              }
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-2-IMG",
+                "path": "1,HTML,1,BODY,0,HEADER,1,DIV,0,A,0,IMG",
+                "selector": "header.site-header > div.nav-wrap > a.brand > img",
+                "boundingRect": {
+                  "top": 50,
+                  "bottom": 98,
+                  "left": 24,
+                  "right": 200,
+                  "width": 176,
+                  "height": 47
+                },
+                "snippet": "<img src=\"/brand/capehelm-horizontal-400.webp\" width=\"400\" height=\"107\" fetchpriority=\"high\" decoding=\"async\" alt=\"Capehelm\">",
+                "nodeLabel": "Capehelm"
+              },
+              "url": "https://capehelm.com/brand/capehelm-horizontal-400.webp",
+              "totalBytes": 12580,
+              "wastedBytes": 11199,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 5447
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (400x107) for its displayed dimensions (176x47). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 10145
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "displayValue": "Est savings of 11\u00a0KiB",
+          "items": [
+            {
+              "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+              "wastedBytes": 10840,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "signal": "Array.prototype.at",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19367
+                    }
+                  },
+                  {
+                    "signal": "Array.prototype.findLast",
+                    "location": {
+                      "type": "source-location",
+                      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                      "urlProvider": "network",
+                      "line": 0,
+                      "column": 19137
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "764EB6B659FE1C16A693FA077A8D4797": {
+                    "url": "https://capehelm.com/support/getting-started/create-finance-document",
+                    "navStartToEndTime": 98,
+                    "transferSize": 8220,
+                    "isLongest": true,
+                    "children": {
+                      "3254.12": {
+                        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+                        "navStartToEndTime": 166,
+                        "transferSize": 10338,
+                        "isLongest": true,
+                        "children": {
+                          "3254.27": {
+                            "url": "https://capehelm.com/cdn-cgi/rum?",
+                            "navStartToEndTime": 418,
+                            "transferSize": 443,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "3254.5": {
+                        "url": "https://capehelm.com/_next/static/chunks/framework-BgSIrAUN.js",
+                        "navStartToEndTime": 164,
+                        "transferSize": 60466,
+                        "children": {}
+                      },
+                      "3254.2": {
+                        "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+                        "navStartToEndTime": 122,
+                        "transferSize": 19806,
+                        "children": {}
+                      },
+                      "3254.4": {
+                        "url": "https://capehelm.com/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+                        "navStartToEndTime": 119,
+                        "transferSize": 1211,
+                        "children": {}
+                      },
+                      "3254.10": {
+                        "url": "https://capehelm.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+                        "navStartToEndTime": 107,
+                        "transferSize": 1044,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 418
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "items": [
+            {
+              "url": "https://capehelm.com/_next/static/css/index.CzMkqL_w.css",
+              "totalBytes": 19806,
+              "wastedMs": 132
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
