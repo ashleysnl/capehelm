@@ -288,4 +288,4 @@ Outstanding follow-ups:
 
 ## Completion rules
 
-A phase is complete only when its applicable acceptance checks pass and evidence is recorded. If deployment or external verification remains unavailable, mark it “Complete — verified in production.” New content and keyword strategy remain outside this plan.
+A phase is complete only when its applicable acceptance checks pass and evidence is recorded. If deployment or external verification remains unavailable, mark it “Implemented — verification pending.” New content and keyword strategy remain outside this plan.
