@@ -1,5 +1,5 @@
 import { ProductScreenshot, type ProductScreenshotAsset } from "../components/ProductScreenshot";
-import { AppStoreLink, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
+import { AppStoreLink, MacAppStoreBadge, ArrowIcon, PageShell, SiteLink } from "../components/SiteShell";
 import { createPageMetadata, defaultSocialTitle } from "../config/pageMetadata";
 import { siteAssetPath } from "../config/site";
 import {
@@ -67,7 +67,7 @@ const productStories: Array<{
 
 export default function Home() {
   return (
-    <PageShell>
+    <PageShell badgeInContent>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -85,7 +85,7 @@ export default function Home() {
           <h1>Personal finance for Mac.<br /><em>Understand your money. Plan what&apos;s next.</em></h1>
           <p className="hero-lede">Track spending, build a budget, forecast the next 14 days, monitor your net worth and plan retirement — while keeping your financial data on your Mac.</p>
           <div className="hero-actions">
-            <AppStoreLink className="button hero-primary-cta">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
+            <MacAppStoreBadge />
             <SiteLink className="text-link" href="#forecast">Explore Capehelm <span aria-hidden="true">↓</span></SiteLink>
           </div>
           <p className="hero-supporting-line">2 months free for eligible new subscribers · Monthly or annual · No ads</p>

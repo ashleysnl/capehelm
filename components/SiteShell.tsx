@@ -18,6 +18,21 @@ export function AppStoreLink({ children, ...props }: Omit<AnchorHTMLAttributes<H
   );
 }
 
+export function MacAppStoreBadge() {
+  return (
+    <AppStoreLink className="mac-app-store-badge" aria-label="Download Capehelm on the Mac App Store (opens in a new tab)">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={siteAssetPath("/brand/apple/download-on-the-mac-app-store.svg")}
+        width="156.10054"
+        height="40"
+        decoding="async"
+        alt="Download on the Mac App Store"
+      />
+    </AppStoreLink>
+  );
+}
+
 export function SiteHeader() {
   return (
     <header className="site-header">
@@ -71,7 +86,7 @@ export function SiteHeader() {
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({ showBadge = true }: { showBadge?: boolean }) {
   return (
     <footer className="site-footer">
       <div className="footer-grid">
@@ -88,6 +103,7 @@ export function SiteFooter() {
           />
           <p className="footer-title">Capehelm</p>
           <p>Private personal finance for Mac. Available on the Mac App Store.</p>
+          {showBadge && <MacAppStoreBadge />}
         </div>
         <nav aria-label="Footer navigation">
           <SiteLink href="/features">Features</SiteLink>
@@ -104,16 +120,17 @@ export function SiteFooter() {
         <span>© 2026 Capehelm</span>
         <span>Available on the Mac App Store.</span>
       </div>
+      <p className="apple-trademark-credit">Apple, the Apple logo, and Mac are trademarks of Apple Inc., registered in the U.S. and other countries. Mac App Store is a service mark of Apple Inc.</p>
     </footer>
   );
 }
 
-export function PageShell({ children }: { children: ReactNode }) {
+export function PageShell({ children, badgeInContent = false }: { children: ReactNode; badgeInContent?: boolean }) {
   return (
     <>
       <SiteHeader />
       <main>{children}</main>
-      <SiteFooter />
+      <SiteFooter showBadge={!badgeInContent} />
     </>
   );
 }

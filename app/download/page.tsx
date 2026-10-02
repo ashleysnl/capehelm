@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import {
-  AppStoreLink,
+  AppStoreLink, MacAppStoreBadge,
   ArrowIcon,
   CheckIcon,
   PageShell,
@@ -20,7 +20,7 @@ export const dynamic = "force-static";
 
 export default function DownloadPage() {
   return (
-    <PageShell>
+    <PageShell badgeInContent>
       <section className="download-hero section-shell">
         <div className="download-copy">
           <p className="eyebrow"><span /> Available for Mac</p>
@@ -60,7 +60,7 @@ export default function DownloadPage() {
             <li><CheckIcon /><span><b>Distribution</b>Mac App Store</span></li>
             <li><CheckIcon /><span><b>Subscriptions</b>Monthly or annual; eligible new subscribers can receive Apple&apos;s two-month introductory trial</span></li>
           </ul>
-          <AppStoreLink className="button">Download on the Mac App Store <ArrowIcon /></AppStoreLink>
+          <MacAppStoreBadge />
         </div>
       </section>
 

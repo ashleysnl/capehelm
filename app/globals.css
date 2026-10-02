@@ -831,3 +831,31 @@ h1 em, h2 em { color: #91b7ff; font-style: normal; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Apple artwork remains unmodified; 48px badge + 12px clear space on each side. */
+.mac-app-store-badge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: max-content;
+  padding: 12px;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+.mac-app-store-badge img {
+  display: block;
+  width: 187.320648px;
+  height: 48px;
+  max-width: none;
+}
+.mac-app-store-badge:focus-visible {
+  outline: 2px solid #91b8ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.apple-trademark-credit {
+  max-width: 800px;
+  margin-top: 20px;
+  font-size: 11px;
+  line-height: 1.6;
+}

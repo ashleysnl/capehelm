@@ -89,7 +89,7 @@ test("homepage hero communicates the Task 3 positioning and one dominant App Sto
   assert.match(hero, /keeping your financial data on your Mac/i);
   assert.match(hero, /Download on the Mac App Store/);
   assert.match(hero, /2 months free for eligible new subscribers · Monthly or annual · No ads/);
-  assert.equal((hero.match(/class="button hero-primary-cta"/g) ?? []).length, 1);
+  assert.equal((hero.match(/class="mac-app-store-badge"/g) ?? []).length, 1);
   assert.match(hero, /capehelm-dashboard-1400\.webp/);
   assert.match(hero, /alt="Capehelm Dashboard showing a real monthly financial overview, spending pace, budget position, upcoming cash flow and financial progress using fictional demonstration data\."/);
 });
