@@ -56,7 +56,7 @@ export default function RecurringChargesGuide() {
 
       <article className="guide-article">
         <header className="guide-hero section-shell">
-          <GuideBreadcrumbs current="Find subscriptions and recurring charges" />
+          <GuideBreadcrumbs path="/guides/how-to-find-subscriptions-recurring-charges-bank-statement" current="Find subscriptions and recurring charges" />
           <p className="eyebrow"><span /> Subscriptions · Recurring spending</p>
           <h1>How to Find Subscriptions and Recurring Charges on Your <em>Bank Statement</em></h1>
           <p className="guide-deck">

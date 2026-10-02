@@ -1,3 +1,4 @@
+import { BreadcrumbSchema } from "./BreadcrumbSchema";
 import { SiteLink } from "./SiteShell";
 import {
   supportArticleByKey,
@@ -42,6 +43,12 @@ export function SupportBreadcrumbs({ article }: { article: SupportArticle }) {
 
   return (
     <nav className="support-breadcrumbs" aria-label="Breadcrumb">
+      <BreadcrumbSchema items={[
+        { name: "Capehelm", path: "/" },
+        { name: "Support", path: "/support" },
+        { name: category.label, path: `/support#category-${article.category}` },
+        { name: article.title, path: supportArticlePath(article) },
+      ]} />
       <ol>
         <li><SiteLink href="/">Capehelm</SiteLink></li>
         <li><SiteLink href="/support">Support</SiteLink></li>

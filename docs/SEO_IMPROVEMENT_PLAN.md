@@ -45,7 +45,7 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 | 1 | Normalize alternate page URLs | Complete — verified in production |
 | 2 | Add automated technical SEO regression checks | Complete — verified in production |
 | 3 | Generate and validate the sitemap | Complete — verified in production |
-| 4 | Add breadcrumb structured data | Not started |
+| 4 | Add breadcrumb structured data | Implemented — verification pending |
 | 5 | Measure performance and fix demonstrated bottlenecks | Not started |
 | 6 | Verify production crawlability and indexing | Not started |
 
@@ -197,16 +197,16 @@ Remaining limitations: Cloudflare redirect allowlists still require synchronizat
 ## Phase 4 — Breadcrumb structured data
 
 Priority: Medium
-Status: Not started
+Status: Implemented — verification pending
 
 ### Tasks
 
-- [ ] Inspect the existing visible breadcrumb/navigation hierarchy.
-- [ ] Add reusable BreadcrumbList JSON-LD for nested guides and support pages.
-- [ ] Use absolute canonical URLs, sequential positions, and labels consistent with visible navigation.
-- [ ] Preserve existing Article, SoftwareApplication, Organization, WebSite, and FAQPage markup.
-- [ ] Validate JSON syntax and representative pages using an appropriate structured-data validator.
-- [ ] Avoid unsupported ratings, fabricated reviews, or promises of search enhancements.
+- [x] Inspect the existing visible breadcrumb/navigation hierarchy.
+- [x] Add reusable BreadcrumbList JSON-LD for nested guides and support pages.
+- [x] Use absolute canonical URLs, sequential positions, and labels consistent with visible navigation.
+- [x] Preserve existing Article, SoftwareApplication, Organization, WebSite, and FAQPage markup.
+- [x] Validate JSON syntax and representative pages using an appropriate structured-data validator.
+- [x] Avoid unsupported ratings, fabricated reviews, or promises of search enhancements.
 
 ### Acceptance
 
@@ -217,10 +217,10 @@ Status: Not started
 
 ### Evidence
 
-Implementation commit:
-Representative URLs:
-Validator/results:
-Remaining limitations:
+Implementation: this commit; shared `BreadcrumbSchema` component supplies JSON-LD in initial HTML for all six guide articles and fourteen support articles. Labels and links use the same values as visible navigation; sequential ListItem positions and absolute production URLs are emitted. Existing Article/SoftwareApplication/Organization/WebSite/FAQPage schema is preserved.
+Representative URLs: /guides/budget-vs-cash-flow-forecast and /support/getting-started/create-finance-document; all 20 nested article pages are validated.
+Validator/results: Pages build and 85 tests passed. `scripts/seo/breadcrumbs.mjs` validates JSON syntax, required BreadcrumbList/ListItem fields, item order, visible names/links, canonical destination existence, section fragments and exactly one list per article. Requirements were checked against Google Search Central's Breadcrumb documentation: https://developers.google.com/search/docs/appearance/structured-data/breadcrumb . Targeted ESLint passed. Post-deployment validation pending.
+Remaining limitations: support categories are real section anchors on /support, not separate category pages, and markup preserves that navigation. Google Rich Results Test and Search Console rendering have not been run; local and HTTP validation do not guarantee Google rich-result display. No reviews, ratings or new editorial content were added.
 
 ## Phase 5 — Performance measurement and targeted fixes
 

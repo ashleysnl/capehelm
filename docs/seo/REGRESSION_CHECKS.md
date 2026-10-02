@@ -31,3 +31,7 @@ Before testing, the script polls the public release marker with a revision/attem
 The route inventory is generated from app pages and the existing support catalogue by `scripts/seo/routes.mjs`. Cloudflare alias allowlists must stay synchronized with new routes. The static validator additionally checks that no rendered public route is omitted from the sitemap.
 
 These checks cover delivered HTML and HTTP behavior. They do not replace browser interaction tests, a full CSS/JS dependency graph audit, Core Web Vitals measurements, or Search Console indexing verification.
+
+## Breadcrumb validation
+
+Build and live checks validate one BreadcrumbList on each nested guide/support article, sequential ListItem positions, absolute production URLs, matching visible labels/links, existing destination pages, and valid support category section anchors. JSON-LD syntax is parsed independently. This checks the required shape documented by Google Search Central; it is not an external Rich Results Test result or a promise of rich-result eligibility/display.

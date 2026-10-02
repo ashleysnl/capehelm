@@ -96,7 +96,7 @@ test("guide metadata and Article schema describe the canonical article", async (
   assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/budget-vs-cash-flow-forecast"/);
   assert.match(html, /<meta property="og:type" content="article"/);
   assert.match(html, /<meta property="article:published_time" content="2026-09-28"/);
-  assert.equal(scripts.length, 1);
+  assert.equal(scripts.length, 2);
 
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@type"], "Article");
@@ -125,7 +125,7 @@ test("bank-access metadata and Article schema describe the canonical article", a
   assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/do-personal-finance-apps-need-bank-access"/);
   assert.match(html, /<meta property="og:type" content="article"/);
   assert.match(html, /<meta property="article:published_time" content="2026-09-28"/);
-  assert.equal(scripts.length, 1);
+  assert.equal(scripts.length, 2);
 
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@type"], "Article");
@@ -181,7 +181,7 @@ test("14-day forecast metadata and Article schema describe the canonical article
   assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-forecast-personal-cash-flow-14-days"/);
   assert.match(html, /<meta property="og:type" content="article"/);
   assert.match(html, /<meta property="article:published_time" content="2026-09-29"/);
-  assert.equal(scripts.length, 1);
+  assert.equal(scripts.length, 2);
 
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@type"], "Article");
@@ -256,7 +256,7 @@ test("CSV analysis metadata and Article schema describe the canonical article", 
   assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-analyze-bank-transactions-csv"/);
   assert.match(html, /<meta property="og:type" content="article"/);
   assert.match(html, /<meta property="article:published_time" content="2026-09-30"/);
-  assert.equal(scripts.length, 1);
+  assert.equal(scripts.length, 2);
 
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@type"], "Article");
@@ -330,7 +330,7 @@ test("net-worth metadata and Article schema describe the canonical article", asy
   assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-track-net-worth-without-bank-connections"/);
   assert.match(html, /<meta property="og:type" content="article"/);
   assert.match(html, /<meta property="article:published_time" content="2026-10-01"/);
-  assert.equal(scripts.length, 1);
+  assert.equal(scripts.length, 2);
 
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@type"], "Article");
@@ -398,7 +398,7 @@ test("recurring-charges metadata and Article schema describe the canonical artic
   assert.match(html, /<link rel="canonical" href="https:\/\/capehelm\.com\/guides\/how-to-find-subscriptions-recurring-charges-bank-statement"/);
   assert.match(html, /<meta property="og:type" content="article"/);
   assert.match(html, /<meta property="article:published_time" content="2026-10-01"/);
-  assert.equal(scripts.length, 1);
+  assert.equal(scripts.length, 2);
 
   const schema = JSON.parse(scripts[0][1]);
   assert.equal(schema["@type"], "Article");

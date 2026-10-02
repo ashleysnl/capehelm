@@ -53,7 +53,7 @@ export default function BudgetVsCashFlowForecastGuide() {
       />
       <article className="guide-article">
         <header className="guide-hero section-shell">
-          <GuideBreadcrumbs current="Budget vs. cash-flow forecast" />
+          <GuideBreadcrumbs path="/guides/budget-vs-cash-flow-forecast" current="Budget vs. cash-flow forecast" />
           <p className="eyebrow"><span /> Budgeting · Forecasting</p>
           <h1>Budget vs. Cash-Flow Forecast: <em>What&apos;s the Difference?</em></h1>
           <p className="guide-deck">A budget tells you what you planned. A cash-flow forecast tells you what&apos;s about to happen. You need both.</p>

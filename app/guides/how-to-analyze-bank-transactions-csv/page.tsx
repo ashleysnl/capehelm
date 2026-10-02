@@ -79,7 +79,7 @@ export default function AnalyzeBankTransactionsCsvGuide() {
       />
       <article className="guide-article">
         <header className="guide-hero section-shell">
-          <GuideBreadcrumbs current="Analyze bank transactions from CSV" />
+          <GuideBreadcrumbs path="/guides/how-to-analyze-bank-transactions-csv" current="Analyze bank transactions from CSV" />
           <p className="eyebrow"><span /> CSV · Transaction analysis</p>
           <h1>How to Analyze Your Bank Transactions From a <em>CSV File</em></h1>
           <p className="guide-deck">Your bank statement already contains a lot of useful information. A simple CSV export can help you understand where your money went, identify recurring spending and build a better picture of your finances—without connecting another service to your bank account.</p>

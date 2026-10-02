@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { validateBreadcrumbs } from './breadcrumbs.mjs';
 import { publicRoutes } from './routes.mjs';
 import { metadata, localReferences, sitemapUrls, origin } from './checks.mjs';
 const exec = promisify(execFile);
@@ -32,6 +33,8 @@ assert.deepEqual([...urls].sort(),[...expected].sort(),'production sitemap diffe
 const robots=await request(`${origin}/robots.txt`);assert.equal(robots.status,200);assert.match(robots.body,/^Sitemap: https:\/\/capehelm.com\/sitemap.xml\s*$/m);assert.doesNotMatch(robots.body,/^Disallow:\s*\/\s*$/m);
 const pages=new Map(),assets=new Set(),titles=new Set(),descriptions=new Set();
 await pool(urls,u=>check(u,async()=>{const r=await request(u);assert.equal(r.status,200);const m=metadata(r.body,u,r.headers);assert.ok(!titles.has(m.title),'duplicate title');assert.ok(!descriptions.has(m.description),'duplicate description');titles.add(m.title);descriptions.add(m.description);pages.set(u,r.body);}));
+let breadcrumbs=0;
+for(const [u,html] of pages)if(/\/guides\/.+|\/support\/.+/.test(new URL(u).pathname))await check(u,async()=>{validateBreadcrumbs(html,u,pages);breadcrumbs++;});
 for(const [u,html] of pages)for(const r of localReferences(html,u)) {const clean=new URL(r.url);clean.hash='';clean.search='';if(r.kind==='asset')assets.add(clean.href);else if(!pages.has(clean.href))failures.push(`${u}: missing/noncanonical link ${r.url.href}`);}
 await pool([...assets],u=>check(u,async()=>{const r=await request(u);assert.equal(r.status,200,'asset must return 200 without redirect');assert.doesNotMatch(r.headers,/content-type:\s*text\/html/i,'asset returned HTML');}));
 const aliases=[[`${origin}/index.html?seo_check=1`,`${origin}/?seo_check=1`]];
@@ -39,5 +42,5 @@ for(const u of urls)if(new URL(u).pathname!=='/')for(const suffix of ['/','.html
 await pool(aliases,([u,target])=>check(u,()=>redirect(u,target)));
 await pool(['','/','.html'].map(s=>`${origin}/seo-check-does-not-exist-8ef217${s}`),u=>check(u,async()=>assert.equal((await request(u)).status,404,'unknown page must return genuine 404')));
 for(const [u,target] of [[`https://capehelm.ca/features?seo_check=1`,`${origin}/features?seo_check=1`],[`https://www.capehelm.com/features?seo_check=1`,`${origin}/features?seo_check=1`],[`http://capehelm.com/features`,`${origin}/features`],[`https://ashleysnl.github.io/capehelm/features`,`${origin}/features`]])await check(u,()=>redirect(u,target));
-console.log(JSON.stringify({pages:pages.size,assets:assets.size,aliases:aliases.length,failures},null,2));
+console.log(JSON.stringify({pages:pages.size,assets:assets.size,aliases:aliases.length,breadcrumbs,failures},null,2));
 if(failures.length)process.exitCode=1;

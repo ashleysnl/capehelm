@@ -1,8 +1,10 @@
+import { BreadcrumbSchema } from "./BreadcrumbSchema";
 import { ArrowIcon, SiteLink } from "./SiteShell";
 
-export function GuideBreadcrumbs({ current }: { current: string }) {
+export function GuideBreadcrumbs({ current, path }: { current: string; path: string }) {
   return (
     <nav className="guide-breadcrumbs" aria-label="Breadcrumb">
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Guides", path: "/guides" }, { name: current, path }]} />
       <ol>
         <li><SiteLink href="/">Home</SiteLink></li>
         <li><SiteLink href="/guides">Guides</SiteLink></li>

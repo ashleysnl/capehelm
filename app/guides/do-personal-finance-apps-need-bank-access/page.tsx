@@ -51,7 +51,7 @@ export default function PersonalFinanceAppsBankAccessGuide() {
       />
       <article className="guide-article">
         <header className="guide-hero section-shell">
-          <GuideBreadcrumbs current="Personal finance apps and bank access" />
+          <GuideBreadcrumbs path="/guides/do-personal-finance-apps-need-bank-access" current="Personal finance apps and bank access" />
           <p className="eyebrow"><span /> Privacy · Local-first</p>
           <h1>Do Personal Finance Apps Need Access to <em>Your Bank Account?</em></h1>
           <p className="guide-deck">No. Connecting your bank accounts can make personal finance apps more convenient, but it isn&apos;t required to understand your spending, build a budget, forecast your cash flow or track your financial progress.</p>

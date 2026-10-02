@@ -55,7 +55,7 @@ export default function ForecastPersonalCashFlowGuide() {
       />
       <article className="guide-article">
         <header className="guide-hero section-shell">
-          <GuideBreadcrumbs current="Forecast personal cash flow for 14 days" />
+          <GuideBreadcrumbs path="/guides/how-to-forecast-personal-cash-flow-14-days" current="Forecast personal cash flow for 14 days" />
           <p className="eyebrow"><span /> Forecasting · How-to</p>
           <h1>How to Forecast Your Personal Cash Flow for the <em>Next 14 Days</em></h1>
           <p className="guide-deck">A simple two-week cash-flow forecast can show you where your bank balance is headed before the bills actually arrive. Here&apos;s how to build one.</p>

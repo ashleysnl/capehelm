@@ -93,7 +93,7 @@ export default function TrackNetWorthGuide() {
       />
       <article className="guide-article">
         <header className="guide-hero section-shell">
-          <GuideBreadcrumbs current="Track net worth without bank connections" />
+          <GuideBreadcrumbs path="/guides/how-to-track-net-worth-without-bank-connections" current="Track net worth without bank connections" />
           <p className="eyebrow"><span /> Net worth · Long-term progress</p>
           <h1>How to Track Your Net Worth Without Connecting Your <em>Bank Accounts</em></h1>
           <p className="guide-deck">Your net worth is simply what you own minus what you owe. You don&apos;t need to connect every financial account to an app to track it—you can update the numbers periodically and still build a useful picture of your financial progress.</p>
