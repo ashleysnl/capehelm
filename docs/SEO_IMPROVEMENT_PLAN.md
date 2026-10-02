@@ -42,7 +42,7 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 
 | Phase | Work | Status |
 | --- | --- | --- |
-| 1 | Normalize alternate page URLs | Not started |
+| 1 | Normalize alternate page URLs | Complete — verified in production |
 | 2 | Add automated technical SEO regression checks | Not started |
 | 3 | Generate and validate the sitemap | Not started |
 | 4 | Add breadcrumb structured data | Not started |
@@ -52,20 +52,20 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 ## Phase 1 — Normalize alternate page URLs
 
 Priority: High
-Status: Not started
+Status: Complete — verified in production
 
 ### Tasks
 
-- [ ] Inventory canonical routes, .html aliases, index.html variants, and trailing-slash behavior, including nested guides/support routes.
-- [ ] Select the smallest compatible redirect implementation for GitHub Pages behind Cloudflare.
-- [ ] Permanently redirect known page trailing-slash aliases to the existing slashless canonical route.
-- [ ] Permanently redirect known .html aliases to their canonical page.
-- [ ] Redirect /index.html to / and handle nested index.html aliases only where a matching canonical page exists.
-- [ ] Preserve query strings and avoid redirect loops.
-- [ ] Preserve .ca, www, HTTP, and old GitHub Pages redirects.
-- [ ] Preserve genuine 404s; do not redirect every unknown URL to the homepage.
-- [ ] Ensure asset files and directories remain accessible.
-- [ ] Record configuration changes and rollback instructions.
+- [x] Inventory canonical routes, .html aliases, index.html variants, and trailing-slash behavior, including nested guides/support routes.
+- [x] Select the smallest compatible redirect implementation for GitHub Pages behind Cloudflare.
+- [x] Permanently redirect known page trailing-slash aliases to the existing slashless canonical route.
+- [x] Permanently redirect known .html aliases to their canonical page.
+- [x] Redirect /index.html to / and handle nested index.html aliases only where a matching canonical page exists.
+- [x] Preserve query strings and avoid redirect loops.
+- [x] Preserve .ca, www, HTTP, and old GitHub Pages redirects.
+- [x] Preserve genuine 404s; do not redirect every unknown URL to the homepage.
+- [x] Ensure asset files and directories remain accessible.
+- [x] Record configuration changes and rollback instructions.
 
 ### Acceptance
 
@@ -79,11 +79,51 @@ Status: Not started
 
 ### Evidence
 
-Implementation commit:
-Cloudflare rule IDs / rollback:
-Production test date:
-Tested URL/status/Location matrix:
+Implementation configuration commit: 176f964f7c900a369572380b6b5f72cd9e87da9c.
+Cloudflare deployment: 2026-10-02 10:28:33 UTC; ruleset version 1.
+Configuration and prior-state backup: [cloudflare-phase-1-redirects.json](seo/cloudflare-phase-1-redirects.json).
+
+Cloudflare zone: b511c956f35ff132dff5237557e4ad21.
+New ruleset: 5b7dc2fc15124a328978958ad0df2d0c.
+Rules:
+- Home index: 9031da889f16487785858836dada80e9.
+- Known trailing slash: 18e2488412ea432eb130f9ccb7a9c4c5.
+- Known HTML: caa355a0e5c244da966b4ddd5aa989a6.
+- Known nested index: 48c78c21d32249d3a368eb471ad4d79c.
+
+Prior state: no capehelm.com zone-level redirect ruleset. Existing capehelm.ca ruleset c3b398841669439cbf00eaa95800b323 was left unchanged.
+Rollback: delete only the new .com ruleset, or disable its four rules. Do not alter .ca redirects or managed security rules.
+
+Implementation: four Cloudflare Single Redirect rules, restricted to explicit aliases of the 32 sitemap pages and .com/www hosts. API dry-run passed before creation. No application/build changes were needed.
+
+Production test date: 2026-10-02.
+- 94 alias cases passed: 31 non-home routes × trailing slash, .html, and /index.html, plus homepage /index.html. Every response was 301 with the exact expected Location and preserved seo_check=1 query string.
+- All 32 canonical destinations returned 200 with matching canonical tags (root slash equivalence accepted).
+- Unknown slashless, trailing-slash, and .html paths returned 404 without redirects.
+- robots.txt, sitemap.xml, current JS runtime, CSS, and a product WebP returned 200 without redirects.
+- A JS filename from the earlier audit had changed after deployment and returned 404; the currently referenced script was fetched from live HTML and verified 200.
+
+Representative URL/status/Location matrix:
+
+| Request | Result | Destination / hops |
+| --- | --- | --- |
+| /features/?seo_check=1 | 301 | /features?seo_check=1; one hop |
+| /features.html?seo_check=1 | 301 | /features?seo_check=1; one hop |
+| /features/index.html?seo_check=1 | 301 | /features?seo_check=1; one hop |
+| /index.html?seo_check=1 | 301 | /?seo_check=1; one hop |
+| Known nested guide/support aliases | 301 | Matching slashless canonical; one hop |
+| www.capehelm.com/features.html?seo_check=1 | 301 then 200 | https://capehelm.com/features?seo_check=1; one hop |
+| capehelm.ca/features?seo_check=1 | 301 then 200 | https://capehelm.com/features?seo_check=1; one hop |
+| capehelm.ca/features/?seo_check=1 | 301, 301, 200 | .ca → .com alias → canonical; two hops |
+| HTTP .com/features | 301 then 200 | HTTPS canonical; one hop |
+| Old GitHub Pages /capehelm/features | 301 then 200 | .com canonical; one hop |
+| Unknown URL variants | 404 | No redirect |
+
 Remaining limitations:
+- Existing .ca and GitHub Pages host redirects remain separate from .com alias normalization; combinations may use two hops. Preserving those established redirects avoids broadening this change.
+- Explicit route allowlists must be updated when canonical routes are added/removed. Phase 3 should consider generating the redirect route inventory alongside the sitemap.
+- Only recognized aliases are normalized; arbitrary unknown URLs are deliberately left as 404.
+- Phase 2 and later phases have not started.
 
 ## Phase 2 — Automated technical SEO regression checks
 
