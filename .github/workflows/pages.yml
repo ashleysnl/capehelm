@@ -37,7 +37,9 @@ jobs:
         run: npm test
 
       - name: Prepare Pages artifact
-        run: touch dist/client/.nojekyll
+        run: |
+          touch dist/client/.nojekyll
+          node -e 'require("fs").writeFileSync("dist/client/seo-release.json", JSON.stringify({revision: process.env.GITHUB_SHA}))' 
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -57,3 +59,16 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Check out deployed source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js for production checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify deployed revision and production SEO
+        env:
+          SEO_EXPECTED_REVISION: ${{ github.sha }}
+        run: npm run test:seo:live

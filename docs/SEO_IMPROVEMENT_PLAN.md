@@ -43,7 +43,7 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 | Phase | Work | Status |
 | --- | --- | --- |
 | 1 | Normalize alternate page URLs | Complete — verified in production |
-| 2 | Add automated technical SEO regression checks | Not started |
+| 2 | Add automated technical SEO regression checks | Implemented — verification pending |
 | 3 | Generate and validate the sitemap | Not started |
 | 4 | Add breadcrumb structured data | Not started |
 | 5 | Measure performance and fix demonstrated bottlenecks | Not started |
@@ -123,26 +123,26 @@ Remaining limitations:
 - Existing .ca and GitHub Pages host redirects remain separate from .com alias normalization; combinations may use two hops. Preserving those established redirects avoids broadening this change.
 - Explicit route allowlists must be updated when canonical routes are added/removed. Phase 3 should consider generating the redirect route inventory alongside the sitemap.
 - Only recognized aliases are normalized; arbitrary unknown URLs are deliberately left as 404.
-- Phase 2 and later phases have not started.
+- Phase 2 is tracked below; later phases remain separate.
 
 ## Phase 2 — Automated technical SEO regression checks
 
 Priority: High
-Status: Not started
+Status: Implemented — verification pending
 Dependency: Phase 1
 
 ### Tasks
 
-- [ ] Inspect existing tests and extend them without duplicating coverage.
-- [ ] Check every canonical route for successful rendering, one title, a description, a canonical URL, and one H1.
-- [ ] Check unique titles/descriptions and canonical consistency.
-- [ ] Detect accidental noindex directives in HTML and production headers.
-- [ ] Validate internal page links and referenced first-party assets against deployed/build output.
-- [ ] Verify sitemap URLs and robots sitemap declaration.
-- [ ] Add live smoke checks for redirects, alias handling, and genuine 404 responses.
-- [ ] Keep deterministic build checks separate from network-dependent production checks.
-- [ ] Integrate checks with the existing Pages workflow; account for deployment propagation and avoid flaky timing assumptions.
-- [ ] Document how to run each check locally.
+- [x] Inspect existing tests and extend them without duplicating coverage.
+- [x] Check every canonical route for successful rendering, one title, a description, a canonical URL, and one H1.
+- [x] Check unique titles/descriptions and canonical consistency.
+- [x] Detect accidental noindex directives in HTML and production headers.
+- [x] Validate internal page links and referenced first-party assets against deployed/build output.
+- [x] Verify sitemap URLs and robots sitemap declaration.
+- [x] Add live smoke checks for redirects, alias handling, and genuine 404 responses.
+- [x] Keep deterministic build checks separate from network-dependent production checks.
+- [x] Integrate checks with the existing Pages workflow; account for deployment propagation and avoid flaky timing assumptions.
+- [x] Document how to run each check locally.
 
 ### Acceptance
 
@@ -154,11 +154,11 @@ Dependency: Phase 1
 
 ### Evidence
 
-Implementation commit:
-Commands/results:
-Failure-path verification:
-Production smoke-check result:
-Remaining limitations:
+Implementation: this commit; see [regression-check documentation](seo/REGRESSION_CHECKS.md).
+Commands/results: Pages-mode npm test passed 82/82 tests. Targeted ESLint checks passed for the new scripts and tests.
+Failure-path verification: controlled fixtures detect missing route coverage, incorrect canonical, missing first-party asset, broken internal page link, crawler noindex metadata, and X-Robots-Tag noindex headers.
+Production smoke-check result: pending execution and deployed workflow verification.
+Remaining limitations: browser behavior, full CSS/JS dependency graphs, third-party endpoints, field performance and Google indexing remain outside these checks. Generated sitemap work remains Phase 3.
 
 ## Phase 3 — Generate and validate the sitemap
 

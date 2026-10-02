@@ -26,7 +26,7 @@ npm run lint
 npm test
 ```
 
-`npm test` creates the production build, verifies all ten public routes render,
+`npm test` creates the production build, verifies all public routes render,
 and checks the published robots and sitemap files.
 
 ## Project map
@@ -56,3 +56,7 @@ Capehelm is available from the Mac App Store. The website links to the shared pr
 ## SEO and deployment
 
 The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://capehelm.com` origin. The production export is served from the root path, so asset and navigation URLs must not include the former `/capehelm` project prefix. GitHub Pages copies `public/CNAME`, `public/robots.txt`, and `public/sitemap.xml` into the deployed site root. Hosting configuration is maintained in `.openai/hosting.json` by Sites.
+
+## Technical SEO regression checks
+
+Run `npm run test:seo:live` for public production checks. Build checks remain in `npm test`; production checks run after the Pages deployment and verify the deployed commit before checking routes, assets, headers, redirects and 404s. See [docs/seo/REGRESSION_CHECKS.md](docs/seo/REGRESSION_CHECKS.md) for commands, coverage and limitations.
