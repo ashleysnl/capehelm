@@ -1,0 +1,34 @@
+name: Measure Capehelm performance
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/performance/**
+      - .github/workflows/performance.yml
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        page: [home, features, guide, support]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run three mobile and desktop audits
+        env:
+          AUDIT_PAGE: ${{ matrix.page }}
+          CHROME_PATH: /usr/bin/google-chrome
+        run: node scripts/performance/audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: performance-${{ matrix.page }}
+          path: performance-reports/
+          retention-days: 30
