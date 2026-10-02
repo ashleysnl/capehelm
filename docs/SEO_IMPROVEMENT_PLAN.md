@@ -44,7 +44,7 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 | --- | --- | --- |
 | 1 | Normalize alternate page URLs | Complete — verified in production |
 | 2 | Add automated technical SEO regression checks | Complete — verified in production |
-| 3 | Generate and validate the sitemap | Implemented — verification pending |
+| 3 | Generate and validate the sitemap | Complete — verified in production |
 | 4 | Add breadcrumb structured data | Not started |
 | 5 | Measure performance and fix demonstrated bottlenecks | Not started |
 | 6 | Verify production crawlability and indexing | Not started |
@@ -165,7 +165,7 @@ Remaining limitations: browser behavior, full CSS/JS dependency graphs, third-pa
 ## Phase 3 — Generate and validate the sitemap
 
 Priority: Medium
-Status: Implemented — verification pending
+Status: Complete — verified in production
 Dependency: Phase 2
 
 ### Tasks
@@ -188,10 +188,10 @@ Dependency: Phase 2
 
 ### Evidence
 
-Implementation: this commit. `scripts/seo/routes.mjs` discovers static app page routes and reuses the support article catalogue for the parameterized support route. `npm run build` generates `public/sitemap.xml` before compilation; the former manually tracked XML is removed and the generated file is ignored. `npm run seo:generate` supports standalone generation. Unknown dynamic route patterns fail until a route source is registered.
+Implementation commit: 4c393e55253077b8c83a7034c9562af8d5c0ee10. `scripts/seo/routes.mjs` discovers static app page routes and reuses the support article catalogue for the parameterized support route. `npm run build` generates `public/sitemap.xml` before compilation; the former manually tracked XML is removed and the generated file is ignored. `npm run seo:generate` supports standalone generation. Unknown dynamic route patterns fail until a route source is registered.
 Route count and coverage: 32 canonical URLs (18 static pages + 14 support catalogue articles), each once. Build tests compare the sitemap with every rendered public HTML page. Alias/error/asset routes are excluded.
 Generated output verification: Pages build and 84 tests passed. Tests confirm exact generated XML, canonical origin, uniqueness, no artificial lastmod, automatic addition/removal of fixture pages, and rejection of an unsupported dynamic route. Targeted ESLint passed.
-Production sitemap verification: pending deployment and Phase 2 live checks.
+Production sitemap verification: passed in [GitHub Actions run 36997249742](https://github.com/ashleysnl/capehelm/actions/runs/36997249742) on 2026-10-02. Build and deploy jobs succeeded. The deployed revision marker matched the implementation commit; the live sitemap matched the discovered route set. All 32 canonical pages returned indexable 200 responses with matching canonicals, 45 first-party assets passed, and all 94 alias checks passed with zero failures. Python ElementTree independently parsed the generated XML successfully (32 unique URLs).
 Remaining limitations: Cloudflare redirect allowlists still require synchronization when new routes are added. They were not changed because the canonical route set remains identical. No lastmod is emitted until reliable page modification dates exist.
 
 ## Phase 4 — Breadcrumb structured data
