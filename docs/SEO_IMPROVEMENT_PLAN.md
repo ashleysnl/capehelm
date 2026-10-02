@@ -46,8 +46,8 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 | 2 | Add automated technical SEO regression checks | Complete — verified in production |
 | 3 | Generate and validate the sitemap | Complete — verified in production |
 | 4 | Add breadcrumb structured data | Complete — verified in production |
-| 5 | Measure performance and fix demonstrated bottlenecks | Not started |
-| 6 | Verify production crawlability and indexing | Not started |
+| 5 | Measure performance and fix demonstrated bottlenecks | Complete — measured and verified in production |
+| 6 | Verify production crawlability and indexing | Complete — verified; indexing follow-ups recorded |
 
 ## Phase 1 — Normalize alternate page URLs
 
@@ -257,19 +257,19 @@ Limitations: four-page lab sample, no field INP; lazy support PNGs, framework/an
 ## Phase 6 — Production crawlability and indexing verification
 
 Priority: Final verification
-Status: Not started
+Status: Complete — verified; indexing follow-ups recorded
 Dependency: Phases 1–5
 
 ### Tasks
 
-- [ ] Recheck all current sitemap URLs, canonicals, metadata, HTTP robots headers, redirects, assets, and internal links.
-- [ ] Verify robots.txt and sitemap.xml content types and accessibility.
-- [ ] Check representative pages using Google Search Console URL Inspection where the connected tooling supports it.
-- [ ] Review sitemap processing, indexing exclusions, duplicate canonical reports, and crawl errors.
-- [ ] Check whether Cloudflare challenges/security rules interfere with verified search crawlers; do not weaken protection based on a spoofed user-agent test.
-- [ ] Submit or refresh the sitemap only if necessary and supported.
-- [ ] Record technical fixes separately from expected indexing delays.
-- [ ] Update this tracker with final evidence and any follow-up items.
+- [x] Recheck all current sitemap URLs, canonicals, metadata, HTTP robots headers, redirects, assets, and internal links.
+- [x] Verify robots.txt and sitemap.xml content types and accessibility.
+- [x] Check representative pages using Google Search Console URL Inspection where the connected tooling supports it.
+- [x] Review sitemap processing, indexing exclusions, duplicate canonical reports, and crawl errors.
+- [x] Check whether Cloudflare challenges/security rules interfere with verified search crawlers; do not weaken protection based on a spoofed user-agent test.
+- [x] Submit or refresh the sitemap only if necessary and supported.
+- [x] Record technical fixes separately from expected indexing delays.
+- [x] Update this tracker with final evidence and any follow-up items.
 
 ### Acceptance
 
@@ -281,11 +281,12 @@ Dependency: Phases 1–5
 
 ### Evidence
 
-Verification date:
-Production route count:
-Search Console results:
-Cloudflare crawler findings:
-Outstanding follow-ups:
+Verification date: 2026-10-02; production release `1d48d3b8200690554392fa9245fc33c57e4370d5`.
+Production: 32 pages, 45 assets, 94 aliases, 20 breadcrumb schemas; zero live check failures. robots.txt plain text and sitemap XML accessibility verified and enforced in deployment checks.
+Search Console: sitemap processed, 32 URLs, zero errors/warnings; all 32 canonical URLs inspected: 5 indexed, 11 discovered/not indexed, 16 unknown. No reported technical exclusion in these results. No sitemap refresh required. Deprecated sitemap indexed count is disregarded.
+Cloudflare: no custom blocking/rate-limit rules or legacy firewall rules; Bot Fight Mode/crawler protection off; genuine Google sitemap and successful historical mobile fetches confirmed. No security settings changed. Request-level verified-bot events not reviewed.
+Evidence: [PHASE_6_REPORT.md](seo/PHASE_6_REPORT.md), [phase-6-evidence.json](seo/phase-6-evidence.json).
+Follow-ups: recheck the 27 unindexed URLs in 1–2 weeks; manually review property-wide Page Indexing/Crawl Stats and Google-selected canonicals where the connector does not expose them. No recurring tracker configured. Google indexing/ranking is not guaranteed. All six phases have recorded implementation and production evidence.
 
 ## Completion rules
 

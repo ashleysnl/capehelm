@@ -26,11 +26,11 @@ if(revision) {
   }
   assert.ok(ready,`deployed revision ${revision} not visible after bounded retries`);
 }
-const sitemap=await request(`${origin}/sitemap.xml`);assert.equal(sitemap.status,200);const urls=sitemapUrls(sitemap.body);
+const sitemap=await request(`${origin}/sitemap.xml`);assert.equal(sitemap.status,200);assert.match(sitemap.headers,/content-type:\s*(?:application|text)\/xml(?:[;\s]|$)/i,'sitemap must be XML');const urls=sitemapUrls(sitemap.body);
 // Use the checked-out route sources to prevent an old/partial release from passing with fewer routes.
 const expected=(await publicRoutes()).map(route=>new URL(route,origin).href);
 assert.deepEqual([...urls].sort(),[...expected].sort(),'production sitemap differs from checkout');
-const robots=await request(`${origin}/robots.txt`);assert.equal(robots.status,200);assert.match(robots.body,/^Sitemap: https:\/\/capehelm.com\/sitemap.xml\s*$/m);assert.doesNotMatch(robots.body,/^Disallow:\s*\/\s*$/m);
+const robots=await request(`${origin}/robots.txt`);assert.equal(robots.status,200);assert.match(robots.headers,/content-type:\s*text\/plain(?:[;\s]|$)/i,'robots.txt must be plain text');assert.match(robots.body,/^Sitemap: https:\/\/capehelm.com\/sitemap.xml\s*$/m);assert.doesNotMatch(robots.body,/^Disallow:\s*\/\s*$/m);
 const pages=new Map(),assets=new Set(),titles=new Set(),descriptions=new Set();
 await pool(urls,u=>check(u,async()=>{const r=await request(u);assert.equal(r.status,200);const m=metadata(r.body,u,r.headers);assert.ok(!titles.has(m.title),'duplicate title');assert.ok(!descriptions.has(m.description),'duplicate description');titles.add(m.title);descriptions.add(m.description);pages.set(u,r.body);}));
 let breadcrumbs=0;

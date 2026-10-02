@@ -1,0 +1,905 @@
+{
+  "verifiedAt": "2026-10-02",
+  "release": "1d48d3b8200690554392fa9245fc33c57e4370d5",
+  "sitemap": {
+    "siteUrl": "sc-domain:capehelm.com",
+    "sitemaps": [
+      {
+        "path": "https://capehelm.com/sitemap.xml",
+        "lastSubmitted": "2026-09-23T22:26:27.445Z",
+        "isPending": false,
+        "isSitemapsIndex": false,
+        "type": "sitemap",
+        "lastDownloaded": "2026-10-02T09:49:40.919Z",
+        "warnings": "0",
+        "errors": "0",
+        "contents": [
+          {
+            "type": "web",
+            "submitted": "32",
+            "indexed": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "urlInspections": {
+    "siteUrl": "sc-domain:capehelm.com",
+    "inspections": [
+      {
+        "id": "e326649f-47cd-4c35-a838-d2482e85f152",
+        "url": "https://capehelm.com/why-capehelm",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:20:27.430963+00:00"
+      },
+      {
+        "id": "f3a958c1-ef09-495d-9e45-87e400f70a93",
+        "url": "https://capehelm.com/support/troubleshooting/subscription-access",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:20:20.785615+00:00"
+      },
+      {
+        "id": "156ef8f4-13aa-443a-ac2c-ae7c27d81b78",
+        "url": "https://capehelm.com/support/troubleshooting/restore-purchases",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:20:14.11601+00:00"
+      },
+      {
+        "id": "10b6a390-d3b1-492a-9684-41f06bdda675",
+        "url": "https://capehelm.com/support/troubleshooting/remembered-document-issues",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:20:03.192455+00:00"
+      },
+      {
+        "id": "6ef38f20-e05f-48e9-a444-a05892c498c8",
+        "url": "https://capehelm.com/support/troubleshooting/moving-renaming-finance-document",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:19:56.3785+00:00"
+      },
+      {
+        "id": "873accfa-9694-4882-9cfe-52fcc961ef57",
+        "url": "https://capehelm.com/support/troubleshooting/finance-document-will-not-open",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:19:49.760717+00:00"
+      },
+      {
+        "id": "5d659b27-acb1-4aad-91e5-707acbed3e4e",
+        "url": "https://capehelm.com/support/troubleshooting/csv-will-not-import",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:19:43.125734+00:00"
+      },
+      {
+        "id": "afdbc5bd-ea08-4574-879b-56d54ab97c17",
+        "url": "https://capehelm.com/support/troubleshooting/backup-and-restore",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:19:36.42383+00:00"
+      },
+      {
+        "id": "ebee33fd-07ab-428b-a74e-9a4dc91b26c0",
+        "url": "https://capehelm.com/support/getting-started/use-forecast",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:19:25.395712+00:00"
+      },
+      {
+        "id": "b1c69560-2ecc-482f-b181-858724a887e5",
+        "url": "https://capehelm.com/support/getting-started/setup-budget",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:19:18.889679+00:00"
+      },
+      {
+        "id": "ff267fca-f1e4-4e5e-8f7d-8a3c4a503bc4",
+        "url": "https://capehelm.com/support/getting-started/review-categories",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:19:12.355353+00:00"
+      },
+      {
+        "id": "ab49d02f-00e0-46ad-a1df-780920eec0fd",
+        "url": "https://capehelm.com/support/getting-started/open-finance-document",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:19:05.675551+00:00"
+      },
+      {
+        "id": "584fdf67-23db-4fb2-b10b-fcd8075995ef",
+        "url": "https://capehelm.com/support/getting-started/import-transactions",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:18:59.017883+00:00"
+      },
+      {
+        "id": "55447339-12b0-4703-9683-4f25a2fcd885",
+        "url": "https://capehelm.com/support/getting-started/create-finance-document",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:18:14.590458+00:00"
+      },
+      {
+        "id": "5245d4aa-0097-4a0b-8538-f8f812a9b020",
+        "url": "https://capehelm.com/support/getting-started/back-up-capehelm",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:18:07.942238+00:00"
+      },
+      {
+        "id": "60e2cdbd-dc6d-46f4-8326-8aa62a1212f4",
+        "url": "https://capehelm.com/support",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:18:01.252045+00:00"
+      },
+      {
+        "id": "9f59cf2e-435d-4081-8499-98d71b502e1a",
+        "url": "https://capehelm.com/private-personal-finance",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:17:54.622799+00:00"
+      },
+      {
+        "id": "6d88aea4-d4b6-495a-8ade-b6f6882052be",
+        "url": "https://capehelm.com/privacy",
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-10-01T12:37:47+00:00",
+        "page_fetch_state": "SUCCESSFUL",
+        "crawled_as": "MOBILE",
+        "requested_at": "2026-10-02T11:17:47.838237+00:00"
+      },
+      {
+        "id": "647e0378-fa28-4dc1-8b7d-291bed98b635",
+        "url": "https://capehelm.com/personal-finance-for-mac",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:17:41.31096+00:00"
+      },
+      {
+        "id": "85738b1b-7012-430c-bcdf-ff3c1f928a81",
+        "url": "https://capehelm.com/guides/how-to-track-net-worth-without-bank-connections",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:17:34.669403+00:00"
+      },
+      {
+        "id": "3e70132b-143f-42e5-8490-5050e420d116",
+        "url": "https://capehelm.com/guides/how-to-forecast-personal-cash-flow-14-days",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:17:28.026978+00:00"
+      },
+      {
+        "id": "98b191cc-b99d-4579-a30c-47e6493e6847",
+        "url": "https://capehelm.com/guides/how-to-find-subscriptions-recurring-charges-bank-statement",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:17:21.233823+00:00"
+      },
+      {
+        "id": "3b8af789-cfc2-4e98-83ae-68dc887ec0fe",
+        "url": "https://capehelm.com/guides/how-to-analyze-bank-transactions-csv",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:17:14.478869+00:00"
+      },
+      {
+        "id": "69378e90-5c4e-4ce9-bf96-25dbf3bcdc2b",
+        "url": "https://capehelm.com/guides/do-personal-finance-apps-need-bank-access",
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-09-30T06:12:51+00:00",
+        "page_fetch_state": "SUCCESSFUL",
+        "crawled_as": "MOBILE",
+        "requested_at": "2026-10-02T11:17:07.85988+00:00"
+      },
+      {
+        "id": "69b27e14-7d72-4b55-ae6b-0604534e1c50",
+        "url": "https://capehelm.com/guides/budget-vs-cash-flow-forecast",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:17:01.233108+00:00"
+      },
+      {
+        "id": "afada051-5e7d-4875-acd0-d75d5f9935c1",
+        "url": "https://capehelm.com/guides",
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-09-29T00:58:38+00:00",
+        "page_fetch_state": "SUCCESSFUL",
+        "crawled_as": "MOBILE",
+        "requested_at": "2026-10-02T11:16:54.521356+00:00"
+      },
+      {
+        "id": "b3af9932-a821-4467-89f9-3f17347f6a0f",
+        "url": "https://capehelm.com/features",
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-09-23T22:31:45+00:00",
+        "page_fetch_state": "SUCCESSFUL",
+        "crawled_as": "MOBILE",
+        "requested_at": "2026-10-02T11:16:47.885142+00:00"
+      },
+      {
+        "id": "abbd4c28-33ec-49d4-b59d-0e3f440be588",
+        "url": "https://capehelm.com/faq",
+        "verdict": "NEUTRAL",
+        "coverage_state": "Discovered - currently not indexed",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": "CRAWLING_USER_AGENT_UNSPECIFIED",
+        "requested_at": "2026-10-02T11:16:41.135024+00:00"
+      },
+      {
+        "id": "86810597-6304-433f-8d11-da17717a05ce",
+        "url": "https://capehelm.com/download",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:16:34.521522+00:00"
+      },
+      {
+        "id": "6a6c77fa-8135-4fb0-880d-342a98663b4e",
+        "url": "https://capehelm.com/csv-bank-statement-import",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:16:27.871158+00:00"
+      },
+      {
+        "id": "8537ab1e-0f30-4878-8532-321d1850fc8c",
+        "url": "https://capehelm.com/cash-flow-forecast",
+        "verdict": "NEUTRAL",
+        "coverage_state": "URL is unknown to Google",
+        "robots_txt_state": "ROBOTS_TXT_STATE_UNSPECIFIED",
+        "indexing_state": "INDEXING_STATE_UNSPECIFIED",
+        "last_crawl_time": null,
+        "page_fetch_state": "PAGE_FETCH_STATE_UNSPECIFIED",
+        "crawled_as": null,
+        "requested_at": "2026-10-02T11:16:21.274096+00:00"
+      },
+      {
+        "id": "b8f93929-5d70-40ce-a0b9-c6bcdc5a3ca4",
+        "url": "https://capehelm.com/",
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "last_crawl_time": "2026-09-23T22:24:46+00:00",
+        "page_fetch_state": "SUCCESSFUL",
+        "crawled_as": "MOBILE",
+        "requested_at": "2026-10-02T11:16:14.664237+00:00"
+      }
+    ],
+    "pagination": {
+      "limit": 100,
+      "offset": 0,
+      "returned": 38,
+      "hasMore": false,
+      "note": "Showing all 38 rows."
+    }
+  },
+  "aliases": [
+    {
+      "siteUrl": "sc-domain:capehelm.com",
+      "inspectionUrl": "https://capehelm.com/features.html",
+      "verdict": "NEUTRAL",
+      "coverageState": "URL is unknown to Google",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawlTime": null,
+      "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "referringUrls": []
+    },
+    {
+      "siteUrl": "sc-domain:capehelm.ca",
+      "inspectionUrl": "https://capehelm.ca/features",
+      "verdict": "NEUTRAL",
+      "coverageState": "URL is unknown to Google",
+      "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawlTime": null,
+      "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+      "referringUrls": []
+    }
+  ],
+  "cloudflare": {
+    "rulesets": {
+      "result": [
+        {
+          "description": "Created by the Cloudflare security team, this ruleset provides normalization on the URL path",
+          "id": "70339d97bdb34195bbf054b1ebe81f76",
+          "kind": "managed",
+          "last_updated": "2024-08-01T17:37:11.538019Z",
+          "name": "Cloudflare Normalization Ruleset",
+          "phase": "http_request_sanitize",
+          "version": "6"
+        },
+        {
+          "description": "Created by the Cloudflare security team, this ruleset is designed to provide protection for free zones",
+          "id": "77454fe2d30c4220b5701f6fdfb893ba",
+          "kind": "managed",
+          "last_updated": "2026-08-17T16:24:51.912839Z",
+          "name": "Cloudflare Managed Free Ruleset",
+          "phase": "http_request_firewall_managed",
+          "source": "firewall_managed",
+          "version": "74"
+        },
+        {
+          "description": "Automatic mitigation of HTTP-based DDoS attacks. Cloudflare routinely adds signatures to address new attack vectors. Additional configuration allows you to customize the sensitivity of each rule and the performed mitigation action.",
+          "id": "4d21379b4f9f4bb088e0729962c8b3cf",
+          "kind": "managed",
+          "last_updated": "2026-10-01T18:09:59.641737Z",
+          "name": "DDoS L7 ruleset",
+          "phase": "ddos_l7",
+          "version": "3432"
+        },
+        {
+          "description": "",
+          "id": "5b7dc2fc15124a328978958ad0df2d0c",
+          "kind": "zone",
+          "last_updated": "2026-10-02T10:28:33.307332Z",
+          "name": "Capehelm canonical page aliases",
+          "phase": "http_request_dynamic_redirect",
+          "version": "1"
+        },
+        {
+          "description": "",
+          "id": "de94cd6089aa4985a3a5434fb9aaf446",
+          "kind": "zone",
+          "last_updated": "2026-10-02T11:04:51.919666Z",
+          "name": "Capehelm successful versioned asset browser cache",
+          "phase": "http_response_headers_transform",
+          "version": "1"
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "messages": [],
+      "status": 200
+    },
+    "settings": {
+      "result": [
+        {
+          "id": "0rtt",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "advanced_ddos",
+          "value": "on",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "always_online",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "always_use_https",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "automatic_https_rewrites",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "brotli",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "browser_cache_ttl",
+          "value": 14400,
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "browser_check",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "cache_level",
+          "value": "aggressive",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "challenge_ttl",
+          "value": 1800,
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "ciphers",
+          "value": [],
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "cname_flattening",
+          "value": "flatten_at_root",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "development_mode",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "early_hints",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "ech",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "edge_cache_ttl",
+          "value": 7200,
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "email_obfuscation",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "filter_logs_to_cloudflare",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "hotlink_protection",
+          "modified_on": null,
+          "value": "off",
+          "editable": true
+        },
+        {
+          "id": "http2",
+          "value": "on",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "http3",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "ip_geolocation",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "ipv6",
+          "value": "on",
+          "modified_on": "2026-09-12T15:10:01.937557Z",
+          "editable": true
+        },
+        {
+          "id": "log_to_cloudflare",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "long_lived_grpc",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "max_upload",
+          "value": 100,
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "min_tls_version",
+          "value": "1.0",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "minify",
+          "value": {
+            "css": "off",
+            "html": "off",
+            "js": "off"
+          },
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "mirage",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "mobile_redirect",
+          "value": {
+            "status": "off",
+            "mobile_subdomain": null,
+            "strip_uri": false
+          },
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "opportunistic_encryption",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "opportunistic_onion",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "orange_to_orange",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "origin_error_page_pass_thru",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "polish",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "pq_keyex",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "prefetch_preload",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "privacy_pass",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "proxy_read_timeout",
+          "value": "125",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "pseudo_ipv4",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "replace_insecure_js",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "response_buffering",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "rocket_loader",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "security_header",
+          "modified_on": null,
+          "value": {
+            "strict_transport_security": {
+              "enabled": false,
+              "max_age": 0,
+              "include_subdomains": false,
+              "preload": false,
+              "nosniff": false
+            }
+          },
+          "editable": true
+        },
+        {
+          "id": "security_level",
+          "value": "medium",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "server_side_exclude",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "sort_query_string_for_cache",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "ssl",
+          "value": "full",
+          "modified_on": null,
+          "certificate_status": "active",
+          "validation_errors": [],
+          "editable": true
+        },
+        {
+          "id": "tls_1_2_only",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "tls_1_3",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "tls_client_auth",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "true_client_ip_header",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "visitor_ip",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "waf",
+          "value": "off",
+          "modified_on": null,
+          "editable": true
+        },
+        {
+          "id": "webp",
+          "value": "off",
+          "modified_on": null,
+          "editable": false
+        },
+        {
+          "id": "websockets",
+          "value": "on",
+          "modified_on": null,
+          "editable": true
+        }
+      ],
+      "success": true,
+      "errors": [],
+      "messages": [],
+      "status": 200
+    },
+    "bots": {
+      "result": {
+        "enable_js": false,
+        "fight_mode": false,
+        "ai_bots_protection": "disabled",
+        "content_bots_protection": "disabled",
+        "crawler_protection": "disabled",
+        "ai_training": "disabled",
+        "ai_search": "disabled",
+        "ai_user": "disabled",
+        "is_robots_txt_managed": false,
+        "bot_preference_sync_enabled": false,
+        "cf_robots_variant": "policy_only",
+        "ai_bots_migration_opt_out": false,
+        "using_latest_model": true
+      },
+      "success": true,
+      "errors": [],
+      "messages": [],
+      "status": 200
+    },
+    "legacyRules": {
+      "result": [],
+      "success": true,
+      "errors": [],
+      "messages": [],
+      "result_info": {
+        "page": 1,
+        "per_page": 25,
+        "count": 0,
+        "total_count": 0,
+        "total_pages": 0
+      },
+      "status": 200
+    }
+  },
+  "limitations": [
+    "No configured GSC Wizard indexing tracker; no health score available.",
+    "Connector does not expose property-wide Page Indexing/Crawl Stats reports or Google-selected canonical fields.",
+    "First 25-URL inspection call timed out; recovered persisted history and inspected remaining URLs in smaller batches. Latest results cover all 32 canonical URLs.",
+    "No verified-bot request/security event log review; historical Google successful crawls and sitemap fetch support accessibility, not all future requests."
+  ]
+}
