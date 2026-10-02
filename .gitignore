@@ -39,3 +39,6 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# Generated from app routes and the support catalogue during npm run build.
+/public/sitemap.xml

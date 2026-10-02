@@ -37,7 +37,7 @@ and checks the published robots and sitemap files.
 - `config/site.ts` — product name, navigation and availability status
 - `public/CNAME` — GitHub Pages custom-domain declaration for `capehelm.com`
 - `public/robots.txt` — crawler access rules and production sitemap declaration
-- `public/sitemap.xml` — canonical production URLs for all public marketing pages
+- `public/sitemap.xml` — generated canonical URLs from app routes and the support catalogue; do not edit manually
 - `public/brand/` — approved Capehelm logo, mark and app icon copied from the product repository
 - `public/assets/capehelm-social-1200x630.png` — canonical social-sharing card using the approved Dashboard screenshot
 
@@ -60,3 +60,5 @@ The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://
 ## Technical SEO regression checks
 
 Run `npm run test:seo:live` for public production checks. Build checks remain in `npm test`; production checks run after the Pages deployment and verify the deployed commit before checking routes, assets, headers, redirects and 404s. See [docs/seo/REGRESSION_CHECKS.md](docs/seo/REGRESSION_CHECKS.md) for commands, coverage and limitations.
+
+The build generates `public/sitemap.xml` before compilation using `scripts/seo/routes.mjs`. Static `app/**/page.tsx` routes are discovered automatically; support article routes reuse `content/supportArticles.ts`. Unknown dynamic route patterns fail the build until their source is registered. Run `npm run seo:generate` to regenerate it without a full build. No build-date `lastmod` is emitted.

@@ -2,41 +2,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+import { publicRoutes as discoverRoutes, renderSitemap } from "../scripts/seo/routes.mjs";
+
 const productionOrigin = "https://capehelm.com";
-const publicRoutes = [
-  "/",
-  "/features",
-  "/why-capehelm",
-  "/guides",
-  "/guides/budget-vs-cash-flow-forecast",
-  "/guides/do-personal-finance-apps-need-bank-access",
-  "/guides/how-to-forecast-personal-cash-flow-14-days",
-  "/guides/how-to-analyze-bank-transactions-csv",
-  "/guides/how-to-track-net-worth-without-bank-connections",
-  "/guides/how-to-find-subscriptions-recurring-charges-bank-statement",
-  "/faq",
-  "/privacy",
-  "/support",
-  "/support/getting-started/create-finance-document",
-  "/support/getting-started/open-finance-document",
-  "/support/getting-started/import-transactions",
-  "/support/getting-started/review-categories",
-  "/support/getting-started/setup-budget",
-  "/support/getting-started/use-forecast",
-  "/support/getting-started/back-up-capehelm",
-  "/support/troubleshooting/csv-will-not-import",
-  "/support/troubleshooting/finance-document-will-not-open",
-  "/support/troubleshooting/restore-purchases",
-  "/support/troubleshooting/subscription-access",
-  "/support/troubleshooting/backup-and-restore",
-  "/support/troubleshooting/moving-renaming-finance-document",
-  "/support/troubleshooting/remembered-document-issues",
-  "/download",
-  "/personal-finance-for-mac",
-  "/cash-flow-forecast",
-  "/private-personal-finance",
-  "/csv-bank-statement-import",
-];
+const publicRoutes = await discoverRoutes();
 
 async function readBuiltAsset(name) {
   return readFile(new URL(`../dist/client/${name}`, import.meta.url), "utf8");
@@ -57,6 +26,7 @@ test("sitemap.xml contains every canonical public route exactly once", async () 
   const expectedLocations = publicRoutes.map((route) => `${productionOrigin}${route}`);
 
   assert.deepEqual(locations, expectedLocations);
+  assert.equal(sitemap, renderSitemap(publicRoutes), "generated XML matches canonical route source");
   assert.equal(new Set(locations).size, locations.length);
   assert.ok(locations.every((location) => location.startsWith(`${productionOrigin}/`)));
   assert.doesNotMatch(sitemap, /github\.io|localhost|<lastmod>|<changefreq>|<priority>/i);

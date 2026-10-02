@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { readFile } from 'node:fs/promises';
+import { publicRoutes } from './routes.mjs';
 import { metadata, localReferences, sitemapUrls, origin } from './checks.mjs';
 const exec = promisify(execFile);
 const failures=[];
@@ -26,8 +26,8 @@ if(revision) {
   assert.ok(ready,`deployed revision ${revision} not visible after bounded retries`);
 }
 const sitemap=await request(`${origin}/sitemap.xml`);assert.equal(sitemap.status,200);const urls=sitemapUrls(sitemap.body);
-// Use the checked-out sitemap to prevent an old/partial release from passing with fewer routes.
-const expected=sitemapUrls(await readFile(new URL('../../public/sitemap.xml',import.meta.url),'utf8'));
+// Use the checked-out route sources to prevent an old/partial release from passing with fewer routes.
+const expected=(await publicRoutes()).map(route=>new URL(route,origin).href);
 assert.deepEqual([...urls].sort(),[...expected].sort(),'production sitemap differs from checkout');
 const robots=await request(`${origin}/robots.txt`);assert.equal(robots.status,200);assert.match(robots.body,/^Sitemap: https:\/\/capehelm.com\/sitemap.xml\s*$/m);assert.doesNotMatch(robots.body,/^Disallow:\s*\/\s*$/m);
 const pages=new Map(),assets=new Set(),titles=new Set(),descriptions=new Set();

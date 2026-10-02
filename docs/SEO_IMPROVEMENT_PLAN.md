@@ -44,7 +44,7 @@ Observed through live HTTP checks, GitHub source reads, and Cloudflare configura
 | --- | --- | --- |
 | 1 | Normalize alternate page URLs | Complete — verified in production |
 | 2 | Add automated technical SEO regression checks | Complete — verified in production |
-| 3 | Generate and validate the sitemap | Not started |
+| 3 | Generate and validate the sitemap | Implemented — verification pending |
 | 4 | Add breadcrumb structured data | Not started |
 | 5 | Measure performance and fix demonstrated bottlenecks | Not started |
 | 6 | Verify production crawlability and indexing | Not started |
@@ -165,19 +165,19 @@ Remaining limitations: browser behavior, full CSS/JS dependency graphs, third-pa
 ## Phase 3 — Generate and validate the sitemap
 
 Priority: Medium
-Status: Not started
+Status: Implemented — verification pending
 Dependency: Phase 2
 
 ### Tasks
 
-- [ ] Identify the existing route/content catalogue and use it as the route source where possible.
-- [ ] Generate sitemap.xml during the build from canonical public routes.
-- [ ] Include only intended indexable pages using https://capehelm.com URLs.
-- [ ] Exclude .html/trailing-slash aliases, nonexistent routes, assets, and preview hosts.
-- [ ] Keep robots.txt pointing to the production sitemap.
-- [ ] Validate XML syntax, URL uniqueness, and route coverage.
-- [ ] Add lastmod only if backed by meaningful page modification dates; do not set every page to the build date.
-- [ ] Remove or clearly document the old manual maintenance path.
+- [x] Identify the existing route/content catalogue and use it as the route source where possible.
+- [x] Generate sitemap.xml during the build from canonical public routes.
+- [x] Include only intended indexable pages using https://capehelm.com URLs.
+- [x] Exclude .html/trailing-slash aliases, nonexistent routes, assets, and preview hosts.
+- [x] Keep robots.txt pointing to the production sitemap.
+- [x] Validate XML syntax, URL uniqueness, and route coverage.
+- [x] Add lastmod only if backed by meaningful page modification dates; do not set every page to the build date.
+- [x] Remove or clearly document the old manual maintenance path.
 
 ### Acceptance
 
@@ -188,11 +188,11 @@ Dependency: Phase 2
 
 ### Evidence
 
-Implementation commit:
-Route count and coverage:
-Generated output verification:
-Production sitemap verification:
-Remaining limitations:
+Implementation: this commit. `scripts/seo/routes.mjs` discovers static app page routes and reuses the support article catalogue for the parameterized support route. `npm run build` generates `public/sitemap.xml` before compilation; the former manually tracked XML is removed and the generated file is ignored. `npm run seo:generate` supports standalone generation. Unknown dynamic route patterns fail until a route source is registered.
+Route count and coverage: 32 canonical URLs (18 static pages + 14 support catalogue articles), each once. Build tests compare the sitemap with every rendered public HTML page. Alias/error/asset routes are excluded.
+Generated output verification: Pages build and 84 tests passed. Tests confirm exact generated XML, canonical origin, uniqueness, no artificial lastmod, automatic addition/removal of fixture pages, and rejection of an unsupported dynamic route. Targeted ESLint passed.
+Production sitemap verification: pending deployment and Phase 2 live checks.
+Remaining limitations: Cloudflare redirect allowlists still require synchronization when new routes are added. They were not changed because the canonical route set remains identical. No lastmod is emitted until reliable page modification dates exist.
 
 ## Phase 4 — Breadcrumb structured data
 
