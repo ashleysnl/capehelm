@@ -4,7 +4,7 @@ import { createPageMetadata } from "../../config/pageMetadata";
 export const metadata = createPageMetadata({
   title: "Personal Finance Guides | Capehelm",
   description:
-    "Practical Capehelm guides to subscriptions, recurring charges, net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+    "Practical Capehelm guides to household spending, inflation, subscriptions, net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
   path: "/guides",
 });
 
@@ -25,6 +25,21 @@ export default function GuidesPage() {
           <p>Useful on its own. Connected to Capehelm where the product can help.</p>
         </div>
         <div className="guides-list">
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
+              <span>Household spending · Inflation</span>
+              <time dateTime="2026-10-05">October 5, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">How to Compare Your Household Spending Year Over Year in Canada</h2>
+              <p>Compare the same months, review categories carefully and use Canadian inflation data as context for your own transaction history.</p>
+              <SiteLink className="text-link" href="/guides/compare-household-spending-year-over-year-canada">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>Last year</span><i>→</i><span>This year</span><i>→</i><span>Review</span>
+            </div>
+          </article>
+
           <article className="guide-index-card">
             <div className="guide-index-meta">
               <span>Subscriptions · Recurring spending</span>
