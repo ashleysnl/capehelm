@@ -144,7 +144,7 @@ export default function CompareHouseholdSpendingGuide() {
             </p>
           </section>
 
-          <aside className="guide-source-note">
+          <aside>
             <strong>About this guide</strong>
             <p>
               Educational information only, not personalized financial, tax or investment advice. Bank of Canada household figures are estimates relative to pre-pandemic trends; its September 2026 article notes that 2024–2025 spending estimates may be revised and results depend on assumptions. Checked October 5, 2026.
