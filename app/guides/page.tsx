@@ -46,7 +46,7 @@ export default function GuidesPage() {
               <time dateTime="2026-10-01">October 1, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">How to Find Subscriptions and Recurring Charges on Your Bank Statement</h2>
+              <h2>How to Find Subscriptions and Recurring Charges on Your Bank Statement</h2>
               <p>Find forgotten subscriptions and repeating charges, convert small monthly payments into annual cost, and build a recurring-spending audit from your own transaction history.</p>
               <SiteLink className="text-link" href="/guides/how-to-find-subscriptions-recurring-charges-bank-statement">Read the guide <ArrowIcon /></SiteLink>
             </div>
