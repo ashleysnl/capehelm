@@ -43,7 +43,15 @@ const pages = [
     file: "guides.html",
     title: "Personal Finance Guides | Capehelm",
     description:
-      "Practical Capehelm guides to subscriptions, recurring charges, net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+      "Practical Capehelm guides to household spending, inflation, subscriptions, net worth, transaction analysis, budgeting, cash-flow forecasting and local-first personal finance.",
+  },
+  {
+    route: "/guides/compare-household-spending-year-over-year-canada",
+    file: "guides/compare-household-spending-year-over-year-canada.html",
+    title: "How to Compare Your Household Spending Year Over Year in Canada | Capehelm",
+    description:
+      "A practical way to compare household spending across the same months, account for category changes and understand where Canada’s inflation data helps—and where it does not.",
+    openGraphType: "article",
   },
   {
     route: "/guides/budget-vs-cash-flow-forecast",
