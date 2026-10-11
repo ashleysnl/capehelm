@@ -52,6 +52,7 @@ const pages = [
     description:
       "A practical way to compare household spending across the same months, account for category changes and understand where Canada’s inflation data helps—and where it does not.",
     openGraphType: "article",
+    canonical: `${productionOrigin}/guides/compare-household-spending-year-over-year-canada`,
   },
   {
     route: "/guides/budget-vs-cash-flow-forecast",
