@@ -31,10 +31,13 @@ and checks the published robots and sitemap files.
 
 ## Project map
 
-- `app/` — Home, Features, Privacy and Download routes, global metadata and styling
+- `app/` — public page routes, global metadata and styling, including Guides, Support, FAQ and SEO landing pages
 - `components/` — shared site chrome, product screenshots and landing-page presentation
 - `config/pageMetadata.ts` — canonical, Open Graph and Twitter/X metadata shared by public pages
 - `config/site.ts` — product name, navigation and availability status
+- `content/supportArticles.ts` — support article content and metadata, used to render support routes and generate the sitemap
+- `scripts/seo/` — sitemap generation and shared build/live SEO checks
+- `tests/` — build, route, metadata, accessibility and SEO regression checks
 - `public/CNAME` — GitHub Pages custom-domain declaration for `capehelm.com`
 - `public/robots.txt` — crawler access rules and production sitemap declaration
 - `public/sitemap.xml` — generated canonical URLs from app routes and the support catalogue; do not edit manually
@@ -55,7 +58,7 @@ Capehelm is available from the Mac App Store. The website links to the shared pr
 
 ## SEO and deployment
 
-The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://capehelm.com` origin. The production export is served from the root path, so asset and navigation URLs must not include the former `/capehelm` project prefix. GitHub Pages copies `public/CNAME`, `public/robots.txt`, and `public/sitemap.xml` into the deployed site root. Hosting configuration is maintained in `.openai/hosting.json` by Sites.
+The GitHub Pages workflow sets `NEXT_PUBLIC_SITE_URL` to the canonical `https://capehelm.com` origin and publishes the production site at the domain root. Asset and navigation URLs must not include the former `/capehelm` project prefix. GitHub Pages copies `public/CNAME`, `public/robots.txt`, and `public/sitemap.xml` into the deployed site root. The Cloudflare-compatible build tooling does not change the current GitHub Pages production host. Sites-managed metadata is maintained in `.openai/hosting.json`.
 
 ## Technical SEO regression checks
 
