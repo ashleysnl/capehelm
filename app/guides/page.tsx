@@ -27,11 +27,26 @@ export default function GuidesPage() {
         <div className="guides-list">
           <article className="guide-index-card">
             <div className="guide-index-meta">
+              <span>Holiday spending · Cash flow</span>
+              <time dateTime="2026-10-19">October 19, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">Holiday Budgeting in Canada: Plan Purchases and Payment Dates</h2>
+              <p>Connect your seasonal spending limit to paydays and card payments, with a worked example that exposes a cash squeeze before payday.</p>
+              <SiteLink className="text-link" href="/guides/holiday-budget-cash-flow-plan-canada">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>Purchase</span><i>→</i><span>Payment date</span><i>→</i><span>Cash left</span>
+            </div>
+          </article>
+
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
               <span>Household spending · Inflation</span>
               <time dateTime="2026-10-05">October 5, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">How to Compare Your Household Spending Year Over Year in Canada</h2>
+              <h2>How to Compare Your Household Spending Year Over Year in Canada</h2>
               <p>Compare the same months, review categories carefully and use Canadian inflation data as context for your own transaction history.</p>
               <SiteLink className="text-link" href="/guides/compare-household-spending-year-over-year-canada">Read the guide <ArrowIcon /></SiteLink>
             </div>
