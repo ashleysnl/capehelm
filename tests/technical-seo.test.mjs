@@ -29,6 +29,15 @@ const pages = [
     canonical: `${productionOrigin}/guides`,
   },
   {
+    route: "/guides/holiday-budget-cash-flow-plan-canada",
+    file: "guides/holiday-budget-cash-flow-plan-canada.html",
+    title: "Holiday Budgeting in Canada: Plan Purchases and Payment Dates | Capehelm",
+    description:
+      "Build a Canadian holiday spending plan that connects gift limits, paydays and credit-card payment dates, with a worked cash-flow example and a January check.",
+    openGraphType: "article",
+    canonical: `${productionOrigin}/guides/holiday-budget-cash-flow-plan-canada`,
+  },
+  {
     route: "/guides/compare-household-spending-year-over-year-canada",
     file: "guides/compare-household-spending-year-over-year-canada.html",
     title: "How to Compare Your Household Spending Year Over Year in Canada | Capehelm",
