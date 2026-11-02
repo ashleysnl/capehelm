@@ -27,11 +27,26 @@ export default function GuidesPage() {
         <div className="guides-list">
           <article className="guide-index-card">
             <div className="guide-index-meta">
+              <span>Household planning · Privacy</span>
+              <time dateTime="2026-11-02">November 2, 2026</time>
+            </div>
+            <div>
+              <h2 id="latest-guide-title">How to Share a Household Money Picture Without Sharing Bank Passwords</h2>
+              <p>Build a focused view of shared bills, spending and near-term cash flow while each person keeps control of their own banking access.</p>
+              <SiteLink className="text-link" href="/guides/share-household-finances-without-bank-passwords">Read the guide <ArrowIcon /></SiteLink>
+            </div>
+            <div className="guide-index-visual" aria-hidden="true">
+              <span>Separate access</span><i>→</i><span>Shared picture</span><i>→</i><span>Next action</span>
+            </div>
+          </article>
+
+          <article className="guide-index-card">
+            <div className="guide-index-meta">
               <span>Holiday spending · Cash flow</span>
               <time dateTime="2026-10-19">October 19, 2026</time>
             </div>
             <div>
-              <h2 id="latest-guide-title">Holiday Budgeting in Canada: Plan Purchases and Payment Dates</h2>
+              <h2>Holiday Budgeting in Canada: Plan Purchases and Payment Dates</h2>
               <p>Connect your seasonal spending limit to paydays and card payments, with a worked example that exposes a cash squeeze before payday.</p>
               <SiteLink className="text-link" href="/guides/holiday-budget-cash-flow-plan-canada">Read the guide <ArrowIcon /></SiteLink>
             </div>
