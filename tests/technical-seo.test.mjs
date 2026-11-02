@@ -29,6 +29,15 @@ const pages = [
     canonical: `${productionOrigin}/guides`,
   },
   {
+    route: "/guides/share-household-finances-without-bank-passwords",
+    file: "guides/share-household-finances-without-bank-passwords.html",
+    title: "How to Share a Household Money Picture Without Sharing Bank Passwords | Capehelm",
+    description:
+      "Build a useful shared view of household bills, spending and near-term cash flow without exchanging online-banking passwords or combining every account.",
+    openGraphType: "article",
+    canonical: `${productionOrigin}/guides/share-household-finances-without-bank-passwords`,
+  },
+  {
     route: "/guides/holiday-budget-cash-flow-plan-canada",
     file: "guides/holiday-budget-cash-flow-plan-canada.html",
     title: "Holiday Budgeting in Canada: Plan Purchases and Payment Dates | Capehelm",
